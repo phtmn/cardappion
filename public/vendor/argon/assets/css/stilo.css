@@ -1,0 +1,76 @@
+
+
+.bg-verd{
+    background-color: #7ed957;
+}
+
+.bg-amarelo{ 
+    background-color: #ffde59;
+}
+
+.bg-azul{
+    background-color: #5ce1e6;
+}
+
+.bg-azul2{
+    background-color: #5271ff;
+}
+
+.bg-lilas{
+    background-color: #cb6ce6;
+}
+
+.bg-black{
+    background-color: #0d0d0d;
+}
+
+/*/////////////////////////////////Botões//////////////////////////////////*/
+
+.btn-verd{
+    color: #ffffff;
+    background-color: #7ed957;   
+}
+
+.btn-amarelo{
+    color: #ffffff; 
+    background-color: #ffde59;
+}
+
+.btn-azul{
+    color: #ffffff;
+    background-color: #5ce1e6;
+}
+
+.btn-azul2{
+    color: #ffffff;
+    background-color: #5271ff;
+}
+
+.btn-lilas{
+    color: #ffffff;
+    background-color: #cb6ce6;
+}
+
+
+/*////////////////////////////////Cor-Textos////////////////////////////////*/
+
+
+.text-verd{
+    color: #7ed957;
+}
+
+.text-amarelo{ 
+    color: #ffde59;
+}
+
+.text-azul{
+    color: #5ce1e6;
+}
+
+.text-azul2{
+    color: #5271ff;
+}
+
+.text-lilas{
+    color: #cb6ce6;
+}
