@@ -13,7 +13,8 @@ class SiteController extends Controller
     public function home(){
         return view('layouts.site3');
     }
-
+    
+    
     public function promocao($slug){
 
         $promotion = Promotion::where('url','=',$slug)->first();

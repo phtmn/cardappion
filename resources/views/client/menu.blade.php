@@ -80,11 +80,12 @@
         <ion-tab tab="promocoes">
                 <ion-content>
                 <ion-list>
+                
                     <ion-item>
-                        <ion-label>Pac-Man</ion-label>
+                        <ion-label></ion-label>
                     </ion-item>
                     <ion-item>
-                        <ion-label>Super Mario World</ion-label>
+                        <ion-label></ion-label>
                     </ion-item>
                     <ion-item>
                         <ion-label>Pokémon Yellow</ion-label>

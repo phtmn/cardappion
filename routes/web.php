@@ -13,6 +13,7 @@
 
 Route::get('/','Site\SiteController@home')->name('site3');
 
+
 Route::get('promo/{slug}', 'Site\SiteController@promocao')->name('promo');
 Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
 Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('product.detail');

@@ -63,7 +63,7 @@
                     <span class="custom-toggle-slider rounded-circle"></span>
                   </label>
                             </td>
-                            <!-- <td><a href="{{ route('promo',$d->url)  }}" target="_blank">cardappon.com.br/promo/{{ $d->url }}</a></td> -->
+                            <td><a href="{{ route('promo',$d->url)  }}" target="_blank">cardappon.com.br/promo/{{ $d->url }}</a></td>
                             <td>
                             <!-- <a href="" data-toogle="toltip" title="Editar promoção" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 <a href="" data-toogle="toltip" title="Apagar promoção" class="btn btn-sm btn-primary"><i class="fa fa-trash"></i></a>                                 -->
