@@ -49,14 +49,14 @@
                     <input type="text" name="description" class="form-control">
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="Categoria" class="text-primary">Categoria</label>
                     <select name="category_id" id="" class="form-control">
                         @foreach($categories as $c)
                             <option value="{{$c->id }}">{{$c->name }}</option>
                         @endforeach
                     </select>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="" class="text-primary">Valor</label>
@@ -69,7 +69,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Categoria" class="text-primary">Adicionar ao menu</label>
+                    <label for="Categoria" class="text-primary">Categoria</label>
                     <select name="menu_id" id="" class="form-control">
                         @foreach($menus as $m)
                             <option value="{{$m->id }}">{{$m->description }}</option>
