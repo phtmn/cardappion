@@ -29,8 +29,8 @@
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col-8">                
-                                <a href="#!" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i
-                                    class=" ni ni-cloud-upload-96"></i> Upload Logo</a>
+                                <!-- <a href="#!" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i
+                                    class=" ni ni-cloud-upload-96"></i> Upload Logo</a> -->
                             </div>
                             <div class="col-4 text-right">
                             </div>
@@ -39,7 +39,7 @@
                     <div class="card-body">
                         <div class="text-center">
                             <h5 class="h3">
-                                Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span>
+                                Olá, {{ auth()->user()->name }} <span class="font-weight-light"></span>
                             </h5>
                             <div class="h5 font-weight-300">
                                 <i class="ni location_pin mr-2"></i>{{ auth()->user()->email }}
@@ -58,7 +58,7 @@
                     <div class="card-body">
                         <form action="{{route('config.store')}}" method="POST">
                             @csrf
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <label for="example-text-input"
                                     class="col-md-4 col-form-label form-control-label text-right text-danger">Nome <b
                                         class="text-danger" data-toggle="tooltip" data-placement="right"
@@ -66,7 +66,7 @@
                                 <div class="col-md-8">
                                     <input type="text" name="name" class="form-control" value="">
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- <div class="form-group row">
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Nº do Documento <b

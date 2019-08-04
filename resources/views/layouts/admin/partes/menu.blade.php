@@ -1,8 +1,9 @@
 <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+
     <div class="scrollbar-inner">
         <div class="sidenav-header d-flex align-items-center">
             <a class="navbar-brand" href="../../pages/dashboards/dashboard.html">
-                <img src="../../assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+                <img src="{{asset('vendor/argon/assets/img/brand/blue.png')}} " class="navbar-brand-img" alt="...">
             </a>
             <div class="ml-auto">
                 

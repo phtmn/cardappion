@@ -16,16 +16,18 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('tenant_id');
-            $table->unsignedBigInteger('menu_id');
-            $table->unsignedBigInteger('category_id');
-            $table->string('description');
-            $table->decimal('price',10,2);
-            $table->string('image')->nullable();
+            // $table->unsignedBigInteger('menu_id');
+            // $table->unsignedBigInteger('category_id');
+            $table->string('title');
             $table->text('details')->nullable();
-            $table->boolean('active');
+            $table->string('slug',100)->nullable();
+            $table->string('url')->nullable()->unique();
+            $table->decimal('price',10,2)->nullable();
+            $table->string('image')->nullable();
+            $table->boolean('active')->default(1);
             $table->boolean('featured')->default(0);
             $table->foreign('tenant_id')->references('id')->on('tenants');
-            $table->foreign('menu_id')->references('id')->on('menus');
+            // $table->foreign('menu_id')->references('id')->on('menus');
             $table->softDeletes();
             $table->timestamps();
         });

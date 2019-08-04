@@ -1,5 +1,7 @@
 <nav class="navbar navbar-top navbar-expand navbar-dark bg-dark border-bottom">
+
       <div class="container-fluid">
+      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           
           <ul class="navbar-nav align-items-center ml-md-auto">
@@ -13,14 +15,22 @@
                 </div>
               </div>
             </li>
-           
+
             <li class="nav-item ">
+            <a class="nav-link" href="#" 
+              data-toggle="tooltip" data-placement="bottom" title="Em breve!">
+               cardappion.me/m/adjoeov
+              </a>
+              
+            </li>
+           
+            <!-- <li class="nav-item ">
             <a class="nav-link" href="#" 
               data-toggle="tooltip" data-placement="bottom" title="Em breve!">
                 <i class="ni ni-bell-55"></i>
               </a>
               
-            </li>
+            </li> -->
             <li class="nav-item ">
               <a class="nav-link" href="#" 
               data-toggle="tooltip" data-placement="bottom" title="Suporte">
@@ -34,7 +44,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="{{asset('vendor/argon/assets/img/theme/team-4.jpg')}}">
+                    <img alt="Image placeholder" src="{{asset('vendor/argon/assets/img/qrcode-512.png')}}">
                   </span>
                   
                 </div>

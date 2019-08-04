@@ -8,7 +8,7 @@
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
                     <i class="ni ni-bullet-list-67 text-white"></i>
-                    <h3 class="h3 text-white d-inline-block mb-0">Produtos - Add NOVO PRODUTO</h3>
+                    <h3 class="h3 text-white d-inline-block mb-0">Produtos</h3>
                     
                 </div>
                 <div class="col-lg-6 col-5 text-right">
@@ -22,9 +22,83 @@
 @stop
 
 @section('conteudo')
-  
 
-    <div class="container-fluid mt--6">
+
+
+
+<div class="container-fluid mt--6">
+    <div class="row">
+    <div class="col-lg-12">
+            <div class="card-wrapper">
+                <div class="card">                    
+                    <div class="card-header">
+                        <h3 class="mb-0">Dados do Produto</h3>
+                    </div>
+                    <div class="card-body">
+                    <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="example-text-input"
+                                    class="col-md-4 col-form-label form-control-label text-right ">Foto de destaque </label>
+                                <div class="col-md-8">
+                                    <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" />
+                                </div>
+                            </div>
+                           
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Título do produto </label>
+                                <div class="col-md-4">
+                                    <input type="text" name="title" class="form-control">   
+                                </div>
+                            </div>
+                           
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Valor (R$) </label>
+                                <div class="col-md-2">
+                                        <input type="text" name="price" class="form-control" id="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
+                                <div class="col-md-4">
+                                         <textarea name="details" ></textarea>   
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-4">
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                <button type="submit" class="btn btn-block btn-outline-success btn-lg btn-round"> <i
+                                    class=" fa fa-check-square nav-icon"></i> Salvar</button>
+                                </div>
+                                <div class="col-md-4">
+                                    
+                                </div>
+                            
+                            </div>
+
+                            
+
+                            
+
+                            @include('tools.messages')
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+
+
+    <!-- <div class="container-fluid mt--6">
     <div class="row">
         <div class="col-lg-12">
             <div class="card-wrapper">                
@@ -49,14 +123,14 @@
                     <input type="text" name="description" class="form-control">
                 </div>
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="Categoria" class="text-primary">Categoria</label>
                     <select name="category_id" id="" class="form-control">
                         @foreach($categories as $c)
                             <option value="{{$c->id }}">{{$c->name }}</option>
                         @endforeach
                     </select>
-                </div> -->
+                </div>
 
                 <div class="form-group">
                     <label for="" class="text-primary">Valor</label>
@@ -95,7 +169,7 @@
                         </div>
                     </div>
                 </div>
-          
+           -->
        
       
 

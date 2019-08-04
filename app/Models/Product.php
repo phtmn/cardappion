@@ -9,8 +9,9 @@ class Product extends Model
 {
     use TenantTrait;
 
-    protected $fillable = ['tenant_id','menu_id','category_id','description','price','image','details','active'];
+    // protected $fillable = ['tenant_id','menu_id','category_id','description','price','image','details','active'];
 
+    protected $fillable = ['tenant_id','title','price','url','image','details','active'];
 
     public function menu(){
 

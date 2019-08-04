@@ -171,7 +171,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                               </div> 
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right  text-dark">{{ __('Nome do Responsável') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right  text-dark">{{ __('Nome completo') }}</label>
                             <div class="input-group-append">
               <span class="fa fa-user input-group-text"></span>
           </div>

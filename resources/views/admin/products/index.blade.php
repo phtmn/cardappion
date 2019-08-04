@@ -11,6 +11,7 @@
                     <h3 class="h3 text-white d-inline-block mb-0">Produtos</h3>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
+                <a href="#" class="btn btn-sm btn-neutral"> Total de Produtos  ( {{$data->count()}} )</a>
                 </div>
             </div>
         </div>
@@ -30,7 +31,7 @@
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col-8">   
-                                <a href="{{route('products.create')}}" class="btn btn-success"> <i class=" fa fa-plus nav-icon"></i> Produto </a>                                           
+                                <a href="{{route('products.create')}}" class="btn btn-success"> <i class=" fa fa-plus nav-icon"></i> Adicionar Produto </a>                                           
                             </div>
                             <div class="col-4 text-right">
                             </div>
@@ -38,9 +39,7 @@
                     </div>                    
                     <div class="card-body">
                         <div class="text-center">
-                        <div class="card-header">
-        <h4 class="card-title">Seus Produtos ( {{$data->count()}} )</h4>
-    </div>
+         
     <div class="card-body">
        <div class="table-responsive">
            <table class="table">
@@ -48,24 +47,24 @@
                         <th>#</th>
                         <th>Produto</th>
                         <th>Valor (R$)</th>
-                        <th>Disponibilidade</th>
+                        <th>Publicado</th>
                         <th></th>
                </thead>
                <tbody>
                     @forelse($data as $d)
                         <tr>
                         <td><img src="{{Storage::url($d->image)}}" style="height: 70px;" alt=""/></td>
-                            <td>{{$d->description}}</td>
-                            <td>{{ $d->price}}</td>
+                            <td>{{$d->title}}</td>
+                            <td>R$ {{ number_format($d->price,2,',','.') }} </td>
                             <td>
                             <label class="custom-toggle">
-                    <input type="checkbox">
-                    <span class="custom-toggle-slider rounded-circle"></span>
+                    <input type="checkbox" checked>
+                    <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
                   </label>
                             </td>
                             <td>
-                                <a href="" data-toogle="toltip" title="Editar produto" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                <a href="" data-toogle="toltip" title="Apagar produto" class="btn btn-sm btn-primary"><i class="fa fa-trash"></i></a>                                
+                                <!-- <a href="" data-toogle="toltip" title="Editar produto" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+                                <a href="" data-toogle="toltip" title="Apagar produto" class="btn btn-sm btn-primary"><i class="fa fa-trash"></i></a>                                 -->
                             </td> 
                             
                         </tr>

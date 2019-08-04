@@ -39,7 +39,7 @@ class PromotionController extends Controller
 
             Promotion::create($promotion);
 
-            return redirect()->route('promotions.index')->with('msg','Oferta Inserida Com Sucesso!');
+            return redirect()->route('promotions.index')->with('msg','Promoção adicionada com Sucesso!');
         }catch (\Exception $e){
             return redirect()->back()->with('error','Ocorreu um Erro: '.$e->getMessage());
         }

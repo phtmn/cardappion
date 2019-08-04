@@ -29,16 +29,17 @@ class ProductsController extends Controller
 
         try{
             $product = $request->all();
+            // $product['url']   = Str::random(5);
 
             if($request->hasFile('image')){
                 $product['image']  = $request->image->store('products');
 
             }
 
-            $product['active'] = 1;
             Product::create($product);
 
-            return redirect()->back()->with('msg','Produto Inserido Com Sucesso!');
+            return redirect()->route('products.index')->with('msg','Produto adicionado com Sucesso!');
+            
         }catch (\Exception $e){
             return redirect()->back()->with('error','Ocorreu um Erro: '.$e->getMessage());
         }

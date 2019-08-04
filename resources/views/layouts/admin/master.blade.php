@@ -37,7 +37,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
             <div class="copyright text-center text-lg-left text-muted">
-              &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Todos os cardápios e promoções em um único lugar Tim</a>
+              &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Todos os cardápios e promoções em um único lugar Tim</a>
             </div>
           </div>
           <div class="col-lg-6">
@@ -45,9 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Soluções em Cardápios Digitais</a>
               </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-              </li>
+              
               <li class="nav-item">
                 <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
               </li>

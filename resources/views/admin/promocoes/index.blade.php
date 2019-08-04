@@ -11,6 +11,7 @@
                     <h3 class="h3 text-white d-inline-block mb-0">Promoções</h3>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
+                <a href="#" class="btn btn-sm btn-neutral"> Total de Promoções ( {{$data->count()}} )</a>
                 </div>
             </div>
         </div>
@@ -32,14 +33,13 @@
                                 <a href="{{route('promotions.create')}}" class="btn btn-success"> <i class=" fa fa-plus nav-icon"></i> Adicionar Promoção </a>                                           
                             </div>
                             <div class="col-4 text-right">
+                            
                             </div>
                         </div>
                     </div>                    
                     <div class="card-body">
                         <div class="text-center">
-                        <div class="card-header">
-        <h4 class="card-title">Promoções Cadastradas ( {{$data->count()}} )</h4>
-    </div>
+          
     <div class="card-body">
        <div class="table-responsive">
            <table class="table">
@@ -55,15 +55,15 @@
                         <tr>
                             
                             <td><img src="{{Storage::url($d->image)}}" style="height: 70px;" alt=""/></td>
-                            <td>{{$d->title}}</td>
+                            <td><a href="{{ route('promo',$d->url)  }}" target="_blank">{{$d->title}}</a></td>
                             <td>R$ {{ number_format($d->promotion_value,2,',','.') }}  </td> 
                             <td>
                             <label class="custom-toggle">
-                    <input type="checkbox">
-                    <span class="custom-toggle-slider rounded-circle"></span>
+                            <input type="checkbox" checked>
+                    <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
                   </label>
                             </td>
-                            <td><a href="{{ route('promo',$d->url)  }}" target="_blank">cardappon.com.br/promo/{{ $d->url }}</a></td>
+                            <!-- <td><a href="{{ route('promo',$d->url)  }}" target="_blank">cardappon.com.br/promo/{{ $d->url }}</a></td> -->
                             <td>
                             <!-- <a href="" data-toogle="toltip" title="Editar promoção" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                                 <a href="" data-toogle="toltip" title="Apagar promoção" class="btn btn-sm btn-primary"><i class="fa fa-trash"></i></a>                                 -->

@@ -59,6 +59,14 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
+                                <div class="col-md-4">
+                                         <textarea name="details" ></textarea>   
+                                </div>
+                            </div>
+
 
                             <div class="form-group row">
                                 <div class="col-md-4">
