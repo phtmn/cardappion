@@ -47,8 +47,8 @@
                         <th>#</th>
                         <th>Produto</th>
                         <th>Valor (R$)</th>
-                        <th>Publicado</th>
-                        <th></th>
+                        <th class="text-left">Publicado</th>
+                        <th ></th>
                </thead>
                <tbody>
                     @forelse($data as $d)
@@ -56,7 +56,7 @@
                         <td><img src="{{Storage::url($d->image)}}" style="height: 70px;" alt=""/></td>
                             <td>{{$d->title}}</td>
                             <td>R$ {{ number_format($d->price,2,',','.') }} </td>
-                            <td>
+                            <td >
                             <label class="custom-toggle">
                     <input type="checkbox" checked>
                     <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>

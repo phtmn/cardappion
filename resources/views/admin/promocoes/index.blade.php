@@ -47,7 +47,7 @@
                     <th>#</th>
                     <th>Promoção </th>
                     <th>Valor (R$)</th>                                        
-                    <th>Publicado</th>
+                    <th class="text-left">Publicado</th>
                     <th></th>
                </thead>
                <tbody>
