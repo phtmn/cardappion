@@ -9,40 +9,63 @@ use Illuminate\Support\Str;
 
 class PromotionController extends Controller
 {
-    public function index(){
+  public function index()
+  {
 
-        return view('admin.promocoes.index',[
-            'data' => $data = Promotion::all()
-        ]);
+    return view('admin.promocoes.index', [
+      'data' => $data = Promotion::all()
+    ]);
+  }
+
+  public function create()
+  {
+    return view('admin.promocoes.create');
+  }
+
+  public function qrCode($id)
+  {
+
+    $promocao = Promotion::findOrFail($id);
+
+    return view('admin.promocoes.qrcode', compact('promocao'));
+  }
+
+  public function store(Request $request)
+  {
+    try {
+      $promotion          = $request->all();
+      $promotion['url']   = Str::random(5);
+
+      if ($request->hasFile('image')) {
+        $promotion['image'] = $request->image->move('promotions');
+      }
+
+      Promotion::create($promotion);
+
+      return redirect()->route('promotions.index')->with('msg', 'Promoção adicionada com Sucesso!');
+    } catch (\Exception $e) {
+      return redirect()->back()->with('error', 'Ocorreu um Erro: ' . $e->getMessage());
+    }
+  }
+
+  public function activate($id)
+  {
+    $promotion = Promotion::find($id);
+
+    if ($promotion->active == 0) {
+      $promotion->active = 1;
+    } else {
+      $promotion->active = 0;
     }
 
-    public function create(){
-        return view('admin.promocoes.create');
+    if ($promotion->save()) {
+      return response()->json([
+        'success' => true
+      ], 200);
+    } else {
+      return response()->json([
+        'success' => false
+      ], 400);
     }
-
-    public function qrCode($id){
-
-        $promocao = Promotion::findOrFail($id);
-
-        return view('admin.promocoes.qrcode',compact('promocao'));
-    }
-
-    public function store(Request $request){
-
-        try{
-            $promotion          = $request->all();
-            $promotion['url']   = Str::random(5);
-
-            if($request->hasFile('image')){
-                $promotion['image'] = $request->image->store('promotions');
-            }
-
-            Promotion::create($promotion);
-
-            return redirect()->route('promotions.index')->with('msg','Promoção adicionada com Sucesso!');
-        }catch (\Exception $e){
-            return redirect()->back()->with('error','Ocorreu um Erro: '.$e->getMessage());
-        }
-
-    }
+  }
 }

@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/','Site\SiteController@home')->name('site3');
-
+Route::get('/', 'Site\SiteController@home')->name('site3');
+Route::name('site.menu.show')->get('/m/{token}', 'Site\SiteController@show');
 
 Route::get('promo/{slug}', 'Site\SiteController@promocao')->name('promo');
 Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
@@ -21,20 +21,26 @@ Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('prod
 Auth::routes();
 
 
-Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'auth'],function(){
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
-    Route::get('/','DashboardController@index')->name('dashboard.index');
+  Route::get('/', 'DashboardController@index')->name('dashboard.index');
 
-    Route::resource('promotions','PromotionController');
-    Route::resource('menus','MenuController');
-    Route::resource('products','ProductsController');
+  Route::resource('promotions', 'PromotionController');
+  Route::resource('menus', 'MenuController');
+  Route::resource('products', 'ProductsController');
 
-    Route::get('/config/createEdit','ConfigController@createEdit')->name('config.createEdit');
-    Route::post('/config/createEdit','ConfigController@store')->name('config.store');
+  Route::get('/config/createEdit', 'ConfigController@createEdit')->name('config.createEdit');
+  Route::post('/config/createEdit', 'ConfigController@store')->name('config.store');
 
-    Route::get('/menu-itens/{id}','MenuController@menuItens')->name('menu.menuItens');
-    Route::get('/menu-item/menu/{menu}/delete/{id}','MenuController@deleteItem')->name('menu.deleteItem');
-    Route::get('/menu/share/{id}','MenuController@share')->name('menu.share');
+  Route::get('/menu-itens/{id}', 'MenuController@menuItens')->name('menu.menuItens');
+  Route::get('/menu-item/menu/{menu}/delete/{id}', 'MenuController@deleteItem')->name('menu.deleteItem');
+  Route::get('/menu/share/{id}', 'MenuController@share')->name('menu.share');
 
-    Route::get('qrcode/{id}', 'PromotionController@qrCode')->name('promotion.qrCode');
+  Route::get('qrcode/{id}', 'PromotionController@qrCode')->name('promotion.qrCode');
+
+  // Routes
+  Route::name('admin.products.activate')->get('/ativar/{id}', 'ProductsController@activate');
+  Route::name('admin.promotions.activate')->get('/ativar/{id}', 'PromotionController@activate');
+
+  Route::name('admin.menus.activate')->get('/ativar/{id}', 'MenuController@activate');
 });

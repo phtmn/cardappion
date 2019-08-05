@@ -1,0 +1,40 @@
+db:
+  image: mysql:5.7
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: docker
+    MYSQL_DATABASE: app
+
+data:
+  image: brzdigital/data
+  volumes:
+    - ./:/var/www/
+    - ./public/:/var/www/html/
+
+php:
+  image: brzdigital/php-fpm
+  ports:
+    - 9000:9000
+  volumes_from:
+    - data
+  links:
+    - db:db
+
+nginx:
+  image: brzdigital/nginx
+  ports:
+    - 80:80
+  volumes_from:
+    - data
+  links:
+    - php:fpm
+
+artisan:
+  image: brzdigital/artisan
+  command: queue:listen
+  working_dir: /var/www/
+  links:
+    - db:db
+  volumes_from:
+    - data

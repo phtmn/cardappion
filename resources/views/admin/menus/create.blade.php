@@ -9,7 +9,7 @@
                 <div class="col-lg-6 col-7">
                     <i class="ni ni-collection text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Menu - Add NOVO Menu</h3>
-                    
+
                 </div>
                 <div class="col-lg-6 col-5 text-right">
                 </div>
@@ -25,18 +25,19 @@
 <div class="container-fluid mt--6">
     <div class="row">
         <div class="col-lg-12">
-            <div class="card-wrapper">  
+            <div class="card-wrapper">
     <div class="card">
         <form action="{{route('menus.store')}}" method="POST">
             @csrf
 
         <div class="card-body">
-            <div class="form-group">
-                    <label for="" class="text-primary">Nome do Cardápio</label>
-                    <input type="text" name="description" class="form-control">
+          <div class="row">
+            <div class="form-group col-md-10">
+              <label for="" class="text-primary">Nome do Cardápio</label>
+              <input type="text" name="description" class="form-control">
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="" class="text-primary">Url para compatilhamento do menu</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -44,16 +45,16 @@
                     </div>
                     <input type="text" class="form-control" name="url" id="basic-url" aria-describedby="basic-addon3">
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group">
-                <label for="active">Disponivel</label>
-                <select name="active" id="" class="form-control">
-                    <option value="1" selected>Sim</option>
-                    <option value="0">Não</option>
-                </select>
+            <div class="form-group col-md-2">
+              <label for="active">Disponivel</label>
+              <select name="active" id="" class="form-control">
+                <option value="1" selected>Sim</option>
+                <option value="0">Não</option>
+              </select>
             </div>
-
+          </div>
         </div>
 
         <div class="card-footer">
@@ -64,6 +65,6 @@
     </div>
     </div>
     </div>
-  
+
 
 @stop

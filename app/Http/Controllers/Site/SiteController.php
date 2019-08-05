@@ -10,31 +10,39 @@ use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
-    public function home(){
-        return view('layouts.site3');
-    }
-    
-    
-    public function promocao($slug){
+  public function home()
+  {
+    return view('layouts.site3');
+  }
 
-        $promotion = Promotion::where('url','=',$slug)->first();
-        //dd($promotion);
-        return view('client.promotion', compact('promotion'));
-    }
+  public function promocao($slug)
+  {
 
-    public function menu($slug)
-    {
+    $promotion = Promotion::where('url', '=', $slug)->first();
+    //dd($promotion);
+    return view('client.promotion', compact('promotion'));
+  }
 
-        return view('client.menu',[
-            'promotions'    => Promotion::all(),
-            'menu'          => Menu::where('slug','=',$slug)->first(),
-            'categories'    => ProductCategory::all()
-        ]);
+  public function menu($slug)
+  {
 
-    }
+    return view('client.menu', [
+      'promotions'    => Promotion::all(),
+      'menu'          => Menu::where('slug', '=', $slug)->first(),
+      'categories'    => ProductCategory::all()
+    ]);
+  }
 
-    public function productDetail($id){
-        $product = Product::find($id);
-        return view('client.productDetail',compact('product'));
-    }
+  public function productDetail($id)
+  {
+    $product = Product::find($id);
+    return view('client.productDetail', compact('product'));
+  }
+
+  public function show($token)
+  {
+    $menu = Menu::where('token', $token)->firstOrFail();
+
+    return view('site.show', compact('menu'));
+  }
 }

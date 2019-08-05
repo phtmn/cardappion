@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @include('layouts.admin.partes.navbar')
     @yield('cabecalho')
     @yield('conteudo')
-  
+
       <footer class="footer pt-0">
         <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
@@ -45,7 +45,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Soluções em Cardápios Digitais</a>
               </li>
-              
+
               <li class="nav-item">
                 <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
               </li>
@@ -70,17 +70,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-  
-   
+
+
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
 
     <script>
 
-     
-
-      $(document).ready(function() {                
+      $(document).ready(function() {
         $('#telephone').mask('(00) 0000-0000');
-        $('#whatsapp').mask('(00) 0000-0000');        
+        $('#whatsapp').mask('(00) 0000-0000');
+      });
+
+      $('.js-checkbox').on('click', function(e) {
+        var route = $(this).data('route');
+
+        $.ajax({
+          url : route,
+          type : 'get',
+        })
+        .done(function(msg){
+          return true;
+        })
+
       });
 
       function limpa_formulário_cep() {
@@ -110,7 +121,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   $("#address").val("...");
                   $("#neighborhood").val("...");
                   $("#city").val("...");
-                  $("#state").val("...");                  
+                  $("#state").val("...");
 
                   //Consulta o webservice viacep.com.br/
                   $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
@@ -120,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           $("#address").val(dados.logradouro);
                           $("#neighborhood").val(dados.bairro);
                           $("#city").val(dados.localidade);
-                          $("#us").val(dados.uf);                          
+                          $("#us").val(dados.uf);
                       } //end if.
                       else {
                           //CEP pesquisado não foi encontrado.
@@ -144,7 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </script>
 
 
-  
+
 
 
 @yield('js')

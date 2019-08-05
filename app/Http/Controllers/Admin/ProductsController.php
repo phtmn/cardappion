@@ -10,41 +10,60 @@ use App\Http\Controllers\Controller;
 
 class ProductsController extends Controller
 {
-    public function index(){
+  public function index()
+  {
 
-        return view('admin.products.index',[
-            'data' => $data = Product::all()
-        ]);
+    return view('admin.products.index', [
+      'data' => $data = Product::all()
+    ]);
+  }
+
+  public function create()
+  {
+
+    return view('admin.products.create', [
+      'categories' => ProductCategory::all(),
+      'menus'      => Menu::all()
+    ]);
+  }
+
+  public function store(Request $request)
+  {
+
+    try {
+      $product = $request->all();
+      // $product['url']   = Str::random(5);
+
+      if ($request->hasFile('image')) {
+        $product['image']  = $request->image->move('products');
+      }
+
+      Product::create($product);
+
+      return redirect()->route('products.index')->with('msg', 'Produto adicionado com Sucesso!');
+    } catch (\Exception $e) {
+      return redirect()->back()->with('error', 'Ocorreu um Erro: ' . $e->getMessage());
+    }
+  }
+
+  public function activate($id)
+  {
+    $product = Product::find($id);
+
+    if ($product->active == 0) {
+      $product->active = 1;
+    } else {
+      $product->active = 0;
     }
 
-    public function create(){
-
-        return view('admin.products.create',[
-            'categories' => ProductCategory::all(),
-            'menus'      => Menu::all()
-        ]);
+    if ($product->save()) {
+      return response()->json([
+        'success' => true
+      ], 200);
+    } else {
+      return response()->json([
+        'success' => false
+      ], 400);
     }
-
-    public function store(Request $request){
-
-        try{
-            $product = $request->all();
-            // $product['url']   = Str::random(5);
-
-            if($request->hasFile('image')){
-                $product['image']  = $request->image->store('products');
-
-            }
-
-            Product::create($product);
-
-            return redirect()->route('products.index')->with('msg','Produto adicionado com Sucesso!');
-            
-        }catch (\Exception $e){
-            return redirect()->back()->with('error','Ocorreu um Erro: '.$e->getMessage());
-        }
-
-
-
-    }
+  }
 }
