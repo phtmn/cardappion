@@ -74,7 +74,7 @@
 
                         </tr>
                     @empty
-                        <p class="text-danger">Nenhuma promoção cadastrada</p>
+                        <p class="text-danger">Nenhum produto cadastrado</p>
                     @endforelse
                </tbody>
            </table>
