@@ -44,7 +44,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="{{asset('vendor/argon/assets/img/qrcode-512.png')}}">
+                    <img alt="Image placeholder" src="{{asset('vendor/argon/assets/img/logo2.png')}}">
                   </span>
                   
                 </div>

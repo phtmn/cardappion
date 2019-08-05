@@ -12,7 +12,7 @@ class SiteController extends Controller
 {
   public function home()
   {
-    return view('layouts.site3');
+    return view('layouts.site');
   }
 
   public function promocao($slug)

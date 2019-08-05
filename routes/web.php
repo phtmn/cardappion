@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'Site\SiteController@home')->name('site3');
+Route::get('/', 'Site\SiteController@home')->name('site');
 Route::name('site.menu.show')->get('/m/{token}', 'Site\SiteController@show');
 
 Route::get('promo/{slug}', 'Site\SiteController@promocao')->name('promo');

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Cardapion</title>
+  <title>cardappion</title>
   <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
   <link rel="icon" href="{{asset('vendor/argon/assets/img/brand/icon2.png')}}" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
