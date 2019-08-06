@@ -83,7 +83,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       $('.js-checkbox').on('click', function(e) {
         var route = $(this).data('route');
-
         $.ajax({
           url : route,
           type : 'get',
@@ -91,7 +90,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
         .done(function(msg){
           return true;
         })
+      });
 
+      $('.js-menu-action').on('click', function() {
+        var id = $(this).data('id');
+        $.ajax({
+          url : $(this).data('route'),
+          type : 'get',
+        })
+        .done(function(msg){
+          console.log('ok - ' + id);
+          $('.js-table-' + id).hide(1000, function() {
+            $(this).remove();
+          });
+        })
       });
 
       function limpa_formulário_cep() {

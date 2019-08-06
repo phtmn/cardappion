@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <a href="{{ route('products.create') }}" class="btn btn-outline-primary"> Adicionar Item a esse Cardápio</a>
+                        <a href="{{ route('admin.menus.products', [ 'id' => $menu->id ]) }}" class="btn btn-outline-primary"> Adicionar Item a esse Cardápio</a>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -39,15 +39,20 @@
                     </thead>
                     <tbody>
                     @forelse( $menu->products as $d)
-                        <tr>
-                            <td>{{$d->id}}</td>
-                            <td>{{$d->description}}</td>
-                            <td>{{$d->price }}</td>
-                            <td><i>próximas versões</i></td>
-                            <td class="text-right">
-                                <a href="{{route('menu.deleteItem',[$menu->id,$d->id])}}" class="btn btn-outline-danger btn-round">Remover</a>
-                            </td>
-                        </tr>
+                      <tr class="js-table-{{ $d->id }}">
+                        <td>{{$d->id}}</td>
+                        <td>{{$d->title}}</td>
+                        <td>{{$d->price }}</td>
+                        <td>
+                          <img src="{{ url("{$d->image}") }}" style="height: 70px;" alt=""/>
+                        </td>
+                        <td class="text-right">
+                          <a class="btn btn-danger btn-round btn-sm js-menu-action" style="color: white"
+                            data-route="{{ route('admin.menus.remove_products', [ 'menu_id' => $menu->id, 'product_id' => $d->id ]) }}"
+                            data-id="{{ $d->id }}"
+                          >Remover</a>
+                        </td>
+                      </tr>
                     @empty
                         <p>Nenhum item no menu</p>
 

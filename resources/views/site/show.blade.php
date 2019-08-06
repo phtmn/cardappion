@@ -1,1 +1,1 @@
-<h1>{{ $menu->description }}</h1>
+<h1>{{ $menu->name }}</h1>

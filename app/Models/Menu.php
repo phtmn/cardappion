@@ -10,7 +10,6 @@ use Webpatser\Uuid\Uuid;
 
 class Menu extends Model
 {
-
   protected $fillable = ['tenant_id', 'user_id', 'description', 'active', 'uui', 'url', 'slug', 'token'];
 
   protected $casts = [
@@ -31,11 +30,9 @@ class Menu extends Model
     });
   }
 
-
   public function products()
   {
-
-    return $this->hasMany(Product::class);
+    return $this->belongsToMany(Product::class, 'products_categories', 'menu_id', 'product_id');
   }
 
   public static function gerarUrl($string)

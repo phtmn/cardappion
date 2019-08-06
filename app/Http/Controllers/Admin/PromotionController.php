@@ -24,7 +24,6 @@ class PromotionController extends Controller
 
   public function qrCode($id)
   {
-
     $promocao = Promotion::findOrFail($id);
 
     return view('admin.promocoes.qrcode', compact('promocao'));

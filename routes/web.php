@@ -18,6 +18,9 @@ Route::get('promo/{slug}', 'Site\SiteController@promocao')->name('promo');
 Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
 Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('product.detail');
 
+Route::name('admin.menus.add_products')->get('menus/menu-item/{menu_id}/product/{product_id}/adicionar', 'Admin\MenuController@storeProducts');
+Route::name('admin.menus.remove_products')->get('menus/menu-item/{menu_id}/product/{product_id}/remover', 'Admin\MenuController@deleteProducts');
+
 Auth::routes();
 
 
@@ -39,8 +42,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
   Route::get('qrcode/{id}', 'PromotionController@qrCode')->name('promotion.qrCode');
 
   // Routes
-  Route::name('admin.products.activate')->get('/ativar/{id}', 'ProductsController@activate');
-  Route::name('admin.promotions.activate')->get('/ativar/{id}', 'PromotionController@activate');
+  Route::name('admin.products.activate')->get('products/ativar/{id}', 'ProductsController@activate');
 
-  Route::name('admin.menus.activate')->get('/ativar/{id}', 'MenuController@activate');
+  Route::name('admin.promotions.activate')->get('promotions/ativar/{id}', 'PromotionController@activate');
+
+  Route::name('admin.menus.activate')->get('menus/ativar/{id}', 'MenuController@activate');
+  Route::name('admin.menus.products')->get('menus/menu-item/{menu_id}/adicionar', 'MenuController@addProducts');
 });

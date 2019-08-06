@@ -15,7 +15,6 @@ class CreateMenusTable extends Migration
   {
     Schema::create('menus', function (Blueprint $table) {
       $table->bigIncrements('id');
-
       $table->unsignedBigInteger('tenant_id');
       $table->unsignedBigInteger('user_id');
       $table->string('description');
@@ -24,10 +23,8 @@ class CreateMenusTable extends Migration
       $table->string('url')->nullable();
       $table->string('token')->nullable();
       $table->boolean('active');
-
       $table->foreign('tenant_id')->references('id')->on('tenants');
       $table->foreign('user_id')->references('id')->on('users');
-
       $table->softDeletes();
       $table->timestamps();
     });

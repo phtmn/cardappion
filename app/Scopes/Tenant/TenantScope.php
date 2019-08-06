@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: matthaus
@@ -15,13 +16,11 @@ use Illuminate\Database\Eloquent\Scope;
 
 class TenantScope implements Scope
 {
-    public function apply(Builder $builder, Model $model)
-    {
-        if(auth()->check()){
-            $tenant = app(ManagerTenant::class)->getTenantIdentify();
-            $builder->where('tenant_id',$tenant);
-        }
-
+  public function apply(Builder $builder, Model $model)
+  {
+    if (auth()->check()) {
+      $tenant = app(ManagerTenant::class)->getTenantIdentify();
+      $builder->where('tenant_id', $tenant);
     }
-
+  }
 }

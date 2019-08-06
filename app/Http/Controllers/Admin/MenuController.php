@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class MenuController extends Controller
 {
@@ -25,16 +26,18 @@ class MenuController extends Controller
   {
     $request->merge(['token' => str_random(8)]);
 
-    $request->user()->menus()
-      ->create($request->all());
-    return redirect()->route('menus.index')->with('msg', 'Menu Cadastrado !');
+    $request->user()->menus()->create($request->all());
+
+    // return redirect()->route('menus.index')->with('msg', 'Menu Cadastrado !');
+    return redirect()->route('menus.index');
   }
 
-  public function menuItens($menu)
+  public function menuItens($menu_id)
   {
+    $menu = Menu::find($menu_id);
 
     return view('admin.menus.menu_itens', [
-      'menu' => Menu::find($menu)
+      'menu' => $menu
     ]);
   }
 
@@ -75,5 +78,33 @@ class MenuController extends Controller
         'success' => false
       ], 400);
     }
+  }
+
+  public function addProducts($menu_id)
+  {
+    $menu = Menu::find($menu_id);
+    $products = Product::get()->diff($menu->products);
+
+    return view('admin.menus.add_product', compact('menu', 'products'));
+  }
+
+  public function storeProducts($menu_id, $product_id)
+  {
+    $menu = Menu::find($menu_id);
+    $menu->products()->attach([$product_id]);
+
+    return response()->json([
+      'success' => true
+    ], 200);
+  }
+
+  public function deleteProducts($menu_id, $product_id)
+  {
+    $menu = Menu::find($menu_id);
+    $menu->products()->detach([$product_id]);
+
+    return response()->json([
+      'success' => true
+    ], 200);
   }
 }

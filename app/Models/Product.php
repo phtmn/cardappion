@@ -19,13 +19,6 @@ class Product extends Model
 
   public function menu()
   {
-
-    return $this->belongsTo(Menu::class);
-  }
-
-  public function category()
-  {
-
-    return $this->belongsTo(ProductCategory::class);
+    return $this->belongsToMany(Menu::class, 'products_categories', 'menu_id', 'product_id');
   }
 }

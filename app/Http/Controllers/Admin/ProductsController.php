@@ -20,7 +20,6 @@ class ProductsController extends Controller
 
   public function create()
   {
-
     return view('admin.products.create', [
       'categories' => ProductCategory::all(),
       'menus'      => Menu::all()
@@ -29,7 +28,6 @@ class ProductsController extends Controller
 
   public function store(Request $request)
   {
-
     try {
       $product = $request->all();
       // $product['url']   = Str::random(5);
