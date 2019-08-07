@@ -2,64 +2,93 @@
 
 @section('cabecalho')
 
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <a href="{{ route('admin.menus.products', [ 'id' => $menu->id ]) }}" class="btn btn-outline-primary"> Adicionar Item a esse Cardápio</a>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{route('menus.index')}}">Voltar para Menus</a></li>
-                            <li class="breadcrumb-item active">Cadastrar Produto</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+<div class="header bg-dark pb-6">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <i class="ni ni-collection text-white"></i>
+                    <h3 class="h3 text-white d-inline-block mb-0">Menu <i class="ni ni-ungroup text-white"></i> {{$menu->description}}</h3>
+                </div>
+                <div class="col-lg-6 col-5 text-right">
+                <a class="text-white" href="{{route('menus.index')}} "><i class="ni ni-bold-left text-white"></i> Voltar </a>
+              <!-- <a href="#" class="btn btn-sm btn-neutral"> Total de Categorias ({{$menu->count()}})</a> -->
+            </div>
+            </div>
         </div>
+    </div>
+</div>
+
+        
 
 @stop
 
 @section('conteudo')
     @include('tools.messages')
-    <div class="card">
-        <div class="card-header">
-            <h4 class="card-title">Você está vendo o cardápio: {{$menu->description}}</h4>
-{{--            <a href="{{route('menus.create')}}" class="btn btn-danger btn-round"> Novo Menu</a>--}}
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead class="text-primary">
-                    <th>Codigo</th>
-                    <th>Nome</th>
-                    <th>Valor(R$)</th>
-                    <th>Foto</th>
+
+
+    <div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                            <a href="{{ route('admin.menus.products', [ 'id' => $menu->id ]) }}" class="btn btn-success"> <i class=" fa fa-plus nav-icon"> </i> Adicionar produto na categoria</a>
+                                <!-- <a href="{{route('products.create')}}" class="btn btn-success"> <i class=" fa fa-plus nav-icon"></i> Adicionar Produto </a> -->
+                            </div>
+                            <div class="col-4 text-right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+
+    <div class="card-body">
+       <div class="table-responsive">
+       <table class="table">
+                    <thead class="">
+                    <th>#</th>
+                    <th>Produto</th>
+                    <th>Valor (R$)</th>
+                    
                     <th class="text-right"></th>
                     </thead>
                     <tbody>
                     @forelse( $menu->products as $d)
                       <tr class="js-table-{{ $d->id }}">
-                        <td>{{$d->id}}</td>
-                        <td>{{$d->title}}</td>
-                        <td>{{$d->price }}</td>
-                        <td>
+                      <td>
                           <img src="{{ url("{$d->image}") }}" style="height: 70px;" alt=""/>
                         </td>
-                        <td class="text-right">
+                        <td>{{$d->title}}</td>
+                        <td>R$ {{ number_format($d->price,2,',','.') }}</td>
+                       
+                        <td class="text-left">
                           <a class="btn btn-danger btn-round btn-sm js-menu-action" style="color: white"
                             data-route="{{ route('admin.menus.remove_products', [ 'menu_id' => $menu->id, 'product_id' => $d->id ]) }}"
                             data-id="{{ $d->id }}"
-                          >Remover</a>
+                          > <i class="ni ni-fat-remove"></i> Remover </a>
                         </td>
                       </tr>
                     @empty
-                        <p>Nenhum item no menu</p>
+                    <p class="text-danger">Nenhum produto adicionado na categoria {{$menu->description}}</p>
 
                     @endforelse
                     </tbody>
                 </table>
+       </div>
+    </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+
+
     </div>
+
+
+
+    
 @stop

@@ -28,7 +28,7 @@
 
     <div class="container-fluid mt--6">
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-5">
           <div class="card-wrapper">
             <div class="card">
               <form action="{{route('menus.store')}}" method="POST">
@@ -36,7 +36,7 @@
                 <div class="card-header">
                   <div class="row align-items-center">
                     <div class="col-8">
-                      <h3 class="mb-0">Nova Categoria</h3>
+                      <h3 class="mb-0">Adicionar Categoria</h3>
                         <!-- <a href="#!" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i
                             class=" ni ni-cloud-upload-96"></i> Upload Logo</a> -->
                     </div>
@@ -47,14 +47,29 @@
                 <div class="card-body">
                   @include('admin.menus.partials._form')
                 </div>
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-round">Salvar</button>
-                </div>
+
+                <div class="form-group row">
+                                <div class="col-md-4">
+                                    
+                                </div>
+                                <div class="col-md-4">
+                                <button type="submit" class="btn btn-block btn-outline-success btn-lg btn-round "> <i
+                                    class=" fa fa-check-square nav-icon"></i> Salvar</button>
+                                </div>
+                                <div class="col-md-4">
+                                    
+                                </div>
+                            
+                            </div>
+
+                <!-- <div class="card-footer">
+                  <button type="submit" class="btn btn-round btn-outline-success"><i class=" fa fa-check-square nav-icon"></i> Salvar</button>
+                </div> -->
               </form>
             </div>
           </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-7">
             <div class="card-wrapper">
                 <div class="card">
                     <div class="card-header">
@@ -75,7 +90,7 @@
                     @forelse($data as $d)
                         <tr>
                         <!-- <td>{{$d->id}}</td> -->
-                            <td><a href="#" target="_blank">{{$d->description}}</a> </td>
+                            <td>{{$d->description}}</a> </td>
                             <!-- <td>{{ 0 }}</td> -->
                             <td>
 
@@ -92,9 +107,9 @@
 
                             </td>
 
-                            <td class="text-right">
-                              <a href="{{ route('site.menu.show', [ 'token' => $d->token ]) }}" class="btn btn-primary btn-round btn-sm"> Visualizar</a>
-                              <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-primary btn-round btn-sm"><i class=" fa fa-plus nav-icon"></i> Adicionar Produtos</a>
+                            <td class="text-left">
+                              <!-- <a href="{{ route('site.menu.show', [ 'token' => $d->token ]) }}" class="btn btn-primary btn-round btn-sm"> Visualizar</a> -->
+                              <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-success btn-round btn-sm"><i class="ni ni-ui-04"></i> Vincular </a>
                               <!-- <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-primary btn-round">Visualizar Produtos</a> -->
                               <!-- <a href="{{route('menu.share',$d->id)}}" class="btn btn-success btn-round" data-toggle="tooltip" title="proximas versoes">Compartilhar</a> -->
                             </td>

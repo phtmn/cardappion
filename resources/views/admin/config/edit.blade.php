@@ -53,7 +53,7 @@
             <div class="card-wrapper">
                 <div class="card">                    
                     <div class="card-header">
-                        <h3 class="mb-0">Dados do Estabelecimento</h3>
+                        <h3 class="mb-0"> {{ Auth::user()->tenant->name }}</h3>
                     </div>
                     <div class="card-body">
                         <form action="{{route('config.store')}}" method="POST">
@@ -79,9 +79,7 @@
                             </div> -->
                             <div class="form-group row">
                                 <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right text-danger">CEP <b
-                                        class="text-danger" data-toggle="tooltip" data-placement="right"
-                                        title="Campo obrigatório"> * </b></label>
+                                    class="col-md-4 col-form-label form-control-label text-right ">CEP </label>
                                 <div class="col-md-3">
                                     <input type="text" name="zipcode" class="form-control" value="{{$config->zipcode}}" id="cep" maxlength="8">
                                 </div>

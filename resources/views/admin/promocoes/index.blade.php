@@ -54,7 +54,8 @@
                     @forelse($data as $d)
                         <tr>
                           <td><img src="{{ url("{$d->image}") }}" style="height: 70px;" alt=""/></td>
-                          <td><a href="{{ route('promo',$d->url)  }}" target="_blank">{{$d->title}}</a></td>
+                          <td>{{$d->title}}</td>
+                          <!-- <td><a href="{{ route('promo',$d->url)  }}" target="_blank">{{$d->title}}</a></td> -->
                           <td>R$ {{ number_format($d->promotion_value,2,',','.') }}  </td>
                           <td>
                             <label class="custom-toggle">
