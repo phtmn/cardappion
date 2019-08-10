@@ -20,10 +20,7 @@ class ProductsController extends Controller
 
   public function create()
   {
-    return view('admin.products.create', [
-      'categories' => ProductCategory::all(),
-      'menus'      => Menu::all()
-    ]);
+    return view('admin.products.create');
   }
 
   public function store(Request $request)

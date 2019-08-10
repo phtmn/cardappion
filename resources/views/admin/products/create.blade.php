@@ -9,7 +9,7 @@
                 <div class="col-lg-6 col-7">
                     <i class="ni ni-bullet-list-67 text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Produtos</h3>
-                    
+
                 </div>
                 <div class="col-lg-6 col-5 text-right">
                 </div>
@@ -30,7 +30,7 @@
     <div class="row">
     <div class="col-lg-12">
             <div class="card-wrapper">
-                <div class="card">                    
+                <div class="card">
                     <div class="card-header">
                         <h3 class="mb-0">Dados do Produto</h3>
                     </div>
@@ -44,15 +44,15 @@
                                     <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" />
                                 </div>
                             </div>
-                           
+
                             <div class="form-group row">
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Título do produto </label>
                                 <div class="col-md-4">
-                                    <input type="text" name="title" class="form-control">   
+                                    <input type="text" name="title" class="form-control">
                                 </div>
                             </div>
-                           
+
                             <div class="form-group row">
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Valor (R$) </label>
@@ -64,27 +64,23 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
                                 <div class="col-md-4">
-                                         <textarea name="details" ></textarea>   
+                                         <textarea name="details" ></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-md-4">
-                                    
+
                                 </div>
                                 <div class="col-md-4">
                                 <button type="submit" class="btn btn-block btn-outline-success btn-lg btn-round"> <i
                                     class=" fa fa-check-square nav-icon"></i> Salvar</button>
                                 </div>
                                 <div class="col-md-4">
-                                    
+
                                 </div>
-                            
+
                             </div>
-
-                            
-
-                            
 
                             @include('tools.messages')
 
@@ -93,92 +89,9 @@
                 </div>
             </div>
         </div>
-        </div>
-
-
-
-
-    <!-- <div class="container-fluid mt--6">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card-wrapper">                
-                <div class="card"> 
-                          
-                    <div class="card-header">
-                        <div class="row align-items-center">
-                            <div class="col-8">   
-                                <h2> Novo Produto </h2>                                           
-                            </div>
-                            <div class="col-4 text-right">
-                            </div>
-                        </div>
-                    </div>                    
-                    
-                    <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
-            @csrf   
-       
-    <div class="card-body">
-                <div class="form-group">
-                    <label for="" class="text-primary">Descrição</label>
-                    <input type="text" name="description" class="form-control">
-                </div>
-
-                <div class="form-group">
-                    <label for="Categoria" class="text-primary">Categoria</label>
-                    <select name="category_id" id="" class="form-control">
-                        @foreach($categories as $c)
-                            <option value="{{$c->id }}">{{$c->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="" class="text-primary">Valor</label>
-                    <input type="text" name="price" class="form-control">
-                </div>
-
-                <div class="img">
-                    <label class="text-primary"> Foto de Destaque</label>
-                    <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" />
-                </div>
-
-                <div class="form-group">
-                    <label for="Categoria" class="text-primary">Categoria</label>
-                    <select name="menu_id" id="" class="form-control">
-                        @foreach($menus as $m)
-                            <option value="{{$m->id }}">{{$m->description }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="nome" class="text-primary">Informações Adicionais</label>
-                    <textarea name="details" id="summernote" cols="30" rows="10"></textarea>
-                </div>
-
-            </div>
-
-            <div class="card-footer">
-                <button type="submit" class="btn btn-round">Salvar</button>
-            </div>
-        </form>
-        @include('tools.messages')
-
-
     </div>
-                        </div>
-                    </div>
-                </div>
-           -->
-       
-      
 
-   
-
-
-
-   
-    
+  @include('tools.messages')
 
 @stop
 
