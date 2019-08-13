@@ -7,8 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <title>{{$menu->description}}</title> -->
+    <!-- <title>{{$tenant->description}}</title> -->
     <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
     <link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
     <style>
         .cardapio {
@@ -33,9 +35,23 @@
     </ion-conent>
     <ion-list style="margin-top: 5px">
 
-                    <ion-item href="#">
+      <div class="list-category">
+        @foreach ($categories as $category)
+          <ion-item class="item-category" href="#"
+            data-route="{{ route('admin.menus.getproducts', [ 'id' => $category->id ]) }}"
+            data-id="{{ $category->id }}">
+            <ion-label>{{ $category->description }}</ion-label>
+          </ion-item>
+        @endforeach
+      </div>
 
-                        <ion-label>Nome da categoria cadastrada </br>e marcada como publicada</ion-label>
+      <div class="list-category-itens"></div>
+
+      <div class="item-details"></div>
+
+
+                    {{-- <ion-item href="#">
+                        <ion-label>Nome da categoria</ion-label>
                     </ion-item>
 
                     <ion-item href="#">
@@ -53,11 +69,7 @@
                     <ion-item href="#">
 
                         <ion-label>Nome da categoria</ion-label>
-                    </ion-item>
-                    <ion-item href="#">
-
-                        <ion-label>Nome da categoria</ion-label>
-                    </ion-item>
+                    </ion-item> --}}
 
 
                     <!-- <p>Nada a exibir</p> -->
@@ -84,43 +96,22 @@
 
                 <ion-list style="margin-top: 5px">
 
-                        <ion-item href="#">
-                            <ion-thumbnail slot="start">
-                                <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
-                            </ion-thumbnail>
-                            <ion-label>nome </br> R$ valor</ion-label>
-                        </ion-item>
+                  <div class="list-promo">
+                    @foreach ($promotions as $promotion)
+                      <ion-item class="promo" href="#"
+                        data-route="{{ route('admin.menus.getpromo', [ 'id' => $promotion->id ]) }}">
+                        <ion-thumbnail slot="start">
+                          <img src="{{ url($promotion->image) }}" alt="">
+                        </ion-thumbnail>
+                        <ion-label>{{ $promotion->title }} </br> R$ {{ $promotion->promotion_value }}</ion-label>
+                      </ion-item>
+                    @endforeach
+                  </div>
 
-                        <ion-item href="#">
-                            <ion-thumbnail slot="start">
-                                <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
-                            </ion-thumbnail>
-                            <ion-label>nome </br> R$ valor</ion-label>
-                        </ion-item>
-                        <ion-item href="#">
-                            <ion-thumbnail slot="start">
-                                <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
-                            </ion-thumbnail>
-                            <ion-label>nome </br> R$ valor</ion-label>
-                        </ion-item>
-                        <ion-item href="#">
-                            <ion-thumbnail slot="start">
-                                <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
-                            </ion-thumbnail>
-                            <ion-label>nome </br> R$ valor</ion-label>
-                        </ion-item>
-                        <ion-item href="#">
-                            <ion-thumbnail slot="start">
-                                <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
-                            </ion-thumbnail>
-                            <ion-label>nome </br> R$ valor</ion-label>
-                        </ion-item>
-                        <ion-item href="#">
-                            <ion-thumbnail slot="start">
-                                <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
-                            </ion-thumbnail>
-                            <ion-label>nome </br> R$ valor</ion-label>
-                        </ion-item>
+                  <div class="promo-details"></div>
+
+
+
 
 
                         <!-- <p>Nada a exibir</p> -->
@@ -134,7 +125,7 @@
         <ion-tab tab="parceiro">
             <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px;">
             <ion-content>
-                
+
                     <ion-content>
         <!-- <ion-item style="margin-top:5px">
                 <ion-label> </ion-label>
@@ -144,7 +135,7 @@
             <ion-item style="margin-top:50px">
                 <ion-label>
 
-                <h1>{{ $menu->name }}</h1></ion-label>
+                <h1>{{ $tenant->name }}</h1></ion-label>
 
 
             </ion-item>
@@ -156,33 +147,33 @@
 
             <ion-list style="margin-top: 5px">
 
-                       
-
-                        <ion-item href="#">
-                            <!-- <ion-thumbnail slot="start">
-                                <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
-                            </ion-thumbnail> -->
-                            <ion-label>{{ $menu->name }}</ion-label>
-                        </ion-item>
-
-                        <ion-item href="#">
-                           
-                            <ion-label>Cidade - ESTADO
-                            </br>
-                            whatspp
-                            </br>
-                            instagram
-                            
-                            
-                            </ion-label>
-                            
-                        </ion-item>
-                        <ion-item style="margin-top:50px">
-                             <ion-label><h3>Feito por cardappion.me</h3></ion-label>
 
 
-                            </ion-item>
-                        
+                <ion-item href="#">
+                    <!-- <ion-thumbnail slot="start">
+                        <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
+                    </ion-thumbnail> -->
+                    <ion-label>{{ $tenant->name }}</ion-label>
+                </ion-item>
+
+                <ion-item href="#">
+
+                    <ion-label>{{ $config->half_address }}
+                    </br>
+                    whatspp: {{ $config->format_whatsapp }}
+                    </br>
+                    instagram: {{ $config->instagram }}
+
+
+                    </ion-label>
+
+                </ion-item>
+                <ion-item style="margin-top:50px">
+                <ion-label><h3>Feito por cardappion.me</h3></ion-label>
+
+
+                </ion-item>
+
 
 
                         <!-- <p>Nada a exibir</p> -->
@@ -197,26 +188,24 @@
                 <ion-icon name="business"></ion-icon>
             </ion-tab-button>
 
-            <ion-tab-button tab="cardapio">
+            <ion-tab-button tab="cardapio" class="btn-cardapio">
                 <ion-label>Menu</ion-label>
                 <ion-icon name="paper"></ion-icon>
             </ion-tab-button>
 
-            <ion-tab-button tab="promocoes">
+            <ion-tab-button tab="promocoes" class="btn-promo">
                 <ion-label>Promoções</ion-label>
                 <ion-icon name="gift"></ion-icon>
             </ion-tab-button>
-
-
-
         </ion-tab-bar>
-        </ion-tabs>
+      </ion-tabs>
     </div>
 
 
 </ion-app>
 
 <ion-menu-controller></ion-menu-controller>
+<script src="{{asset('vendor/argon/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 
 <script>
     const menuCtrl = document.querySelector('ion-menu-controller');
@@ -226,6 +215,100 @@
         menuCtrl.open('first');
     }
 
+    $('.btn-cardapio').on('click', function() {
+      $('.list-category').css('display', '');
+      $('.list-category-itens').empty();
+      $('.item-details').empty();
+    });
+
+    $('.btn-promo').on('click', function() {
+      $('.list-promo').css('display', '');
+      $('.promo-details').empty();
+    });
+
+    $('.item-category').on('click', function() {
+      var url = $(this).data('route');
+
+      $.ajax({
+          url : url,
+          type : 'get',
+        })
+        .done(function(data){
+          var img = '{{ config('app.url') }}';
+          var list = '';
+          $.each(data, function(i, val) {
+            list += '<ion-item href="#" onclick="product(' + val.id + ')" data-id="' + val.id + '">' +
+              '<ion-thumbnail slot="start">' +
+                  '<img src=' + img + '/' + val.image + ' alt="">' +
+              '</ion-thumbnail>' +
+              '<ion-label>' + val.title + '</br> R$ ' + val.price + '</ion-label>' +
+            '</ion-item>';
+          });
+          $('.list-category-itens').append(list);
+          $('.list-category').css('display', 'none');
+        });
+    });
+
+    function product(id) {
+      var url = `{{ config('app.url') }}/admin/menus/prod/${id}`;
+      $.ajax({
+        url : url,
+        type : 'get',
+      })
+      .done(function(data){
+        var img = '{{ config('app.url') }}';
+        var info = '';
+
+          info += '<ion-list style="margin-top: 5px">' +
+                    '<ion-item href="#">' +
+                      '<ion-thumbnail>' +
+                        '<img class="" src="' + img + '/' + data.image + '" alt="">' +
+                      '</ion-thumbnail>' +
+                    '</ion-item>' +
+
+                    '<ion-item href="#">' +
+                      '<ion-label><h3>' + data.title + '</h3>' +
+                      '</br> preço: ' + data.price
+                    '</ion-label>' +
+
+                    '</ion-item>' +
+                  '</ion-list>'
+
+        $('.list-category-itens').empty();
+        $('.item-details').append(info);
+      });
+    }
+
+    $('.promo').on('click', function() {
+      var url = $(this).data('route');
+
+      $.ajax({
+        url : url,
+        type : 'get',
+      })
+      .done(function(data){
+        var img = '{{ config('app.url') }}';
+        var info = '';
+
+          info += '<ion-list style="margin-top: 5px">' +
+                    '<ion-item href="#">' +
+                      '<ion-thumbnail>' +
+                        '<img class="" src="' + img + '/' + data.image + '" alt="">' +
+                      '</ion-thumbnail>' +
+                    '</ion-item>' +
+
+                    '<ion-item href="#">' +
+                      '<ion-label><h3>' + data.title + '</h3>' +
+                      '</br> preço: ' + data.promotion_value
+                    '</ion-label>' +
+
+                    '</ion-item>' +
+                  '</ion-list>';
+
+        $('.promo-details').append(info);
+        $('.list-promo').css('display', 'none');
+      });
+    });
 
 </script>
 </body>

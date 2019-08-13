@@ -6,6 +6,7 @@ use App\Models\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Promotion;
 
 class MenuController extends Controller
 {
@@ -106,5 +107,26 @@ class MenuController extends Controller
     return response()->json([
       'success' => true
     ], 200);
+  }
+
+  public function getProducts($menu_id)
+  {
+    $menu = Menu::find($menu_id);
+
+    return response()->json($menu->products()->where('active', true)->get());
+  }
+
+  public function getProduct($product_id)
+  {
+    $product = Product::find($product_id);
+
+    return response()->json($product);
+  }
+
+  public function getPromo($promotion_id)
+  {
+    $promotion = Promotion::find($promotion_id);
+
+    return response()->json($promotion);
   }
 }

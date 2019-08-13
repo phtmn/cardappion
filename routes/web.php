@@ -48,4 +48,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 
   Route::name('admin.menus.activate')->get('menus/ativar/{id}', 'MenuController@activate');
   Route::name('admin.menus.products')->get('menus/menu-item/{menu_id}/adicionar', 'MenuController@addProducts');
+  Route::name('admin.menus.getproducts')->get('menus/prods/{menu_id}', 'MenuController@getProducts');
+  Route::name('admin.menus.getproduct')->get('menus/prod/{menu_id}', 'MenuController@getProduct');
+  Route::name('admin.menus.getpromo')->get('menus/promo/{promotion_id}', 'MenuController@getPromo');
 });

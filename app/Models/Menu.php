@@ -35,6 +35,11 @@ class Menu extends Model
     return $this->belongsToMany(Product::class, 'products_categories', 'menu_id', 'product_id');
   }
 
+  public function tenant()
+  {
+    return $this->belongTo(Tenant::class);
+  }
+
   public static function gerarUrl($string)
   {
 

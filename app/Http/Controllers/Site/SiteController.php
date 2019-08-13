@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use Auth;
 use App\Models\Menu;
+use App\Models\Config;
 use App\Models\Product;
 use App\Models\Promotion;
 use App\Models\ProductCategory;
@@ -42,8 +43,14 @@ class SiteController extends Controller
 
   public function show($token)
   {
-    $menu = Auth::user()->tenant()->where('token', $token)->firstOrFail();
+    $tenant = Auth::user()->tenant()->where('token', $token)->firstOrFail();
 
-    return view('site.show', compact('menu'));
+    $config = $tenant->config()->firstOrFail();
+
+    $categories = $tenant->menus()->where('active', true)->get();
+
+    $promotions = $tenant->promotions()->where('active', true)->get();
+
+    return view('site.show', compact('tenant', 'config', 'categories', 'promotions'));
   }
 }

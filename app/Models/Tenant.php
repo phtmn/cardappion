@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Webpatser\Uuid\Uuid;
+use App\Models\Promotion;
 
 class Tenant extends Model
 {
@@ -25,6 +26,21 @@ class Tenant extends Model
   public function users()
   {
     return $this->hasMany(User::class);
+  }
+
+  public function config()
+  {
+    return $this->hasOne(Config::class);
+  }
+
+  public function menus()
+  {
+    return $this->hasMany(Menu::class);
+  }
+
+  public function promotions()
+  {
+    return $this->hasMany(Promotion::class);
   }
 
   // Accesors
