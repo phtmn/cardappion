@@ -250,7 +250,7 @@
     });
 
     function product(id) {
-      var url = `{{ config('app.url') }}/admin/menus/prod/${id}`;
+      var url = `{{ config('app.url') }}/menus/prod/${id}`;
       $.ajax({
         url : url,
         type : 'get',

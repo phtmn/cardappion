@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Site;
 
 use Auth;
 use App\Models\Menu;
+use App\Models\Tenant;
 use App\Models\Config;
 use App\Models\Product;
 use App\Models\Promotion;
@@ -43,7 +44,7 @@ class SiteController extends Controller
 
   public function show($token)
   {
-    $tenant = Auth::user()->tenant()->where('token', $token)->firstOrFail();
+    $tenant = Tenant::where('token', $token)->firstOrFail();
 
     $config = $tenant->config()->firstOrFail();
 
