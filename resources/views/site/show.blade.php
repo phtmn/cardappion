@@ -199,43 +199,43 @@ img {
                 <ion-item href="#">
                 <ion-col >
                   <div class="ion-text-center">
-                  
+
                     Feito por <a href="http://www.cardappion.me" target="_blank" ><b> cardappion.me </b></a>
                   </div>
                 </ion-col>
-                   
+
                 </ion-item>
                 <ion-col>
       <div class="ion-text-end">
         <h2 style="margin-right:25px"><strong >{{ $tenant->name }}</strong></h2>
-        
+
       </div>
     </ion-col>
                 <ion-item href="#">
 
                     <ion-label>
-                    {{ $config->address }}
+                    {{ $config->address ?? '' }}
                     </br>
-                    {{ $config->neighborhood }}
+                    {{ $config->neighborhood ?? '' }}
                     </br>
-                    {{ $config->half_address }}
+                    {{ $config->half_address ?? '' }}
                     </br>
-                    whatsapp {{ $config->format_whatsapp }} 
-                    </br>                  
-                    {{ $config->site }}
+                    whatsapp {{ $config->format_whatsapp ?? '' }}
                     </br>
-                    {{ $config->instagram }}
+                    {{ $config->site ?? '' }}
                     </br>
-                    {{ $config->fanpage }}
+                    {{ $config->instagram ?? '' }}
+                    </br>
+                    {{ $config->fanpage ?? '' }}
 
 
                     </ion-label>
 
                 </ion-item>
-                
-                
 
-                
+
+
+
 
 
 
@@ -291,7 +291,7 @@ img {
 
     $('.item-category').on('click', function() {
       var url = $(this).data('route');
-      
+
       $.ajax({
           url : url,
           type : 'get',
@@ -353,7 +353,7 @@ img {
       .done(function(data){
         var img = '{{ config('app.url') }}';
         var info = '';
-        
+
           info += '<ion-list style="margin-top: 5px">' +
                     '<ion-item href="#">' +
                       '<ion-thumbnail>' +
