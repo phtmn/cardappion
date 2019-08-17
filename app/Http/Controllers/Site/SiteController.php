@@ -46,7 +46,7 @@ class SiteController extends Controller
   {
     $tenant = Tenant::where('token', $token)->firstOrFail();
 
-    $config = $tenant->config()->first();
+    $config = $tenant->config()->withoutGlobalScopes()->firstOrFail();
 
     $categories = $tenant->menus()->where('active', true)->get();
 

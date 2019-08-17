@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: matthaus
@@ -12,8 +13,9 @@ namespace App\Tenant;
 class ManagerTenant
 {
 
-    public function getTenantIdentify(){
+  public function getTenantIdentify()
+  {
 
-        return auth()->user()->tenant->id;
-    }
+    return auth()->user()->tenant->id;
+  }
 }
