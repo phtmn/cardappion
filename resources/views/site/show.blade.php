@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <style>
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -123,7 +129,7 @@
         </ion-tab>
 
         <ion-tab tab="parceiro">
-            <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px;">
+            <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px; align:center;" >
             <ion-content>
 
                     <ion-content>
@@ -146,33 +152,90 @@
             </ion-item> -->
 
             <ion-list style="margin-top: 5px">
-
+            <ion-grid>
+  <!-- <ion-row>
+    <ion-col>
+      <div class="ion-text-start">
+        <h3>text-start</h3>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="ion-text-end">
+        <h3>text-end</h3>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="ion-text-center">
+        <h3>text-center</h3>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div class="ion-text-justify">
+        <h3>text-justify</h3>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="ion-text-wrap">
+        <h3>text-wrap</h3>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="ion-text-nowrap">
+        <h3>text-nowrap</h3>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>           -->
 
 
                 <ion-item href="#">
-                    <!-- <ion-thumbnail slot="start">
-                        <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" alt="">
-                    </ion-thumbnail> -->
-                    <ion-label>{{ $tenant->name }}</ion-label>
+                <ion-col >
+                  <div class="ion-text-center">
+                  
+                    Feito por <i><b> cardappion.me </b></i>
+                  </div>
+                </ion-col>
+                   
                 </ion-item>
-
+                <ion-col>
+      <div class="ion-text-end">
+        <h2 style="margin-right:25px"><strong >{{ $tenant->name }}</strong></h2>
+        
+      </div>
+    </ion-col>
                 <ion-item href="#">
 
-                    <ion-label>{{ $config->half_address }}
+                    <ion-label>
+                    {{ $config->address }}
                     </br>
-                    whatspp: {{ $config->format_whatsapp }}
+                    {{ $config->neighborhood }}
                     </br>
-                    instagram: {{ $config->instagram }}
+                    {{ $config->half_address }}
+                    </br>
+                    whatsapp {{ $config->format_whatsapp }} 
+                    </br>                  
+                    {{ $config->site }}
+                    </br>
+                    {{ $config->instagram }}
+                    </br>
+                    {{ $config->fanpage }}
 
 
                     </ion-label>
 
                 </ion-item>
-                <ion-item style="margin-top:50px">
-                <ion-label><h3>Feito por cardappion.me</h3></ion-label>
+                
+                
 
-
-                </ion-item>
+                
 
 
 
@@ -241,7 +304,7 @@
               '<ion-thumbnail slot="start">' +
                   '<img src=' + img + '/' + val.image + ' alt="">' +
               '</ion-thumbnail>' +
-              '<ion-label>' + val.title + '</br> R$ ' + val.price + '</ion-label>' +
+              '<ion-label>' + val.title + '</br> preçooopreçoooR$ ' + val.price + '</ion-label>' +
             '</ion-item>';
           });
           $('.list-category-itens').append(list);
@@ -268,7 +331,7 @@
 
                     '<ion-item href="#">' +
                       '<ion-label><h3>' + data.title + '</h3>' +
-                      '</br> preço: ' + data.price
+                      '</br> preçooooo ' + data.price
                     '</ion-label>' +
 
                     '</ion-item>' +
@@ -299,7 +362,7 @@
 
                     '<ion-item href="#">' +
                       '<ion-label><h3>' + data.title + '</h3>' +
-                      '</br> preço: ' + data.promotion_value
+                      '</br> preçooo: ' + data.promotion_value
                     '</ion-label>' +
 
                     '</ion-item>' +
