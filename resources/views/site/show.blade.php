@@ -90,7 +90,7 @@ img {
 
             </ion-tab>
         <ion-tab tab="promocoes">
-        <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px; " class="top">
+        <!-- <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px; " class="top"> -->
                 <ion-content>
                 <!-- <ion-list> -->
 
@@ -109,7 +109,7 @@ img {
                         <ion-thumbnail slot="start">
                           <img src="{{ url($promotion->image) }}" alt="">
                         </ion-thumbnail>
-                        <ion-label>{{ $promotion->title }} </br> R$ {{ $promotion->promotion_value }}</ion-label>
+                        <ion-label>{{ $promotion->title }} </br> R$ {{ number_format($promotion->promotion_value,2,',','.')}} </ion-label>
                       </ion-item>
                     @endforeach
                   </div>
@@ -128,8 +128,8 @@ img {
     </ion-content>
         </ion-tab>
 
-        <ion-tab tab="parceiro">
-            <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px; align:center;" >
+        <ion-tab tab="sobre">
+            <!-- <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px; align:center;" > -->
             <ion-content>
 
                     <ion-content>
@@ -200,7 +200,7 @@ img {
                 <ion-col >
                   <div class="ion-text-center">
                   
-                    Feito por <i><b> cardappion.me </b></i>
+                    Feito por <a href="http://www.cardappion.me" target="_blank" ><b> cardappion.me </b></a>
                   </div>
                 </ion-col>
                    
@@ -246,7 +246,7 @@ img {
         </ion-tab>
 
         <ion-tab-bar slot="bottom">
-            <ion-tab-button tab="parceiro">
+            <ion-tab-button tab="sobre">
                 <ion-label>Sobre</ion-label>
                 <ion-icon name="business"></ion-icon>
             </ion-tab-button>
@@ -291,7 +291,7 @@ img {
 
     $('.item-category').on('click', function() {
       var url = $(this).data('route');
-
+      
       $.ajax({
           url : url,
           type : 'get',
@@ -304,7 +304,7 @@ img {
               '<ion-thumbnail slot="start">' +
                   '<img src=' + img + '/' + val.image + ' alt="">' +
               '</ion-thumbnail>' +
-              '<ion-label>' + val.title + '</br> preçooopreçoooR$ ' + val.price + '</ion-label>' +
+              '<ion-label>' + val.title + '</br> R$ ' + val.price + '</ion-label>' +
             '</ion-item>';
           });
           $('.list-category-itens').append(list);
@@ -322,7 +322,7 @@ img {
         var img = '{{ config('app.url') }}';
         var info = '';
 
-          info += '<ion-list style="margin-top: 5px">' +
+          info += '<ion-list style="margin-top: 50px">' +
                     '<ion-item href="#">' +
                       '<ion-thumbnail>' +
                         '<img class="" src="' + img + '/' + data.image + '" alt="">' +
@@ -331,7 +331,8 @@ img {
 
                     '<ion-item href="#">' +
                       '<ion-label><h3>' + data.title + '</h3>' +
-                      '</br> preçooooo ' + data.price
+                      '</br> preçooooo ' + data.price +
+                      '</br> preçooooo ' + data.price +
                     '</ion-label>' +
 
                     '</ion-item>' +
@@ -352,17 +353,18 @@ img {
       .done(function(data){
         var img = '{{ config('app.url') }}';
         var info = '';
-
+        
           info += '<ion-list style="margin-top: 5px">' +
                     '<ion-item href="#">' +
                       '<ion-thumbnail>' +
-                        '<img class="" src="' + img + '/' + data.image + '" alt="">' +
+                        '<img class="" src="' + img + '/' + data.image + '" alt="" >' +
                       '</ion-thumbnail>' +
                     '</ion-item>' +
 
                     '<ion-item href="#">' +
                       '<ion-label><h3>' + data.title + '</h3>' +
-                      '</br> preçooo: ' + data.promotion_value
+                      '</br> preçooo: ' + data.promotion_value +
+                      '</br> preçooooo ' + data.details +
                     '</ion-label>' +
 
                     '</ion-item>' +
