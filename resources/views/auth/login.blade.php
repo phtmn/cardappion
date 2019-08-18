@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Cardapion</title>
+  <title>cardappion</title>
 
   <!-- Favicon -->
   <link rel="icon" href="{{asset('vendor/argon/assets/img/brand/favicon.png')}}" type="image/png">
@@ -26,10 +26,10 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Navbar -->
-  <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+  <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-dark bg-black">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="{{asset('vendor/argon/assets/img/brand/white.png')}}">
+        <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="#">
-                <img src="../../assets/img/brand/blue.png">
+                <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -164,7 +164,7 @@
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
-                    <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" type="email" name="email" value="{{ old('email') }}">
+                    <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="E-mail" type="email" name="email" value="{{ old('email') }}">
                         @if ($errors->has('email'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('email') }}</strong>

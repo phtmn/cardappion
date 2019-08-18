@@ -98,8 +98,8 @@
                 <h2 class="display-4 text-white font-weight-light">Todos os cardápios e promoções em um único lugar.</h2>
                 
                 <div class="mt-5">
-                  <a href="./pages/dashboards/dashboard.html" class="btn btn-azul my-2">Cadastre-se</a>
-                  <a href="https://www.creative-tim.com/product/argon-dashboard-pro" class="btn btn-verd my-2">Acessar conta </a>
+                  <a href="{{route('register')}}" class="btn btn-azul my-2">Cadastre-se</a>
+                  <a href="{{route('login')}}" class="btn btn-verd my-2">Acessar conta </a>
                   
                 </div>
               </div>

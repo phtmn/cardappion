@@ -49,7 +49,7 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Título do produto </label>
                                 <div class="col-md-4">
-                                    <input type="text" name="title" class="form-control">
+                                    <input type="text" name="title" class="form-control" required> 
                                 </div>
                             </div>
 

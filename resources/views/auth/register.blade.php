@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Cardapion = Cadastro</title>
+  <title>cardappion</title>
   <!-- Extra dtails for Live View on GitHub Pages -->
   <!-- Canonical SEO -->
   <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
@@ -34,10 +34,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Navbar -->
-  <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+  <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-dark bg-black">
     <div class="container">
       <a class="navbar-brand" href="vendor/argon/pages/dashboards/dashboard.html">
-        <img src="{{asset('vendor/argon/assets/img/brand/white.png')}}">
+        <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="vendor/argon/pages/dashboards/dashboard.html">
-                <img src="{{asset('vendor/argon/assets/img/brand/blue.png')}}">
+                <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}">
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -148,16 +148,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card ">
-                <div class="card-header text-danger"><b>Cadastre-se aqui seu estabelecimento</b></div>
+                <div class="card-header text-danger"><b>Cadastre-se aqui seu negócio</b></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row"> 
-                            <label for="tenant" class="col-md-4 col-form-label text-md-right  text-dark">{{ __('Nome do Estabelecimento') }}</label> 
+                            <label for="tenant" class="col-md-4 col-form-label text-md-right  text-dark">{{ __('Nome do negócio') }}</label> 
                             <div class="input-group-append">
-              <span class="fa fa-institution  input-group-text"></span>
+              <span class="fa fa-user input-group-text"></span>
           </div>
                             <div class="col-md-6"> 
                               <input id="tenant" type="text" class="form-control{{ $errors->has('tenant') ? ' is-invalid' : '' }}" name="tenant" value="{{ old('tenant') }}" required autofocus>
