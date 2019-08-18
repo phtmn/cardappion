@@ -36,6 +36,7 @@ img {
         </ion-content>
         <ion-tabs>
             <ion-tab tab="cardapio">
+            <!-- {{ $tenant->plan }} -->
             <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px;">
                 <ion-content>
     </ion-conent>
