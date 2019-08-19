@@ -129,13 +129,7 @@
                                         value="" id="whatsapp">
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Site </label>
-                                <div class="col-md-7">
-                                    <input type="text" name="site" class="form-control" value="">
-                                </div>
-                            </div>
+                            
                             <div class="form-group row">
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Instagram </label>
@@ -152,6 +146,13 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Site </label>
+                                <div class="col-md-7">
+                                    <input type="text" name="site" class="form-control" value="">
+                                </div>
+                            </div>
 
                             <div class="form-group row">
                                 <div class="col-md-4">

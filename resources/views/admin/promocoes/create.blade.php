@@ -63,7 +63,7 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
                                 <div class="col-md-4">
-                                         <textarea name="details" ></textarea>   
+                                         <textarea name="details"rows="5" resize="none" maxlenght="250" ></textarea>   
                                 </div>
                             </div>
 

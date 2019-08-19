@@ -1,16 +1,4 @@
-<nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white" id="sidenav-main">
 
-    <div class="scrollbar-inner">
-        <div class="sidenav-header d-flex align-items-center">
-            <a class="navbar-brand" href="#">
-                <img src="{{asset('vendor/argon/assets/img/brand/logo.png')}} " class="navbar-brand-img" alt="...">
-            </a>
-            <div class="ml-auto">
-                
-            </div>
-        </div>
-        <div class="navbar-inner">
-            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('dashboard.index')}}">
@@ -48,7 +36,4 @@
                 </ul>
                 <hr class="my-3">
                 
-            </div>
-        </div>
-    </div>
-</nav>
+   

@@ -2,13 +2,16 @@
 
 @section('cabecalho')
 
-<div class="header bg-dark pb-6">
+
+
+<div class="header pb-4 d-flex align-items-center" style="min-height: 350px; background-size: cover; background-position: center top;">
+<span class="mask bg-gradient-dark"></span>
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <i class="ni ni-bullet-list-67 text-white"></i>
-                    <h3 class="h3 text-white d-inline-block mb-0">Produtos</h3>
+                    
+                    <h1 class="display-2 text-white d-inline-block mb-0">  <i class="ni ni-bullet-list-67 text-white"></i> Produtos</h1>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
                 <a href="#" class="btn btn-sm btn-neutral"> Total de Produtos  ( {{$data->count()}} )</a>

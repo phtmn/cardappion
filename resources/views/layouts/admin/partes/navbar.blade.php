@@ -23,17 +23,11 @@
 
             </li>
 
-            <!-- <li class="nav-item ">
-            <a class="nav-link" href="#"
-              data-toggle="tooltip" data-placement="bottom" title="Em breve!">
-                <i class="ni ni-bell-55"></i>
-              </a>
-
-            </li> -->
+            
             <li class="nav-item ">
-              <a class="nav-link" href="#"
+              <a class="nav-link" href="https://www.instagram.com/cardappion" target="_blank"
               data-toggle="tooltip" data-placement="bottom" title="Suporte">
-                <i class="text-white fab fa-whatsapp" > </i>
+                <i class="text-white fab fa-instagram" > </i>
               </a>
 
             </li>
@@ -61,8 +55,11 @@
                 <a href="{{route('logout')}}" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                   <i class="ni ni-button-power"></i>
                   <span>Sair</span>
+                  <!-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  </form> -->
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  </form>
+                        @csrf
+                    </form>
                 </a>
               </div>
             </li>
