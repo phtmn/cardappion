@@ -7,8 +7,9 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <i class="ni ni-collection text-white"></i>
-                    <h3 class="h3 text-white d-inline-block mb-0">Menu</h3>
+                    <!-- <i class="ni ni-collection text-white"></i>
+                    <h3 class="h3 text-white d-inline-block mb-0">Menu</h3> -->
+                    <h1 class="display-4 text-white d-inline-block mb-0">  <i class="ni ni-collection text-white"></i> Menu</h1>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
 
@@ -28,11 +29,13 @@
 
     <div class="container-fluid mt--6">
     <div class="row">
-        <div class="col-lg-5">
+
+    <div class="col-lg-5">
           <div class="card-wrapper">
-            <div class="card">
-              <form action="{{route('menus.store')}}" method="POST">
+          <form action="{{route('menus.store')}}" method="POST">
                 @csrf
+            <div class="card">
+              
                 <div class="card-header">
                   <div class="row align-items-center">
                     <div class="col-8">
@@ -46,7 +49,7 @@
                 </div>
                 <div class="card-body">
                   @include('admin.menus.partials._form')
-                </div>
+              
 
                 <div class="form-group row">
                                 <div class="col-md-4">
@@ -69,6 +72,10 @@
             </div>
           </div>
         </div>
+        </div>
+
+
+        
         <div class="col-lg-7">
             <div class="card-wrapper">
                 <div class="card">
@@ -126,18 +133,8 @@
             </div>
         </div>
 
-    </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 @stop
+
+

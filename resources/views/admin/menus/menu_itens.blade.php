@@ -7,8 +7,9 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <i class="ni ni-collection text-white"></i>
-                    <h3 class="h3 text-white d-inline-block mb-0">Menu <i class="ni ni-ungroup text-white"></i> {{$menu->description}}</h3>
+                    <!-- <i class="ni ni-collection text-white"></i>
+                    <h3 class="h3 text-white d-inline-block mb-0">Menu <i class="ni ni-ungroup text-white"></i> {{$menu->description}}</h3> -->
+                    <h1 class="display-4 text-white d-inline-block mb-0">  <i class="ni ni-collection text-white"></i> Menu </h1> <i class="ni ni-ungroup text-white"></i> <i class="text-white"> {{$menu->description}} </i>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
                 <a class="text-white" href="{{route('menus.index')}} "><i class="ni ni-bold-left text-white"></i> Voltar </a>

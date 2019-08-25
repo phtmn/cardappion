@@ -7,11 +7,12 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <i class="ni ni-bullet-list-67 text-white"></i>
-                    <h3 class="h3 text-white d-inline-block mb-0">Produtos</h3>
-
+                    <!-- <i class="ni ni-bullet-list-67 text-white"></i>
+                    <h3 class="h3 text-white d-inline-block mb-0">Produtos</h3> -->
+                    <h1 class="display-4 text-white d-inline-block mb-0">  <i class="ni ni-bullet-list-67 text-white"></i> Produtos</h1>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
+                <a class="text-white" href="{{route('products.index')}} "><i class="ni ni-bold-left text-white"></i> Voltar </a>
                 </div>
             </div>
         </div>
@@ -64,7 +65,7 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
                                 <div class="col-md-4">
-                                         <textarea name="details" rows="5" resize="none" maxlenght="250"></textarea>
+                                         <textarea name="details" rows="5" resize="none" class="form-control" maxlenght="250"></textarea>
                                 </div>
                             </div>
 
