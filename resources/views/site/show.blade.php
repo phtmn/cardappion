@@ -37,7 +37,7 @@ img {
         <ion-tabs>
             <ion-tab tab="cardapio">
             <!-- {{ $tenant->plan }} -->
-            <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px;">
+            <!-- <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px;"> -->
                 <ion-content>
     </ion-conent>
     <ion-list style="margin-top: 5px">
@@ -327,21 +327,18 @@ img {
         var img = '{{ config('app.url') }}';
         var info = '';
 
-          info += '<ion-list style="margin-top: 50px">' +
-                    '<ion-item href="#">' +
-                      '<ion-thumbnail>' +
+          info += '<ion-card>' +                      
                         '<img class="" src="' + img + '/' + data.image + '" alt="">' +
-                      '</ion-thumbnail>' +
-                    '</ion-item>' +
-
-                    '<ion-item href="#">' +
-                      '<ion-label><h3>' + data.title + '</h3>' +
-                      '</br> preçooooo ' + data.price +
-                      '</br> preçooooo ' + data.price +
-                    '</ion-label>' +
-
-                    '</ion-item>' +
-                  '</ion-list>'
+                      '<ion-card-content>' +
+                      '<ion-card-title>' + data.title +
+                      '</ion-card-title>' +
+                      '<p>' + data.price + 
+                      '</p>' +
+                      '<hr>' +
+                      '<p>' + data.details + 
+                      '</p>' +
+                    '</ion-card-content>' +                   
+                  '</ion-content>'
 
         $('.list-category-itens').empty();
         $('.item-details').append(info);
