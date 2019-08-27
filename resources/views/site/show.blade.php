@@ -253,17 +253,17 @@ img {
         <ion-tab-bar slot="bottom">
             <ion-tab-button tab="sobre">
                 <ion-label>Sobre</ion-label>
-                <ion-icon name="business" color="danger"></ion-icon>
+                <ion-icon name="business" color="default"></ion-icon>
             </ion-tab-button>
 
             <ion-tab-button tab="cardapio" class="btn-cardapio">
                 <ion-label>Menu</ion-label>
-                <ion-icon name="paper" color="danger"></ion-icon>
+                <ion-icon name="paper" color="default"></ion-icon>
             </ion-tab-button>
 
             <ion-tab-button tab="promocoes" class="btn-promo">
                 <ion-label>Promoções</ion-label>
-                <ion-icon name="gift" color="danger"></ion-icon>
+                <ion-icon name="gift" color="default"></ion-icon>
             </ion-tab-button>
         </ion-tab-bar>
       </ion-tabs>

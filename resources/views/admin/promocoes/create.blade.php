@@ -40,7 +40,7 @@
                             <div class="form-group row">
                                 <label for="example-text-input"
                                     class="col-md-4 col-form-label form-control-label text-right ">Foto de destaque </label>
-                                <div class="col-md-8">
+                                <div class="col-md-4">
                                     <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" />
                                 </div>
                             </div>
@@ -56,6 +56,7 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Valor (R$) </label>
                                 <div class="col-md-2">
+                                        <!-- <input type="text" name="promotion_value" class="form-control" id="promotion_value"> -->
                                         <input type="text" name="promotion_value" class="form-control" id="">
                                 </div>
                             </div>
@@ -64,7 +65,7 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
                                 <div class="col-md-4">
-                                         <textarea name="details"rows="5" resize="none" class="form-control" maxlenght="250" ></textarea>   
+                                         <textarea name="details"rows="5" resize="none" class="form-control" maxlenght="500" ></textarea>   
                                 </div>
                             </div>
 
@@ -120,7 +121,7 @@
         $(document).ready(function(){
             $('.dropify').dropify({
                 messages:{
-                    'default': 'Clique para fazer upload da imagem da promoção'
+                    'default': 'upload da imagem da promoção'
                 }
             });
         });

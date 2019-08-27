@@ -32,12 +32,17 @@ class PromotionController extends Controller
   public function store(Request $request)
   {
     try {
-      $promotion          = $request->all();
+      $promotion          = $request->all();      
       $promotion['url']   = Str::random(5);
 
+         
       if ($request->hasFile('image')) {
         $promotion['image'] = $request->image->move('promotions');
       }
+
+      // if ($request->promotion_value) {
+      //   $promotion['promotion_value'] = toMoney($request->promotion_value);                                
+      // }
 
       Promotion::create($promotion);
 
