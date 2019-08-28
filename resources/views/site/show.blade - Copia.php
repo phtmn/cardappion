@@ -25,17 +25,11 @@ img {
     </style>
 </head>
 <body>
-
-
 <ion-app>
 
 
     <div class="ion-page" main>
-    <ion-header>
-  <ion-toolbar>
-    <ion-title>cardappion</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
         <ion-content padding>
 
@@ -46,7 +40,7 @@ img {
             <!-- <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px;"> -->
                 <ion-content>
     </ion-conent>
-    <ion-list style="margin-top: 50px">
+    <ion-list style="margin-top: 5px">
 
       <div class="list-category">
         @foreach ($categories as $category)
@@ -107,7 +101,7 @@ img {
                     </ion-item> -->
                     <ion-content>
 
-                <ion-list style="margin-top: 50px">
+                <ion-list style="margin-top: 5px">
 
                   <div class="list-promo">
                     @foreach ($promotions as $promotion)
@@ -118,13 +112,6 @@ img {
                         </ion-thumbnail>
                         <ion-label>{{ $promotion->title }} </br> R$ {{ number_format($promotion->promotion_value,2,',','.')}} </ion-label>
                       </ion-item>
-               <!-- <ion-content class="card-background-page" >
-                          <ion-card class="promo" href="#" data-route="{{ route('admin.menus.getpromo', [ 'id' => $promotion->id ]) }}"s>
-                            <img src="{{ url($promotion->image) }}"/>
-                            <div class="card-title">{{ $promotion->title }}</div>
-                            <div class="card-subtitle">R$ {{ number_format($promotion->promotion_value,2,',','.')}}</div>
-                          </ion-card>
-                          </ion-content> -->
                     @endforeach
                   </div>
 
@@ -165,7 +152,7 @@ img {
 
             </ion-item> -->
 
-            <ion-list style="margin-top: 50px">
+            <ion-list style="margin-top: 5px">
             <ion-grid>
   <!-- <ion-row>
     <ion-col>
@@ -210,7 +197,7 @@ img {
 </ion-grid>           -->
 
 
-                <!-- <ion-item href="#">
+                <ion-item href="#">
                 <ion-col >
                   <div class="ion-text-center">
 
@@ -218,7 +205,7 @@ img {
                   </div>
                 </ion-col>
 
-                </ion-item> -->
+                </ion-item>
                 <ion-col>
       <div class="ion-text-end">
         <h2 style="margin-right:25px"><strong >{{ $tenant->name }}</strong></h2>
@@ -286,17 +273,6 @@ img {
 </ion-app>
 
 <ion-menu-controller></ion-menu-controller>
-
-
-
-
-
-
-
-
- 
-
-
 <script src="{{asset('vendor/argon/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
 
 <script>
