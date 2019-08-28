@@ -2,7 +2,7 @@
 
 @section('cabecalho')
 
-<div class="header bg-dark pb-6">
+<div class="header bg-black pb-6">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">

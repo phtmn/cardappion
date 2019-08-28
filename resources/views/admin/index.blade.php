@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 @section('cabecalho')
-<div class="header bg-dark pb-6">
+<div class="header bg-black pb-6">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
@@ -28,7 +28,7 @@
                   
                     <div class="col">
                       <!-- <h5 class="card-title text-uppercase text-muted mb-0">Configurações</h5> -->
-                      <span class="h3 font-weight-bold mb-0"><i class="ni ni-settings-gear-65 text-danger"></i> Configurações</span>
+                      <span class="h3 font-weight-bold mb-0"><i class="ni ni-settings-gear-65 text-primary"></i> Configurações</span>
                     </div>
                    
                   </div>
@@ -46,7 +46,7 @@
                   <div class="row">
                     <div class="col">
                       
-                      <span class="h3 font-weight-bold mb-0"><i class="ni ni-bullet-list-67 text-danger"></i> Produtos</span>
+                      <span class="h3 font-weight-bold mb-0"><i class="ni ni-bullet-list-67 text-primary"></i> Produtos</span>
                     </div>
                     
                   </div>
@@ -64,7 +64,7 @@
                   <div class="row">
                     <div class="col">
                      
-                      <span class="h3 font-weight-bold mb-0"> <i class="ni ni-notification-70 text-danger"></i> Promoções</span>
+                      <span class="h3 font-weight-bold mb-0"> <i class="ni ni-notification-70 text-primary"></i> Promoções</span>
                     </div>
                    
                   </div>
@@ -82,7 +82,7 @@
                   <div class="row">
                     <div class="col">
                       
-                      <span class="h3 font-weight-bold mb-0"><i class="ni ni-collection text-danger"></i> Menu</span>
+                      <span class="h3 font-weight-bold mb-0"><i class="ni ni-collection text-primary"></i> Menu</span>
                     </div>
                     
                   </div>

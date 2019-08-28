@@ -2,7 +2,7 @@
 
 @section('cabecalho')
 
-<div class="header bg-dark pb-6">
+<div class="header bg-black pb-6">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
@@ -56,8 +56,8 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Valor (R$) </label>
                                 <div class="col-md-2">
-                                        <!-- <input type="text" name="promotion_value" class="form-control" id="promotion_value"> -->
-                                        <input type="text" name="promotion_value" class="form-control" id="">
+                                         <input type="text" name="promotion_value" class="form-control" id="promotion_value"> 
+                                        <!-- <input type="text" name="promotion_value" class="form-control" id=""> -->
                                 </div>
                             </div>
 
@@ -130,7 +130,7 @@
 
         $(document).ready(function(){
            
-            $("#promotion_value").mask('#.##0,00', {reverse: true});      
+            $("#promotion_value").mask('#,##0.00', {reverse: true});      
 
         });
     </script>

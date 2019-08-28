@@ -32,8 +32,8 @@ img {
 
     <div class="ion-page" main>
     <ion-header>
-  <ion-toolbar>
-    <ion-title>cardappion</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title ><img src="{{asset('vendor/argon/assets/img/brand/logo11.png')}}" style="width: 255px; height:57px;"></ion-title>
   </ion-toolbar>
 </ion-header>
 
