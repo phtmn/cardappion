@@ -220,7 +220,7 @@ img {
 
                 </ion-item> -->
                 <ion-col>
-      <div class="ion-text-end">
+      <div class="ion-text-end" >
         <h2 style="margin-right:25px"><strong >{{ $tenant->name }}</strong></h2>
 
       </div>

@@ -58,8 +58,8 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Valor (R$) </label>
                                 <div class="col-md-2">
-                                        <input type="text" name="price" class="form-control" id="">
-                                        <!-- <input type="text" name="price" class="form-control" id="price"> -->
+                                        <!-- <input type="text" name="price" class="form-control" id=""> -->
+                                         <input type="text" name="price" class="form-control" id="price"> 
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -126,7 +126,8 @@
 
         $(document).ready(function(){
                
-                $("#price").mask('#.##0,00', {reverse: true});      
+                $("#price").mask('#.##0,00', {reverse: true});   
+
 
         })
 

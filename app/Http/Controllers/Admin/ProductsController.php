@@ -25,12 +25,20 @@ class ProductsController extends Controller
 
   public function store(Request $request)
   {
+    
     try {
       $product = $request->all();
       // $product['url']   = Str::random(5);
 
       if ($request->hasFile('image')) {
         $product['image']  = $request->image->move('products');
+      }
+
+      if ($request->price) {
+     
+        // $promotion['promotion_value'] = $request->promotion_value;  
+        $product['price'] = str_replace(',','.',str_replace('.','',$request->price));
+                               
       }
 
       Product::create($product);

@@ -130,7 +130,8 @@
 
         $(document).ready(function(){
            
-            $("#promotion_value").mask('#,##0.00', {reverse: true});      
+            // $("#promotion_value").mask('#,##0.00', {reverse: true}); 
+            $("#promotion_value").mask('#.##0,00', {reverse: true});     
 
         });
     </script>
