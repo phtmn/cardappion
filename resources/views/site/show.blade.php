@@ -143,7 +143,7 @@ img {
         </ion-tab>
 
         <ion-tab tab="sobre">
-            <!-- <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px; align:center;" > -->
+             <!-- <img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 400px; height:200px; align:center;" >  -->
             <ion-content>
 
                     <ion-content>
@@ -318,6 +318,37 @@ img {
       $('.promo-details').empty();
     });
 
+     function float2moeda(num) {
+            x	=	0;
+            if(num<0){
+              num	=	Math.abs(num);
+              x	=	1;
+            }
+            if(isNaN(num)){
+              num	=	"0.00";
+            }
+            cents = Math.floor((num*100+0.5)%100);
+            num = Math.floor((num*100+0.5)/100).toString();
+            if(cents < 10){
+              cents	=	"0" + cents;
+            }
+            for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++){
+              num	=	num.substring(0,num.length-(4*i+3))+'.'+num.substring(num.length-(4*i+3));
+            }
+            ret = num + ',' + cents;
+            if (x == 1){
+              ret	=	' - ' + ret;
+            }
+            return ret;
+          }
+
+          function moeda2float(moeda){
+            // moeda = moeda.replace(".","");
+            moeda = moeda.replace(/\./g,"");
+            moeda = moeda.replace(",",".");
+            return parseFloat(moeda);
+          }
+
     $('.item-category').on('click', function() {
       var url = $(this).data('route');
 
@@ -333,7 +364,10 @@ img {
               '<ion-thumbnail slot="start">' +
                   '<img src=' + img + '/' + val.image + ' alt="">' +
               '</ion-thumbnail>' +
-              '<ion-label>' + val.title + '</br> R$ ' + val.price + '</ion-label>' +
+              // '<ion-label>' + val.title + '</br> R$aaa ' + val.price   + '</ion-label>' +
+              
+              '<ion-label>' + val.title + '</br> R$ ' + float2moeda(val.price)     + '</ion-label>' +
+              // '<button ion-button clear item-end>pedir</button>' +
             '</ion-item>';
           });
           $('.list-category-itens').append(list);
@@ -356,7 +390,7 @@ img {
                       '<ion-card-content>' +
                       '<ion-card-title>' + data.title +
                       '</ion-card-title>' +
-                      '<p>' + data.price + 
+                      '<p> R$:' + float2moeda(data.price)  + 
                       '</p>' +
                       '<hr>' +
                       '<p>' + data.details + 
@@ -380,21 +414,36 @@ img {
         var img = '{{ config('app.url') }}';
         var info = '';
 
-          info += '<ion-list style="margin-top: 5px">' +
-                    '<ion-item href="#">' +
-                      '<ion-thumbnail>' +
-                        '<img class="" src="' + img + '/' + data.image + '" alt="" >' +
-                      '</ion-thumbnail>' +
-                    '</ion-item>' +
+          // info += '<ion-list style="margin-top: 5px">' +
+          //           '<ion-item href="#">' +
+          //             '<ion-thumbnail>' +
+          //               '<img class="" src="' + img + '/' + data.image + '" alt="" >' +
+          //             '</ion-thumbnail>' +
+          //           '</ion-item>' +
 
-                    '<ion-item href="#">' +
-                      '<ion-label><h3>' + data.title + '</h3>' +
-                      '</br> preçooo: ' + data.promotion_value +
-                      '</br> preçooooo ' + data.details +
-                    '</ion-label>' +
+          //           '<ion-item href="#">' +
+          //             '<ion-label><h3>' + data.title + '</h3>' +
+          //             '</br> preçooo: ' + float2moeda(data.promotion_value)  +
+          //             '</br> preçooooo ' + data.details +
+          //           '</ion-label>' +
 
-                    '</ion-item>' +
-                  '</ion-list>';
+          //           '</ion-item>' +
+          //         '</ion-list>';
+
+
+          info +=    '<ion-card>' +
+                        '<img src="' + img + '/' + data.image + '" alt="" >' +
+                        '<ion-card-content>' +
+                          '<ion-card-title>'  + data.title + '</ion-card-title>' +
+                          '</br> R$: ' + float2moeda(data.promotion_value)  +
+                          '<p>' + data.details +                             
+                          '</p>' +
+                        '</ion-card-content>' +
+                 '</ion-card>' ;
+
+
+
+
 
         $('.promo-details').append(info);
         $('.list-promo').css('display', 'none');
