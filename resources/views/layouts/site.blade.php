@@ -13,27 +13,28 @@
   <link rel="stylesheet" href="{{asset('vendor/argon/assets/css/stilo.css')}}" type="text/css">
 </head>
 
-<body>
+<body class="bg-dark">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <!-- Navabr -->
   <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-black">
     <div class="container">
-      <a class="navbar-brand" href="./pages/dashboards/dashboard.html">
+      <a class="navbar-brand mx-auto" href="{{route('site')}}">
         <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}" style="width: 215px; height:50px;">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
       <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
         <div class="navbar-collapse-header">
           <div class="row">
             <div class="col-6 collapse-brand">
-              <a href="{{asset('vendor/argon/pages/dashboards/dashboard.html')}}">
-                <img src="{{asset('vendor/argon/assets/img/brand/blue.png')}}">
+              <a href="">
+                <!-- <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}"> -->
               </a>
             </div>
+         
             <div class="col-6 collapse-close">
               <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
@@ -45,22 +46,22 @@
         <ul class="navbar-nav mr-auto">
       
           <li class="nav-item">
-            <a href="./pages/examples/pricing.html" class="nav-link">
+            <a href="" class="nav-link">
               <span class="nav-link-inner--text">Sobre Nós</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{asset('vendor/argon/pages/examples/login.html')}}" class="nav-link">
+            <a href="" class="nav-link">
               <span class="nav-link-inner--text">Serviços</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{asset('vendor/argon/pages/examples/register.html')}}" class="nav-link">
+            <a href="" class="nav-link">
               <span class="nav-link-inner--text">Planos</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{asset('vendor/argon/pages/examples/register.html')}}" class="nav-link">
+            <a href="" class="nav-link">
               <span class="nav-link-inner--text">Download App</span>
             </a>
           </li>
@@ -92,7 +93,10 @@
       <div class="container">
         <div class="header-body">
           <div class="row align-items-center">
-            <div class="col-lg-6">
+          <div class="col-lg-1">
+              
+              </div>
+            <div class="col-lg-10">
               <div class="pr-5">
                 <h1 class="display-1 text-white font-weight-bold mb-0">Soluções em Cardápios Digitais </h1>
                 <h2 class="display-4 text-white font-weight-light">Todos os cardápios e promoções em um único lugar.</h2>
@@ -100,23 +104,22 @@
                 <div class="mt-5">
                   <a href="{{route('register')}}" class="btn btn-azul my-2">Cadastre-se</a>
                   <a href="{{route('login')}}" class="btn btn-verd my-2">Acessar conta </a>
-                  
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-1">
               
             </div>
           </div>
         </div>
       </div>
-      <div class="separator separator-bottom separator-skew zindex-100">
+      <!-- <div class="separator separator-bottom separator-skew zindex-100">
         <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-secondary" points="2560 0 2560 100 0 100"></polygon>
         </svg>
-      </div>
+      </div> -->
     </div>
-    <section class="py-6 pb-9 bg-secondary">
+    <!-- <section class="py-6 pb-9 bg-secondary">
       <div class="row justify-content-center text-center">
         <div class="col-md-6">
           <h2 class="display-3 text-azul2">Fazer parte da nossa plataforma é muito simples</h3>
@@ -164,8 +167,9 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="py-6 bg-black"> <!---->
+      </div>
+    </section> -->
+    <!-- <section class="py-6 bg-black"> 
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6 order-md-2">
@@ -217,8 +221,8 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="py-6">
+    </section> -->
+    <!-- <section class="py-6">
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6">
@@ -233,8 +237,8 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="py-6">
+    </section> -->
+    <!-- <section class="py-6">
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6 order-md-2">
@@ -248,7 +252,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <!--
     </section>
     
@@ -354,15 +358,15 @@
   </div>
    -->   
   <!-- Footer -->
-  <footer class="py-5" id="footer-main">
+  <!-- <footer class="py-5" id="footer-main">
     <div class="container">
       <div class="row align-items-center justify-content-xl-between">
-        <div class="col-xl-6">
+         <div class="col-xl-6">
           <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2018 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">Creative Tim</a>
+            <a href="" class="font-weight-bold ml-1" target="_blank">cardappion</a>
           </div>
-        </div>
-        <div class="col-xl-6">
+        </div> -->
+        <!-- <div class="col-xl-6">
           <ul class="nav nav-footer justify-content-center justify-content-xl-end">
             <li class="nav-item">
               <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a>
@@ -377,10 +381,10 @@
               <a href="https://www.creative-tim.com/license" class="nav-link" target="_blank">License</a>
             </li>
           </ul>
-        </div>
+        </div> 
       </div>
     </div>
-  </footer>
+  </footer> -->
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{asset('vendor/argon/assets/vendor/jquery/dist/jquery.min.js')}}"></script>

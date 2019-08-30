@@ -20,7 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-<body>
+<body class="bg-black">
   <!-- Google Tag Manager (noscript) -->
   <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
   <!-- End Google Tag Manager (noscript) -->
@@ -32,8 +32,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @yield('cabecalho')
     @yield('conteudo')
 
-      <footer class="footer pt-0">
-        <!-- <div class="row align-items-center justify-content-lg-between">
+    <!--  <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
           <div class="col-lg-6">
             <div class="copyright text-center text-lg-left text-muted">
               &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">cardappion.me </a>
@@ -53,8 +53,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </div>
-        </div> -->
-      </footer>
+        </div> 
+      </footer> -->
     </div>
   </div>
   <script src="{{asset('vendor/argon/assets/vendor/jquery/dist/jquery.min.js')}}"></script>

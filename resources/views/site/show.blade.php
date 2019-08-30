@@ -63,7 +63,7 @@ img {
       <div class="item-details"></div>
 
 
-                    {{-- <ion-item href="#">
+                   <!-- <ion-item href="#">
                         <ion-label>Nome da categoria</ion-label>
                     </ion-item>
 
@@ -82,7 +82,7 @@ img {
                     <ion-item href="#">
 
                         <ion-label>Nome da categoria</ion-label>
-                    </ion-item> --}}
+                    </ion-item>  -->
 
 
                     <!-- <p>Nada a exibir</p> -->
