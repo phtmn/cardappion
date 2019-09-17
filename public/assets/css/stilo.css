@@ -1,0 +1,65 @@
+.bg-verd1 {
+    background-color: rgb(138, 197, 65);
+    fill: rgb(138, 197, 65);
+}
+
+.bg-black{
+    background-color: rgb(13,13,13);
+    fill: rgb(13,13,13);
+}
+
+.bg-black{
+    background-color: rgb(13,13,13);
+    fill: rgb(13,13,13);
+}
+
+.bg-gradient-danger {
+    background: linear-gradient(87deg,#6936f5 0,#070707 100%)!important;
+}
+
+.bg-gradient-default {
+    background: linear-gradient(87deg,#172b4d 0,#1a174d 100%)!important;
+}
+
+
+.bg-verd2 {
+    background-color: #679202;
+    fill: #679202;
+}
+
+.bg-mr {
+    background-color: #502423;
+}
+
+.btn-verd1 {
+    background-color: rgb(138, 197, 65);
+    color: aliceblue;
+}
+
+.btn-verd2 {
+    background-color: #679202;
+    color: aliceblue;
+}
+
+.btn-mr {
+    background-color: #502423;
+    color: aliceblue;
+}
+
+.bg-img {
+    padding: 20px;
+    width: 100.97%;
+    background: url('../img/brand/fundo2.jpg') no-repeat;
+}
+
+.text-verd1 {
+    color: rgb(138, 197, 65);
+}
+
+.text-verd2 {
+    color: #679202;
+}
+
+.text-mr {
+    color: #502423;
+}

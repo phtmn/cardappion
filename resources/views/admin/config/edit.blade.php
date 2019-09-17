@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-lg-4">
             <div class="card-wrapper">                
-                <div class="card">                
+                <div class="card ">                
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col-8">                
@@ -52,7 +52,7 @@
         </div>
         <div class="col-lg-8">
             <div class="card-wrapper">
-                <div class="card">                    
+                <div class="card ">                    
                     <div class="card-header">
                         <h3 class="mb-0"> {{ Auth::user()->tenant->name }}</h3>
                     </div>

@@ -1,30 +1,38 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <title>cardappion</title>
-  <link rel="canonical" href="https://www.creative-tim.com/product/argon-dashboard-pro" />
-  <link rel="icon" href="{{asset('vendor/argon/assets/img/brand/icon2.png')}}" type="image/png">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
+  <meta name="author" content="Creative Tim">
+  <title>{{ config('app.name') }}</title>
+
+  <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
+  <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/icon2.png') }}" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-  <link rel="stylesheet" href="{{asset('vendor/argon/assets/vendor/nucleo/css/nucleo.css')}}" type="text/css">
-  <link rel="stylesheet" href="{{asset('vendor/argon/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css')}}" type="text/css">
-  <link rel="stylesheet" href="{{asset('vendor/argon/assets/css/argon.min.css?v=1.0.0')}}" type="text/css">
-  <link rel="stylesheet" href="{{asset('vendor/argon/assets/css/stilo.css')}}" type="text/css">
+  <link rel="stylesheet" href="{{ asset('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
+  <link rel="stylesheet" href="{{ asset('assets/css/argon.min.css?v=1.0.0') }}" type="text/css">
+
+  <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/lavalamp/js/jquery.lavalamp.min.js') }}"></script>
+  <script src="{{ asset('assets/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
+  <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
+  <script src="{{ asset('assets/js/demo.min.js') }}"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 @yield('css')
 </head>
 
 
 
 <body class="bg-black">
-  <!-- Google Tag Manager (noscript) -->
-  <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- Sidenav -->
+  
 
   <!-- Main content -->
   <div class="main-content" id="panel">
@@ -57,20 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </footer> -->
     </div>
   </div>
-  <script src="{{asset('vendor/argon/assets/vendor/jquery/dist/jquery.min.js')}}"></script>
-  <script src="{{asset('vendor/argon/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('vendor/argon/assets/vendor/js-cookie/js.cookie.js')}}"></script>
-  <script src="{{asset('vendor/argon/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js')}}"></script>
-  <script src="{{asset('vendor/argon/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js')}}"></script>
-  <script src="{{asset('vendor/argon/assets/vendor/lavalamp/js/jquery.lavalamp.min.js')}}"></script>
-  <script src="{{asset('vendor/argon/assets/vendor/onscreen/dist/on-screen.umd.min.js')}}"></script>
-  <script src="{{asset('vendor/argon/assets/js/argon.min.js?v=1.0.0')}}"></script>
-  <script src="{{asset('vendor/argon/assets/js/demo.min.js')}}"></script>
-
-
-
-
-
+  
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
 
     <script>

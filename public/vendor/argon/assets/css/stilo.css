@@ -1,76 +1,46 @@
-
-
-.bg-verd{
-    background-color: #7ed957;
+.bg-verd1 {
+    background-color: rgb(138, 197, 65);
+    fill: rgb(138, 197, 65);
 }
 
-.bg-amarelo{ 
-    background-color: #ffde59;
+.bg-verd2 {
+    background-color: #679202;
+    fill: #679202;
 }
 
-.bg-azul{
-    background-color: #5ce1e6;
+.bg-mr {
+    background-color: #502423;
 }
 
-.bg-azul2{
-    background-color: #5271ff;
+.btn-verd1 {
+    background-color: rgb(138, 197, 65);
+    color: aliceblue;
 }
 
-.bg-lilas{
-    background-color: #cb6ce6;
+.btn-verd2 {
+    background-color: #679202;
+    color: aliceblue;
 }
 
-.bg-black{
-    background-color: #0d0d0d;
+.btn-mr {
+    background-color: #502423;
+    color: aliceblue;
 }
 
-/*/////////////////////////////////Botões//////////////////////////////////*/
-
-.btn-verd{
-    color: #ffffff;
-    background-color: #7ed957;   
+.bg-img {
+    padding: 20px;
+    width: 100.97%;
+    background: url('../img/brand/fundo2.jpg') no-repeat;
 }
 
-.btn-amarelo{
-    color: #ffffff; 
-    background-color: #ffde59;
+.text-verd1 {
+    color: rgb(138, 197, 65);
 }
 
-.btn-azul{
-    color: #ffffff;
-    background-color: #5ce1e6;
+.text-verd2 {
+    color: #679202;
 }
 
-.btn-azul2{
-    color: #ffffff;
-    background-color: #5271ff;
-}
-
-.btn-lilas{
-    color: #ffffff;
-    background-color: #cb6ce6;
-}
-
-
-/*////////////////////////////////Cor-Textos////////////////////////////////*/
-
-
-.text-verd{
-    color: #7ed957;
-}
-
-.text-amarelo{ 
-    color: #ffde59;
-}
-
-.text-azul{
-    color: #5ce1e6;
-}
-
-.text-azul2{
-    color: #5271ff;
-}
-
-.text-lilas{
-    color: #cb6ce6;
+.text-mr {
+    color: #502423;
 }

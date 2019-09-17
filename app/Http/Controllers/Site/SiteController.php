@@ -15,7 +15,7 @@ class SiteController extends Controller
 {
   public function home()
   {
-    return view('layouts.site');
+    return view('site.home');
   }
 
   public function promocao($slug)

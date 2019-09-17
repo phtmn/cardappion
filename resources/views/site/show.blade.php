@@ -13,7 +13,8 @@ img {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <title>{{$tenant->description}}</title> -->
+    <title>{{ config('app.name') }}</title>
+    <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/icon2.png') }}" type="image/png">
     <script src="https://unpkg.com/@ionic/core@latest/dist/ionic.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
