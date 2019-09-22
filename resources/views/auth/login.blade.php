@@ -54,7 +54,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-7">
           <!-- <div class="card bg-secondary border-0 mb-0"> -->
-          <div class="card bg-gradient-default border-0 mb-0">
+          <div class="card  border-0 mb-0">
             <!-- <div class="card-header bg-transparent pb-5">
               <div class="text-muted text-center mt-2 mb-3"><small>Entre com</small></div>
               <div class="btn-wrapper text-center">

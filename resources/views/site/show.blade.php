@@ -104,7 +104,8 @@ img {
 
 
                     <!-- <ion-item>
-                        <ion-label><img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 50px; height:50px;"> Nome da Promoção e R$</ion-label>
+                        <ion-label><img src="{{asset('vendor/argon/assets/img/brand/google.jpg')}}" style="width: 50px; height:50px;"> Nome da Promoção e wha
+                      </ion-label>
                     </ion-item> -->
                     <ion-content>
 
@@ -235,7 +236,12 @@ img {
                     {{ $config->half_address ?? '' }}
                     </br>
                     <ion-icon name="logo-whatsapp" color="success"></ion-icon>
-                    {{ $config->format_whatsapp ?? '' }}                   
+                    {{ $config->format_whatsapp ?? '' }}    
+                    <!-- <a  target="_blank" href="https://api.whatsapp.com/send?phone=55{{ $config->format_whatsapp ?? '' }}">{{ $config->format_whatsapp ?? '' }}  </a> -->
+                    <!-- https://api.whatsapp.com/send?phone=55{{ $config->format_whatsapp ?? '' }} -->
+                    </br>
+                    <ion-icon name="call" color="dark"></ion-icon>
+                    {{ $config->telephone ?? '' }}                   
                     </br>
                     <ion-icon name="logo-instagram" color="dark"> </ion-icon>
                     {{ $config->instagram ?? '' }}
@@ -391,7 +397,7 @@ img {
                       '<ion-card-content>' +
                       '<ion-card-title>' + data.title +
                       '</ion-card-title>' +
-                      '<p> R$:' + float2moeda(data.price)  + 
+                      '<p> R$' + float2moeda(data.price)  + 
                       '</p>' +
                       '<hr>' +
                       '<p>' + data.details + 
@@ -436,7 +442,7 @@ img {
                         '<img src="' + img + '/' + data.image + '" alt="" >' +
                         '<ion-card-content>' +
                           '<ion-card-title>'  + data.title + '</ion-card-title>' +
-                          '</br> R$: ' + float2moeda(data.promotion_value)  +
+                          '</br> R$ ' + float2moeda(data.promotion_value)  +
                           '<p>' + data.details +                             
                           '</p>' +
                         '</ion-card-content>' +

@@ -154,7 +154,15 @@
                                     <input type="text" name="site" class="form-control" value="{{$config->site}}">
                                 </div>
                             </div>
-
+                            <!-- @can('{{ Auth::user()->tenant->plan == A }}')
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Site </label>
+                                <div class="col-md-7">
+                                    <input type="text" name="site" class="form-control" value="{{$config->site}}">
+                                </div>
+                            </div>
+                            @endcan -->
                             <div class="form-group row">
                                 <div class="col-md-4">
                                     

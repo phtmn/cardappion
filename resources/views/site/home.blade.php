@@ -2,11 +2,13 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
+  
   <title>{{ config('app.name') }}</title>
 
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
@@ -26,13 +28,34 @@
   <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
   <script src="{{ asset('assets/js/demo.min.js') }}"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  
+  <!-- Google Analytics phtolentinon@gmail.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148440473-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-148440473-1');
+  </script>
+
+  <!-- Google Adsense phtolentinon@gmail.com -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-5608530994046947",
+      enable_page_level_ads: true
+    });
+  </script>
+
 </head>
-<body  class="bg-black">
-@yield('content')
-@stack('scripts')
-@include('layouts._nav')
-@include('layouts._main') 
-@include('layouts._footer') 
+
+<body class="bg-black">
+  @yield('content')
+  @stack('scripts')
+  @include('layouts._nav')
+  @include('layouts._main')
+  
 </body>
+
 </html>

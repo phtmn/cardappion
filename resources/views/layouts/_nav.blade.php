@@ -20,7 +20,7 @@
       </div>
 
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                 <i class="ni ni-ui-04 d-lg-none"></i>
                 <span class="nav-link-inner--text">Conheça</span>
@@ -74,7 +74,7 @@
                   </a>                 
                 </div>
               </div>
-            </li>
+            </li> -->
       
         <li class="nav-item">
           <a class="nav-link nav-link-icon" href="https://www.facebook.com/#" target="_blank" >
