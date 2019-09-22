@@ -19,6 +19,17 @@ img {
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
     <link href="https://unpkg.com/@ionic/core@latest/css/ionic.bundle.css" rel="stylesheet">
+
+    <!-- Google Adsense phtolentinon@gmail.com -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-5608530994046947",
+      enable_page_level_ads: true
+    });
+  </script>
+
+
     <style>
         .cardapio {
             margint-top:100px;
