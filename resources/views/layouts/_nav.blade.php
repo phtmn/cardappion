@@ -1,11 +1,11 @@
 <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-black nav-stilo">
   <div class="container">
-    <a class="nav-brand" href="{{route('site')}}">
-      <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}" alt="{{ config('app.name') }}" class="img-fluid"style="width:215px; height:50px">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <a class="navbar-brand mx-auto" href="{{route('site')}}">
+      <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}" alt="{{ config('app.name') }}" class="img-fluid"style="width:215px; height:50px">
+    </a>    
     <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
       <div class="navbar-collapse-header">
         <div class="row">
