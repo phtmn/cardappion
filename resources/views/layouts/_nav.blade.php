@@ -20,62 +20,71 @@
       </div>
 
       <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-      <!-- <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                 <i class="ni ni-ui-04 d-lg-none"></i>
-                <span class="nav-link-inner--text">Conheça</span>
+                <span class="nav-link-inner--text text-dark">Conheça</span>
               </a>
               <div class="dropdown-menu dropdown-menu-xl">
                 <div class="dropdown-menu-inner">
-                  <a href="./docs/getting-started/overview.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                      <i class="ni ni-spaceship"></i>
+                  <a href="" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                      <i class="ni ni-building"></i>
                     </div>
                     <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Sobre Nós</h6>
-                      <p class="description d-none d-md-inline-block mb-0">Learn how to use Argon compiling Scss, change brand colors and more.</p>
+                      <h6 class="heading text-dark mb-md-1">Sobre Nós</h6>
+                      <p class="description d-none d-md-inline-block mb-0">Todos os cardápios e promoções em um único lugar.</p>
                     </div>
                   </a>
-                  <a href="./docs/foundation/colors.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                      <i class="ni ni-palette"></i>
+                  <!-- <a href="./docs/foundation/colors.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                      <i class="ni ni-single-copy-04"></i>
                     </div>
                     <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Termo de Uso</h6>
-                      <p class="description d-none d-md-inline-block mb-0">Learn more about colors, typography, icons and the grid system we used for Argon.</p>
+                      <h6 class="heading text-dark mb-md-1">Termo de Uso</h6>
+                      <p class="description d-none d-md-inline-block mb-0">Este termo de uso regulamenta a utilização da plataforma.</p>
+                    </div>
+                  </a> -->
+                  <a href="" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                      <i class="ni ni-align-left-2"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-dark mb-md-1">Serviços</h6>
+                      <p class="description d-none d-md-inline-block mb-0">Soluções em Cardápios Digitais.</p>
                     </div>
                   </a>
-                  <a href="./docs/getting-started/overview.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                      <i class="ni ni-spaceship"></i>
+                  <a href="" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                      <i class="ni ni-paper-diploma"></i>
                     </div>
                     <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Serviços</h6>
-                      <p class="description d-none d-md-inline-block mb-0">Learn how to use Argon compiling Scss, change brand colors and more.</p>
+                      <h6 class="heading text-dark mb-md-1">Planos</h6>
+                      <p class="description d-none d-md-inline-block mb-0">Conheça nossos planos e escolha o que mais combina com o seu negócio.</p>
                     </div>
                   </a>
-                  <a href="./docs/getting-started/overview.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                      <i class="ni ni-spaceship"></i>
+                  <a href="" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                      <i class="ni ni-email-83"></i>
                     </div>
                     <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Planos</h6>
-                      <p class="description d-none d-md-inline-block mb-0">Learn how to use Argon compiling Scss, change brand colors and more.</p>
+                      <h6 class="heading text-dark mb-md-1">Contato</h6>
+                      <p class="description d-none d-md-inline-block mb-0">info@cardappion.com.br</p>
                     </div>
                   </a>
-                  <a href="./docs/getting-started/overview.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                      <i class="ni ni-spaceship"></i>
+                  <!-- <a href="./docs/getting-started/overview.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                      <i class="ni ni-mobile-button"></i>
                     </div>
                     <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Download App</h6>
+                      <h6 class="heading text-dark mb-md-1">Download App</h6>
                       <p class="description d-none d-md-inline-block mb-0">Learn how to use Argon compiling Scss, change brand colors and more.</p>
                     </div>
-                  </a>                 
+                  </a>                  -->
                 </div>
               </div>
-            </li> -->
-      
+            </li>
+            
         <li class="nav-item">
           <a class="nav-link nav-link-icon" href="https://www.facebook.com/#" target="_blank" >
             <i class="fab fa-facebook-square text-default"></i>
@@ -88,6 +97,7 @@
             <span class="nav-link-inner--text d-lg-none text-dark">Instagram</span>
           </a>
         </li>
+       
 
         
         <li class="nav-item">          
@@ -95,10 +105,6 @@
           <a href="{{route('login')}}" class="btn btn-dark my-2 ">Acessar conta </a>
         </li> 
         
-       
-      
-        
-
       </ul>
     </div>
   </div>

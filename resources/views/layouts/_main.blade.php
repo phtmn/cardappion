@@ -2,7 +2,7 @@
 
   <div class="main-content">
     <!-- Header -->
-    <div class="header bg-black pt-5 pb-7">
+    <div class="header bg-primary pt-5 pb-7">
       <div class="container">
         <div class="header-body">
           <div class="row align-items-center">
@@ -15,8 +15,9 @@
                 <h2 class="display-4 text-white font-weight-light">Todos os cardápios e promoções em um único lugar.</h2>
                 
                 <div class="mt-5">
-                  <!-- <a href="{{route('register')}}" class="btn btn-azul my-2">Cadastre-se</a>
-                  <a href="{{route('login')}}" class="btn btn-verd my-2">Acessar conta </a> -->
+                <!-- <p class="lead text-white">
+            Temos uma plataforma perfeita para o seu negócio, seja ele do tamanho que for.
+            </p> -->
                 </div>
               </div>
             </div>
@@ -37,13 +38,13 @@
         <div class="col-md-6">
           <h2 class="display-3 text-azul2">Fazer parte da nossa plataforma é muito simples</h3>
             <p class="lead text-white">
-            Temos uma plataforma perfeita para o seu estabeleciomento, seja ele do tamanho que for.
+            Temos uma plataforma perfeita para o seu negócio, seja ele do tamanho que for.
             </p>
         </div>
       </div>
     
     </section> -->
-    <section class="section section-lg pt-lg-0 mt--7">
+    <section class="section section-lg pt-lg-0 mt--7 bg-primary">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
@@ -59,7 +60,7 @@
                 </div>
               </div>
               <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-6 bg-primary">
+                <div class="card card-lift--hover shadow border-6 bg-dark">
                   <div class="card-body py-5">
                     
                     <h4 class="h3 text-white text-center text-uppercase">Crie seu cardápio</h4>
@@ -84,7 +85,7 @@
       </div>
     </section>
     
-    <!-- <section class="py-6">
+    <section class="py-6 bg-white">
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6">
@@ -92,7 +93,7 @@
           </div>
           <div class="col-md-6">
             <div class="pr-md-5">
-              <h1> Cadastre seu cardápio digital</h1>
+              <h1> CADASTRE SEU NEGÓCIO</h1>
               <p>If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages.</p>
               <a href="./pages/examples/profile.html" class="font-weight-bold text-warning mt-5">Explore pages</a>
             </div>
@@ -100,7 +101,7 @@
         </div>
       </div>
     </section> 
-    <section class="py-6">
+    <section class="py-6 bg-black">
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6 order-md-2">
@@ -108,73 +109,36 @@
           </div>
           <div class="col-md-6 order-md-1">
             <div class="pr-md-5">
-              <h1>Lovable widgets and cards</h1>
+              <h1>CRIE SEU CARDÁPIO</h1>
               <p>We love cards and everybody on the web seems to. We have gone above and beyond with options for you to organise your information. From cards designed for content, to pricing cards or user profiles, you will have many options to choose from.</p>
               <a href="./pages/widgets.html" class="font-weight-bold text-info mt-5">Explore widgets</a>
             </div>
           </div>
         </div>
-      </div>
-   
+      </div>   
     </section>
-    
-    <section class="py-6 bg-black"> 
+
+    <section class="py-6 bg-white">
       <div class="container">
         <div class="row row-grid align-items-center">
-          <div class="col-md-6 order-md-2">
-            <img src="{{asset('vendor/argon/assets/img/theme/landing-1.png')}}" class="img-fluid">
+          <div class="col-md-6">
+            <img src="{{asset('vendor/argon/assets/img/theme/landing-2.png')}}" class="img-fluid">
           </div>
-          <div class="col-md-6 order-md-1 ">
-            <div class="pr-md-5 ">
-              <h1 class="text-azul">Cadastre seu estabelecimento</h1>
-              <p class="text-azul">This dashboard comes with super cool features that are meant to help in the process. Handcrafted components, page examples and functional widgets are just a few things you will see and love at first sight.</p>
-              <ul class="list-unstyled mt-5">
-                <li class="py-2">
-                  <div class="d-flex align-items-center">
-                    <div>
-                      <div class="badge badge-circle badge-success mr-3">
-                        <i class="ni ni-settings-gear-65"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="mb-0 text-lilas">Carefully crafted components</h4>
-                    </div>
-                  </div>
-                </li>
-                <li class="py-2">
-                  <div class="d-flex align-items-center">
-                    <div>
-                      <div class="badge badge-circle badge-success mr-3">
-                        <i class="ni ni-html5"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="mb-0 text-lilas">Amazing page examples</h4>
-                    </div>
-                  </div>
-                </li>
-                <li class="py-2">
-                  <div class="d-flex align-items-center">
-                    <div>
-                      <div class="badge badge-circle badge-success mr-3">
-                        <i class="ni ni-satisfied"></i>
-                      </div>
-                    </div>
-                    <div>
-                      <h4 class="mb-0 text-lilas">Super friendly support team</h4>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+          <div class="col-md-6">
+            <div class="pr-md-5">
+              <h1> COMPARTILHE SEU CARDÁPIO</h1>
+              <p>If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages.</p>
+              <a href="./pages/examples/profile.html" class="font-weight-bold text-warning mt-5">Explore pages</a>
             </div>
           </div>
         </div>
       </div>
-    </section>   -->
+    </section> 
     
+       
   
-
-  <!-- <div class="main-content">
+    <section class="py-6 bg-default">
+  <div class="main-content">
     
     <div class="header  py-7 py-lg-8 pt-lg-9">
       <div class="container">
@@ -186,11 +150,11 @@
           </div>
         </div>
       </div>
-      <div class="separator separator-bottom separator-skew zindex-100">
+      <!-- <div class="separator separator-bottom separator-skew zindex-100">
         <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
         </svg>
-      </div>
+      </div> -->
     </div>
     
     <div class="container mt--8 pb-5">
@@ -248,7 +212,7 @@
                 <a href="#!" class="text-light">Request a demo</a>
               </div>
             </div>
-            <div class="card card-pricing bg-gradient-success zoom-in shadow-lg rounded border-0 text-center mb-4">
+            <div class="card card-pricing bg-gradient-primary zoom-in shadow-lg rounded border-0 text-center mb-4">
               <div class="card-header bg-transparent">
                 <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Alpha pack</h4>
               </div>
@@ -386,6 +350,6 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
    
-  
+  </section> 

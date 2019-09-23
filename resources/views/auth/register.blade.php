@@ -70,7 +70,7 @@
             </div> -->
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small class="font-weight-bold">Cadastre aqui seu negócio</small>
+                <!-- <small class="font-weight-bold">Cadastre aqui seu negócio</small> -->
               </div>
               <form method="POST" action="{{ route('register') }}">
                         @csrf
