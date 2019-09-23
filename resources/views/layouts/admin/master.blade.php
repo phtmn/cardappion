@@ -31,7 +31,7 @@
 
 
 
-<body class="bg-black">
+<body class="bg-black ">
   
 
   <!-- Main content -->

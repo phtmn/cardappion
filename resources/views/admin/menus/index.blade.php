@@ -9,11 +9,14 @@
                 <div class="col-lg-6 col-7">
                     <!-- <i class="ni ni-collection text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Menu</h3> -->
-                    <h1 class="display-4 text-white d-inline-block mb-0">  <i class="ni ni-collection text-white"></i> Menu</h1>
+                    <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+                                    <i class="ni ni-collection"></i>
+                                </div>
+                    <h1 class="display-4 text-white d-inline-block mb-0">  Menu</h1>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
 
-              <a href="#" class="btn btn-sm btn-neutral"> Total de Categorias ({{$data->count()}})</a>
+              <!-- <a href="#" class="btn btn-sm btn-neutral"> Total de Categorias ({{$data->count()}})</a> -->
             </div>
             </div>
         </div>

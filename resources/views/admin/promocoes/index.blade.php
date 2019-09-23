@@ -9,10 +9,13 @@
                 <div class="col-lg-6 col-7">
                     <!-- <i class="ni ni-notification-70 text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Promoções</h3> -->
-                    <h1 class="display-4 text-white d-inline-block mb-0">  <i class="ni ni-notification-70 text-white"></i> Promoções</h1>
+                    <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+                                    <i class="ni ni-notification-70"></i>
+                                </div>
+                    <h1 class="display-4 text-white d-inline-block mb-0"> Promoções</h1>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                <a href="#" class="btn btn-sm btn-neutral"> Total de Promoções ( {{$data->count()}} )</a>
+                <!-- <a href="#" class="btn btn-sm btn-neutral"> Total de Promoções ( {{$data->count()}} )</a> -->
                 </div>
             </div>
         </div>

@@ -7,7 +7,11 @@
                 <div class="col-lg-6 col-7">
                     <!-- <i class="ni ni-tv-2 text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Dashboard</h3> -->
-                    <h1 class="display-4 text-white d-inline-block mb-0">  <i class="ni ni-tv-2 text-white"></i> Dashboard</h1>
+                    <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+                                    <i class="ni ni-tv-2"></i>
+                                </div>
+                    <h1 class="display-4 text-white d-inline-block mb-0"> Dashboard</h1>
+                    
                 </div>
                 
             </div>
