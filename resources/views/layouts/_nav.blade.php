@@ -1,7 +1,7 @@
-<nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-black nav-stilo">
+<nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo">
   <div class="container">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon bg-primary"></span>
     </button>
     <a class="navbar-brand mx-auto" href="{{route('site')}}">
       <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}" alt="{{ config('app.name') }}" class="img-fluid"style="width:215px; height:50px">
@@ -78,21 +78,21 @@
       
         <li class="nav-item">
           <a class="nav-link nav-link-icon" href="https://www.facebook.com/#" target="_blank" >
-            <i class="fab fa-facebook-square"></i>
-            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+            <i class="fab fa-facebook-square text-default"></i>
+            <span class="nav-link-inner--text d-lg-none text-dark">Facebook</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-link-icon" href="https://www.instagram.com/#" target="_blank" >
-            <i class="fab fa-instagram"></i>
-            <span class="nav-link-inner--text d-lg-none">Instagram</span>
+            <i class="fab fa-instagram text-primary"></i>
+            <span class="nav-link-inner--text d-lg-none text-dark">Instagram</span>
           </a>
         </li>
 
         
         <li class="nav-item">          
           <a href="{{route('register')}}" class="btn btn-primary my-2 ">Cadastre-se</a>
-          <a href="{{route('login')}}" class="btn btn-secondary my-2 ">Acessar conta </a>
+          <a href="{{route('login')}}" class="btn btn-dark my-2 ">Acessar conta </a>
         </li> 
         
        

@@ -28,17 +28,17 @@
 
 </head>
 
-<body class="bg-black">
+<body class="bg-primary">
 @include('layouts._nav')
   <div class="main-content">
     <!-- Header -->
-    <div class="header bg-black pt-5 pb-7">
+    <div class="header bg-primary pt-5 pb-7">
       <div class="container">
         <div class="header-body text-center mb-4">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <!-- <h1 class="text-white">Bem vindo!</h1>
-              <p class="text-lead text-white">Utilize o formulario para entrar no painel.</p> -->
+              <h1 class="text-white">Bem vindo!</h1>
+              <p class="text-lead text-white">Utilize o formulário para acessar sua conta</p>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
       </div> -->
     </div>
     <!-- Page content -->
-    <div class="container mt--9 pb-5">
+    <div class="container mt--7 pb-5">
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-7">
           <!-- <div class="card bg-secondary border-0 mb-0"> -->
@@ -70,7 +70,7 @@
             </div> -->
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small class="font-weight-bold">Bem vindo!</small>
+                <!-- <small class="font-weight-bold">Bem vindo!</small> -->
               </div>
               <form role="form" action="{{ route('login') }}" method="POST">
                   @csrf
@@ -116,7 +116,7 @@
               <!-- <a href="#" class="text-light"><small>Esqueci a senha?</small></a> -->
             </div>
             <div class="col-6 text-right">
-              <a href="{{route('register')}}" class="text-azul"><small>Cadastre-se</small></a>
+              <a href="{{route('register')}}" class="text-white"><small>Cadastre-se</small></a>
             </div>
           </div>
         </div>
