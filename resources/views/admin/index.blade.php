@@ -168,7 +168,7 @@
               <div class="text-right ml-auto">
                 <button type="button" class="btn btn-sm btn-primary btn-icon">
                   <!-- <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> -->
-                  <span class="btn-inner--text">Atualizar</span>
+                  <span class="btn-inner--text">Mudar para PREMIUM</span>
                 </button>
               </div>
             
@@ -180,8 +180,8 @@
                 Neste Plano você pode:
 
               </p>
-                colocar imagem do plano
-              <img alt="Image placeholder" src="../../assets/img/theme/img-1-1000x600.jpg" class="img-fluid rounded">
+                
+              <img alt="Image placeholder" src="{{ asset('vendor/argon/assets/img/brand/master.png') }}" class="img-fluid rounded">
             
             
             </div>

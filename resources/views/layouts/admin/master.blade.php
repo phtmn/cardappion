@@ -71,7 +71,7 @@
     <script>
 
       $(document).ready(function() {
-        $('#telephone').mask('(00) 00000-0000');
+        $('#telephone').mask('(00) 0000-0000');
         $('#whatsapp').mask('(00) 00000-0000');
       });
 

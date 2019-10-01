@@ -94,8 +94,11 @@
           <div class="col-md-6">
             <div class="pr-md-5">
               <h1> CADASTRE SEU NEGÓCIO</h1>
-              <p>If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages.</p>
-              <a href="./pages/examples/profile.html" class="font-weight-bold text-warning mt-5">Explore pages</a>
+              <p>Nosso objetivo é melhorar seu negócio com soluções baseadas em cardápios digitais.
+
+              
+              </p>
+              <a href="{{route('register')}}" class="font-weight-bold text-warning mt-5">Cadastre-se</a>
             </div>
           </div>
         </div>
@@ -108,10 +111,11 @@
             <img src="{{asset('vendor/argon/assets/img/theme/landing-3.png')}}" class="img-fluid">
           </div>
           <div class="col-md-6 order-md-1">
-            <div class="pr-md-5">
-              <h1>CRIE SEU CARDÁPIO</h1>
-              <p>We love cards and everybody on the web seems to. We have gone above and beyond with options for you to organise your information. From cards designed for content, to pricing cards or user profiles, you will have many options to choose from.</p>
-              <a href="./pages/widgets.html" class="font-weight-bold text-info mt-5">Explore widgets</a>
+            <div class="pr-md-5 text-white">
+              <h1 class="text-white">CRIE SEU CARDÁPIO</h1>
+              <p> O cardappion é perfeito para o seu negócio, seja ele do tamanho que for. Informações e preços atualizadas de forma instantânea.</p>
+              
+              <!-- <a href="./pages/widgets.html" class="font-weight-bold text-info mt-5">Explore widgets</a> -->
             </div>
           </div>
         </div>
@@ -122,13 +126,13 @@
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6">
-            <img src="{{asset('vendor/argon/assets/img/theme/landing-2.png')}}" class="img-fluid">
+            {!! QrCode::size(400)->generate('www.cardappion.com.br'); !!}
           </div>
           <div class="col-md-6">
             <div class="pr-md-5">
               <h1> COMPARTILHE SEU CARDÁPIO</h1>
-              <p>If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example pages.</p>
-              <a href="./pages/examples/profile.html" class="font-weight-bold text-warning mt-5">Explore pages</a>
+              <p> Acesso aos itens que realmente estão sendo servidos no dia.</p>
+              <a href="{{route('login')}}" class="font-weight-bold text-warning mt-5">Acessar conta</a>
             </div>
           </div>
         </div>
@@ -145,7 +149,7 @@
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <h1 class="text-dark">Planos</h1>
+              <h1 class="text-white">Planos</h1>
             </div>
           </div>
         </div>
@@ -163,12 +167,48 @@
           <div class="pricing card-group flex-column flex-md-row mb-3">
             <div class="card card-pricing border-0 text-center mb-4">
               <div class="card-header bg-transparent">
-                <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">Bravo pack</h4>
+                <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">MASTER</h4>
               </div>
               <div class="card-body px-lg-7">
-                <div class="display-2">$49</div>
-                <span class="text-muted">per application</span>
+                <div class="display-2">R$ 0,00</div>
+                <span class="text-muted">por mês</span>
                 <ul class="list-unstyled my-4">
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                          <i class="fas fa-terminal"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">Cadastrar Produtos</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                          <i class="fas fa-terminal"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">Cadastrar Promoções</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                          <i class="fas fa-terminal"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">QR Code</span>
+                      </div>
+                    </div>
+                  </li>
                   <li>
                     <div class="d-flex align-items-center">
                       <div>
@@ -180,45 +220,19 @@
                         <span class="pl-2">Complete documentation</span>
                       </div>
                     </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
-                          <i class="fas fa-pen-fancy"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">Working materials in Sketch</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
-                          <i class="fas fa-hdd"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">2GB cloud storage</span>
-                      </div>
-                    </div>
-                  </li>
+                  </li> 
+                  
                 </ul>
-                <button type="button" class="btn btn-primary mb-3">Start free trial</button>
-              </div>
-              <div class="card-footer">
-                <a href="#!" class="text-light">Request a demo</a>
-              </div>
+                <button type="button" class="btn btn-primary mb-3">Cadastre-se</button>
+              </div>             
             </div>
             <div class="card card-pricing bg-gradient-primary zoom-in shadow-lg rounded border-0 text-center mb-4">
               <div class="card-header bg-transparent">
-                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Alpha pack</h4>
+                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">PREMIUM</h4>
               </div>
               <div class="card-body px-lg-7">
-                <div class="display-1 text-white">$199</div>
-                <span class="text-white">per application</span>
+                <div class="display-1 text-white">R$ 69,00</div>
+                <span class="text-white">por mês</span>
                 <ul class="list-unstyled my-4">
                   <li>
                     <div class="d-flex align-items-center">
@@ -257,16 +271,13 @@
                     </div>
                   </li>
                 </ul>
-                <button type="button" class="btn btn-secondary mb-3">Start free trial</button>
-              </div>
-              <div class="card-footer bg-transparent">
-                <a href="#!" class="text-white">Contact sales</a>
-              </div>
+                <button type="button" class="btn btn-secondary mb-3">Cadastre-se</button>
+              </div>             
             </div>
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-lg-center px-3 mt-5">
+      <!-- <div class="d-flex justify-content-lg-center px-3 mt-5">
         <div>
           <div class="icon icon-shape bg-gradient-white shadow rounded-circle text-primary">
             <i class="ni ni-building text-primary"></i>
@@ -275,8 +286,8 @@
         <div class="col-lg-6">
           <p class="text-white"><strong>The Arctic Ocean</strong> freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.</p>
         </div>
-      </div>
-      <div class="row row-grid justify-content-center">
+      </div> -->
+      <!-- <div class="row row-grid justify-content-center">
         <div class="col-lg-10">
           <div class="table-responsive">
             <table class="table table-dark mt-5">
@@ -348,7 +359,7 @@
             </table>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
    

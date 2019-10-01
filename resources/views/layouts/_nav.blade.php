@@ -65,6 +65,15 @@
                   </a>
                   <a href="" class="media d-flex align-items-center">
                     <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                      <i class="ni ni-world"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-dark mb-md-1">Blog</h6>
+                      <p class="description d-none d-md-inline-block mb-0">Todas as novidades em um único lugar.</p>
+                    </div>
+                  </a>
+                  <a href="" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
                       <i class="ni ni-email-83"></i>
                     </div>
                     <div class="media-body ml-3">
