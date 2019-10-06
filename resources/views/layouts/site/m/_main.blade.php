@@ -1,8 +1,4 @@
 <div class="main-content">
-
-
-
-
   <section class="py-6 mt--0 bg-black" id="sobre">
     <div class="container">
       <div class="row row-grid align-items-center">
@@ -28,6 +24,8 @@
 
             {{ $config->instagram ?? '' }}
             </br>
+
+           
 
             {{ $config->fanpage ?? '' }}
             </br>
@@ -121,7 +119,7 @@
           <div class="header-body text-center mb-7">
             <div class="row justify-content-center">
               <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-                <h1 class="text-white">Promoções</h1>
+                <h1 class="text-white"><i class="ni ni-notification-70"></i> Promoções</h1>
               </div>
             </div>
           </div>
@@ -139,7 +137,8 @@
                 <div class="card-body">
                   @foreach ($promotions as $promotion)
                   <ul class="list-group list-group-flush list my--3">
-                    <li class="list-group-item px-0" data-toggle="modal" data-target="#modal-promocao">
+                    <!-- <li class="list-group-item px-0" data-toggle="modal" data-target="#modal-promocao"> -->
+                    <li class="list-group-item px-0" >
                       <div class="row align-items-center">
                         <div class="col-auto">
                           <!-- Avatar -->
@@ -153,6 +152,8 @@
                           </h4>
                           <!-- <span class="text-success">●</span>
                       <small>Online</small> -->
+                      <h5><span class="badge badge-pill badge-danger"><a href="javascript:void(0)" class="text-dark detalhe-promocao" data-id="{{ $promotion->id }}"> <b style="text-transform: capitalize; "> Informações2 </b></a></span></h5>
+                      <!-- <h5><span class="badge badge-pill badge-danger"><a href="javascript:void(0)" class="text-dark detalhe-promocao" data-id="{{ $promotion->id }}"> <i class="ni ni-fat-add"></i><b style="text-transform: capitalize; "> Informações </b></a></span></h5> -->
                         </div>
                         <div class="col-auto">
                           <button type="button" class="btn btn-sm btn-primary">R$ {{ number_format($promotion->promotion_value,2,',','.')}}</button>
@@ -171,8 +172,55 @@
 
       </div>
     </div>
+
+    <div class="modal fade" id="kalahun-modal" tabindex="-1" role="dialog" aria-labelledby="modal-promocao" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<h2 class="modal-title  mb-2 text-right " id="nome"> </h2>
+					<h3>Resumo </h3>
+					
+					<h3>Objetivos</h3>
+					<p class="text-justify mt-3 mx-3" style="text-indent: 15px;" id="title"></p>
+
+					
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="alert alert-secondary text-center" role="alert">
+									<strong>Custo (R$)</strong> <b id="valor_projeto"> </b>
+								</div>
+
+							</div>
+							<div class="col">
+								<div class="alert alert-success text-center" role="alert">
+									<strong>Meta de Captação (R$)</strong> <b id="valor_meta"> </b>
+								</div>
+
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="col">
+								<div class="alert alert-default text-center" role="alert">
+									<strong>
+									</strong>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
     <!-- Modal  -->
-    <div class="modal fade" id="modal-promocao" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+    <!-- <div class="modal fade" id="modal-promocao" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true"> -->
       <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -182,6 +230,7 @@
             </button>
           </div>
           <div class="modal-body">
+            <p class="text-justify mt-3 mx-3" style="text-indent: 15px;" id="title"></p>
             <p>{{ $promotion->title }}</p>
             <p><img alt="Image placeholder" style="width: 50px;" class="img-fluid rounded shadow" src="{{ url($promotion->image) }}"></p>
             <p>{{ $promotion->details }}</p>
@@ -193,3 +242,6 @@
         </div>
       </div>
   </section>
+
+
+
