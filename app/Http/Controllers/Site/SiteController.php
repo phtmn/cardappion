@@ -26,10 +26,22 @@ class SiteController extends Controller
     return view('client.promotion', compact('promotion'));
   }
 
-  public function detalhe_promocao($slug)
+  public function detalhe_promocao2($slug)
   {
 
     $promotion = Promotion::where('url', '=', $slug)->first();
+    //dd($promotion);
+    return response()->json($promotion);
+
+    // return view('client.promotion', compact('promotion'));
+  }
+
+  public function detalhe_promocao($token)
+  {
+
+    $tenant = Tenant::where('token', $token)->firstOrFail();
+    // $promotions = $tenant->promotions()->where('active', true)->get();
+    $promotion = Promotion::where('url', '=', $token)->first();
     //dd($promotion);
     return response()->json($promotion);
 

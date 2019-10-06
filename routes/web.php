@@ -6,7 +6,7 @@ Route::name('site.menu.show')->get('/m/{token}', 'Site\SiteController@show');
 Route::get('promo/{slug}', 'Site\SiteController@promocao')->name('promo');
 Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
 
-Route::get('/m/{slug}/{id}','Site\SiteController@detalhe_promocao')->name('detalhe.promocao');
+Route::get('/m/{token}/{id}','Site\SiteController@detalhe_promocao')->name('detalhe.promocao');
 
 // Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('product.detail');
 

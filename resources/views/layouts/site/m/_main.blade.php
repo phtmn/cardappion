@@ -40,7 +40,7 @@
   </section>
 
 
-  <section class="py-6 bg-primary" id="menu">
+  <section class="py-6 bg-danger" id="menu">
     <div class="main-content">
 
       <div class="header  py-7 py-lg-8 pt-lg-9">
@@ -48,7 +48,7 @@
           <div class="header-body text-center mb-7">
             <div class="row justify-content-center">
               <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-                <h1 class="text-white">Menu</h1>
+                <h1 class="text-white"> <i class="ni ni-collection"></i> Menu</h1>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
             @foreach ($categories as $category)
             <p>
               <div class="alert alert-white alert-dismissible fade show" role="alert" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <span class="alert-inner--icon"><i class="ni ni-collection"></i></span>
+                <span class="alert-inner--icon"><i class="ni ni-ungroup "></i></span>
                 <span class="alert-inner--text"><strong>{{ $category->description }} </strong> </span>
                
               </div>
@@ -130,10 +130,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="pricing card-group flex-column flex-md-row mb-3">
-              <div class="card card-pricing border-0 mb-4">
-                <!-- <div class="card-header bg-transparent">
-                <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">MASTER</h4>
-              </div> -->
+              <div class="card card-pricing border-0 mb-4">               
                 <div class="card-body">
                   @foreach ($promotions as $promotion)
                   <ul class="list-group list-group-flush list my--3">
@@ -173,7 +170,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="kalahun-modal" tabindex="-1" role="dialog" aria-labelledby="modal-promocao" aria-hidden="true">
+    <div class="modal fade" id="modal-promocao" tabindex="-1" role="dialog" aria-labelledby="modal-promocao" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -181,66 +178,16 @@
 						<span aria-hidden="true">×</span>
 					</button>
 				</div>
-				<div class="modal-body">
-					<h2 class="modal-title  mb-2 text-right " id="nome"> </h2>
-					<h3>Resumo </h3>
-					
+				<div class="modal-body">	
+        <img alt="Image placeholder" style="width: 150px;" class="img-fluid rounded shadow" src="{{ url($promotion->image) }}">				
+					<h3>Resumo </h3>					
 					<h3>Objetivos</h3>
 					<p class="text-justify mt-3 mx-3" style="text-indent: 15px;" id="title"></p>
-
-					
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="alert alert-secondary text-center" role="alert">
-									<strong>Custo (R$)</strong> <b id="valor_projeto"> </b>
-								</div>
-
-							</div>
-							<div class="col">
-								<div class="alert alert-success text-center" role="alert">
-									<strong>Meta de Captação (R$)</strong> <b id="valor_meta"> </b>
-								</div>
-
-							</div>
-						</div>
-						<div class="row">
-
-							<div class="col">
-								<div class="alert alert-default text-center" role="alert">
-									<strong>
-									</strong>
-								</div>
-
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 
-    <!-- Modal  -->
-    <!-- <div class="modal fade" id="modal-promocao" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true"> -->
-      <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h6 class="modal-title" id="modal-title-default">Promoções</h6>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <p class="text-justify mt-3 mx-3" style="text-indent: 15px;" id="title"></p>
-            <p>{{ $promotion->title }}</p>
-            <p><img alt="Image placeholder" style="width: 50px;" class="img-fluid rounded shadow" src="{{ url($promotion->image) }}"></p>
-            <p>{{ $promotion->details }}</p>
-          </div>
-          <div class="modal-footer">
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            <button type="button" class="btn btn-primary">R$ {{ number_format($promotion->promotion_value,2,',','.')}}</button>
-          </div>
-        </div>
-      </div>
+   
   </section>
 
 
