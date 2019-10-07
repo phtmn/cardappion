@@ -1,13 +1,15 @@
 <div class="main-content">
-  <section class="py-6 mt--0 bg-black" id="sobre">
+  <section class="py-6 mt--0 bg-white" id="sobre">
     <div class="container">
+
       <div class="row row-grid align-items-center">
+
         <div class="col-md-6 order-md-2">
           <!-- <img src="{{asset('vendor/argon/assets/img/theme/landing-3.png')}}" class="img-fluid"> -->
         </div>
         <div class="col-md-6 order-md-1">
-          <div class="pr-md-5 text-white">
-            <h1 class="text-white">{{ $tenant->name }}</h1>
+          <div class="pr-md-5 text-dark">
+            <h1 class="text-dark">{{ $tenant->name }}</h1>
 
             {{ $config->address ?? '' }}, {{ $config->neighborhood ?? '' }}
             </br>
@@ -25,7 +27,7 @@
             {{ $config->instagram ?? '' }}
             </br>
 
-           
+
 
             {{ $config->fanpage ?? '' }}
             </br>
@@ -40,7 +42,7 @@
   </section>
 
 
-  <section class="py-6 bg-danger" id="menu">
+  <section class="py-6 bg-warning" id="menu">
     <div class="main-content">
 
       <div class="header  py-7 py-lg-8 pt-lg-9">
@@ -63,18 +65,62 @@
               <div class="alert alert-white alert-dismissible fade show" role="alert" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 <span class="alert-inner--icon"><i class="ni ni-ungroup "></i></span>
                 <span class="alert-inner--text"><strong>{{ $category->description }} </strong> </span>
-               
+
               </div>
               <!-- <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 {{ $category->description }}
               </a> -->
+
               <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
     Button with data-target
   </button> -->
             </p>
             <div class="collapse" id="collapseExample">
               <div class="card card-body">
-                Anim pariatur cliche reprehenderit.
+                <ul class="list-group list-group-flush list my--3">
+                  <li class="list-group-item px-0">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+
+                        <img alt="Image placeholder" style="width: 50px;" class="img-fluid rounded shadow" src="">
+
+                      </div>
+                      <div class="col ml--2">
+                        <h4 class="mb-0">
+                          blablablabla
+                        </h4>
+                        <button type="button" class="btn btn-sm btn-danger">R$ 10</button>
+
+                      </div>
+                      <div class="col-auto">
+                        <!-- <button type="button" class="btn btn-sm btn-primary">R$ 10</button> -->
+                      </div>
+                    </div>
+                    <p></p>
+                  </li>
+                  <li class="list-group-item px-0">
+                    <div class="row align-items-center">
+                      <div class="col-auto">
+                        <!-- Avatar -->
+
+                        <img alt="Image placeholder" style="width: 50px;" class="img-fluid rounded shadow" src="">
+
+                      </div>
+                      <div class="col ml--2">
+                        <h4 class="mb-0">
+                          blablablabla
+                        </h4>
+                        <button type="button" class="btn btn-sm btn-danger">R$ 10</button>
+
+                      </div>
+                      <div class="col-auto">
+                        <!-- <button type="button" class="btn btn-sm btn-primary">R$ 10</button> -->
+                      </div>
+                    </div>
+                    <p></p>
+                  </li>
+                </ul>
               </div>
             </div>
             @endforeach
@@ -111,84 +157,82 @@
 
 
 
-  <section class="py-6 bg-default" id="promocoes">
+  <section class="py-0 bg-white" id="promocoes">
     <div class="main-content">
-
-      <div class="header  py-7 py-lg-8 pt-lg-9">
+      <div class="header  py-5 py-lg-8 pt-lg-9">
         <div class="container">
-          <div class="header-body text-center mb-7">
+          <div class="header-body text-center mb-0">
             <div class="row justify-content-center">
-              <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-                <h1 class="text-white"><i class="ni ni-notification-70"></i> Promoções</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mt--8 pb-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="pricing card-group flex-column flex-md-row mb-3">
-              <div class="card card-pricing border-0 mb-4">               
-                <div class="card-body">
-                  @foreach ($promotions as $promotion)
-                  <ul class="list-group list-group-flush list my--3">
-                    <!-- <li class="list-group-item px-0" data-toggle="modal" data-target="#modal-promocao"> -->
-                    <li class="list-group-item px-0" >
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-                          <!-- Avatar -->
-
-                          <img alt="Image placeholder" style="width: 50px;" class="img-fluid rounded shadow" src="{{ url($promotion->image) }}">
-
-                        </div>
-                        <div class="col ml--2">
-                          <h4 class="mb-0">
-                            {{ $promotion->title }}
-                          </h4>
-                          <!-- <span class="text-success">●</span>
-                      <small>Online</small> -->
-                      <h5><span class="badge badge-pill badge-danger"><a href="javascript:void(0)" class="text-dark detalhe-promocao" data-id="{{ $promotion->id }}"> <b style="text-transform: capitalize; "> Informações2 </b></a></span></h5>
-                      <!-- <h5><span class="badge badge-pill badge-danger"><a href="javascript:void(0)" class="text-dark detalhe-promocao" data-id="{{ $promotion->id }}"> <i class="ni ni-fat-add"></i><b style="text-transform: capitalize; "> Informações </b></a></span></h5> -->
-                        </div>
-                        <div class="col-auto">
-                          <button type="button" class="btn btn-sm btn-primary">R$ {{ number_format($promotion->promotion_value,2,',','.')}}</button>
-                        </div>
-                      </div>
-                      <p></p>
-                    </li>
-                  </ul>
-                  @endforeach
+              <div class="col-xl-5 col-lg-6 col-md-8 px-5 ">
+                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                  <i class="ni ni-notification-70"></i>
                 </div>
+                <h2 class="text-dark"> Promoções</h2>
               </div>
-
             </div>
+            <div class="row justify-content-center mt-4">
+            <div class="col-lg-10">
+                @foreach($promotions->chunk(3) as $promotion)
+                    <div class="row row-grid">
+                        @foreach($promotions as $promotion)
+                            <div class="col-lg-4">
+                                
+                                    <div class="card card-lift--hover shadow border-0 bg-white-default">
+									
+                                        <div class="card-body py-4">
+											
+                                        {{ $promotion->title }}
+                                            
+                                        </div>
+                                      
+                                    </div>
+                                
+                            </div>
+                        @endforeach
+                    </div>
+                @endforeach
+            </div>
+        </div>
           </div>
         </div>
-
       </div>
-    </div>
-
-    <div class="modal fade" id="modal-promocao" tabindex="-1" role="dialog" aria-labelledby="modal-promocao" aria-hidden="true">
-		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">	
-        <img alt="Image placeholder" style="width: 150px;" class="img-fluid rounded shadow" src="{{ url($promotion->image) }}">				
-					<h3>Resumo </h3>					
-					<h3>Objetivos</h3>
-					<p class="text-justify mt-3 mx-3" style="text-indent: 15px;" id="title"></p>
-				</div>
-			</div>
-		</div>
-
-   
+     
+      
+      
+          
   </section>
 
 
 
+
+  <!-- <div class="container mt--8 pb-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 ">
+            @foreach($promotions->chunk(3) as $promotion)
+              <div class="row row-grid">
+                @forelse ($promotions as $promotion)
+                    <div class="col-lg-3">
+                      <div class="pricing card-group flex-column flex-md-row mb-3">
+                        <div class="card">                      
+                            <img class="card-img-top" src="{{ url($promotion->image) }}" alt="Image placeholder">                      
+                            <div class="card-body">
+                              <h5 class="h2 card-title mb-0">{{ $promotion->title }}</h5>
+                              <small class="text-muted"><span class="badge badge-dot mr-4">
+                                  <i class="bg-success"></i>
+                                  <span class="status">disponível</span>
+                              </small>
+                              <p class="card-text mt-4">{{ $promotion->details }}</p>
+                              <b class="px-0 text-warning">R$ {{ number_format($promotion->promotion_value,2,',','.')}}</b>
+                            </div>
+                            @empty
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">                      
+                              <span class="alert-text"><strong>Nenhuma</strong> promoção cadastrada!</span>
+                            </div>
+                  @endforelse                     
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+      </div>
+   -->

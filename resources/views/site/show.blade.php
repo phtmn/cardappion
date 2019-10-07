@@ -63,6 +63,9 @@
 		})
 	});
 
+  $('.item-category').on('click', function() {
+      var url = $(this).data('route');
+
 	$(document).ready(function() {
 		$('#valor').mask('#.##0,00', {
 			reverse: true
