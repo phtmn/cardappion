@@ -1,15 +1,15 @@
 @extends('layouts.admin.master')
 @section('cabecalho')
-<div class="header bg-black pb-6">
+<div class="header bg-white pb-6">
   <div class="container-fluid">
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
 
-          <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+          <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
             <i class="ni ni-tv-2"></i>
           </div>
-          <h1 class="display-4 text-white d-inline-block mb-0"> Dashboard</h1>
+          <h3 class="display-5 text-dark d-inline-block mb-0"> Dashboard</h3>
 
         </div>
 
@@ -36,7 +36,7 @@
                 <span class="h2 font-weight-bold mb-0">Perfil</span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-badge"></i>
                 </div>
               </div>
@@ -60,7 +60,7 @@
                 <span class="h2 font-weight-bold mb-0">Produtos</span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-bullet-list-67"></i>
                 </div>
               </div>
@@ -84,7 +84,7 @@
                 <span class="h2 font-weight-bold mb-0">Promoções</span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-notification-70"></i>
                 </div>
               </div>
@@ -108,7 +108,7 @@
                 <span class="h2 font-weight-bold mb-0">Menu</span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-collection"></i>
                 </div>
               </div>
@@ -130,14 +130,14 @@
             
                 
                     
-                        <span class="nav-link-text text-primary"> Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span> </span>
+                        <span class="nav-link-text text-warning"> Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span> </span>
                         
                         <small class="d-block text-muted font-weight-900">{{ Auth::user()->tenant->name }}</small>
             </div>
             
             <div class="card-header d-flex align-items-center">
               <div class="d-flex align-items-center">
-              <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+              <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-email-83"></i>
                 </div>
                 <div class="mx-3">
@@ -157,7 +157,7 @@
             </div>
             <div class="card-header d-flex align-items-center">
               <div class="d-flex align-items-center">
-              <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+              <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-paper-diploma"></i>
                 </div>
                 <div class="mx-3">
@@ -166,7 +166,7 @@
                 </div>
               </div>
               <div class="text-right ml-auto">
-                <button type="button" class="btn btn-sm btn-primary btn-icon">
+                <button type="button" class="btn btn-sm btn-dark btn-icon">
                   <!-- <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> -->
                   <span class="btn-inner--text">Mudar para PREMIUM</span>
                 </button>
@@ -195,10 +195,10 @@
             <div class="card-header">
             <a  href="{{ Auth::user()->tenant->url_token }}"  target="_blank" class="media d-flex align-items-center">
                 <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
-                                    <i class="ni ni-world-2 text-primary"></i>
+                                    <i class="ni ni-world-2 text-warning"></i>
                                 </div>
                     
-                        <span class="nav-link-text text-primary">Landing Page </span>
+                        <span class="nav-link-text text-warning">Landing Page </span>
                         </a>
                         <small class="d-block text-muted font-weight-900">{{ Auth::user()->tenant->url_token }}</small>
                         <hr> <b>DICA 1:</b> Compartilhe o <b> <i> link </b> </i> de sua Landing Page para seus clientes em

@@ -2,7 +2,7 @@
 
   <div class="main-content">
     <!-- Header -->
-    <div class="header bg-primary pt-5 pb-7">
+    <div class="header bg-white pt-5 pb-7">
       <div class="container">
         <div class="header-body">
           <div class="row align-items-center">
@@ -11,8 +11,8 @@
               </div>
             <div class="col-lg-10">
               <div class="pr-5">
-                <h1 class="display-1 text-white font-weight-bold mb-0">Soluções em Cardápios Digitais </h1>
-                <h2 class="display-4 text-white font-weight-light">Todos os cardápios e promoções em um único lugar.</h2>
+                <h1 class="display-1 text-dark font-weight-bold mb-0">Soluções em Cardápios Digitais </h1>
+                <h2 class="display-4 text-dark font-weight-light">Todos os cardápios e promoções em um único lugar.</h2>
                 
                 <div class="mt-5">
                 <!-- <p class="lead text-white">
@@ -44,16 +44,16 @@
       </div>
     
     </section> -->
-    <section class="section section-lg pt-lg-0 mt--7 bg-primary">
+    <section class="section section-lg pt-lg-0 mt--7 bg-warning">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="row">
               <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-0 bg-azul">
+                <div class="card card-lift--hover shadow border-0 bg-warning">
                   <div class="card-body py-5">
                     
-                    <h4 class="h3 text-primary text-center text-uppercase">Cadastre seu negócio</h4>
+                    <h4 class="h3 text-white text-center text-uppercase">Cadastre seu negócio</h4>
                     
                   
                   </div>
@@ -73,7 +73,7 @@
                 <div class="card card-lift--hover shadow border-0 bg-lilas">
                   <div class="card-body py-5">
                     
-                    <h4 class="h3 text-primary text-center text-uppercase">Compartilhe seu cardápio</h4>
+                    <h4 class="h3 text-warning text-center text-uppercase">Compartilhe seu cardápio</h4>
                    
                   </div>
                 </div>
@@ -82,6 +82,7 @@
           </div>
         </div>
       </div>
+      
       </div>
     </section>
     
@@ -93,7 +94,11 @@
           </div>
           <div class="col-md-6">
             <div class="pr-md-5">
-              <h1> CADASTRE SEU NEGÓCIO</h1>
+            <div class="alert alert-warning" role="alert">
+              <span class="alert-icon"><i class="ni ni-building"></i></span>
+              <span class="alert-text"><strong>CADASTRE</strong> seu negócio</span>
+          </div>
+              <!-- <h1> CADASTRE SEU NEGÓCIO</h1> -->
               <p>Nosso objetivo é melhorar seu negócio com soluções baseadas em cardápios digitais.
 
               
@@ -112,7 +117,11 @@
           </div>
           <div class="col-md-6 order-md-1">
             <div class="pr-md-5 text-white">
-              <h1 class="text-white">CRIE SEU CARDÁPIO</h1>
+            <div class="alert alert-white" role="alert">
+              <span class="alert-icon"><i class="ni ni-collection"></i></span>
+              <span class="alert-text"><strong>CRIE</strong> seu cardápio</span>
+          </div>
+              <!-- <h1 class="text-white">CRIE SEU CARDÁPIO</h1> -->
               <p> O cardappion é perfeito para o seu negócio, seja ele do tamanho que for. Informações e preços atualizadas de forma instantânea.</p>
               
               <!-- <a href="./pages/widgets.html" class="font-weight-bold text-info mt-5">Explore widgets</a> -->
@@ -130,9 +139,13 @@
           </div>
           <div class="col-md-6">
             <div class="pr-md-5">
-              <h1> COMPARTILHE SEU CARDÁPIO</h1>
+            <div class="alert alert-white" role="alert">
+              <span class="alert-icon text-warning"><i class="ni ni-world-2"></i></span>
+              <span class="alert-text text-warning"><strong>COMPARTILHE</strong> seu cardápio</span>
+          </div>
+              <!-- <h1> COMPARTILHE SEU CARDÁPIO</h1> -->
               <p> Acesso aos itens que realmente estão sendo servidos no dia.</p>
-              <a href="{{route('login')}}" class="font-weight-bold text-warning mt-5">Acessar conta</a>
+              <a href="{{route('login')}}" class="font-weight-bold text-dark mt-5">Acessar conta</a>
             </div>
           </div>
         </div>
@@ -141,7 +154,7 @@
     
        
   
-    <section class="py-6 bg-default">
+    <section class="py-0 bg-dark">
   <div class="main-content">
     
     <div class="header  py-7 py-lg-8 pt-lg-9">
@@ -223,10 +236,10 @@
                   </li> 
                   
                 </ul>
-                <button type="button" class="btn btn-primary mb-3">Cadastre-se</button>
+                <button type="button" class="btn btn-warning mb-3">Cadastre-se</button>
               </div>             
             </div>
-            <div class="card card-pricing bg-gradient-primary zoom-in shadow-lg rounded border-0 text-center mb-4">
+            <div class="card card-pricing bg-gradient-dark zoom-in shadow-lg rounded border-0 text-center mb-4">
               <div class="card-header bg-transparent">
                 <h4 class="text-uppercase ls-1 text-white py-3 mb-0">PREMIUM</h4>
               </div>

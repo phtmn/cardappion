@@ -2,17 +2,17 @@
 
 @section('cabecalho')
 
-<div class="header bg-black pb-6">
+<div class="header bg-white pb-6">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
                     <!-- <i class="ni ni-notification-70 text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Promoções</h3> -->
-                    <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                                     <i class="ni ni-notification-70"></i>
                                 </div>
-                    <h1 class="display-4 text-white d-inline-block mb-0"> Promoções</h1>
+                    <h3 class="display-5 text-dark d-inline-block mb-0"> Promoções</h3>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
                 <!-- <a href="#" class="btn btn-sm btn-neutral"> Total de Promoções ( {{$data->count()}} )</a> -->
@@ -34,7 +34,7 @@
                     <div class="card-header">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <a href="{{route('promotions.create')}}" class="btn btn-success"> <i class=" fa fa-plus nav-icon"></i> Adicionar Promoção </a>
+                                <a href="{{route('promotions.create')}}" class="btn btn-dark"> <i class=" fa fa-plus nav-icon"></i> Adicionar Promoção </a>
                             </div>
                             <div class="col-4 text-right">
 

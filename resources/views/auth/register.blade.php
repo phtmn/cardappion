@@ -27,18 +27,18 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
-<body class="bg-primary">
+<body class="bg-warning">
 @include('layouts._nav')
 
   <div class="main-content">
     <!-- Header -->
-    <div class="header bg-primary pt-5 pb-7">
+    <div class="header bg-white pt-5 pb-7">
       <div class="container">
         <div class="header-body text-center mb-4">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <h1 class="text-white">Cadastre aqui seu negócio!</h1>
-              <p class="text-lead text-white">Utilize o formulário para cadastrar sua conta.</p>
+              <h1 class="text-dark">Cadastre aqui seu negócio!</h1>
+              <p class="text-lead text-dark">Utilize o formulário para cadastrar sua conta.</p>
             </div>
           </div>
         </div>
@@ -151,8 +151,8 @@
 
                         
                             <div class="text-center">
-                                <button type="submit" class="btn btn-azul">
-                                    {{ __('Cadastrar') }}
+                                <button type="submit" class="btn btn-warning my-2">
+                                    {{ __('Cadastre-se') }}
                                 </button>
                             </div>
                         
@@ -165,7 +165,7 @@
               <!-- <a href="#" class="text-light"><small>Esqueci a senha?</small></a> -->
             </div>
             <div class="col-6 text-right">
-              <a href="{{route('login')}}" class="text-white"><small>Acessar conta</small></a>
+              <a href="{{route('login')}}" class="text-white"><small><b>Acessar conta</b></small></a>
             </div>
           </div>
         </div>
