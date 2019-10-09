@@ -161,14 +161,14 @@
                   <i class="ni ni-paper-diploma"></i>
                 </div>
                 <div class="mx-3">
-                  <a href="#" class="text-dark font-weight-600 text-sm">Você possui um Plano</a>
+                  <a href="#" class="text-dark font-weight-600 text-sm">Você possui o Plano</a>
                   <small class="d-block text-muted">MASTER</small>
                 </div>
               </div>
               <div class="text-right ml-auto">
                 <button type="button" class="btn btn-sm btn-dark btn-icon">
                   <!-- <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> -->
-                  <span class="btn-inner--text">Mudar para PREMIUM</span>
+                  <span class="btn-inner--text">Alterar Plano</span>
                 </button>
               </div>
             
@@ -199,8 +199,17 @@
                                 </div>
                     
                         <span class="nav-link-text text-warning">Landing Page </span>
+                        <div class="text-right ml-auto">
+                <button type="button" class="btn btn-sm btn-dark btn-icon">
+                  <!-- <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> -->
+                  <span class="btn-inner--text">Alterar Link</span>
+                </button>
+              </div>
                         </a>
+                        <div class="mx-3">
                         <small class="d-block text-muted font-weight-900">{{ Auth::user()->tenant->url_token }}</small>
+</div>
+                       
                         <hr> <b>DICA 1:</b> Compartilhe o <b> <i> link </b> </i> de sua Landing Page para seus clientes em
                         <i class="fab fa-facebook-square text-default"></i>                         
                         <i class="fab fa-instagram text-primary"></i>

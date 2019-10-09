@@ -1,6 +1,6 @@
 <div class="row">
   <div class="form-group col-md-12">
-    <label for="" >Nome do categoria</label>
+    <label for="" >Nome da categoria</label>
     <input type="text" name="description" class="form-control" required>
   </div>
 

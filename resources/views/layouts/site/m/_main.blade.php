@@ -42,7 +42,7 @@
   </section>
 
 
-  <section class="py-6 bg-warning" id="menu">
+  <section class="py-6 bg-gradient-warning" id="menu">
     <div class="main-content">
 
       <div class="header  py-7 py-lg-8 pt-lg-9">
