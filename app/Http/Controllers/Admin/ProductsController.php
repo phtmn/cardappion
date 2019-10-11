@@ -12,7 +12,6 @@ class ProductsController extends Controller
 {
   public function index()
   {
-
     return view('admin.products.index', [
       'data' => $data = Product::all()
     ]);
@@ -25,7 +24,6 @@ class ProductsController extends Controller
 
   public function store(Request $request)
   {
-    
     try {
       $product = $request->all();
       // $product['url']   = Str::random(5);
@@ -35,10 +33,9 @@ class ProductsController extends Controller
       }
 
       if ($request->price) {
-     
-        // $promotion['promotion_value'] = $request->promotion_value;  
-        $product['price'] = str_replace(',','.',str_replace('.','',$request->price));
-                               
+
+        // $promotion['promotion_value'] = $request->promotion_value;
+        $product['price'] = str_replace(',', '.', str_replace('.', '', $request->price));
       }
 
       Product::create($product);
@@ -47,6 +44,30 @@ class ProductsController extends Controller
     } catch (\Exception $e) {
       return redirect()->back()->with('error', 'Ocorreu um Erro: ' . $e->getMessage());
     }
+  }
+
+  public function edit($id)
+  {
+    $product = Product::findOrFail($id);
+
+    return view('admin.products.edit', compact('product'));
+  }
+
+  public function update(Request $request, $id)
+  {
+    $product = Product::findOrFail($id);
+
+    if ($request->hasFile('image')) {
+      $product['image'] = $request->image->move('products');
+    }
+
+    $product['title'] = $request->title;
+    $product['price'] = $request->price;
+    $product['details'] = $request->details;
+
+    $product->save();
+
+    return redirect()->route('products.index');
   }
 
   public function activate($id)
