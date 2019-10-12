@@ -1,8 +1,16 @@
 <div class="main-content">
-  <section class="py-6 mt--0 bg-white" id="sobre">
+  <section class="py-6 mt-4 bg-white" id="sobre">
     <div class="container">
 
       <div class="row row-grid align-items-center">
+      <div class="row justify-content-center ">
+              <div class="col-xl-5 col-lg-6 col-md-8 px-5 ">
+                <div class="icon icon-shape bg-danger rounded-circle text-white">
+                  <i class="ni ni-building"></i>
+                </div>
+                <h3 class="text-dark"> Sobre Nós</h3>
+              </div>
+            </div>
 
         <div class="col-md-6 order-md-2">
           <!-- <img src="{{asset('vendor/argon/assets/img/theme/landing-3.png')}}" class="img-fluid"> -->
@@ -42,7 +50,7 @@
   </section>
 
 
-  <section class="py-6 bg-gradient-warning" id="menu">
+  <section class="py-6 bg-gradient-danger" id="menu">
     <div class="main-content">
 
       <div class="header  py-7 py-lg-8 pt-lg-9">
@@ -164,8 +172,9 @@
           <div class="header-body text-center mb-0">
             <div class="row justify-content-center">
               <div class="col-xl-5 col-lg-6 col-md-8 px-5 ">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                <div class="icon icon-shape bg-warning rounded-circle text-white">
                   <i class="ni ni-notification-70"></i>
+                  
                 </div>
                 <h2 class="text-dark"> Promoções</h2>
               </div>

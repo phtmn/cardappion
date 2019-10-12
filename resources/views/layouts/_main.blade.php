@@ -44,39 +44,52 @@
       </div>
     
     </section> -->
-    <section class="section section-lg pt-lg-0 mt--7 bg-gradient-warning">
+    <section class="section section-lg pt-lg-0 mt--7 bg-white">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="row">
               <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-0 bg-warning">
-                  <div class="card-body py-5">
-                    
-                    <h4 class="h3 text-white text-center text-uppercase">Cadastre seu negócio</h4>
-                    
-                  
+                <div class="card card-lift--hover shadow border-0 bg-danger">
+                  <div class="card-body py-5">                    
+                    <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-building"></i></span>
+                    <span class="alert-text text-white"><strong> CADASTRE</strong> seu negócio</span>
+                    <!-- <div>
+                      <span class="badge badge-pill badge-primary">design</span>
+                      <span class="badge badge-pill badge-primary">system</span>
+                      <span class="badge badge-pill badge-primary">creative</span>
+                    </div>
+                    <center> <a href="#" class="btn btn-white mt-4 text-danger">é simples,</a>    </center> -->
                   </div>
                 </div>
               </div>
               <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-6 bg-dark">
-                  <div class="card-body py-5">
-                    
-                    <h4 class="h3 text-white text-center text-uppercase">Crie seu cardápio</h4>
-                  
-                  
+                <div class="card card-lift--hover shadow border-6 bg-gradient-danger">
+                  <div class="card-body py-5">                    
+                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
+                  <span class="alert-text text-white"><strong>CRIE</strong> seu cardápio</span>
+                  <!-- <div class="mt-2">
+                      <span class="badge badge-pill badge-primary">design</span>
+                      <span class="badge badge-pill badge-primary">system</span>
+                      <span class="badge badge-pill badge-primary">creative</span>
+                    </div>
+                    <center> <a href="#" class="btn btn-white mt-4 text-danger">é rápido</a> </center> -->
                   </div>
                 </div>
               </div>
               <div class="col-lg-4">
-                <div class="card card-lift--hover shadow border-0 bg-lilas">
+                <div class="card card-lift--hover shadow border-0 bg-gradient-warning">                
                   <div class="card-body py-5">
-                    
-                    <h4 class="h3 text-warning text-center text-uppercase">Compartilhe seu cardápio</h4>
-                   
-                  </div>
-                </div>
+                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i class="ni ni-world-2"></i></span>
+                  <span class="alert-text text-white"><strong>COMPARTILHE</strong> seu cardápio</span>   
+                  <!-- <div>
+                      <span class="badge badge-pill badge-primary">design</span>
+                      <span class="badge badge-pill badge-primary">system</span>
+                      <span class="badge badge-pill badge-primary">creative</span>
+                    </div>
+                    <center>  <a href="#" class="btn btn-white mt-4 text-warning ">e fácil</a>     </center>            -->
+                  </div>                  
+                </div>                
               </div>
             </div>
           </div>
@@ -85,18 +98,19 @@
       
       </div>
     </section>
-    
+
+       
     <section class="py-6 bg-white">
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6">
-            <img src="{{asset('vendor/argon/assets/img/theme/landing-2.png')}}" class="img-fluid">
+            <img src="{{asset('vendor/argon/assets/img/theme/cad_1.png')}}" class="img-fluid floating">
           </div>
           <div class="col-md-6">
             <div class="pr-md-5">
-            <div class="alert alert-warning" role="alert">
-              <span class="alert-icon"><i class="ni ni-building"></i></span>
-              <span class="alert-text"><strong>CADASTRE</strong> seu negócio</span>
+            <div class="alert alert-danger" role="alert">
+              <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-building"></i></span>
+              <span class="alert-text"><strong> CADASTRE</strong> seu negócio</span>
           </div>
               <!-- <h1> CADASTRE SEU NEGÓCIO</h1> -->
               <p>Nosso objetivo é melhorar seu negócio com soluções baseadas em cardápios digitais.
@@ -109,16 +123,17 @@
         </div>
       </div>
     </section> 
-    <section class="py-6 bg-black">
+
+    <section class="py-6 bg-white">
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6 order-md-2">
-            <img src="{{asset('vendor/argon/assets/img/theme/landing-3.png')}}" class="img-fluid">
+            <img src="{{asset('vendor/argon/assets/img/theme/cad_3.png')}}" class="img-fluid floating">
           </div>
           <div class="col-md-6 order-md-1">
-            <div class="pr-md-5 text-white">
-            <div class="alert alert-white" role="alert">
-              <span class="alert-icon"><i class="ni ni-collection"></i></span>
+            <div class="pr-md-5 text-dark">
+            <div class="alert alert-danger bg-gradient-danger" role="alert">
+              <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
               <span class="alert-text"><strong>CRIE</strong> seu cardápio</span>
           </div>
               <!-- <h1 class="text-white">CRIE SEU CARDÁPIO</h1> -->
@@ -134,14 +149,14 @@
     <section class="py-6 bg-white">
       <div class="container">
         <div class="row row-grid align-items-center">
-          <div class="col-md-6">
-            {!! QrCode::size(400)->generate('www.cardappion.com.br'); !!}
+        <div class="col-md-6 ">
+            <img src="{{asset('vendor/argon/assets/img/theme/landing-1.png')}}" class="img-fluid floating">
           </div>
           <div class="col-md-6">
             <div class="pr-md-5">
-            <div class="alert alert-white" role="alert">
-              <span class="alert-icon text-warning"><i class="ni ni-world-2"></i></span>
-              <span class="alert-text text-warning"><strong>COMPARTILHE</strong> seu cardápio</span>
+            <div class="alert alert-warning bg-gradient-warning" role="alert">
+              <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i class="ni ni-world-2"></i></span>
+              <span class="alert-text text-white"><strong>COMPARTILHE</strong> seu cardápio</span>
           </div>
               <!-- <h1> COMPARTILHE SEU CARDÁPIO</h1> -->
               <p> Acesso aos itens que realmente estão sendo servidos no dia.</p>

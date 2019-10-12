@@ -27,7 +27,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
-<body class="bg-warning">
+<body class="bg-gradient-danger">
 @include('layouts._nav')
 
   <div class="main-content">

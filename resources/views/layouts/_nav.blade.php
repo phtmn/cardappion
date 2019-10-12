@@ -1,4 +1,4 @@
-<nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo ">
+<nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo headroom ">
 <!-- <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo fixed-top"> -->
   <div class="container">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto  navbar-nav-hover ">
       <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                 <i class="ni ni-ui-04 d-lg-none"></i>
@@ -95,14 +95,14 @@
               </div>
             </li>
             
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link nav-link-icon" href="https://www.facebook.com/#" target="_blank" >
             <i class="fab fa-facebook-square text-default"></i>
             <span class="nav-link-inner--text d-lg-none text-dark">Facebook</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://www.instagram.com/#" target="_blank" >
+          <a class="nav-link nav-link-icon" href="https://www.instagram.com/cardappion" target="_blank" >
             <i class="fab fa-instagram text-primary"></i>
             <span class="nav-link-inner--text d-lg-none text-dark">Instagram</span>
           </a>

@@ -22,7 +22,7 @@
                 </div>
             </div>
 
-            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+            <ul class="navbar-nav align-items-lg-center ml-lg-auto navbar-nav-hover">
                 <li class="nav-item dropdown">
                 <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configurações</button>
                     <!-- <a href="#" class="nav-link text-dark" data-toggle="dropdown" role="button">
