@@ -33,6 +33,28 @@ class MenuController extends Controller
     return redirect()->route('menus.index');
   }
 
+  public function edit($id)
+  {
+    $menu = Menu::findOrFail($id);
+
+    return view('admin.menus.edit', compact('menu'));
+  }
+
+  public function update(Request $request, $id)
+  {
+    $menu = $request->user()->menus()->findOrFail($id);
+
+    $menu['description'] = $request->description;
+    $menu['active'] = $request->active;
+
+    $menu->save();
+
+    $data = Menu::all();
+    return view('admin.menus.index', [
+      'data' => $data
+    ]);
+  }
+
   public function menuItens($menu_id)
   {
     $menu = Menu::find($menu_id);

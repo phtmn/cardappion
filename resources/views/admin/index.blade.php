@@ -1,15 +1,15 @@
 @extends('layouts.admin.master')
 @section('cabecalho')
-<div class="header bg-black pb-6">
+<div class="header bg-white pb-6">
   <div class="container-fluid">
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
 
-          <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+          <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
             <i class="ni ni-tv-2"></i>
           </div>
-          <h1 class="display-4 text-white d-inline-block mb-0"> Dashboard</h1>
+          <h3 class="display-5 text-dark d-inline-block mb-0"> Dashboard</h3>
 
         </div>
 
@@ -36,7 +36,7 @@
                 <span class="h2 font-weight-bold mb-0">Perfil</span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-badge"></i>
                 </div>
               </div>
@@ -60,14 +60,14 @@
                 <span class="h2 font-weight-bold mb-0">Produtos</span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-bullet-list-67"></i>
                 </div>
               </div>
             </div>
             <!-- <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
+                    <span class="text-nowrap">Total de Produtos</span>
+                    <span class="text-primary mr-2">  </span>                    
                   </p> -->
           </div>
         </a>
@@ -84,7 +84,7 @@
                 <span class="h2 font-weight-bold mb-0">Promoções</span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-notification-70"></i>
                 </div>
               </div>
@@ -108,7 +108,7 @@
                 <span class="h2 font-weight-bold mb-0">Menu</span>
               </div>
               <div class="col-auto">
-                <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-collection"></i>
                 </div>
               </div>
@@ -130,14 +130,14 @@
             
                 
                     
-                        <span class="nav-link-text text-primary"> Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span> </span>
+                        <span class="nav-link-text text-warning"> Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span> </span>
                         
                         <small class="d-block text-muted font-weight-900">{{ Auth::user()->tenant->name }}</small>
             </div>
             
             <div class="card-header d-flex align-items-center">
               <div class="d-flex align-items-center">
-              <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+              <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-email-83"></i>
                 </div>
                 <div class="mx-3">
@@ -157,18 +157,18 @@
             </div>
             <div class="card-header d-flex align-items-center">
               <div class="d-flex align-items-center">
-              <div class="icon icon-shape bg-black text-white rounded-circle shadow">
+              <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-paper-diploma"></i>
                 </div>
                 <div class="mx-3">
-                  <a href="#" class="text-dark font-weight-600 text-sm">Você possui um Plano</a>
+                  <a href="#" class="text-dark font-weight-600 text-sm">Você possui o Plano</a>
                   <small class="d-block text-muted">MASTER</small>
                 </div>
               </div>
               <div class="text-right ml-auto">
                 <button type="button" class="btn btn-sm btn-primary btn-icon">
                   <!-- <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> -->
-                  <span class="btn-inner--text">Mudar para PREMIUM</span>
+                  <span class="btn-inner--text">Alterar Plano</span>
                 </button>
               </div>
             
@@ -176,12 +176,12 @@
             </div>
             
             <div class="card-body">
-              <p class="mb-4">
+              <p class="mb-0">
                 Neste Plano você pode:
 
               </p>
                 
-              <img alt="Image placeholder" src="{{ asset('vendor/argon/assets/img/brand/master.png') }}" class="img-fluid rounded">
+              <img alt="Image placeholder" src="{{ asset('vendor/argon/assets/img/brand/master.png') }}" class="img-fluid floating">
             
             
             </div>
@@ -195,19 +195,28 @@
             <div class="card-header">
             <a  href="{{ Auth::user()->tenant->url_token }}"  target="_blank" class="media d-flex align-items-center">
                 <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
-                                    <i class="ni ni-world-2 text-primary"></i>
+                                    <i class="ni ni-world-2 text-warning"></i>
                                 </div>
                     
-                        <span class="nav-link-text text-primary">Landing Page </span>
+                        <span class="nav-link-text text-warning">Landing Page </span>
+                        <div class="text-right ml-auto">
+                <button type="button" class="btn btn-sm btn-primary btn-icon">
+                  <!-- <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> -->
+                  <span class="btn-inner--text">Alterar Link</span>
+                </button>
+              </div>
                         </a>
+                        <div class="mx-3">
                         <small class="d-block text-muted font-weight-900">{{ Auth::user()->tenant->url_token }}</small>
+</div>
+                       
                         <hr> <b>DICA 1:</b> Compartilhe o <b> <i> link </b> </i> de sua Landing Page para seus clientes em
                         <i class="fab fa-facebook-square text-default"></i>                         
                         <i class="fab fa-instagram text-primary"></i>
                         <i class="fab fa-whatsapp text-success"></i> e muito mais!
                         <hr> <b>DICA 2:</b> Disponibilize o <b> <i> qrcode </b> </i> da sua Landing Page para seus clientes em panfletos, cardápio e materiais de divulgação!
             </div>
-            <div class="card-header d-flex align-items-center mx-2">
+            <div class="card-header d-flex align-items-center mx-3 ">
             {!! QrCode::size(500)->generate(Auth::user()->tenant->url_token); !!}
              
               

@@ -5,7 +5,10 @@ Route::name('site.menu.show')->get('/m/{token}', 'Site\SiteController@show');
 
 Route::get('promo/{slug}', 'Site\SiteController@promocao')->name('promo');
 Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
-Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('product.detail');
+
+Route::get('/m/{token}/{id}', 'Site\SiteController@detalhe_promocao')->name('detalhe.promocao');
+
+// Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('product.detail');
 
 Route::name('admin.menus.add_products')->get('menus/menu-item/{menu_id}/product/{product_id}/adicionar', 'Admin\MenuController@storeProducts');
 Route::name('admin.menus.remove_products')->get('menus/menu-item/{menu_id}/product/{product_id}/remover', 'Admin\MenuController@deleteProducts');
@@ -13,6 +16,9 @@ Route::name('admin.menus.remove_products')->get('menus/menu-item/{menu_id}/produ
 Route::name('admin.menus.getproducts')->get('menus/prods/{menu_id}', 'Admin\MenuController@getProducts');
 Route::name('admin.menus.getproduct')->get('menus/prod/{menu_id}', 'Admin\MenuController@getProduct');
 Route::name('admin.menus.getpromo')->get('menus/promo/{promotion_id}', 'Admin\MenuController@getPromo');
+
+
+
 
 Auth::routes();
 
@@ -34,16 +40,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
   Route::get('qrcode/{id}', 'PromotionController@qrCode')->name('promotion.qrCode');
 
 
-  // Route::get('qr-code-g', function () {
-  //   \QrCode::size(500)
-  //             ->format('png')
-  //             ->generate('ItSolutionStuff.com', public_path('images/qrcode.png'));
-      
-  //   return view('qrCode');
 
-  // Routes
   Route::name('admin.products.activate')->get('products/ativar/{id}', 'ProductsController@activate');
-
   Route::name('admin.promotions.activate')->get('promotions/ativar/{id}', 'PromotionController@activate');
 
   Route::name('admin.menus.activate')->get('menus/ativar/{id}', 'MenuController@activate');

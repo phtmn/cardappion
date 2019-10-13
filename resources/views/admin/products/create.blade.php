@@ -2,20 +2,20 @@
 
 @section('cabecalho')
 
-<div class="header bg-black pb-6">
+<div class="header bg-white pb-6">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
                     <!-- <i class="ni ni-bullet-list-67 text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Produtos</h3> -->
-                    <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
-                                    <i class="ni ni-bullet-list-67"></i>
-                                </div>
-                    <h1 class="display-4 text-white d-inline-block mb-0">   Produtos</h1>
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+            <i class="ni ni-bullet-list-67"></i>
+          </div>
+          <h3 class="display-5 text-dark d-inline-block mb-0"> Produtos</h3>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                <a class="text-white" href="{{route('products.index')}} "><i class="ni ni-bold-left text-white"></i> Voltar </a>
+                <a class="text-dark" href="{{route('products.index')}} "><i class="ni ni-bold-left text-dark"></i> Voltar </a>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <div class="card-wrapper">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="mb-0">Dados do Produto</h3>
+                        <h3 class="mb-0">Adicionar Produto</h3>
                     </div>
                     <div class="card-body">
                     <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
@@ -78,7 +78,7 @@
 
                                 </div>
                                 <div class="col-md-4">
-                                <button type="submit" class="btn btn-block btn-outline-success btn-lg btn-round"> <i
+                                <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i
                                     class=" fa fa-check-square nav-icon"></i> Salvar</button>
                                 </div>
                                 <div class="col-md-4">

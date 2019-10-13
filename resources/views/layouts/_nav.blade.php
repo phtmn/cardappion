@@ -1,10 +1,11 @@
-<nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo">
+<nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo headroom ">
+<!-- <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo fixed-top"> -->
   <div class="container">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon bg-primary"></span>
+      <span class="navbar-toggler-icon bg-dark"></span>
     </button>
     <a class="navbar-brand mx-auto" href="{{route('site')}}">
-      <img src="{{asset('vendor/argon/assets/img/brand/logo2.png')}}" alt="{{ config('app.name') }}" class="img-fluid"style="width:215px; height:50px">
+      <img src="{{asset('vendor/argon/assets/img/brand/logo4.png')}}" alt="{{ config('app.name') }}" class="img-fluid"style="width:215px; height:50px">
     </a>    
     <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
       <div class="navbar-collapse-header">
@@ -19,7 +20,7 @@
         </div>
       </div>
 
-      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto  navbar-nav-hover ">
       <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" role="button">
                 <i class="ni ni-ui-04 d-lg-none"></i>
@@ -28,7 +29,7 @@
               <div class="dropdown-menu dropdown-menu-xl">
                 <div class="dropdown-menu-inner">
                   <a href="" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                       <i class="ni ni-building"></i>
                     </div>
                     <div class="media-body ml-3">
@@ -46,7 +47,7 @@
                     </div>
                   </a> -->
                   <a href="" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                       <i class="ni ni-align-left-2"></i>
                     </div>
                     <div class="media-body ml-3">
@@ -55,7 +56,7 @@
                     </div>
                   </a>
                   <a href="" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                       <i class="ni ni-paper-diploma"></i>
                     </div>
                     <div class="media-body ml-3">
@@ -64,7 +65,7 @@
                     </div>
                   </a>
                   <a href="" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                       <i class="ni ni-world"></i>
                     </div>
                     <div class="media-body ml-3">
@@ -73,7 +74,7 @@
                     </div>
                   </a>
                   <a href="" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-dark rounded-circle text-white">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                       <i class="ni ni-email-83"></i>
                     </div>
                     <div class="media-body ml-3">
@@ -94,14 +95,14 @@
               </div>
             </li>
             
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link nav-link-icon" href="https://www.facebook.com/#" target="_blank" >
             <i class="fab fa-facebook-square text-default"></i>
             <span class="nav-link-inner--text d-lg-none text-dark">Facebook</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="https://www.instagram.com/#" target="_blank" >
+          <a class="nav-link nav-link-icon" href="https://www.instagram.com/cardappion" target="_blank" >
             <i class="fab fa-instagram text-primary"></i>
             <span class="nav-link-inner--text d-lg-none text-dark">Instagram</span>
           </a>
@@ -110,7 +111,7 @@
 
         
         <li class="nav-item">          
-          <a href="{{route('register')}}" class="btn btn-primary my-2 ">Cadastre-se</a>
+          <a href="{{route('register')}}" class="btn btn-warning my-2 ">Cadastre-se</a>
           <a href="{{route('login')}}" class="btn btn-dark my-2 ">Acessar conta </a>
         </li> 
         

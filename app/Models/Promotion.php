@@ -41,4 +41,10 @@ class Promotion extends Model
   {
     return $this->belongsTo(Tenant::class);
   }
+
+  public function setPromotionValueAttribute($input)
+  {
+    if ($input)
+      $this->attributes['promotion_value'] = str_replace(['.', ',', 'R$'], ['', '.', ''], $input);
+  }
 }

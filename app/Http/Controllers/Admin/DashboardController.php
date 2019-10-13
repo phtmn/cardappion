@@ -11,4 +11,11 @@ class DashboardController extends Controller
 
         return view('admin.index');
     }
+
+    // public function index()
+    // {
+    //   return view('admin.index', [
+    //     'data' => $data = Product::all()
+    //   ]);
+    // }
 }

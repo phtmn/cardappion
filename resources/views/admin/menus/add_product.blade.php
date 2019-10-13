@@ -2,20 +2,20 @@
 
 @section('cabecalho')
 
-<div class="header bg-black pb-6">
+<div class="header bg-white pb-6">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
                     <!-- <i class="ni ni-collection text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Menu <i class="ni ni-ungroup text-white"></i> {{$menu->description}}</h3></h3> -->
-                    <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+                    <div class="icon icon-shape bg-gradient-warning  rounded-circle text-white">
                                     <i class="ni ni-collection"></i>
                                 </div>
-                    <h1 class="display-4 text-white d-inline-block mb-0"> Menu </h1> <i class="ni ni-ungroup text-white"></i> <i class="text-white"> {{$menu->description}} </i>
+                    <h3 class="display-5 text-dark d-inline-block mb-0"> Menu </h3> <i class="ni ni-ungroup text-dark"></i> <i class="text-dark"> {{$menu->description}} </i>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                <a class="text-white" href="{{route('menu.menuItens', [ 'menu_id' => $menu->id ])}} "><i class="ni ni-bold-left text-white"></i> Voltar </a>
+                <a class="text-dark" href="{{route('menu.menuItens', [ 'menu_id' => $menu->id ])}} "><i class="ni ni-bold-left text-dark"></i> Voltar </a>
               <!-- <a href="#" class="btn btn-sm btn-neutral"> Total de Categorias ({{$menu->count()}})</a> -->
             </div>
             </div>
@@ -56,7 +56,7 @@
                 <td>R$ {{ number_format($d->price,2,',','.') }}</td>
 
                 <td class="text-left">
-              <a class="btn btn-success btn-round btn-sm js-menu-action" style="color: white"
+              <a class="btn btn-primary btn-round btn-sm js-menu-action" style="color: white"
                 data-route="{{ route('admin.menus.add_products', [ 'menu_id' => $menu->id, 'product_id' => $d->id ]) }}"
                 data-id="{{ $d->id }}"
               > <i class="ni ni-fat-add"></i> Adicionar</a>

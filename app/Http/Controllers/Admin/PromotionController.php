@@ -31,29 +31,52 @@ class PromotionController extends Controller
 
   public function store(Request $request)
   {
-   
+
     try {
-      $promotion          = $request->all();      
+      $promotion          = $request->all();
       $promotion['url']   = Str::random(5);
-      
-         
+
+
       if ($request->hasFile('image')) {
         $promotion['image'] = $request->image->move('promotions');
       }
 
       if ($request->promotion_value) {
-     
-        // $promotion['promotion_value'] = $request->promotion_value;  
-        $promotion['promotion_value'] = str_replace(',','.',str_replace('.','',$request->promotion_value));
-                               
+
+        // $promotion['promotion_value'] = $request->promotion_value;
+        $promotion['promotion_value'] = str_replace(',', '.', str_replace('.', '', $request->promotion_value));
       }
-      // dd($request->all()); 
+      // dd($request->all());
       Promotion::create($promotion);
 
       return redirect()->route('promotions.index')->with('msg', 'Promoção adicionada com Sucesso!');
     } catch (\Exception $e) {
       return redirect()->back()->with('error', 'Ocorreu um Erro: ' . $e->getMessage());
     }
+  }
+
+  public function edit($id)
+  {
+    $promotion = Promotion::findOrFail($id);
+
+    return view('admin.promocoes.edit', compact('promotion'));
+  }
+
+  public function update(Request $request, $id)
+  {
+    $promotion = Promotion::findOrFail($id);
+
+    if ($request->hasFile('image')) {
+      $promotion['image'] = $request->image->move('promotions');
+    }
+
+    $promotion['title'] = $request->title;
+    $promotion['promotion_value'] = $request->promotion_value;
+    $promotion['details'] = $request->details;
+
+    $promotion->save();
+
+    return redirect()->route('promotions.index');
   }
 
   public function activate($id)
