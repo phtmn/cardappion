@@ -2,17 +2,17 @@
 
 @section('cabecalho')
 
-<div class="header bg-black pb-6">
+<div class="header bg-white pb-6">
   <div class="container-fluid">
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
           <!-- <i class="ni ni-collection text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Menu</h3> -->
-          <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+          <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
             <i class="ni ni-collection"></i>
           </div>
-          <h1 class="display-4 text-white d-inline-block mb-0"> Menu</h1>
+          <h3 class="display-5 text-dark d-inline-block mb-0"> Menu</h3>
         </div>
         <div class="col-lg-6 col-5 text-right">
 
@@ -59,7 +59,7 @@
 
                 </div>
                 <div class="col-md-4">
-                  <button type="submit" class="btn btn-block btn-outline-success btn-lg btn-round "> <i
+                  <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round "> <i
                       class=" fa fa-check-square nav-icon"></i> Salvar</button>
                 </div>
                 <div class="col-md-4">
@@ -115,10 +115,10 @@
 
                 <td class="text-left">
                   <!-- <a href="{{ route('site.menu.show', [ 'token' => $d->token ]) }}" class="btn btn-primary btn-round btn-sm"> Visualizar</a> -->
-                  <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-success btn-round btn-sm"><i
-                      class="ni ni-ui-04"></i> Vincular </a>
+                  <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-outline-primary btn-sm btn-round"><i
+                      class="ni ni-ui-04 y"></i> Vincular </a>
                   <a href="{{ route('menus.edit', ['id' => $d->id]) }}" class="btn btn-primary btn-sm"
-                    data-toggle="tooltip" data-placement="top" title="Editar"> Editar
+                    data-toggle="tooltip" data-placement="top" title="Editar"> <i class="ni ni-curved-next text-white"></i> Editar
                   </a>
                   <!-- <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-primary btn-round">Visualizar Produtos</a> -->
                   <!-- <a href="{{route('menu.share',$d->id)}}" class="btn btn-success btn-round" data-toggle="tooltip" title="proximas versoes">Compartilhar</a> -->

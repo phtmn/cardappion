@@ -74,8 +74,8 @@
 
                         <!-- <td><a href="{{ route('promo',$d->url)  }}" target="_blank">cardappon.com.br/promo/{{ $d->url }}</a></td> -->
                         <td>
-                          <a href="{{ route('promotions.edit', ['id' => $d->id]) }}" class="btn btn-success btn-sm"
-                            data-toggle="tooltip" data-placement="top" title="Editar"> Editar
+                          <a href="{{ route('promotions.edit', ['id' => $d->id]) }}" class="btn btn-primary btn-sm"
+                            data-toggle="tooltip" data-placement="top" title="Editar"> <i class="ni ni-curved-next text-white"></i> Editar
                           </a>
                           <!-- <a href="" data-toogle="toltip" title="Editar promoção" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                               <a href="" data-toogle="toltip" title="Apagar promoção" class="btn btn-sm btn-primary"><i class="fa fa-trash"></i></a>                                 -->

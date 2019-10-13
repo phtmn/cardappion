@@ -172,12 +172,14 @@
     <section class="py-0 bg-dark">
   <div class="main-content">
     
-    <div class="header  py-7 py-lg-8 pt-lg-9">
+    <div class="header  py-7 py-lg-7 pt-lg-4">
       <div class="container">
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <h1 class="text-white">Planos</h1>
+            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-dark"><i class="ni ni-paper-diploma"></i></span>
+                    <span class="alert-text text-white"><strong> <h1 class="text-white">Planos</h1></strong> </span>
+              
             </div>
           </div>
         </div>
@@ -195,16 +197,28 @@
           <div class="pricing card-group flex-column flex-md-row mb-3">
             <div class="card card-pricing border-0 text-center mb-4">
               <div class="card-header bg-transparent">
-                <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">MASTER</h4>
+                <h2 class="text-uppercase ls-1 text-dark py-3 mb-0"><b>MASTER</b></h2>
               </div>
               <div class="card-body px-lg-7">
                 <div class="display-2">R$ 0,00</div>
                 <span class="text-muted">por mês</span>
                 <ul class="list-unstyled my-4">
+                <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
+                          <i class="fas fa-terminal"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">Configurar Perfil</span>
+                      </div>
+                    </div>
+                  </li>
                   <li>
                     <div class="d-flex align-items-center">
                       <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
                           <i class="fas fa-terminal"></i>
                         </div>
                       </div>
@@ -216,7 +230,7 @@
                   <li>
                     <div class="d-flex align-items-center">
                       <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
                           <i class="fas fa-terminal"></i>
                         </div>
                       </div>
@@ -228,33 +242,58 @@
                   <li>
                     <div class="d-flex align-items-center">
                       <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
                           <i class="fas fa-terminal"></i>
                         </div>
                       </div>
                       <div>
-                        <span class="pl-2">QR Code</span>
+                        <span class="pl-2">Criar Cardápio Digital</span>
                       </div>
                     </div>
                   </li>
                   <li>
                     <div class="d-flex align-items-center">
                       <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
                           <i class="fas fa-terminal"></i>
                         </div>
                       </div>
                       <div>
-                        <span class="pl-2">Complete documentation</span>
+                        <span class="pl-2">Compartilhar Cardápio </span>
                       </div>
                     </div>
-                  </li> 
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
+                          <i class="fas fa-terminal"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">Acessar Cardápio via QR Code</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
+                          <i class="fas fa-terminal"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">...</span>
+                      </div>
+                    </div>
+                  </li>
+                
                   
                 </ul>
-                <button type="button" class="btn btn-warning mb-3">Cadastre-se</button>
+                <a href="{{route('register')}}" class="btn btn-warning my-2 ">Cadastre-se</a>
               </div>             
             </div>
-            <div class="card card-pricing bg-gradient-dark zoom-in shadow-lg rounded border-0 text-center mb-4">
+            <!-- <div class="card card-pricing bg-gradient-dark zoom-in shadow-lg rounded border-0 text-center mb-4">
               <div class="card-header bg-transparent">
                 <h4 class="text-uppercase ls-1 text-white py-3 mb-0">PREMIUM</h4>
               </div>
@@ -301,7 +340,7 @@
                 </ul>
                 <button type="button" class="btn btn-secondary mb-3">Cadastre-se</button>
               </div>             
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

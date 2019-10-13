@@ -2,17 +2,17 @@
 
 @section('cabecalho')
 
-<div class="header bg-black pb-6">
+<div class="header bg-white pb-6">
   <div class="container-fluid">
     <div class="header-body">
       <div class="row align-items-center py-4">
         <div class="col-lg-6 col-7">
 
           <!-- <h3 class="h3 text-white d-inline-block mb-0">Produtos</h3> -->
-          <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+          <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
             <i class="ni ni-bullet-list-67"></i>
           </div>
-          <h1 class="display-4 text-white d-inline-block mb-0"> Produtos</h1>
+          <h3 class="display-5 text-dark d-inline-block mb-0"> Produtos</h3>
         </div>
         <div class="col-lg-6 col-5 text-right">
           <!-- <a href="#" class="btn btn-sm btn-neutral"> Total de Produtos  ( {{$data->count()}} )</a> -->
@@ -52,7 +52,7 @@
           <div class="card-header">
             <div class="row align-items-center">
               <div class="col-8">
-                <a href="{{route('products.create')}}" class="btn btn-success"> <i class=" fa fa-plus nav-icon"></i>
+                <a href="{{route('products.create')}}" class="btn btn-dark"> <i class=" fa fa-plus nav-icon"></i>
                   Adicionar Produto </a>
               </div>
               <div class="col-4 text-right">
@@ -90,8 +90,8 @@
                           </label>
                         </td>
                         <td>
-                          <a href="{{ route('products.edit', ['id' => $d->id]) }}" class="btn btn-success btn-sm"
-                            data-toggle="tooltip" data-placement="top" title="Editar"> Editar
+                          <a href="{{ route('products.edit', ['id' => $d->id]) }}" class="btn btn-primary btn-sm"
+                            data-toggle="tooltip" data-placement="top" title="Editar"> <i class="ni ni-curved-next text-white"></i> Editar
                           </a>
                           <!-- <a href="" data-toogle="toltip" title="Editar produto" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                             <a href="" data-toogle="toltip" title="Apagar produto" class="btn btn-sm btn-primary"><i class="fa fa-trash"></i></a>                                 -->

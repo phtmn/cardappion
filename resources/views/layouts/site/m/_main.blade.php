@@ -3,14 +3,14 @@
     <div class="container">
 
       <div class="row row-grid align-items-center">
-      <div class="row justify-content-center ">
-              <div class="col-xl-5 col-lg-6 col-md-8 px-5 ">
-                <div class="icon icon-shape bg-danger rounded-circle text-white">
-                  <i class="ni ni-building"></i>
-                </div>
-                <h3 class="text-dark"> Sobre Nós</h3>
-              </div>
+        <div class="row justify-content-center ">
+          <div class="col-xl-5 col-lg-6 col-md-8 px-5 ">
+            <div class="icon icon-shape bg-danger rounded-circle text-white">
+              <i class="ni ni-building"></i>
             </div>
+            <h3 class="text-dark"> Sobre Nós</h3>
+          </div>
+        </div>
 
         <div class="col-md-6 order-md-2">
           <!-- <img src="{{asset('vendor/argon/assets/img/theme/landing-3.png')}}" class="img-fluid"> -->
@@ -164,8 +164,8 @@
 
 
 
-
-  <section class="py-0 bg-white" id="promocoes">
+  <!-- 
+  <section class="py-0 bg-defaut" id="promocowwes">
     <div class="main-content">
       <div class="header  py-5 py-lg-8 pt-lg-9">
         <div class="container">
@@ -173,33 +173,10 @@
             <div class="row justify-content-center">
               <div class="col-xl-5 col-lg-6 col-md-8 px-5 ">
                 <div class="icon icon-shape bg-warning rounded-circle text-white">
-                  <i class="ni ni-notification-70"></i>
-                  
+                  <i class="ni ni-notification-70"></i>                  
                 </div>
                 <h2 class="text-dark"> Promoções</h2>
               </div>
-            </div>
-            <div class="row justify-content-center mt-4">
-            <div class="col-lg-10">
-                @foreach($promotions->chunk(3) as $promotion)
-                    <div class="row row-grid">
-                        @foreach($promotions as $promotion)
-                            <div class="col-lg-4">
-                                
-                                    <div class="card card-lift--hover shadow border-0 bg-white-default">
-									
-                                        <div class="card-body py-4">
-											
-                                        {{ $promotion->title }}
-                                            
-                                        </div>
-                                      
-                                    </div>
-                                
-                            </div>
-                        @endforeach
-                    </div>
-                @endforeach
             </div>
         </div>
           </div>
@@ -209,7 +186,51 @@
       
       
           
+  </section> -->
+
+  <section class="py-6 bg-gradient-white " id="promocoes">
+    <div class="main-content">
+      <div class="header py-7 py-lg-8 pt-lg-9">
+        <div class="container">
+          <div class="header-body text-center mb-7">
+            <div class="row justify-content-center">
+              <div class="col-xl-5 col-lg-6 col-md-8 px-5 ">
+                <div class="icon icon-shape bg-warning rounded-circle text-white">
+                  <i class="ni ni-notification-70"></i>
+                </div>
+                <h2 class="text-dark"> Promoções</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid mt--8 pb-5">
+        <div class="row  d-flex justify-content-center">
+          <div class="col-lg-12">
+            @forelse($promotions as $promotion)
+            <div class="col-xs-12 ">              
+              <div class="col-xs-12 hovereffect">
+                <div>
+                  <a href="{{ url($promotion->image) }}" data-fancybox="gallery" data-caption="{{$promotion->title}} - {{$promotion->promotion_value}} - {{$promotion->details}}" class="">
+                    <img src="{{ url($promotion->image) }}" class="img-fluid " alt="" style="width:355px; height:255px;" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            @empty
+            <p class="font-weight-900 text-default text-center">#não há promoções para exibir!</p>
+            @endforelse
+          </div>
+        </div>
+      </div>
   </section>
+
+
+
+
+
+
+
 
 
 

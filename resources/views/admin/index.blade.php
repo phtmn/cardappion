@@ -66,8 +66,8 @@
               </div>
             </div>
             <!-- <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
+                    <span class="text-nowrap">Total de Produtos</span>
+                    <span class="text-primary mr-2">  </span>                    
                   </p> -->
           </div>
         </a>
@@ -166,7 +166,7 @@
                 </div>
               </div>
               <div class="text-right ml-auto">
-                <button type="button" class="btn btn-sm btn-dark btn-icon">
+                <button type="button" class="btn btn-sm btn-primary btn-icon">
                   <!-- <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> -->
                   <span class="btn-inner--text">Alterar Plano</span>
                 </button>
@@ -176,12 +176,12 @@
             </div>
             
             <div class="card-body">
-              <p class="mb-4">
+              <p class="mb-0">
                 Neste Plano você pode:
 
               </p>
                 
-              <img alt="Image placeholder" src="{{ asset('vendor/argon/assets/img/brand/master.png') }}" class="img-fluid rounded">
+              <img alt="Image placeholder" src="{{ asset('vendor/argon/assets/img/brand/master.png') }}" class="img-fluid floating">
             
             
             </div>
@@ -200,7 +200,7 @@
                     
                         <span class="nav-link-text text-warning">Landing Page </span>
                         <div class="text-right ml-auto">
-                <button type="button" class="btn btn-sm btn-dark btn-icon">
+                <button type="button" class="btn btn-sm btn-primary btn-icon">
                   <!-- <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span> -->
                   <span class="btn-inner--text">Alterar Link</span>
                 </button>
@@ -216,7 +216,7 @@
                         <i class="fab fa-whatsapp text-success"></i> e muito mais!
                         <hr> <b>DICA 2:</b> Disponibilize o <b> <i> qrcode </b> </i> da sua Landing Page para seus clientes em panfletos, cardápio e materiais de divulgação!
             </div>
-            <div class="card-header d-flex align-items-center mx-2">
+            <div class="card-header d-flex align-items-center mx-3 ">
             {!! QrCode::size(500)->generate(Auth::user()->tenant->url_token); !!}
              
               

@@ -2,17 +2,17 @@
 
 @section('cabecalho')
 
-<div class="header bg-black pb-6">
+<div class="header bg-white pb-6">
     <div class="container-fluid">
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
                     <!-- <i class="ni ni-settings-gear-65 text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Configurações</h3> -->
-                    <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                                     <i class="ni ni-badge"></i>
                                 </div>
-                    <h1 class="display-4 text-white d-inline-block mb-0"> Perfil</h1>
+                                <h3 class="display-5 text-dark d-inline-block mb-0"> Perfil</h3>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
                 </div>
@@ -163,7 +163,7 @@
                                     
                                 </div>
                                 <div class="col-md-4">
-                                <button type="submit" class="btn btn-block btn-outline-success btn-lg btn-round"> <i
+                                <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i
                                     class=" fa fa-check-square nav-icon"></i> Salvar</button>
                                 </div>
                                 <div class="col-md-4">
