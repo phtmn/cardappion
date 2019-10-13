@@ -6,7 +6,7 @@
           <div class="icon icon-shape bg-danger rounded-circle text-white">
             <i class="ni ni-building"></i>
             </div>
-            <h6 class="text-dark text-center">Sobre Nós</h6>
+            <h6 class="text-dark text-center">Sobre </h6>
       </a> 
       </li>
       <li class="nav-item">
@@ -22,7 +22,7 @@
           <div class="icon icon-shape bg-warning rounded-circle text-white">
             <i class="ni ni-notification-70"></i>
           </div>
-          <h6 class="text-dark text-center">Promoções</h6>
+          <h6 class="text-dark text-center">Ofertas</h6>
         </a>
       </li>      
     </ul>

@@ -9,6 +9,8 @@
   
   <title>{{ config('app.name') }}</title>
 
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+	<!-- <link href="{{asset('vendor/argon-site/assets/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet"> -->
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">  
   <link rel="stylesheet" href="{{ asset('assets/css/galeria.css') }}" type="text/css">
   <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/logo3.png') }}" type="image/png">
@@ -18,7 +20,7 @@
   <link rel="stylesheet" href="{{ asset('assets/css/argon.min.css?v=1.0.0') }}" type="text/css">
 </head>
 
-<body class="bg-black">
+<body class="bg-gradient-danger" >
   @yield('content')
   @stack('scripts')
   
@@ -30,6 +32,7 @@
 </html>
 
 <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+
   <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
   <script src="{{ asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>

@@ -1,48 +1,112 @@
-<div class="main-content">
-  <section class="py-6 mt-4 bg-white" id="sobre">
+<div class="main-content" >
+
+
+
+
+
+
+  <section class="py-4 mt-8 section bg-gradient-danger" id="sobre">
     <div class="container">
-
-      <div class="row row-grid align-items-center">
-        <div class="row justify-content-center ">
-          <div class="col-xl-5 col-lg-6 col-md-8 px-5 ">
-            <div class="icon icon-shape bg-danger rounded-circle text-white">
-              <i class="ni ni-building"></i>
+      <div class="card card-profile shadow mt-500">
+        <div class="px-8">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 order-lg-2">
+              <div class="card-profile-image mt-4">
+                <a href="#">
+                  <img src="{{asset('vendor/argon/assets/img/brand/logo3.png')}}" class="rounded-circle">
+                </a>
+              </div>
             </div>
-            <h3 class="text-dark"> Sobre Nós</h3>
+            <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+              <div class="card-profile-actions py-4 mt-lg-0">
+              <!-- <i class="fa fa-phone"></i> -->
+              <!-- <a class="nav-link nav-link-icon" href="" target="_blank" data-toggle="tooltip" title=" Whatsapp">
+							<i class="fa fa-whatsapp"></i>
+							<span class="nav-link-inner--text d-lg-none">Whatsapp</span>
+						</a> -->
+              <!-- <i class="fab fa-instagram"></i>
+              <i class="fab fa-facebook"></i>
+              <i class="fa fa-globe"></i> -->
+                <!-- <a href="#" class="btn btn-sm btn-info mr-4">Connect</a> -->
+                  <!-- <a href="#" class="btn btn-sm btn-default float-right">Message</a> -->
+              </div>
+            </div>
+            <div class="col-lg-4 order-lg-1">
+              <div class="card-profile-stats d-flex justify-content-center">
+                <div>
+                <a href="#sobre">
+          <div class="icon icon-shape bg-danger rounded-circle text-white">
+            <i class="ni ni-building"></i>
+            </div>
+            <h5 class="text-dark text-center">Sobre </h5>
+      </a> 
+                </div>
+                <div>
+                <a href="#menu">
+          <div class="icon icon-shape bg-gradient-danger rounded-circle text-white">
+            <i class="ni ni-collection"></i>
           </div>
-        </div>
+          <h5 class="text-dark text-center">Menu</h5>
+        </a>
+                </div>
+                <div>
+                <a href="#promocoes">
+          <div class="icon icon-shape bg-warning rounded-circle text-white">
+            <i class="ni ni-notification-70"></i>
+          </div>
+          <h5 class="text-dark text-center">Ofertas</h5>
+        </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <h3>{{ $tenant->name }}<span class="font-weight-light">, {{ $config->city ?? '' }} {{ $config->us ?? '' }}</span></h3>
+            <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>{{ $config->address ?? '' }}, {{ $config->neighborhood ?? '' }}</div>
+            <!-- <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer</div>
+            <div><i class="ni education_hat mr-2"></i>University of Computer Science</div> -->
+            <div class="d-flex justify-content-center mb-2 ">
 
-        <div class="col-md-6 order-md-2">
-          <!-- <img src="{{asset('vendor/argon/assets/img/theme/landing-3.png')}}" class="img-fluid"> -->
-        </div>
-        <div class="col-md-6 order-md-1">
-          <div class="pr-md-5 text-dark">
-            <h1 class="text-dark">{{ $tenant->name }}</h1>
+                                        @if($config->telephone)
+                                            <a href="{{ $config->telephone ?? 'https://coopviva.com.br' }}" class="nav-link nav-link-icon" target="_blank"  >
+                                            <i class="ni ni-world-2  text-Primary"></i>
+                                            </a>
+                                        @endif
 
-            {{ $config->address ?? '' }}, {{ $config->neighborhood ?? '' }}
-            </br>
-            {{ $config->half_address ?? '' }}
-            </br>
+                                        @if($config->whatsapp)
+                                            <a href="{{ $config->whatsapp ?? 'https://coopviva.com.br' }}" class="nav-link nav-link-icon" target="_blank"  >
+                                            <i class="ni ni-world-2  text-Primary"></i>
+                                            </a>
+                                        @endif
 
-            {{ $config->format_whatsapp ?? '' }}
-            <!-- <a  target="_blank" href="https://api.whatsapp.com/send?phone=55{{ $config->format_whatsapp ?? '' }}">{{ $config->format_whatsapp ?? '' }}  </a> -->
-            <!-- https://api.whatsapp.com/send?phone=55{{ $config->format_whatsapp ?? '' }} -->
-            </br>
+                                        @if($config->instagram)
+                                            <a href="{{ $config->instagram ?? 'https://coopviva.com.br' }}" class="nav-link nav-link-icon" target="_blank"  >
+                                            <i class="ni ni-world-2  text-Primary"></i>
+                                            </a>
+                                        @endif
 
-            {{ $config->telephone ?? '' }}
-            </br>
+                                        @if($config->fanpage)
+                                            <a href="{{ $config->fanpage ?? '#' }}" class="nav-link nav-link-icon"  target="_blank" >
+                                            <i class="fa fa-facebook  text-Primary"></i>
+                                            </a>
+										                    @endif
 
-            {{ $config->instagram ?? '' }}
-            </br>
+                                        @if($config->site)
+                                            <a href="{{ $config->site ?? '#' }}" class="nav-link nav-link-icon"  target="_blank" >
+                                            <i class="fa fa-instagram  text-Primary"></i>
+                                            </a>
+                                        @endif
 
+                                           
+									</div>
+          </div>
+          <div class="mt-5 py-5 border-top text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-9">
+                <!-- <p>Colocar aqui Informaões AdicionaisAn artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p> -->
 
-
-            {{ $config->fanpage ?? '' }}
-            </br>
-            <i>
-              {{ $config->site ?? '' }}
-            </i>
-            <!-- <a href="./pages/widgets.html" class="font-weight-bold text-info mt-5">Explore widgets</a> -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -50,12 +114,32 @@
   </section>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
   <section class="py-6 bg-gradient-danger" id="menu">
     <div class="main-content">
 
       <div class="header  py-7 py-lg-8 pt-lg-9">
         <div class="container">
-          <div class="header-body text-center mb-7">
+          <div class="header-body text-center mb-2">
             <div class="row justify-content-center">
               <div class="col-xl-5 col-lg-6 col-md-8 px-5">
                 <h1 class="text-white"> <i class="ni ni-collection"></i> Menu</h1>
@@ -208,7 +292,7 @@
         <div class="row  d-flex justify-content-center">
           <div class="col-lg-12">
             @forelse($promotions as $promotion)
-            <div class="col-xs-12 ">              
+            <div class="col-xs-12 ">
               <div class="col-xs-12 hovereffect">
                 <div>
                   <a href="{{ url($promotion->image) }}" data-fancybox="gallery" data-caption="{{$promotion->title}} - {{$promotion->promotion_value}} - {{$promotion->details}}" class="">
