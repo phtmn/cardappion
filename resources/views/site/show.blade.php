@@ -48,7 +48,7 @@ img {
     <div class="ion-page" main>
     <ion-header>
   <ion-toolbar color="">
-    <ion-title ><img src="{{asset('vendor/argon/assets/img/brand/logo4.png')}}" style="width: 255px; height:57px;"></ion-title>
+    <ion-title ><img src="{{asset('vendor/argon/assets/img/brand/logo4.png')}}" style="width: 230px; height:40px;"></ion-title>
   </ion-toolbar>
 </ion-header>
 
