@@ -64,13 +64,18 @@ img {
     <ion-list style="margin-top: 50px">
 
       <div class="list-category">
-        @foreach ($categories as $category)
+        @forelse ($categories as $category)
           <ion-item class="item-category" href="#"
             data-route="{{ route('admin.menus.getproducts', [ 'id' => $category->id ]) }}"
             data-id="{{ $category->id }}">
             <ion-label>{{ $category->description }}</ion-label>
           </ion-item>
-        @endforeach
+          @empty
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">                      
+                              <span class="alert-text"><strong>Nenhuma</strong> categoria cadastrada!</span>
+                            </div>
+                    @endforelse
+       
       </div>
 
       <div class="list-category-itens"></div>
@@ -126,7 +131,7 @@ img {
                 <ion-list style="margin-top: 50px">
 
                   <div class="list-promo">
-                    @foreach ($promotions as $promotion)
+                    @forelse ($promotions as $promotion)
                       <ion-item class="promo" href="#"
                         data-route="{{ route('admin.menus.getpromo', [ 'id' => $promotion->id ]) }}">
                         <ion-thumbnail slot="start">
@@ -141,7 +146,11 @@ img {
                             <div class="card-subtitle">R$ {{ number_format($promotion->promotion_value,2,',','.')}}</div>
                           </ion-card>
                           </ion-content> -->
-                    @endforeach
+                          @empty
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">                      
+                              <span class="alert-text"><strong>Nenhuma</strong> promoção cadastrada!</span>
+                            </div>
+                    @endforelse
                   </div>
 
                   <div class="promo-details"></div>
@@ -250,7 +259,7 @@ img {
                     {{ $config->half_address ?? '' }}
                     </br>
                     <ion-icon name="logo-whatsapp" color="success"></ion-icon>
-                    <i class="ni ni-collection"></i>
+                    <!-- <i class="ni ni-collection"></i> -->
 
 
                     {{ $config->format_whatsapp ?? '' }}    
@@ -262,14 +271,14 @@ img {
                     </br>
                     <ion-icon name="logo-instagram" color="dark"> </ion-icon>
 
-                    <ion-icon name="logo-instagram" color="dark"> </ion-icon>
-                    {{ $config->instagram ?? '' }}
+                    <!-- <ion-icon name="logo-instagram" color="dark"> </ion-icon> -->
+                    {{ $config->instagram ?? 'nenhum instagram cadastrado' }}
                     </br>
                     <ion-icon name="logo-facebook" color="primary"></ion-icon>
                     {{ $config->fanpage ?? '' }}
                     </br>
                     <i>
-                    {{ $config->site ?? '' }}
+                    {{ $config->site ?? 'nenhum site cadastrado' }}
                     </i>  
                     
 
@@ -301,8 +310,8 @@ img {
             </ion-tab-button>
 
             <ion-tab-button tab="promocoes" class="btn-promo">
-                <ion-label>Promoções</ion-label>
-                <ion-icon name="gift" color="default"></ion-icon>
+                <ion-label color="dark">Promoções</ion-label>
+                <ion-icon name="gift" color="dark"></ion-icon>
             </ion-tab-button>
         </ion-tab-bar>
       </ion-tabs>
