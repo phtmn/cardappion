@@ -198,15 +198,49 @@
                                 </div>
                     
                         <span class="nav-link-text text-warning">Landing Page </span>
-                        <div class="text-right ml-auto">
-                <!-- <button type="button" class="btn btn-sm btn-primary btn-icon">
-                  <span class="btn-inner--icon"><i class="ni ni-fat-add"></i></span>
+                        <!-- <div class="text-right ml-auto">
+                <button class="btn btn-sm btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"">
+                  <span class="btn-inner--icon"><i class="ni ni-bold-down"></i></span>
                   <span class="btn-inner--text">Alterar Link</span>
-                </button> -->
-              </div>
+                </button>
+              </div> -->
                         </a>
                         <div class="mx-3">
                         <small class="d-block text-muted font-weight-900">{{ Auth::user()->tenant->url_token }}</small>
+                        <button class="btn btn-sm btn-primary mt-2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Alterar Link <i class="ni ni-bold-down"></i>
+  </button>
+              </div>
+              <p>
+  <!-- <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </a> -->
+  <!-- <button class="btn btn-sm btn-primary mt-2" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Alterar Link <i class="ni ni-bold-down"></i>
+  </button> -->
+  
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body bg-gradient-danger">
+  <form>
+  <div class="form-row align-items-center">
+    
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text">cardappion.com.br/m/</div>
+        </div>
+        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+      </div>
+    </div>
+    
+    <div class="col-auto">
+      <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round mb-2">Submit</button>
+    </div>
+  </div>
+</form>
+  </div>
 </div>
                        
                         <hr> <b>DICA 1:</b> Compartilhe o <b> <i> link </b> </i> de sua Landing Page para seus clientes em

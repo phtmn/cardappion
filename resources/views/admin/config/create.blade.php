@@ -32,9 +32,8 @@
                 <div class="card">                
                     <div class="card-header">
                         <div class="row align-items-center">
-                            <div class="col-8">                
-                                <!-- <a href="#!" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i
-                                    class=" ni ni-cloud-upload-96"></i> Upload Logo</a> -->
+                        <div class="col-8">
+                                <a href="#!" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i class=" ni ni-cloud-upload-96"></i> Upload Logo</a>
                             </div>
                             <div class="col-4 text-right">
                             </div>
@@ -42,8 +41,12 @@
                     </div>                    
                     <div class="card-body">
                         <div class="text-center">
+                            <a href="#">
+                                <img src="{{asset('vendor/argon/assets/img/brand/logo3.png')}}" class="img-fluid floating" style="width:150px; height:150px">
+                            </a>
+
                             <h5 class="h3">
-                                Olá, {{ auth()->user()->name }} <span class="font-weight-light"></span>
+                                Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span>
                             </h5>
                             <div class="h5 font-weight-300">
                                 <i class="ni location_pin mr-2"></i>{{ auth()->user()->email }}

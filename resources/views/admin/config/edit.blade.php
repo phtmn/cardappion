@@ -10,9 +10,9 @@
                     <!-- <i class="ni ni-settings-gear-65 text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Configurações</h3> -->
                     <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                                    <i class="ni ni-badge"></i>
-                                </div>
-                <h3 class="display-5 text-dark d-inline-block mb-0"> Perfil</h3>
+                        <i class="ni ni-badge"></i>
+                    </div>
+                    <h3 class="display-5 text-dark d-inline-block mb-0"> Perfil</h3>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
                 </div>
@@ -28,20 +28,23 @@
 <div class="container-fluid mt--6">
     <div class="row">
         <div class="col-lg-4">
-            <div class="card-wrapper">                
-                <div class="card ">                
+            <div class="card-wrapper">
+                <div class="card ">
                     <div class="card-header">
                         <div class="row align-items-center">
-                            <div class="col-8">                
-                                <!-- <a href="#!" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i
-                                    class=" ni ni-cloud-upload-96"></i> Upload Logo</a> -->
+                            <div class="col-8">
+                                <a href="#!" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i class=" ni ni-cloud-upload-96"></i> Upload Logo</a>
                             </div>
                             <div class="col-4 text-right">
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                     <div class="card-body">
                         <div class="text-center">
+                            <a href="#">
+                                <img src="{{asset('vendor/argon/assets/img/brand/logo3.png')}}" class="img-fluid floating" style="width:150px; height:150px">
+                            </a>
+
                             <h5 class="h3">
                                 Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span>
                             </h5>
@@ -55,7 +58,7 @@
         </div>
         <div class="col-lg-8">
             <div class="card-wrapper">
-                <div class="card ">                    
+                <div class="card ">
                     <div class="card-header">
                         <h3 class="mb-0"> {{ Auth::user()->tenant->name }}</h3>
                     </div>
@@ -82,82 +85,68 @@
                                 </div>
                             </div> -->
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right ">CEP </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right ">CEP </label>
                                 <div class="col-md-3">
                                     <input type="text" name="zipcode" class="form-control" value="{{$config->zipcode}}" id="cep" maxlength="8">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Endereço </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Endereço </label>
                                 <div class="col-md-6">
                                     <input type="text" name="address" class="form-control" value="{{$config->address}}" id="address">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Bairro </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Bairro </label>
                                 <div class="col-md-4">
-                                    <input type="text" name="neighborhood" class="form-control"
-                                        value="{{$config->neighborhood}}" id="neighborhood">
+                                    <input type="text" name="neighborhood" class="form-control" value="{{$config->neighborhood}}" id="neighborhood">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Cidade </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Cidade </label>
                                 <div class="col-md-6">
                                     <input type="text" name="city" class="form-control" value="{{$config->city}}" id="city">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Estado </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Estado </label>
                                 <div class="col-md-2">
                                     <input type="text" name="us" class="form-control" value="{{$config->us}}" id="us">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Telefone </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Telefone </label>
                                 <div class="col-md-4">
-                                    <input type="text" name="telephone" class="form-control"
-                                        value="{{$config->telephone}}" id="telephone">
+                                    <input type="text" name="telephone" class="form-control" value="{{$config->telephone}}" id="telephone">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">WhatsApp </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">WhatsApp </label>
                                 <div class="col-md-4">
-                                    <input type="text" name="whatsapp" class="form-control"
-                                        value="{{$config->whatsapp}}" id="whatsapp">
+                                    <input type="text" name="whatsapp" class="form-control" value="{{$config->whatsapp}}" id="whatsapp">
                                 </div>
                             </div>
-            
+
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Instagram </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Instagram </label>
                                 <div class="col-md-7">
-                                    <input type="text" name="instagram" class="form-control"
-                                        value="{{$config->instagram}}">
+                                    <input type="text" name="instagram" class="form-control" value="{{$config->instagram}}">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Fanpage </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Fanpage </label>
                                 <div class="col-md-7">
                                     <input type="text" name="fanpage" class="form-control" value="{{$config->fanpage}}">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Site </label>
+                                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Site </label>
                                 <div class="col-md-7">
                                     <input type="text" name="site" class="form-control" value="{{$config->site}}">
                                 </div>
                             </div>
-                           
+
 
                             <!--  @if(Auth::user()->tenant->plan == 1 )
                                                         <div class="form-group row">
@@ -172,20 +161,15 @@
 
                             <div class="form-group row">
                                 <div class="col-md-4">
-                                    
+
                                 </div>
                                 <div class="col-md-4">
-                                <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i
-                                    class=" fa fa-check-square nav-icon"></i> Salvar</button>
+                                    <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i class=" fa fa-check-square nav-icon"></i> Salvar</button>
                                 </div>
                                 <div class="col-md-4">
-                                    
+
                                 </div>
-                            
                             </div>
-
-                            
-
                             @include('tools.messages')
 
                         </form>
@@ -196,10 +180,7 @@
 
     </div>
 
-    
-
-
-@stop
 
 
 
+    @stop
