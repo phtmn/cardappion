@@ -11,6 +11,7 @@
   
   <title>{{ config('app.name') }}</title>
 
+  
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
   <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/logo3.png') }}" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
@@ -53,8 +54,9 @@
 <body class="bg-black">
   @yield('content')
   @stack('scripts')
-  @include('layouts._nav')
-  @include('layouts._main')
+  @include('site._nav')
+  @include('site.home._main')
+  {{-- @include('site._footer') --}}
   
 </body>
 
