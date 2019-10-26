@@ -28,7 +28,7 @@
 </head>
 
 <body class="bg-gradient-danger">
-@include('layouts._nav')
+@include('site._nav')
 
   <div class="main-content">
     <!-- Header -->

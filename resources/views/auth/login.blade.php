@@ -29,7 +29,7 @@
 </head>
 
 <body class="bg-dark">
-@include('layouts._nav')
+@include('site._nav')
   <div class="main-content">
     <!-- Header -->
     <div class="header bg-white pt-5 pb-7">
