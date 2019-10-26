@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Promotion;
+use App\Models\Tenant;
+use Illuminate\Support\Facades\Auth;
 
 class MenuController extends Controller
 {
@@ -150,5 +152,17 @@ class MenuController extends Controller
     $promotion = Promotion::find($promotion_id);
 
     return response()->json($promotion);
+  }
+
+  public function link(Request $request)
+  {
+    if (Tenant::where('token', $request->token)->first()) {
+      return redirect()->back()->withInput()->withErrors(['link' => 'Link já cadastrado']);
+    }
+
+    $tenant = Auth::user()->tenant()->firstOrFail();
+    $tenant->fill($request->only('token'))->save();
+
+    return redirect()->route('dashboard.index');
   }
 }
