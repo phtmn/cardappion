@@ -30,7 +30,7 @@
     <div class="col-lg-4">
       <div class="card-wrapper">
         <div class="card">
-          <div class="card-header">
+          <!-- <div class="card-header">
             <div class="row align-items-center">
               <div class="col-8">
                 <a href="#!" class="btn btn-dark" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i
@@ -39,7 +39,7 @@
               <div class="col-4 text-right">
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="card-body">
             <div class="text-center">
               <a href="#">
@@ -47,7 +47,9 @@
                   style="width:150px; height:150px">
               </a>
 
-              <h5 class="h3">
+             
+
+              <h5 class="h3 mt-3">
                 Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span>
               </h5>
               <div class="h5 font-weight-300">
@@ -65,7 +67,7 @@
             <h3 class="mb-0">{{ Auth::user()->tenant->name }}</h3>
           </div>
           <div class="card-body">
-            <form action="{{route('config.store')}}" method="POST">
+          <form action="{{route('config.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <!-- <div class="form-group row">
                                 <label for="example-text-input"
@@ -86,6 +88,12 @@
                                         value="" id="docnumber">
                                 </div>
                             </div> -->
+                            <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Upload da Logo </label>
+                <div class="col-md-6">
+                  <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" />
+                </div>
+              </div>
               <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right ">CEP
                 </label>
@@ -187,3 +195,52 @@
 
   </div>
   @stop
+
+  @section('css')
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('js/dropify/dist/css/dropify.css')}}">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
+
+  @stop
+
+  @section('js')
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
+  <script src="{{asset('js/dropify/dist/js/dropify.js')}}"></script>
+  <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+  <script src="{{ asset('js/viaCep.js') }}"></script>
+  <script>
+    $('#summernote').summernote({
+            toolbar: [
+                // [groupName, [list of button]]
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']]
+            ]
+        });
+
+        $(document).ready(function(){
+
+                $("#price").mask('#.##0,00', {reverse: true});
+
+
+        })
+
+        $(document).ready(function(){
+            $('.dropify').dropify({
+                messages:{
+                    'default': 'foto de destaque'
+                }
+            });
+        });
+
+
+
+  </script>
+
+
+  @stop
+

@@ -206,12 +206,16 @@
               data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               Alterar Link <i class="ni ni-bold-down"></i>
             </button>
+            @if($errors->has('link'))
+                  <span class="help-block text-danger "><b>{{ $errors->first('link') }}</b></span>
+                  @endif
           </div>
+         
           <p>
 
           </p>
           <div class="collapse" id="collapseExample">
-            <div class="card card-body bg-gradient-danger">
+            <div class="card card-body ">
               <form action="{{ route('menu.link') }}" method="POST">
                 @csrf
                 <div class="form-row align-items-center">
@@ -219,18 +223,19 @@
                     <label class="sr-only" for="inlineFormInputGroup">Username</label>
                     <div class="input-group mb-2">
                       <div class="input-group-prepend">
-                        <div class="input-group-text">cardappion.com.br/m/</div>
+                        
+                        <input type="text" class="form-control" id="inlineFormInputGroup" name="token" placeholder="" value="{{ Auth::user()->tenant->token }}" required>
+                        
+                        
                       </div>
-                      <input type="text" class="form-control" id="inlineFormInputGroup" name="token" placeholder="">
+                      <!-- <input type="text" class="form-control" id="inlineFormInputGroup" name="token" placeholder=""> -->
                     </div>
                   </div>
                   <div class="col-auto">
                     <button type="submit"
-                      class="btn btn-block btn-outline-default btn-lg btn-round mb-2">Submit</button>
+                      class="btn btn-block btn-outline-primary btn-sm btn-round mb-2">Alterar</button>
                   </div>
-                  @if($errors->has('link'))
-                  <span class="help-block">{{ $errors->first('link') }}</span>
-                  @endif
+                 
                 </div>
               </form>
             </div>

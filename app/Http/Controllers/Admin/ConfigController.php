@@ -23,13 +23,13 @@ class ConfigController extends Controller
   public function store(Request $request)
   {
     if ($request->hasFile('image')) {
-      $image = $request->image->move('products');
+      $image = $request->image->move('logos');
     }
-
+    // dd($request->all());
     $config = Config::UpdateOrCreate(
       ['user_id' => auth()->user()->id],
       [
-        'image'         => isset($image) ? $image : null,
+        'image'         => isset($image) ? $image : null,                
         'name'          => $request->name,
         'docnumber'     => $request->docnumber,
         'zipcode'       => $request->zipcode,

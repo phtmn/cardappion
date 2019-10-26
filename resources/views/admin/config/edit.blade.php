@@ -34,7 +34,7 @@
                 <img src="{{ url("{$config->image}") }}" class="img-fluid floating" style="width:150px; height:150px">
               </a>
 
-              <h5 class="h3 m-2">
+              <h5 class="h3 mt-3">
                 Olá, {{ auth()->user()->name }}<span class="font-weight-light"></span>
               </h5>
               <div class="h5 font-weight-300">
@@ -55,8 +55,7 @@
             <form action="{{route('config.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="form-group row">
-                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Foto de
-                  destaque </label>
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Upload da Logo </label>
                 <div class="col-md-6">
                   <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" />
                 </div>
@@ -197,7 +196,7 @@
         $(document).ready(function(){
             $('.dropify').dropify({
                 messages:{
-                    'default': 'upload da imagem do produto'
+                    'default': 'foto de destaque'
                 }
             });
         });
