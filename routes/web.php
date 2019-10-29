@@ -17,9 +17,6 @@ Route::name('admin.menus.getproducts')->get('menus/prods/{menu_id}', 'Admin\Menu
 Route::name('admin.menus.getproduct')->get('menus/prod/{menu_id}', 'Admin\MenuController@getProduct');
 Route::name('admin.menus.getpromo')->get('menus/promo/{promotion_id}', 'Admin\MenuController@getPromo');
 
-
-
-
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
