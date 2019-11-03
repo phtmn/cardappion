@@ -2,6 +2,10 @@
   <div class="box box-primary">
     <div class="box-header with-border">
       <h3 class="box-title">Detalhes</h3>
+      <div class="box-tools">
+        {!! Form::label('active', 'Ativo?' ) !!}
+        {!! Form::select('active', [ true => 'Sim', false => 'Não' ], null) !!}
+      </div>
     </div>
     <div class="box-body">
       <div class="form-group">
@@ -41,10 +45,13 @@
     </div>
     <div class="box-body">
       <div class="form-group">
-        <label for="imagem">Imagem</label>
-        <input type="file" id="imagem" name="imagem">
+        <label for="image">Imagem</label>
+        <input type="file" id="image" name="image">
 
         <p class="help-block">Apenas Imagens (.jpeg .jpg .png)</p>
+        @if($errors->has('image'))
+        <span class="help-block text-red">{{ $errors->first('image') }}</span>
+        @endif
       </div>
     </div>
   </div>

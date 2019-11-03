@@ -17,7 +17,9 @@ class BlogController extends BaseController
 
   public function index()
   {
-    return view('super.blog.index');
+    $posts = $this->posts->get();
+
+    return view('super.blog.index', compact('posts'));
   }
 
   public function create()
@@ -27,6 +29,8 @@ class BlogController extends BaseController
 
   public function store(Request $request)
   {
+    $post = $request->all();
+
     $validate = validator($request->all(), [
       'category' => 'nullable',
       'title'    => 'required|max:255',
@@ -35,9 +39,16 @@ class BlogController extends BaseController
       'image'    => 'nullable|image|max:2000',
     ]);
 
-    // If fails validate
     if ($validate->fails()) {
       return redirect()->back()->withInput()->withErrors($validate->getMessageBag());
     }
+
+    if ($request->hasFile('image')) {
+      $post['image']  = $request->image->move('posts');
+    }
+
+    $this->posts->create($post);
+
+    return redirect()->route('super.blog.index');
   }
 }
