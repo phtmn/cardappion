@@ -6,3 +6,14 @@
 <script src="{{ asset('assets/super/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('assets/super/dist/js/adminlte.min.js') }}"></script>
 <script src="{{ asset('assets/super/dist/js/demo.js') }}"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+  axios.defaults.headers.common = {
+  "X-Requested-With": "XMLHttpRequest",
+  "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+  "Accept": "application/json"
+};
+</script>

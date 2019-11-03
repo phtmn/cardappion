@@ -47,7 +47,7 @@ Route::prefix('super')->group(function () {
       Route::name('super.blog.store')->post('/adicionar', 'Super\Blog\BlogController@store');
       Route::name('super.blog.edit')->get('/editar/{id}', 'Super\Blog\BlogController@edit');
       Route::name('super.blog.update')->put('/editar/{id}', 'Super\Blog\BlogController@update');
-      Route::name('super.blog.destroy')->delete('/deletar/{id}', 'Super\Blog\BlogController@destroy');
+      Route::name('super.blog.destroy')->delete('/excluir/{id}', 'Super\Blog\BlogController@destroy');
     });
   });
 });

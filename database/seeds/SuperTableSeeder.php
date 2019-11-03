@@ -12,8 +12,14 @@ class SuperTableSeeder extends Seeder
   public function run()
   {
     DB::table('super')->insert([
-      'name' => 'Yuri Canuto',
-      'email' => 'yuriasc@gmail.com',
+      'name'     => 'Yuri Canuto',
+      'email'    => 'yuriasc@gmail.com',
+      'password' => bcrypt('123123123'),
+    ]);
+
+    DB::table('super')->insert([
+      'name'     => 'Pedro Nogueira',
+      'email'    => 'pedro.nogueira@hotmail.com.br',
       'password' => bcrypt('123123123'),
     ]);
   }

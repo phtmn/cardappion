@@ -1,5 +1,8 @@
 <?php
 
+Route::get('/blog', 'Site\BlogController@index')->name('site.blog.index');
+Route::get('/blog/{slug}', 'Site\BlogController@show')->name('site.blog.show');
+
 Route::get('/', 'Site\SiteController@home')->name('site');
 Route::name('site.menu.show')->get('/m/{token}', 'Site\SiteController@show');
 
