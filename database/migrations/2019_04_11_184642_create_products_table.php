@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
       $table->bigIncrements('id');
       $table->unsignedBigInteger('tenant_id');
       $table->string('title');
+      // $table->string('teste');
       $table->text('details')->nullable();
       $table->string('slug', 100)->nullable();
       $table->string('url')->nullable()->unique();
