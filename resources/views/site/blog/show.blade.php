@@ -49,26 +49,79 @@
 <body class="bg-black">
   @include('site._nav')
 
-  <div class="container-fluid pb-8">
-    <div class="row">
-      <div class="col-md-8 offset-2 pt-5">
-        <div class="header pb-6 d-flex align-items-center"
-          style="min-height: 300px; background-image: url({{ url("{$post->image}") }}); background-size: cover; background-position: center top;">
-          <span class="mask bg-gradient-default opacity-8"></span>
-          <div class="container-fluid d-flex align-items-center">
-            <div class="row">
-              <div class="col-lg-7 col-md-10">
-                <h1 class="display-2 text-white">{{ $post->title }}</h1>
-                <p class="text-white mt-0 mb-5">{{ $post->subtitle }}</p>
+
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header bg-white pt-5 pb-7">
+      <div class="container">
+        <div class="header-body">
+          <div class="row align-items-center">
+            <div class="col-lg-1">
+
+            </div>
+            <div class="col-lg-10">
+              <div class="pr-5">
+                <h1 class="display-2 text-dark font-weight-bold mb-0"><div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                  <i class="ni ni-world"></i>
+                </div> Blog </h1>
+                <h2 class="display-4 text-dark font-weight-light">{{ $post->title }}</h2>
+                <h2 class="display-3 text-dark font-weight-light"> {{ $post->created_at->format('d/m/Y') }}</h2>
+                
+                
               </div>
+            </div>
+            <div class="col-lg-1">
+
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- </section>  -->
+
+    </section>
+
+  <div class="container-fluid pb-8">
     <div class="row">
-      <div class="col-md-8 offset-2 pt-5">
-        {!! $post->body !!}
+      <div class="col-lg-1  pt-5">
+        
+      </div>
+      <div class="col-lg-7  pt-5">
+        <div class="header pb-6 d-flex align-items-center"
+          style="min-height: 200px; background-image: url({{ url("{$post->image}") }}); background-size: cover; background-position: center top;">
+          <!-- <span class="mask bg-gradient-default opacity-8"></span> -->
+          <div class="container-fluid d-flex align-items-center">
+            <div class="row">
+              <div class="col-lg-6 col-md-10">
+              <img class="card-img-top" src="{!! $post->image !!}"  style=" height:150px">
+              <h2 class="display-2 text-dark font-weight-light">{!! $post->subtitle !!}</h2>
+              <h2 class="display-4 text-dark font-weight-light">{!! $post->body !!}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3  pt-5">
+        <div class="header pb-6 d-flex align-items-center" >
+          <!-- <span class="mask bg-dark"></span> -->
+          <div class="container-fluid d-flex align-items-center">
+            <div class="row">
+              <div class="col-lg-6 col-md-10">
+           
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-1  pt-5">
+        
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 offset-1 pt-2">
+        <!-- <h2 class="display-2 text-dark font-weight-light">{!! $post->subtitle !!}</h2>
+        <h2 class="display-2 text-dark font-weight-light">{!! $post->body !!}</h2> -->
+        
       </div>
     </div>
 
