@@ -1,5 +1,5 @@
 <div class="main-content">
-  <!-- Header -->
+  
   <div class="header bg-white pt-5 pb-7">
     <div class="container">
       <div class="header-body">
@@ -13,9 +13,7 @@
               <h2 class="display-4 text-dark font-weight-light">Todos os cardápios e promoções em um único lugar.</h2>
 
               <div class="mt-5">
-                <!-- <p class="lead text-white">
-            Temos uma plataforma perfeita para o seu negócio, seja ele do tamanho que for.
-            </p> -->
+                
               </div>
             </div>
           </div>
@@ -27,7 +25,7 @@
     </div>
   </div>
 
-  </section> -->
+  </section> 
   <section class="section section-lg pt-lg-0 mt--7 bg-white">
     <div class="container">
       <div class="row justify-content-center">
@@ -36,8 +34,7 @@
             <div class="col-lg-4">
               <div class="card card-lift--hover shadow border-0 bg-danger">
                 <div class="card-body py-5">
-                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i
-                      class="ni ni-building"></i></span>
+                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-building"></i></span>
                   <span class="alert-text text-white"><strong> CADASTRE</strong> seu negócio</span>
                 </div>
               </div>
@@ -45,8 +42,7 @@
             <div class="col-lg-4">
               <div class="card card-lift--hover shadow border-6 bg-gradient-danger">
                 <div class="card-body py-5">
-                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i
-                      class="ni ni-collection"></i></span>
+                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
                   <span class="alert-text text-white"><strong>CRIE</strong> seu cardápio</span>
                 </div>
               </div>
@@ -54,8 +50,7 @@
             <div class="col-lg-4">
               <div class="card card-lift--hover shadow border-0 bg-gradient-warning">
                 <div class="card-body py-5">
-                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i
-                      class="ni ni-world-2"></i></span>
+                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i class="ni ni-world-2"></i></span>
                   <span class="alert-text text-white"><strong>COMPARTILHE</strong> seu cardápio</span>
                 </div>
               </div>
@@ -78,8 +73,7 @@
       <div class="col-md-6">
         <div class="pr-md-5">
           <div class="alert alert-danger" role="alert">
-            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i
-                class="ni ni-building"></i></span>
+            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-building"></i></span>
             <span class="alert-text"><strong> CADASTRE</strong> seu negócio</span>
           </div>
           <p>Nosso objetivo é melhorar seu negócio com soluções baseadas em cardápios digitais.</p>
@@ -99,8 +93,7 @@
       <div class="col-md-6 order-md-1">
         <div class="pr-md-5 text-dark">
           <div class="alert alert-danger bg-gradient-danger" role="alert">
-            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i
-                class="ni ni-collection"></i></span>
+            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
             <span class="alert-text"><strong>CRIE</strong> seu cardápio</span>
           </div>
           <p> O cardappion é perfeito para o seu negócio, seja ele do tamanho que for. Informações e preços atualizadas
@@ -120,8 +113,7 @@
       <div class="col-md-6">
         <div class="pr-md-5">
           <div class="alert alert-warning bg-gradient-warning" role="alert">
-            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i
-                class="ni ni-world-2"></i></span>
+            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i class="ni ni-world-2"></i></span>
             <span class="alert-text text-white"><strong>COMPARTILHE</strong> seu cardápio</span>
           </div>
           <p> Acesso aos itens que realmente estão sendo servidos no dia.</p>
@@ -140,8 +132,7 @@
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-dark"><i
-                  class="ni ni-paper-diploma"></i></span>
+              <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-dark"><i class="ni ni-paper-diploma"></i></span>
               <span class="alert-text text-white"><strong>
                   <h1 class="text-white">Planos</h1>
                 </strong> </span>
@@ -257,5 +248,4 @@
       </div>
     </div>
   </div>
-
 </section>
