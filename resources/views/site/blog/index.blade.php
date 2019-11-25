@@ -8,15 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>{{ config('app.name') }}</title>
-  <title>{{ config('app.name') }}</title>
+  <title>{{ config('app.name') }}</title>  
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
   <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/logo3.png') }}" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <link rel="stylesheet" href="{{ asset('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('assets/css/argon.min.css?v=1.0.0') }}" type="text/css">
-
+  <style>
+  #div2 {
+    max-width: 70ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+</style>
   <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
@@ -87,12 +93,13 @@
     <!-- </section>  -->
 
     </section>
-    <section class="section section-lg pt-lg-0 mt--6 bg-dark">
+    <section class="section section-lg pt-lg-0 mt--6 bg-gradient-warning">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-12">
+          <div class="col-lg-10">
             <div class="row card-wrapper">
               @foreach ($posts as $post)
+              
               <div class="col-md-3">
                 <!-- <div class="card card-lift--hover  bg-warning"> -->
                 <div class="card">
@@ -101,7 +108,7 @@
                     <p class="text-dark m-0">
                       <h6 class="h4 card-title mb-0"> <b>{{ $post->created_at->format('d/m/Y') }} </h6></b>
                     </p>
-                    <h4 class="h2 card-title mb-0"><a href="{{ route('site.blog.show', [ 'slug' => $post->slug ] ) }}"> {{ $post->title }}</a></h4>
+                    <h4  class="h2 card-title mb-0"><a href="{{ route('site.blog.show', [ 'slug' => $post->slug ] ) }}"> {{ $post->title }}</a></h4>
                     <!-- <p class="card-text mt-4">{{ $post->subtitle }}</p> -->
                   </div> <!-- <a href="{{ route('site.blog.show', [ 'slug' => $post->slug ] ) }}" class="btn btn-link px-0 text-center text-warning">Ler Mais</a> -->
                 </div>

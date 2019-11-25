@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="col-md-8">
   <div class="box box-primary">
     <div class="box-header with-border">
       <h3 class="box-title">Detalhes</h3>
@@ -38,7 +38,7 @@
   </div>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-4">
   <div class="box box-primary">
     <div class="box-header with-border">
       <h3 class="box-title">Imagem</h3>
