@@ -29,7 +29,7 @@ class ProductsController extends Controller
       // $product['url']   = Str::random(5);
 
       if ($request->hasFile('image')) {
-        $product['image']  = $request->image->move('products');
+        $product['image']  = $request->image->move('images/products');
       }
 
       if ($request->price) {
@@ -58,7 +58,7 @@ class ProductsController extends Controller
     $product = Product::findOrFail($id);
 
     if ($request->hasFile('image')) {
-      $product['image'] = $request->image->move('products');
+      $product['image'] = $request->image->move('images/products');
     }
 
     $product['title'] = $request->title;

@@ -17,7 +17,7 @@ class BlogController extends Controller
   public function show($slug)
   {
     
-    $posts = Post::actived()->get();
+    $posts = Post::actived()->paginate(4);
     $post = Post::actived()->where('slug', $slug)->firstOrFail();
 
     return view('site.blog.show', compact('post'), compact('posts'));

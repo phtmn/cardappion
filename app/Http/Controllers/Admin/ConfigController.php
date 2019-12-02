@@ -23,7 +23,7 @@ class ConfigController extends Controller
   public function store(Request $request)
   {
     if ($request->hasFile('image')) {
-      $image = $request->image->move('logos');
+      $image = $request->image->move('images/logos');
     }
     // dd($request->all());
     $config = Config::UpdateOrCreate(
