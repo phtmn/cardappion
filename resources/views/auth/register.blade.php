@@ -81,7 +81,7 @@
                             <span class="input-group-text"><i class="ni ni-settings-gear-65"></i></span>
                          </div>
                             
-                              <input id="tenant" type="text" placeholder="Nome do negócio" class="form-control{{ $errors->has('tenant') ? ' is-invalid' : '' }}" name="tenant" value="{{ old('tenant') }}" required autofocus>
+                              <input id="tenant" type="text" placeholder="Apelido" class="form-control{{ $errors->has('tenant') ? ' is-invalid' : '' }}" name="tenant" value="{{ old('tenant') }}" required autofocus>
 
                               @if ($errors->has('tenant'))
                               <span class="invalid-feedback" role="alert">

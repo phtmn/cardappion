@@ -54,7 +54,7 @@
                                     <i class="ni ni-bullet-list-67"></i>
                                 </div>
                                 <div class="media-body ml-3">
-                                    <h6 class="heading text-dark mb-md-1">Produtos</h6>
+                                    <h6 class="heading text-dark mb-md-1">Pedidos</h6>
 
                                 </div>
                             </a>
@@ -72,7 +72,7 @@
                                     <i class="ni ni-collection"></i>
                                 </div>
                                 <div class="media-body ml-3">
-                                    <h6 class="heading text-dark mb-md-1">Menu</h6>
+                                    <h6 class="heading text-dark mb-md-1">Menus</h6>
 
                                 </div>
                             </a>
