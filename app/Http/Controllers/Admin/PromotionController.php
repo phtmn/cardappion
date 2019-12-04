@@ -38,7 +38,7 @@ class PromotionController extends Controller
 
 
       if ($request->hasFile('image')) {
-        $promotion['image'] = $request->image->move('promotions');
+        $promotion['image'] = $request->image->move('images/promotions');
       }
 
       if ($request->promotion_value) {
@@ -67,7 +67,7 @@ class PromotionController extends Controller
     $promotion = Promotion::findOrFail($id);
 
     if ($request->hasFile('image')) {
-      $promotion['image'] = $request->image->move('promotions');
+      $promotion['image'] = $request->image->move('images/promotions');
     }
 
     $promotion['title'] = $request->title;

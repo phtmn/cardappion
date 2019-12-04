@@ -44,7 +44,7 @@ class BlogController extends BaseController
     }
 
     if ($request->hasFile('image')) {
-      $post['image']  = $request->image->move('posts');
+      $post['image']  = $request->image->move('images/posts');
     }
 
     $this->posts->create($post);
