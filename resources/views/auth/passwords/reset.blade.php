@@ -1,6 +1,14 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
 
-@section('content')
+@include('layouts.site._head')
+<body class="bg-dark">
+@include('layouts.site._nav')  
+
+ 
+<div class="main-content">
+    <!-- Header -->
+    <div class="header bg-white pt-5 pb-7">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -62,4 +70,5 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+</html>
