@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Super\Dashboard;
 
 use App\Http\Controllers\Super\BaseController;
 use Illuminate\Http\Request;
+use App\Models\Tenant;
 
 class DashboardController extends BaseController
 {
@@ -12,7 +13,10 @@ class DashboardController extends BaseController
    **/
   public function index()
   {
-    // Return view
-    return view('super.dashboard.index');
+    return view('super.dashboard.index', [
+      'data' => $data = Tenant::all()
+    ]);// Return view
+    
+    // return view('super.dashboard.index');
   }
 }

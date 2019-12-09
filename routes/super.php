@@ -49,5 +49,8 @@ Route::prefix('super')->group(function () {
       Route::name('super.blog.update')->put('/editar/{id}', 'Super\Blog\BlogController@update');
       Route::name('super.blog.destroy')->delete('/excluir/{id}', 'Super\Blog\BlogController@destroy');
     });
+
+    // // Clientes
+    // Route::name('super.clientes.index')->get('/', 'Super\Dashboard\DashboardController@index');
   });
 });

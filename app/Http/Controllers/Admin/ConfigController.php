@@ -42,6 +42,7 @@ class ConfigController extends Controller
         'site'          => $request->site,
         'instagram'     => $request->instagram,
         'fanpage'       => $request->fanpage,
+        'details'       => $request->details,
         'user_id'       => auth()->user()->id
       ]
     );

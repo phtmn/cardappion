@@ -13,8 +13,8 @@
         <div class="header-body text-center mb-4">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <h1 class="text-dark">Bem vindo!</h1>
-              <p class="text-lead text-dark">Utilize o formulário para acessar sua conta</p>
+              <h1 class="text-dark">Esqueceu sua senha?</h1>
+              <p class="text-lead text-dark">Utilize o formulário para alterar sua senha</p>
             </div>
           </div>
         </div>
@@ -30,7 +30,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+            <div class="text-center text-muted mb-4">
+                <!-- <small class="font-weight-bold">Bem vindo!</small> -->
+              </div>
+                <!-- <div class="card-header">{{ __('Esqueceu sua senha?') }}</div> -->
 
                 <div class="card-body">
                     @if (session('status'))
@@ -43,10 +46,13 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right text-dark">{{ __('E-Mail') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right text-dark">{{ __('E-mail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                            
+                            <input required class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="E-mail" type="email" name="email" value="{{ old('email') }} ">
+                                <!-- <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required> -->
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -58,7 +64,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-secondary">
+                                <button type="submit" class="btn btn-dark my-2">
                                     {{ __('Enviar senha para e-mail') }}
                                 </button>
                             </div>

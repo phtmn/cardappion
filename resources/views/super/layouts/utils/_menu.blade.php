@@ -18,6 +18,8 @@
       </li>
       <li class="{{ is_active('super.blog.*') ? 'active' : '' }}"><a href="{{ route('super.blog.index') }}"><i
             class="fa fa-commenting-o"></i> <span>Blog</span></a></li>
+      
+     
 
     </ul>
   </section>

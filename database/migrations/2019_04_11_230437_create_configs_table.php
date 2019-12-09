@@ -17,8 +17,8 @@ class CreateConfigsTable extends Migration
       $table->bigIncrements('id');
       $table->unsignedBigInteger('tenant_id');
       $table->unsignedBigInteger('user_id');
-      $table->string('name')->nullable();
-      $table->string('docnumber')->nullable();
+      // $table->string('name')->nullable();
+      // $table->string('docnumber')->nullable();
       $table->string('zipcode')->nullable();
       $table->string('address')->nullable();
       $table->string('neighborhood')->nullable();
@@ -30,6 +30,7 @@ class CreateConfigsTable extends Migration
       $table->string('site')->nullable();
       $table->string('instagram')->nullable();
       $table->string('fanpage')->nullable();
+      $table->text('details')->nullable();
       $table->foreign('tenant_id')->references('id')->on('tenants'); // apagar depois q retirar do login?
       $table->foreign('user_id')->references('id')->on('users');
       $table->timestamps();

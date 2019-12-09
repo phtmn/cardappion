@@ -66,6 +66,7 @@
           <ion-content>
             </ion-conent>
             <ion-list style="margin-top: 50px">
+            <ion-slides pager="true">
 
               <div class="list-category">
                 @forelse ($categories as $category)
@@ -133,7 +134,7 @@
             </ion-content>
         </ion-tab>
 
-        <ion-tab tab="sobre">
+        <ion-tab tab="sobre">        
           <ion-content>
             <ion-content>
               <ion-list style="margin-top: 50px">
@@ -146,7 +147,7 @@
                       <h2 style="margin-right:25px"><strong>{{ $tenant->name }}</strong></h2>
                     </div>
                   </ion-col>
-                  <ion-item href="#">
+                  <ion-item >
                     <ion-label>
                       <ion-icon name="map"></ion-icon>
                       {{ $config->address ?? '' }}, {{ $config->neighborhood ?? '' }}
@@ -172,17 +173,22 @@
                       <i>
                         {{ $config->site ?? 'nenhum site cadastrado' }}
                       </i>
-
+                     
                     </ion-label>
-
+                   
+                    
                   </ion-item>
 
               </ion-list>
-
+              <ion-item>
+                     <p> {{ $config->details ?? '' }} </p>
+                      </br>
+                      </ion-item>
+                      </br>
         </ion-tab>
 
         <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="sobre">
+          <ion-tab-button tab="sobre" class="btn-sobre">
             <ion-label color="dark">Sobre</ion-label>
             <ion-icon name="business" color="dark"></ion-icon>
           </ion-tab-button>
@@ -191,6 +197,7 @@
             <ion-label color="dark">Menu</ion-label>
             <ion-icon name="paper" color="dark"></ion-icon>
           </ion-tab-button>
+          
 
           <ion-tab-button tab="promocoes" class="btn-promo">
             <ion-label color="dark">Promoções</ion-label>

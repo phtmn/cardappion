@@ -86,8 +86,9 @@
             </div>
           </div>
           <div class="row mt-3">
-            <div class="col-6">
-              <!-- <a href="#" class="text-light"><small>Esqueci a senha?</small></a> -->
+            <div class="col-6 text-left">
+            <a href="{{url('/password/reset')}}" class="text-white"><small><b>Esqueceu a senha?</b></small></a>
+              <!-- <a href="#" class="text-white"><small>Esqueci a senha?</small></a> -->
             </div>
             <div class="col-6 text-right">
               <a href="{{route('register')}}" class="text-white"><small><b>Cadastre-se</b></small></a>

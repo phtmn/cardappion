@@ -57,7 +57,7 @@
               <div class="form-group row">
                 <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Upload da Logo </label>
                 <div class="col-md-6">
-                  <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" />
+                  <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" data-default-file="{{ url("{$config->image}") }}" />
                 </div>
               </div>
               <div class="form-group row">
@@ -135,6 +135,14 @@
                   <input type="text" name="site" class="form-control" value="{{$config->site}}">
                 </div>
               </div>
+
+              <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
+                                <div class="col-md-6">
+                                         <textarea name="details"rows="5" resize="none" class="form-control" maxlenght="500"  >{{$config->details}}</textarea>   
+                                </div>
+                            </div>
 
               <div class="form-group row">
                 <div class="col-md-4">
