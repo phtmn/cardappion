@@ -14,7 +14,7 @@
               <div class="pr-5">
               <h1 class="display-2 text-dark font-weight-bold mb-0"><div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                   <i class="ni ni-world"></i>
-                </div> Blog {{ config('app.name') }} </h1>
+                </div> Blog </h1>
                 <h2 class="display-4 text-dark font-weight-light">Todas as novidades em um único lugar.</h2>
                 <!-- <h2 class="display-4 text-dark font-weight-light">Todos os cardápios e promoções em um único lugar.</h2> -->
                
