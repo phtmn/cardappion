@@ -26,13 +26,15 @@
   <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
   <script src="{{ asset('assets/js/demo.min.js') }}"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 @yield('css')
 </head>
 
 
 
 <body class="bg-gradient-default ">
-  
+
 
   <!-- Main content -->
   <div class="main-content" id="panel">
@@ -61,18 +63,41 @@
               </li>
             </ul>
           </div>
-        </div> 
+        </div>
       </footer> -->
     </div>
   </div>
-  
+
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
 
     <script>
 
       $(document).ready(function() {
+        var APP_URL = {!! json_encode(url('/')) !!}
+        var _TOKEN  = {!! json_encode(csrf_token()) !!}
+
         $('#telephone').mask('(00) 0000-0000');
         $('#whatsapp').mask('(00) 00000-0000');
+
+        $('#category-drag').sortable({
+            stop: function(event, ui) {
+                const sort = document.querySelectorAll('.js-sort')
+                var ids  = []
+
+                sort.forEach(function(val, i) {
+                    ids.push(val.dataset.id)
+                })
+
+                $.ajax({
+                    url  : APP_URL + '/api/menu/sort',
+                    type : 'POST',
+                    data: {
+                        "_token": _TOKEN,
+                        "sort": JSON.stringify(ids)
+                    }
+                })
+            }
+        });
       });
 
       $('.js-checkbox').on('click', function(e) {
@@ -159,9 +184,6 @@
       });
 
     </script>
-
-
-
 
 
 @yield('js')

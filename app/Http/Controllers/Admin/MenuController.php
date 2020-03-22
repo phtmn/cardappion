@@ -14,7 +14,7 @@ class MenuController extends Controller
 {
   public function index()
   {
-    $data = Menu::all();
+    $data = Menu::orderBy('sort')->get();
     return view('admin.menus.index', [
       'data' => $data
     ]);
@@ -164,5 +164,14 @@ class MenuController extends Controller
     $tenant->fill($request->only('token'))->save();
 
     return redirect()->route('dashboard.index');
+  }
+
+  public function sort(Request $request) {
+
+    $sortable = json_decode($request->sort);
+
+    foreach ($sortable as $key => $sort) {
+        Menu::where('uuid', $sort)->update(['sort' => $key]);
+    }
   }
 }

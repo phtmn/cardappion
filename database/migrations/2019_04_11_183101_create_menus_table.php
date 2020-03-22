@@ -22,6 +22,7 @@ class CreateMenusTable extends Migration
       $table->string('slug', 100)->nullable();
       $table->string('url')->nullable();
       $table->string('token')->nullable();
+      $table->integer('sort')->nullable();
       $table->boolean('active');
       $table->foreign('tenant_id')->references('id')->on('tenants');
       $table->foreign('user_id')->references('id')->on('users');

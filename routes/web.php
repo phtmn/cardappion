@@ -38,6 +38,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
   Route::get('/menu-item/menu/{menu}/delete/{id}', 'MenuController@deleteItem')->name('menu.deleteItem');
   Route::get('/menu/share/{id}', 'MenuController@share')->name('menu.share');
   Route::post('/menu/editar-link', 'MenuController@link')->name('menu.link');
+//   Route::post('/menu/sort/itens', 'MenuController@sort')->name('menu.sort');
 
   Route::get('qrcode/{id}', 'PromotionController@qrCode')->name('promotion.qrCode');
 

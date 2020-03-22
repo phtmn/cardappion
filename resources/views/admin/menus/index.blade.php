@@ -96,17 +96,15 @@
               <th>Publicado</th>
               <th class="text-right"></th>
             </thead>
-            <tbody>
+            <tbody id="category-drag">
               @forelse($data as $d)
-              <tr>
+              <tr class="js-sort" data-id="{{ $d->uuid }}" style="cursor: grab">
                 <!-- <td>{{$d->id}}</td> -->
                 <td>{{$d->description}}</a> </td>
                 <!-- <td>{{ 0 }}</td> -->
                 <td>
                   <label class="custom-toggle">
-                    <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}"
-                      data-route="{{ route('admin.menus.activate', [ 'id' => $d->id ]) }}"
-                      {{ ($d->active) ? 'checked' : '' }}>
+                    <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="{{ route('admin.menus.activate', [ 'id' => $d->id ]) }}" {{ ($d->active) ? 'checked' : '' }}>
                     <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
                   </label>
                   <!-- {{$d->active ? 'Sim' : 'Não'}} -->

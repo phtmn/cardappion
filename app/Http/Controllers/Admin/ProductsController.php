@@ -35,7 +35,7 @@ class ProductsController extends Controller
       if ($request->price) {
 
         // $promotion['promotion_value'] = $request->promotion_value;
-        $product['price'] = str_replace(',', '.', str_replace('.', '', $request->price));
+        // $product['price'] = str_replace(',', '.', str_replace('.', '', $request->price));
       }
 
       Product::create($product);
