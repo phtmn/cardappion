@@ -30,8 +30,8 @@ class ConfigController extends Controller
       ['user_id' => auth()->user()->id],
       [
         'image'         => isset($image) ? $image : null,                
-        'name'          => $request->name,
-        'docnumber'     => $request->docnumber,
+        // 'name'          => $request->name,
+        // 'docnumber'     => $request->docnumber,
         'zipcode'       => $request->zipcode,
         'address'       => $request->address,
         'neighborhood'  => $request->neighborhood,

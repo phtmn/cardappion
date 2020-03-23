@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-@include('layouts.site._head')
+@include('site.layouts._head')
 <body class="bg-dark">
-@include('layouts.site._nav')
+@include('site.layouts._nav')
   <div class="main-content">
     <!-- Header -->
     <div class="header bg-white pt-5 pb-7">
