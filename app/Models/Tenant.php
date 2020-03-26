@@ -43,6 +43,11 @@ class Tenant extends Model
     return $this->hasMany(Promotion::class);
   }
 
+  public function products()
+  {
+    return $this->hasMany(Product::class);
+  }
+
   // Accesors
   public function getUrlTokenAttribute()
   {

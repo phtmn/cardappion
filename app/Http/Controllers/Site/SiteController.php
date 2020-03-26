@@ -18,12 +18,28 @@ class SiteController extends Controller
     return view('site.home.home');
   }
 
-  public function promocao($slug)
+  // public function promocao($slug)
+  // {
+
+  //   $promotion = Promotion::where('url', '=', $slug)->first();
+  //   //dd($promotion);
+  //   return view('client.promotion', compact('promotion'));
+  // }
+
+  public function promo($slug)
   {
 
     $promotion = Promotion::where('url', '=', $slug)->first();
     //dd($promotion);
     return view('client.promotion', compact('promotion'));
+  }
+
+  public function produto($slug)
+  {
+
+    $product = Product::where('url', '=', $slug)->first();
+    //dd($promotion);
+    return view('client.product', compact('product'));
   }
 
   public function detalhe_promocao2($slug)
@@ -72,9 +88,11 @@ class SiteController extends Controller
 
     $categories = $tenant->menus()->where('active', true)->get();
 
+    $products = $tenant->products()->where('active', true)->get();
+
     $promotions = $tenant->promotions()->where('active', true)->get();
 
-    return view('site.show_argon', compact('tenant', 'config', 'categories', 'promotions'));
+    return view('site.show_argon', compact('tenant', 'config', 'categories', 'products', 'promotions'));
     // return view('site.show', compact('tenant', 'config', 'categories', 'promotions'));
   }
 }

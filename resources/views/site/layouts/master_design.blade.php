@@ -53,6 +53,8 @@
   <script src="{{ asset('js/jquery.sharrre.js') }}"></script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 
+
+  
   <script>
     // Carousel
     new Glide('.glide', {
@@ -63,7 +65,7 @@
       perView: 4
     }).mount();
 
-
+    
     // Testimonial Carousel
     new Glide('.testimonial-glide', {
       type: 'carousel',

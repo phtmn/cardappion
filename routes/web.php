@@ -7,12 +7,13 @@ Route::get('/blog/{slug}', 'Site\BlogController@show')->name('site.blog.show');
 Route::get('/', 'Site\SiteController@home')->name('site');
 Route::name('site.menu.show')->get('/m/{token}', 'Site\SiteController@show');
 
-Route::get('promo/{slug}', 'Site\SiteController@promocao')->name('promo');
+Route::get('promo/{slug}', 'Site\SiteController@promo')->name('promo');
+Route::get('produto/{slug}', 'Site\SiteController@produto')->name('produto');
 Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
 
 Route::get('/m/{token}/{id}', 'Site\SiteController@detalhe_promocao')->name('detalhe.promocao');
 
-// Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('product.detail');
+Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('product.detail');
 
 Route::name('admin.menus.add_products')->get('menus/menu-item/{menu_id}/product/{product_id}/adicionar', 'Admin\MenuController@storeProducts');
 Route::name('admin.menus.remove_products')->get('menus/menu-item/{menu_id}/product/{product_id}/remover', 'Admin\MenuController@deleteProducts');

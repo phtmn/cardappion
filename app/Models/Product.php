@@ -22,6 +22,8 @@ class Product extends Model
     return $this->belongsToMany(Menu::class, 'products_categories', 'menu_id', 'product_id');
   }
 
+ 
+
   public function setPriceAttribute($input)
   {
     if ($input)
