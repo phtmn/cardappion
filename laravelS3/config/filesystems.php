@@ -2,7 +2,7 @@
 
 return [
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
     |--------------------------------------------------------------------------
@@ -13,10 +13,9 @@ return [
     |
     */
 
-  // 'default' => env('FILESYSTEM_DRIVER', 's3'),
-  'default' => env('FILESYSTEM_DRIVER', 'public'),
+    'default' => env('FILESYSTEM_DRIVER', 'local'),
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Default Cloud Filesystem Disk
     |--------------------------------------------------------------------------
@@ -27,9 +26,9 @@ return [
     |
     */
 
-  'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
     |--------------------------------------------------------------------------
@@ -38,33 +37,48 @@ return [
     | may even configure multiple disks of the same driver. Defaults have
     | been setup for each driver as an example of the required options.
     |
-    | Supported Drivers: "local", "ftp", "sftp", "s3", "rackspace"
+    | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
     */
 
-  'disks' => [
+    'disks' => [
 
-    'local' => [
-      'driver' => 'local',
-      'root' => storage_path('app'),
+        'local' => [
+            'driver' => 'local',
+            'root' => storage_path('app'),
+        ],
+
+        'public' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        's3' => [
+            'driver' => 's3',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('AWS_BUCKET'),
+            'endpoint' => env('AWS_URL'),
+        ],
+
     ],
 
-    'public' => [
-      'driver' => 'local',
-      'root' => storage_path('app/public'),
-      'url' => env('APP_URL') . '/storage',
-      'visibility' => 'public',
+    /*
+    |--------------------------------------------------------------------------
+    | Symbolic Links
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the symbolic links that will be created when the
+    | `storage:link` Artisan command is executed. The array keys should be
+    | the locations of the links and the values should be their targets.
+    |
+    */
+
+    'links' => [
+        public_path('storage') => storage_path('app/public'),
     ],
-
-     's3' => [
-       'driver' => 's3',
-       'key'    => 'AKIAJ2YA3RHHGJGUVLAQ',
-       'secret' => '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',
-       'region' => 'sa-east-1',
-       'bucket' => 'vetsign',
-       'url' => env('AWS_URL'),
-     ],
-
-  ],
 
 ];
