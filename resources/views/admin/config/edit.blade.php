@@ -98,6 +98,13 @@
                 </div>
               </div>
               <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Taxa de Entrega (R$)
+                </label>
+                <div class="col-md-3">
+                  <input type="text" name="delivery" class="form-control" value="{{$config->delivery_masked}}" id="delivery">
+                </div>
+              </div>
+              <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Telefone
                 </label>
                 <div class="col-md-4">
@@ -140,7 +147,7 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
                                 <div class="col-md-6">
-                                         <textarea name="details"rows="5" resize="none" class="form-control" maxlenght="500"  >{{$config->details}}</textarea>   
+                                         <textarea name="details"rows="5" resize="none" class="form-control" maxlenght="500"  >{{$config->details}}</textarea>
                                 </div>
                             </div>
 
@@ -195,10 +202,7 @@
         });
 
         $(document).ready(function(){
-
-                $("#price").mask('#.##0,00', {reverse: true});
-
-
+            $("#delivery").mask('#.##0,00', {reverse: true});
         })
 
         $(document).ready(function(){

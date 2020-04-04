@@ -33,8 +33,13 @@
             </div> -->
           </div>
         </div>
+        <ul class="navbar-nav ml-lg-auto">
+            <li class="nav-item">
+                <a href="{{ route('cart.checkout', ['token' => $token]) }}" class="btn btn-warning ml-3">Sacola <i class="ni ni-cart"></i></a href="{{ route('cart.checkout', ['token' => $token]) }}">
+            </li>
+        </ul>
         <!-- <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
-       
+
         </ul> -->
       </div>
     </div>
@@ -52,9 +57,69 @@
 
 
 
-  <section class="section  bg-white">
+  <section class="section">
 
-    <div class="cd-section" id="accordion">      
+
+
+    <div class="accordion-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ml-auto">
+                    <div class="accordion my-3" id="accordionExample">
+
+                        @foreach ($categories as $category)
+                        <div class="card">
+                            <div class="card-header" id="heading{{ $loop->index }}">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link w-100 text-primary text-left" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
+                                        {{ $category->description }}
+                                        <i class="ni ni-bold-down float-right"></i>
+
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="collapse{{ $loop->index }}" class="collapse" aria-labelledby="heading{{ $loop->index }}" data-parent="#accordionExample">
+                                <div class="card-body opacity-8">
+                                    <div class="row">
+                                        @foreach ($category->products as $product)
+                                            <div class="card text-center col-md-4" style="width: 20rem;">
+                                                <img class="card-img-top" src="{{ url("{$product->image}") }}" alt="{{ $product->title }}">
+                                                <div class="card-body">
+                                                    <h4 class="card-title">{{ $product->title }}</h4>
+                                                    <p class="card-text">{{ $product->details }}</p>
+                                                    <a href="{{ route('site.menu.product', ['token' => $token,'id' => $product->id]) }}" class="btn btn-sm btn-primary">Ver Produto</a>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {{-- <div class="cd-section" id="accordion">
       <div class="accordion-1">
         <div class="container mt-5">
           <!-- <div class="row">
@@ -130,14 +195,15 @@
           </div>
         </div>
       </div>
+    </div> --}}
   </section>
 
 
 
 
 
-  
 
-         
-      
+
+
+
     @stop

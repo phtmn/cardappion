@@ -1,9 +1,10 @@
-</html>
 <!DOCTYPE html>
 <html>
   <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <meta name="mtoken" content="{{ $token }}">
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
@@ -15,11 +16,12 @@
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="{{ asset('css/all.css') }}" rel="stylesheet">
-  
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
   <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
-  <link href="{{ asset('css/nucleo-svg.css') }}" rel="stylesheet" />  
+  <link href="{{ asset('css/nucleo-svg.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet" />
-  <link href="{{ asset('css//nucleo-svg.css') }}" rel="stylesheet" />  
+  <link href="{{ asset('css//nucleo-svg.css') }}" rel="stylesheet" />
   <link href="{{ asset('css/argon-design-system.min.css?v=1.0.2') }}" rel="stylesheet" />
 
 
@@ -54,8 +56,8 @@
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 
 
-  
-  <script>
+
+  {{-- <script>
     // Carousel
     new Glide('.glide', {
       type: 'carousel',
@@ -65,7 +67,7 @@
       perView: 4
     }).mount();
 
-    
+
     // Testimonial Carousel
     new Glide('.testimonial-glide', {
       type: 'carousel',
@@ -77,16 +79,16 @@
 
     ArgonKit.initGoogleMaps();
     ArgonKit.initGoogleMaps2();
-  </script>
+  </script> --}}
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  
-  
+  <script src="{{ asset('js/app.js') }}"></script>
+
 </head>
 
 
-
+<div id="app">
   @yield('content')
   @stack('scripts')
-  
+</div>
 
 </html>

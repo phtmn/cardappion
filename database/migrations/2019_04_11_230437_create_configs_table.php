@@ -19,6 +19,7 @@ class CreateConfigsTable extends Migration
       $table->unsignedBigInteger('user_id');
       // $table->string('name')->nullable();
       // $table->string('docnumber')->nullable();
+      $table->decimal('delivery', 10, 2)->default(0);
       $table->string('zipcode')->nullable();
       $table->string('address')->nullable();
       $table->string('neighborhood')->nullable();

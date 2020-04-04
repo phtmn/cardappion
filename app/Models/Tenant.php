@@ -8,10 +8,11 @@ use App\Models\Promotion;
 
 class Tenant extends Model
 {
-  protected $fillable = ['name', 'uuid', 'token'];
+  protected $fillable = ['name', 'uuid', 'token', 'plan'];
 
   protected $casts = [
-    'active' => 'boolean'
+    'boolean' => 'active',
+    'boolean' => 'plan'
   ];
 
   public static function boot()
@@ -46,6 +47,11 @@ class Tenant extends Model
   public function products()
   {
     return $this->hasMany(Product::class);
+  }
+
+  public function sales()
+  {
+    return $this->hasMany(Sale::class);
   }
 
   // Accesors

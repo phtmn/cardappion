@@ -23,32 +23,33 @@ class ConfigController extends Controller
   public function store(Request $request)
   {
     if ($request->hasFile('image')) {
-      $image = $request->image->move('images/logos');
+        $image = $request->image->move('images/logos');
     }
     // dd($request->all());
     $config = Config::UpdateOrCreate(
-      ['user_id' => auth()->user()->id],
-      [
-        'image'         => isset($image) ? $image : null,                
-        // 'name'          => $request->name,
-        // 'docnumber'     => $request->docnumber,
-        'zipcode'       => $request->zipcode,
-        'address'       => $request->address,
-        'neighborhood'  => $request->neighborhood,
-        'city'          => $request->city,
-        'us'            => $request->us,
-        'telephone'     => $request->telephone,
-        'whatsapp'      => $request->whatsapp,
-        'site'          => $request->site,
-        'instagram'     => $request->instagram,
-        'fanpage'       => $request->fanpage,
-        'details'       => $request->details,
-        'user_id'       => auth()->user()->id
-      ]
+        ['user_id' => auth()->user()->id],
+        [
+            'image'         => isset($image) ? $image : null,
+            // 'name'          => $request->name,
+            // 'docnumber'     => $request->docnumber,
+            'delivery'      => $request->delivery,
+            'zipcode'       => $request->zipcode,
+            'address'       => $request->address,
+            'neighborhood'  => $request->neighborhood,
+            'city'          => $request->city,
+            'us'            => $request->us,
+            'telephone'     => $request->telephone,
+            'whatsapp'      => $request->whatsapp,
+            'site'          => $request->site,
+            'instagram'     => $request->instagram,
+            'fanpage'       => $request->fanpage,
+            'details'       => $request->details,
+            'user_id'       => auth()->user()->id
+        ]
     );
 
     if ($config) {
-      return redirect()->route('config.createEdit')->with('msg', 'Dados armazenados com sucesso!');
+        return redirect()->route('config.createEdit')->with('msg', 'Dados armazenados com sucesso!');
     }
   }
 }

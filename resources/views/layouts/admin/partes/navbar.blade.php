@@ -26,7 +26,7 @@
                 <li class="nav-item dropdown">
                 <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configurações</button>
                     <!-- <a href="#" class="nav-link text-dark" data-toggle="dropdown" role="button">
-                       
+
                         <span class="nav-link-inner--text">Configurações</span>
                     </a> -->
                     <div class="dropdown-menu dropdown-menu-xl">
@@ -76,6 +76,15 @@
 
                                 </div>
                             </a>
+                            <a href="{{route('sale.index')}}" class="media d-flex align-items-center">
+                                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                                    <i class="ni ni-cart"></i>
+                                </div>
+                                <div class="media-body ml-3">
+                                    <h6 class="heading text-dark mb-md-1">Vendas</h6>
+
+                                </div>
+                            </a>
 
                         </div>
                     </div>
@@ -83,7 +92,7 @@
 
                 <li class="nav-item">
                     <a  href="{{ Auth::user()->tenant->url_token }}"  target="_blank" class="media d-flex align-items-center">
-                       
+
                     <div class="icon icon-shape bg-gradient-white rounded-circle text-dark">
                                     <i class="ni ni-world-2 text-warning"></i>
                                 </div>
@@ -93,12 +102,12 @@
                         <span class="nav-link-text text-warning">Landing Page </span>
                     </a>
                 </li>
-                
+
                 <li class="nav-item">
                 <a href="{{route('logout')}}" class="media d-flex align-items-center" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         <!-- <i class="ni ni-button-power text-dark">  </i> -->
-                       
+
                         <span class="nav-link-text text-dark">   Sair </span>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf

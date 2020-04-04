@@ -8,6 +8,7 @@
   <!-- <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim"> -->
   <title>{{ config('app.name') }}</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
   <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/logo3.png') }}" type="image/png">
@@ -25,48 +26,24 @@
   <script src="{{ asset('assets/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
   <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
   <script src="{{ asset('assets/js/demo.min.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 @yield('css')
 </head>
 
-
-
 <body class="bg-gradient-default ">
 
-
-  <!-- Main content -->
-  <div class="main-content" id="panel">
-    @include('layouts.admin.partes.navbar')
-    @yield('cabecalho')
-    @yield('conteudo')
-
-    <!--  <footer class="footer pt-0">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6">
-            <div class="copyright text-center text-lg-left text-muted">
-              &copy; 2019 <a href="https://www.creative-tim.com" class="font-weight-bold ml-1" target="_blank">cardappion.me </a>
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+            <div id="app">
+                @include('layouts.admin.partes.navbar')
+                @yield('cabecalho')
+                @yield('conteudo')
             </div>
-          </div>
-          <div class="col-lg-6">
-            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Soluções em Cardápios Digitais</a>
-              </li>
-
-              <li class="nav-item">
-                <a href="http://blog.creative-tim.com" class="nav-link" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link" > Soluções em Cardápios Digitais </a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </footer> -->
     </div>
-  </div>
 
     <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
 

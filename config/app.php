@@ -161,7 +161,7 @@ return [
     Illuminate\Translation\TranslationServiceProvider::class,
     Illuminate\Validation\ValidationServiceProvider::class,
     Illuminate\View\ViewServiceProvider::class,
-    
+
 
     /*
          * Package Service Providers...
@@ -178,6 +178,8 @@ return [
     App\Providers\RouteServiceProvider::class,
     Collective\Html\HtmlServiceProvider::class,
     Unisharp\Ckeditor\ServiceProvider::class,
+    Darryldecode\Cart\CartServiceProvider::class,
+
   ],
 
   /*
@@ -231,6 +233,7 @@ return [
     'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
     'Form' => Collective\Html\FormFacade::class,
     'Html' => Collective\Html\HtmlFacade::class,
+    'Cart' => Darryldecode\Cart\Facades\CartFacade::class
   ],
 
 ];

@@ -28,6 +28,167 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app'
-});
+window.addEventListener('load', function () {
+    const app = new Vue({
+        el: '#app'
+    });
+
+    const _token = (document.head.querySelector('meta[name="mtoken"]')) ? document.head.querySelector('meta[name="mtoken"]').content : null
+
+    $("#change").mask('#.##0,00', {reverse: true});
+    $("#whatsapp").mask('(00) 00000-0000');
+
+    const payment = document.querySelector('.checkout-payment')
+    if (payment) {
+        payment.addEventListener('change', function(event) {
+            let change = document.querySelector('#checkout-change')
+            if (event.target.value == 3) {
+                change.style.display = ''
+            } else {
+                change.style.display = 'none'
+            }
+        })
+    }
+
+    const myNumber = document.querySelector('#myNumber')
+
+    const addCart = document.querySelector('.addCart')
+    if (addCart) {
+        addCart.addEventListener('click', function(event) {
+            const id = event.target.dataset.id
+            const quantity = myNumber.value
+
+            axios.post('/cart', {
+                id: id,
+                quantity: quantity
+            })
+            .then((response) => {
+                swal("Bom Trabalho!", response.data.message, "success");
+            })
+            .catch(() => {
+                swal("Oops!", "Aconteceu algum problema", "error");
+            });
+        })
+    }
+
+    const add = document.querySelectorAll('.quantity');
+    if (add) {
+        add.forEach(function(el, i) {
+            el.addEventListener('click', function(event) {
+                const op = event.currentTarget.dataset.op
+                const id = event.currentTarget.dataset.id
+                let qty = event.currentTarget.dataset.qty
+
+                axios.put('/cart/'+id, {
+                    op: (op == 'add') ? 1 : -1,
+                })
+                .then(() => {
+                    location.reload()
+                })
+                .catch(() => {
+                    swal("Oops!", "Aconteceu algum problema", "error");
+                });
+            })
+        });
+    }
+
+    const remove = document.querySelectorAll('.removeItem')
+    if (remove) {
+        remove.forEach(function(el, i) {
+            el.addEventListener('click', function(event) {
+                const id = event.currentTarget.dataset.id
+
+                axios.delete('/cart/'+id)
+                .then(() => {
+                    location.reload()
+                })
+                .catch(() => {
+                    swal("Oops!", "Aconteceu algum problema", "error");
+                });
+            })
+        })
+    }
+
+    const formSale = document.querySelector('.formSale');
+
+    if (formSale) {
+        formSale.addEventListener('click', function() {
+            var inputs = {'token': _token}
+            const array = document.querySelector('#formSale').elements
+            const form = Array.from(array)
+            var resp = true
+
+            form.forEach((input) => {
+                if (input.parentNode.classList.contains('js-validate') && (input.value == '' || input.value == ' ')) {
+                    toogleDisplay(input.parentNode.children, 'block')
+
+                    resp = false
+                    return
+                } else {
+                    toogleDisplay(input.parentNode.children, 'none')
+                }
+                inputs[`${input.id}`] = input.value
+            })
+
+            if (!resp) return false
+
+            list = []
+            let items = document.querySelectorAll('.item-checkout');
+            items.forEach(function(val, i) {
+                products = { 'product': val.dataset.id, 'quantity': val.dataset.quantity }
+                list[i] = products
+            })
+            inputs['items'] = list
+
+            axios({ method: 'post', baseURL: '/sale', data: inputs })
+            .then(function (response) {
+                swal("Bom Trabalho!", response.data.message, "success");
+                setTimeout(() => { window.location.href = response.data.redirect }, response.data.time);
+            })
+            .catch(function (error) {
+                swal("Oops!", "Aconteceu algum problema", "error");
+            });
+        })
+    }
+
+    const status = document.querySelectorAll('.js-status');
+    if(status) {
+        status.forEach(function(el, i) {
+            el.addEventListener('click', function(event) {
+                document.querySelector('#uuid').value = event.target.dataset.uuid
+                $('#modalStatus').modal()
+            })
+        })
+    }
+
+
+    const change_status = document.querySelector('.js-change-status');
+    if(change_status) {
+        change_status.addEventListener('click', (event) => {
+            var object = {};
+            var form = document.querySelector('#formStatus');
+            var uuid = document.querySelector('#uuid').value
+
+            formData = new FormData(form)
+            formData.forEach((value, key) => {object[key] = value});
+            var data = object;
+
+            axios({ method: 'put', baseURL: `/sale/${uuid}`, data: data })
+            .then(function (response) {
+                location.reload()
+            })
+            .catch(function (error) {
+                swal("Oops!", "Aconteceu algum problema", "error");
+            });
+        })
+    }
+
+
+    function toogleDisplay(c, res) {
+        for (i = 0; i < c.length; i++) {
+            if (c[i].classList.contains('-error')) {
+                c[i].style.display = res
+            }
+        }
+    }
+})

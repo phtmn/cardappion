@@ -9,7 +9,7 @@ class Config extends Model
 {
   use TenantTrait;
 
-  protected $fillable = ['user_id', 'tenant_id', 'name', 'docnumber', 'zipcode', 'address', 'neighborhood', 'city', 'us', 'telephone', 'image', 'whatsapp', 'site', 'instagram', 'fanpage', 'details'];
+  protected $fillable = ['user_id', 'tenant_id', 'name', 'delivery', 'docnumber', 'zipcode', 'address', 'neighborhood', 'city', 'us', 'telephone', 'image', 'whatsapp', 'site', 'instagram', 'fanpage', 'details'];
 
   public function user()
   {
@@ -44,5 +44,16 @@ class Config extends Model
     endif;
 
     return $phone;
+  }
+
+  public function setDeliveryAttribute($input)
+  {
+    if ($input)
+      $this->attributes['delivery'] = str_replace(['.', ',', 'R$'], ['', '.', ''], $input);
+  }
+
+  public function getDeliveryMaskedAttribute()
+  {
+      return str_replace(['.'], [','], $this->delivery);
   }
 }

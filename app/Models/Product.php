@@ -22,11 +22,16 @@ class Product extends Model
     return $this->belongsToMany(Menu::class, 'products_categories', 'menu_id', 'product_id');
   }
 
- 
+
 
   public function setPriceAttribute($input)
   {
     if ($input)
       $this->attributes['price'] = str_replace(['.', ',', 'R$'], ['', '.', ''], $input);
+  }
+
+  public function getPriceMaskedAttribute()
+  {
+      return 'R$ ' . str_replace(['.'], [','], $this->price);
   }
 }

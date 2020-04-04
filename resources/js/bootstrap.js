@@ -12,6 +12,9 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    require('jquery-mask-plugin')
+    require('sweetalert')
+
 } catch (e) {}
 
 /**
@@ -31,9 +34,12 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  */
 
 let token = document.head.querySelector('meta[name="csrf-token"]');
+let mtoken = document.head.querySelector('meta[name="mtoken"]');
 
 if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    if (mtoken)
+        window.axios.defaults.baseURL = `/m/${mtoken.content}/checkout`;
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }

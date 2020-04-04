@@ -18,8 +18,8 @@ class CreateTenantsTable extends Migration
       $table->uuid('uuid');
       $table->string('name');
       $table->string('token');
-      $table->string('plan')->default(0);
-      $table->boolean('active')->default(1);
+      $table->string('plan')->default(false);
+      $table->boolean('active')->default(true);
       $table->timestamps();
     });
   }
