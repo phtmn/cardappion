@@ -119,5 +119,42 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+
+        const status = document.querySelectorAll('.js-status')
+        if(status) {
+            status.forEach(function(el, i) {
+                el.addEventListener('click', function(event) {
+                    document.querySelector('#uuid').value = event.target.dataset.uuid
+                    $('#modalStatus').modal()
+                })
+            })
+        }
+
+
+        const change_status = document.querySelector('.js-change-status');
+        if(change_status) {
+            change_status.addEventListener('click', (event) => {
+                var object = {};
+                var form = document.querySelector('#formStatus');
+                var uuid = document.querySelector('#uuid').value
+
+                formData = new FormData(form)
+                formData.forEach((value, key) => {object[key] = value});
+                var data = object;
+
+                axios({ method: 'put', baseURL: `/sale/${uuid}`, data: data })
+                .then(function (response) {
+                    location.reload()
+                })
+                .catch(function (error) {
+                    swal("Oops!", "Aconteceu algum problema", "error");
+                });
+            })
+        }
+
+</script>
 
 @stop

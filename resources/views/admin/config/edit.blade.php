@@ -189,7 +189,7 @@
   <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
   <script src="{{ asset('js/viaCep.js') }}"></script>
   <script>
-    $('#summernote').summernote({
+        $('#summernote').summernote({
             toolbar: [
                 // [groupName, [list of button]]
                 ['style', ['bold', 'italic', 'underline', 'clear']],
@@ -202,15 +202,14 @@
         });
 
         $(document).ready(function(){
-            $("#delivery").mask('#.##0,00', {reverse: true});
-        })
-
-        $(document).ready(function(){
             $('.dropify').dropify({
                 messages:{
                     'default': 'foto de destaque'
                 }
             });
+            console.log('asd');
+            $("#delivery").mask('#.##0,00', {reverse: true});
+
         });
 
 

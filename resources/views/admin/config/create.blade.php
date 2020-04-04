@@ -238,15 +238,12 @@
         });
 
         $(document).ready(function(){
-            $("#delivery").mask('#.##0,00', {reverse: true});
-        })
-
-        $(document).ready(function(){
             $('.dropify').dropify({
                 messages:{
                     'default': 'foto de destaque'
                 }
             });
+            $("#delivery").mask('#.##0,00', {reverse: true});
         });
 
 
