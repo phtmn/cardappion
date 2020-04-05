@@ -97,6 +97,8 @@
     </div>
   </div>
 
+  
+
   @include('tools.messages')
 
   @stop
@@ -113,7 +115,7 @@
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
   <script src="{{asset('js/dropify/dist/js/dropify.js')}}"></script>
   <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
-  <script src="{{ asset('js/viaCep.js') }}"></script>
+  <!-- <script src="{{ asset('js/viaCep.js') }}"></script> -->
   <script>
     $('#summernote').summernote({
             toolbar: [

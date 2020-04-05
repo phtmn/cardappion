@@ -31,7 +31,9 @@
           <div class="card-body">
             <div class="text-center">
               <a href="#">
-                <img src="{{ url("{$config->image}") }}" class="img-fluid floating" style="width:150px; height:150px">
+              @if (isset($config->image))
+                <img src="{{ Storage::url("{$config->image}") }}" class="img-fluid floating" style="width:150px; height:150px">
+                @endif
               </a>
 
               <h5 class="h3 mt-3">
@@ -55,17 +57,28 @@
             <form action="{{route('config.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right">Negócio </label>
+                <div class="col-md-8">
+                  <input type="text" name="tenant_name" class="form-control" value="{{auth()->user()->tenant->name }}">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right">Usuário </label>
+                <div class="col-md-8">
+                  <input type="text" name="user_name" class="form-control" value="{{auth()->user()->name }}">
+                </div>
+              </div>
+              <div class="form-group row">
                 <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Upload da Logo </label>
                 <div class="col-md-6">
-                  <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" data-default-file="{{ url("{$config->image}") }}" />
+                  <input type="file" name="image"  class="form-control"  />
                 </div>
               </div>
               <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right ">CEP
                 </label>
                 <div class="col-md-3">
-                  <input type="text" name="zipcode" class="form-control" value="{{$config->zipcode}}" id="cep"
-                    maxlength="8">
+                  <input type="text" name="zipcode" class="form-control" value="{{$config->zipcode}}" id="cep" maxlength="8">
                 </div>
               </div>
               <div class="form-group row">
@@ -79,8 +92,7 @@
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Bairro
                 </label>
                 <div class="col-md-4">
-                  <input type="text" name="neighborhood" class="form-control" value="{{$config->neighborhood}}"
-                    id="neighborhood">
+                  <input type="text" name="neighborhood" class="form-control" value="{{$config->neighborhood}}" id="neighborhood">
                 </div>
               </div>
               <div class="form-group row">
@@ -104,14 +116,13 @@
                   <input type="text" name="delivery" class="form-control" value="{{$config->delivery_masked}}" id="delivery">
                 </div>
               </div>
-              <div class="form-group row">
-                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Telefone
+              <!-- <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Telegram
                 </label>
                 <div class="col-md-4">
-                  <input type="text" name="telephone" class="form-control" value="{{$config->telephone}}"
-                    id="telephone">
+                  <input type="text" name="telegram" class="form-control" value="{{$config->telegram}}" id="telegram">
                 </div>
-              </div>
+              </div> -->
               <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">WhatsApp
                 </label>
@@ -121,14 +132,13 @@
               </div>
 
               <div class="form-group row">
-                <label for="example-search-input"
-                  class="col-md-4 col-form-label form-control-label text-right">Instagram </label>
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Instagram </label>
                 <div class="col-md-7">
                   <input type="text" name="instagram" class="form-control" value="{{$config->instagram}}">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Fanpage
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Facebook
                 </label>
                 <div class="col-md-7">
                   <input type="text" name="fanpage" class="form-control" value="{{$config->fanpage}}">
@@ -144,20 +154,18 @@
               </div>
 
               <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
-                                <div class="col-md-6">
-                                         <textarea name="details"rows="5" resize="none" class="form-control" maxlenght="500"  >{{$config->details}}</textarea>
-                                </div>
-                            </div>
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
+                <div class="col-md-6">
+                  <textarea name="details" rows="5" resize="none" class="form-control" maxlenght="500">{{$config->details}}</textarea>
+                </div>
+              </div>
 
               <div class="form-group row">
                 <div class="col-md-4">
 
                 </div>
                 <div class="col-md-4">
-                  <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i
-                      class=" fa fa-check-square nav-icon"></i> Salvar</button>
+                  <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i class=" fa fa-check-square nav-icon"></i> Salvar</button>
                 </div>
                 <div class="col-md-4">
 
@@ -172,6 +180,9 @@
     </div>
 
   </div>
+
+ 
+
 
   @stop
 
@@ -189,31 +200,30 @@
   <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
   <script src="{{ asset('js/viaCep.js') }}"></script>
   <script>
-        $('#summernote').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ]
-        });
+    $('#summernote').summernote({
+      toolbar: [
+        // [groupName, [list of button]]
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']]
+      ]
+    });
 
-        $(document).ready(function(){
-            $('.dropify').dropify({
-                messages:{
-                    'default': 'foto de destaque'
-                }
-            });
-            console.log('asd');
-            $("#delivery").mask('#.##0,00', {reverse: true});
+    $(document).ready(function() {
+      $('.dropify').dropify({
+        messages: {
+          'default': 'foto de destaque'
+        }
+      });
+      console.log('asd');
+      $("#delivery").mask('#.##0,00', {
+        reverse: true
+      });
 
-        });
-
-
-
+    });
   </script>
 
 

@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+<!-- @extends('layouts.admin.master')
 
 @section('cabecalho')
 
@@ -64,7 +64,7 @@
 
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table  class="table align-items-center table-flush "  style="width:100%" id="example">
                     <thead class="text-dark">
                       <th>#</th>
                       <th>Produto</th>
@@ -76,7 +76,20 @@
                       @forelse($data as $d)
                       <tr>
                         <td>
-                          <img src="{{ url("{$d->image}") }}" style="height: 70px;" alt="" />
+                        <div class="avatar-group">
+                        <a class="avatar avatar-sm rounded-circle">
+                          <img src="{{ url("{$d->image}") }}" style="height: 50px;" alt="" />
+                        </a>
+                        <!-- <a class="avatar avatar-sm rounded-circle">
+                          <img src="{{ url("{$d->image}") }}" style="height: 50px;" alt="" />
+                        </a>
+                        <a class="avatar avatar-sm rounded-circle">
+                          <img src="{{ url("{$d->image}") }}" style="height: 50px;" alt="" />
+                        </a>
+                        <a class="avatar avatar-sm rounded-circle">
+                          <img src="{{ url("{$d->image}") }}" style="height: 50px;" alt="" />
+                        </a> -->
+                        </div>
                         </td>
                         <td>{{$d->title}}</td>
                         <td>R$ {{ number_format($d->price,2,',','.') }} </td>
@@ -90,11 +103,16 @@
                           </label>
                         </td>
                         <td>
-                          <a href="{{ route('products.edit', ['id' => $d->id]) }}" class="btn btn-primary btn-sm"
-                            data-toggle="tooltip" data-placement="top" title="Editar"> <i class="ni ni-curved-next text-white"></i> Editar
-                          </a>
-                          <!-- <a href="" data-toogle="toltip" title="Editar produto" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                            <a href="" data-toogle="toltip" title="Apagar produto" class="btn btn-sm btn-primary"><i class="fa fa-trash"></i></a>                                 -->
+                        
+                            <form action="{{ route('products.destroy', ['id' => $d->id]) }}"
+                                                        method="post">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <a href="{{ route('products.edit', ['id' => $d->id]) }}" class="btn btn-primary btn-sm"> <i class="ni ni-curved-next text-white"></i> Editar
+                          </a>                                                        
+                                                        <button type="submit" class="btn btn-sm btn-secondary text-warning"><i
+                                                                class="ni ni-fat-remove text-warning"></i> Apagar</button>
+                                                    </form>
                         </td>
 
                       </tr>
@@ -114,7 +132,43 @@
 
   </div>
 
-
-
+  
 
   @stop
+
+  @section('css')
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('js/dropify/dist/css/dropify.css')}}">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
+   
+  <link type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css" rel="stylesheet">
+
+  @stop
+
+
+  @section('js')
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
+  <script src="{{asset('js/dropify/dist/js/dropify.js')}}"></script>
+  <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+  <script src="{{ asset('js/viaCep.js') }}"></script>
+  
+
+    <script>
+    $(document).ready(function() {
+      $('#example').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+          'excelHtml5',
+          'csvHtml5',
+          'pdfHtml5'
+        ]
+      });
+    });
+  </script>
+
+  

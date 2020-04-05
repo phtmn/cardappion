@@ -33,7 +33,7 @@
 <div class="container-fluid mt--6">
   <div class="row">
 
-    <div class="col-lg-5">
+    <div class="col-lg-4">
       <div class="card-wrapper">
         <form action="{{route('menus.update', [ 'id' => $menu->id ])}}" method="POST">
           @csrf

@@ -13,8 +13,8 @@ return [
     |
     */
 
-  // 'default' => env('FILESYSTEM_DRIVER', 's3'),
-  'default' => env('FILESYSTEM_DRIVER', 'public'),
+  'default' => env('FILESYSTEM_DRIVER', 's3'),
+  // 'default' => env('FILESYSTEM_DRIVER', 'public'),
 
   /*
     |--------------------------------------------------------------------------
@@ -58,11 +58,11 @@ return [
 
      's3' => [
        'driver' => 's3',
-       'key'    => 'AKIAJ2YA3RHHGJGUVLAQ',
-       'secret' => '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',
-       'region' => 'sa-east-1',
-       'bucket' => 'vetsign',
-       'url' => env('AWS_URL'),
+       'key'    => 'AKIA2ZWL5DCSNFILZVN5',
+       'secret' => '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',
+       'region' => 'us-east-2',
+       'bucket' => 'cardappion',
+      //  'url' => env('AWS_URL'),
      ],
 
   ],

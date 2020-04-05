@@ -69,25 +69,18 @@
           <div class="card-body">
           <form action="{{route('config.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
-              <!-- <div class="form-group row">
-                                <label for="example-text-input"
-                                    class="col-md-4 col-form-label form-control-label text-right text-danger">Nome <b
-                                        class="text-danger" data-toggle="tooltip" data-placement="right"
-                                        title="Campo obrigatório"> * </b></label>
-                                <div class="col-md-8">
-                                    <input type="text" name="name" class="form-control" value="">
-                                </div>
-                            </div> -->
-              <!-- <div class="form-group row">
-                                <label for="example-search-input"
-                                    class="col-md-4 col-form-label form-control-label text-right">Nº do Documento <b
-                                        class="text-danger" data-toggle="tooltip" data-placement="right"
-                                        title="Campo obrigatório"> * </b></label>
-                                <div class="col-md-4">
-                                    <input type="text" name="docnumber" class="form-control"
-                                        value="" id="docnumber">
-                                </div>
-                            </div> -->
+              <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right">Negócio </label>
+                <div class="col-md-8">
+                  <input type="text" name="tenant_name" class="form-control" >
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right">Usuário </label>
+                <div class="col-md-8">
+                  <input type="text" name="user_name" class="form-control" >
+                </div>
+              </div>
                             <div class="form-group row">
                 <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Upload da Logo </label>
                 <div class="col-md-6">
@@ -136,13 +129,13 @@
                   <input type="text" name="delivery" class="form-control" value="" id="delivery">
                 </div>
               </div>
-              <div class="form-group row">
+              <!-- <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Telefone
                 </label>
                 <div class="col-md-4">
                   <input type="text" name="telephone" class="form-control" value="" id="telephone">
                 </div>
-              </div>
+              </div> -->
               <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">WhatsApp
                 </label>

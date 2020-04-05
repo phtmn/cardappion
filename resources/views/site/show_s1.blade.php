@@ -15,7 +15,7 @@
                       <div class="card-image shadow">
                         <a href="javascript:;">
                           @if (isset($config->image))
-                          <img class="img rounded" src="{{ url("$config->image") }}">
+                          <img class="img rounded" src="{{ Storage::url("$config->image") }}" style="width:200px; height:200px">
                           @endif
                         </a>
                       </div>

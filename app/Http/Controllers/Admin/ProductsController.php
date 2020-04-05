@@ -90,4 +90,17 @@ class ProductsController extends Controller
       ], 400);
     }
   }
+
+  public function destroy($id)
+    {
+
+      $products = Product::find($id);
+        $products->delete();
+
+        return redirect()->route('products.index');
+
+      // $id->delete();
+      //   return redirect()->route('products.index');
+    }
+    
 }

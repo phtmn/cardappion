@@ -33,7 +33,7 @@
 <div class="container-fluid mt--6">
   <div class="row">
 
-    <div class="col-lg-5">
+    <div class="col-lg-4">
       <div class="card-wrapper">
         <form action="{{route('menus.store')}}" method="POST">
           @csrf
@@ -79,7 +79,7 @@
 
 
 
-<div class="col-lg-7">
+<div class="col-lg-8">
   <div class="card-wrapper">
     <div class="card">
       <div class="card-header">
@@ -90,7 +90,7 @@
         <div class="table-responsive">
           <table class="table">
             <thead class="text-dark">
-              <!-- <th>#</th> -->
+              <th>#</th>
               <th>Categoria</th>
               <!-- <th>Produtos</th> -->
               <th>Publicado</th>
@@ -99,7 +99,7 @@
             <tbody id="category-drag">
               @forelse($data as $d)
               <tr class="js-sort" data-id="{{ $d->uuid }}" style="cursor: grab">
-                <!-- <td>{{$d->id}}</td> -->
+                <td>=</td>
                 <td>{{$d->description}}</a> </td>
                 <!-- <td>{{ 0 }}</td> -->
                 <td>
