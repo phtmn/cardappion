@@ -98,7 +98,7 @@
             <tbody id="category-drag">
               @forelse($data as $d)
               <tr class="js-sort" data-id="{{ $d->uuid }}" style="cursor: grab">
-                <td>= {{$d->sort}}</td>
+                <td>= </td>
                 <td>{{$d->description}}</a> </td>
                 <!-- <td>{{ 0 }}</td> -->
                 <td>

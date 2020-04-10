@@ -44,6 +44,9 @@
       </div>
     </div>
   </nav>
+
+
+  
   <!-- End Navbar -->
   @include('site.show_s1')
 

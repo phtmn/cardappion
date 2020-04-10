@@ -9,7 +9,7 @@
         <div class="col-xl-6">
           <ul class="nav nav-footer justify-content-center justify-content-xl-end">
             <li class="nav-item">
-              <!-- <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Creative Tim</a> -->
+            <a href="{{ route('cart.checkout', ['token' => $token]) }}" class="btn btn-warning ml-3">Sacola <i class="ni ni-cart"></i></a href="{{ route('cart.checkout', ['token' => $token]) }}">
             </li>
             <li class="nav-item">
               <!-- <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a> -->

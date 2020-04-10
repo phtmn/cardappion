@@ -92,7 +92,9 @@ class SiteController extends Controller
 
         $promotions = $tenant->promotions()->where('active', true)->get();
 
-        return view('site.show_argon', compact('tenant', 'config', 'categories', 'products', 'promotions', 'token'));
+        // return view('site.show_argon', compact('tenant', 'config', 'categories', 'products', 'promotions', 'token'));
+
+        return view('site.show', compact('tenant', 'config', 'categories', 'products', 'promotions', 'token'));
         // return view('site.show', compact('tenant', 'config', 'categories', 'promotions'));
     }
 
