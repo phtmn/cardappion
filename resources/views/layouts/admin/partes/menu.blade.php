@@ -20,13 +20,7 @@
                             <span class="nav-link-text">Produtos</span>
                         </a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('promotions.index')}}">
-                            <i class="ni ni-notification-70 text-danger"></i>
-                            <span class="nav-link-text">Promoções</span>
-                        </a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('menus.index')}}">
                             <i class="ni ni-collection text-danger"></i>

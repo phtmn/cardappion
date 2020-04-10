@@ -59,8 +59,7 @@
 
                 </div>
                 <div class="col-md-4">
-                  <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round "> <i
-                      class=" fa fa-check-square nav-icon"></i> Salvar</button>
+                  <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round "> <i class=" fa fa-check-square nav-icon"></i> Salvar</button>
                 </div>
                 <div class="col-md-4">
 
@@ -99,7 +98,7 @@
             <tbody id="category-drag">
               @forelse($data as $d)
               <tr class="js-sort" data-id="{{ $d->uuid }}" style="cursor: grab">
-                <td>=</td>
+                <td>= {{$d->sort}}</td>
                 <td>{{$d->description}}</a> </td>
                 <!-- <td>{{ 0 }}</td> -->
                 <td>
@@ -112,14 +111,15 @@
                 </td>
 
                 <td class="text-left">
-                  <!-- <a href="{{ route('site.menu.show', [ 'token' => $d->token ]) }}" class="btn btn-primary btn-round btn-sm"> Visualizar</a> -->
-                  <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-outline-primary btn-sm btn-round"><i
-                      class="ni ni-ui-04 y"></i> Vincular </a>
-                  <a href="{{ route('menus.edit', ['id' => $d->id]) }}" class="btn btn-primary btn-sm"
-                    data-toggle="tooltip" data-placement="top" title="Editar"> <i class="ni ni-curved-next text-white"></i> Editar
-                  </a>
-                  <!-- <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-primary btn-round">Visualizar Produtos</a> -->
-                  <!-- <a href="{{route('menu.share',$d->id)}}" class="btn btn-success btn-round" data-toggle="tooltip" title="proximas versoes">Compartilhar</a> -->
+                  <form action="{{ route('menus.destroy', ['id' => $d->id]) }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-outline-primary btn-sm btn-round"><i class="ni ni-ui-04 y"></i> Vincular </a>
+                    <a href="{{ route('menus.edit', ['id' => $d->id]) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Editar"> <i class="ni ni-curved-next text-white"></i> Editar
+                    </a>
+                    <button type="submit" class="btn btn-primary btn-sm text-white"><i class="far fa-trash-alt"></i> Apagar</button>
+                  </form>
+
                 </td>
 
               </tr>

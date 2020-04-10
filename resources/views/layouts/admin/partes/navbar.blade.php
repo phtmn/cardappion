@@ -57,23 +57,13 @@
                                     <h6 class="heading text-dark mb-md-1">Produtos</h6>
 
                                 </div>
-                            </a>
-                            <a href="{{route('promotions.index')}}" class="media d-flex align-items-center">
-                                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                                    <i class="ni ni-notification-70"></i>
-                                </div>
-                                <div class="media-body ml-3">
-                                    <h6 class="heading text-dark mb-md-1">Promoções</h6>
-
-                                </div>
-                            </a>
+                            </a>                            
                             <a href="{{route('menus.index')}}" class="media d-flex align-items-center">
                                 <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                                     <i class="ni ni-collection"></i>
                                 </div>
                                 <div class="media-body ml-3">
                                     <h6 class="heading text-dark mb-md-1">Menus</h6>
-
                                 </div>
                             </a>
                             <a href="{{route('sale.index')}}" class="media d-flex align-items-center">
@@ -82,7 +72,6 @@
                                 </div>
                                 <div class="media-body ml-3">
                                     <h6 class="heading text-dark mb-md-1">Vendas</h6>
-
                                 </div>
                             </a>
 

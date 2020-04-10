@@ -72,31 +72,7 @@
           </div>
         </a>
       </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-      <div class="card card-stats">
-        <a href="{{route('promotions.index')}}" class="media d-flex align-items-center">
-          <div class="card-body">
-            <div class="row">
-
-              <div class="col">
-                <!-- <h5 class="card-title text-uppercase text-muted mb-0">Perfil</h5> -->
-                <span class="h2 font-weight-bold mb-0">Promoções</span>
-              </div>
-              <div class="col-auto">
-                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
-                  <i class="ni ni-notification-70"></i>
-                </div>
-              </div>
-            </div>
-            <!-- <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p> -->
-          </div>
-        </a>
-      </div>
-    </div>
+    </div>    
     <div class="col-xl-3 col-md-6">
       <div class="card card-stats">
         <a href="{{route('menus.index')}}" class="media d-flex align-items-center">
@@ -110,6 +86,30 @@
               <div class="col-auto">
                 <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
                   <i class="ni ni-collection"></i>
+                </div>
+              </div>
+            </div>
+            <!-- <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last month</span>
+                  </p> -->
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="card card-stats">
+        <a href="{{route('sale.index')}}" class="media d-flex align-items-center">
+          <div class="card-body">
+            <div class="row">
+
+              <div class="col">
+                <!-- <h5 class="card-title text-uppercase text-muted mb-0">Perfil</h5> -->
+                <span class="h2 font-weight-bold mb-0">Vendas</span>
+              </div>
+              <div class="col-auto">
+                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
+                  <i class="ni ni-cart"></i>
                 </div>
               </div>
             </div>

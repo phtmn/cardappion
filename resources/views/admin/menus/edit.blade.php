@@ -88,5 +88,59 @@
 </div>
 
 
+<div class="col-lg-8">
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="mb-0">Categorias do Menu</h3>
+      </div>
+
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="text-dark">
+              <th>#</th>
+              <th>Categoria</th>
+              <!-- <th>Produtos</th> -->
+              <th>Publicado</th>
+              <th class="text-right"></th>
+            </thead>
+            <tbody id="category-drag">
+              @forelse($data as $d)
+              <tr class="js-sort" data-id="{{ $d->uuid }}" style="cursor: grab">
+                <td>= {{$d->sort}}</td>
+                <td>{{$d->description}}</a> </td>
+                <!-- <td>{{ 0 }}</td> -->
+                <td>
+                  <label class="custom-toggle">
+                    <input type="checkbox" class="js-checkbox" data-id="{{ $d->id }}" data-route="{{ route('admin.menus.activate', [ 'id' => $d->id ]) }}" {{ ($d->active) ? 'checked' : '' }}>
+                    <span class="custom-toggle-slider rounded-circle" data-label-off="Não" data-label-on="Sim"></span>
+                  </label>
+                  <!-- {{$d->active ? 'Sim' : 'Não'}} -->
+
+                </td>
+
+                <td class="text-left">
+                <form action="{{ route('menus.destroy', ['id' => $d->id]) }}" method="post">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <a href="{{route('menu.menuItens',$d->id)}}" class="btn btn-outline-primary btn-sm btn-round"><i class="ni ni-ui-04 y"></i> Vincular </a>
+                    <a href="{{ route('menus.edit', ['id' => $d->id]) }}" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Editar"> <i class="ni ni-curved-next text-white"></i> Editar
+                    </a>
+                    <button type="submit" class="btn btn-primary btn-sm text-white"><i class="far fa-trash-alt"></i> Apagar</button>
+                  </form>
+                </td>
+
+              </tr>
+              @empty
+              <p class="text-danger">Nenhuma categoria cadastrada</p>
+              @endforelse
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 @stop

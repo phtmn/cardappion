@@ -38,8 +38,8 @@ class MenuController extends Controller
   public function edit($id)
   {
     $menu = Menu::findOrFail($id);
-
-    return view('admin.menus.edit', compact('menu'));
+    $data = Menu::all();
+    return view('admin.menus.edit', compact('menu'), compact('data'));
   }
 
   public function update(Request $request, $id)
@@ -173,5 +173,13 @@ class MenuController extends Controller
     foreach ($sortable as $key => $sort) {
         Menu::where('uuid', $sort)->update(['sort' => $key]);
     }
+  }
+
+  public function destroy($id)
+  {
+    
+    $menu = Menu::find($id);
+      $menu->delete();      
+      return redirect()->route('menus.index');       
   }
 }

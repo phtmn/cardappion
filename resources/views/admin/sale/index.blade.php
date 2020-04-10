@@ -30,11 +30,9 @@
     <div class="col-lg-12">
       <div class="card-wrapper">
         <div class="card">
-          <div class="card-header">
-            <div class="row align-items-center">
-              <div class="col-4 text-right"></div>
-            </div>
-          </div>
+        <div class="card-header">
+        <h3 class="mb-0">Lista de Pedidos</h3>
+      </div>
           <div class="card-body">
             <div class="text-center">
 
@@ -42,7 +40,8 @@
                 <div class="table-responsive">
                   <table class="table">
                     <thead class="text-dark">
-                        <th>#</th>
+                        <th>Nº</th>
+                        <!-- <th>Data</th> -->
                         <th>Comprador</th>
                         <th>Whatsapp</th>
                         <th>Endereço</th>
@@ -56,17 +55,19 @@
                         @foreach($sales as $sale)
                             <tr>
                                 <td>{{ $sale->invoice_number }}</td>
+                             {{--   <td>{{ $sale->created_at }}</td> --}}
                                 <td>{{ $sale->name }}</td>
                                 <td>{{ $sale->whatsapp_masked }}</td>
                                 <td>{{ $sale->address }}</td>
                                 <td>
-                                    <span class="badge badge-primary">{{ $sale->payment_name }}</span>
+                                    {{ $sale->payment_name }}
                                 </td>
                                 <td>R$ {{ $sale->total_masked }}</td>
                                 <td>R$ {{ $sale->delivery_masked }}</td>
                                 <td>R$ {{ $sale->change_masked }}</td>
                                 <td>
                                     @if($sale->status == 1)
+                                        <!-- <i class="bg-warning"></i> -->
                                         <span class="badge badge-primary js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
                                     @elseif($sale->status == 2)
                                         <span class="badge badge-success js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>

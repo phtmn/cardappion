@@ -6,10 +6,10 @@ Route::get('/blog/{slug}', 'Site\BlogController@show')->name('site.blog.show');
 
 Route::get('/', 'Site\SiteController@home')->name('site');
 Route::name('site.menu.show')->get('/m/{token}', 'Site\SiteController@show');
-Route::name('detalhe.promocao')->get('/m/{token}/{id}', 'Site\SiteController@detalhe_promocao');
+// Route::name('detalhe.promocao')->get('/m/{token}/{id}', 'Site\SiteController@detalhe_promocao');
 Route::name('site.menu.product')->get('/m/{token}/produto/{id}', 'Site\SiteController@product');
 
-Route::get('promo/{slug}', 'Site\SiteController@promo')->name('promo');
+// Route::get('promo/{slug}', 'Site\SiteController@promo')->name('promo');
 Route::get('produto/{slug}', 'Site\SiteController@produto')->name('produto');
 Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
 
@@ -45,7 +45,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
 
-    Route::resource('promotions', 'PromotionController');
+    // Route::resource('promotions', 'PromotionController');
     Route::resource('menus', 'MenuController');
     Route::resource('products', 'ProductsController');
 
@@ -61,7 +61,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
     Route::get('qrcode/{id}', 'PromotionController@qrCode')->name('promotion.qrCode');
 
     Route::name('admin.products.activate')->get('products/ativar/{id}', 'ProductsController@activate');
-    Route::name('admin.promotions.activate')->get('promotions/ativar/{id}', 'PromotionController@activate');
+    // Route::name('admin.promotions.activate')->get('promotions/ativar/{id}', 'PromotionController@activate');
 
     Route::name('admin.menus.activate')->get('menus/ativar/{id}', 'MenuController@activate');
     Route::name('admin.menus.products')->get('menus/menu-item/{menu_id}/adicionar', 'MenuController@addProducts');
