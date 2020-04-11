@@ -1,90 +1,128 @@
-<section class="section  bg-primary">
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-12 ml-auto mr-auto">
-        <section class="blogs-3">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-10 col-md-8 mx-auto">
-                <h2 class="title mb-5 text-white">Promoções</h2>
-                <div class="card card-blog card-plain blog-horizontal mb-5">
-                  
-<div class="row">
-        <div class="col-xl-4">          
-          <div class="card">            
-            <div class="card-body">              
-              <ul class="list-group list-group-flush list my--3">
-              @forelse ($promotions as $promotion)
-                <li class="list-group-item px-0">
-                  <div class="row align-items-center">
-                    <div class="col-auto">                      
-                      <a href="#" >
-                        <img alt="Image placeholder" src="{{ url("{$promotion->image}") }}" class="img-fluid rounded shadow-lg" style="width: 80px;">
-                      </a>
-                    </div>
-                    <div class="col ml--2">
-                      <h4 class="mb-0">
-                        <a href="#!"> {{ $promotion->title }}</a>
-                      </h4>
-                      <!-- <span class="text-success">●</span> -->
-                      <small>R$
-                      {{ number_format($promotion->promotion_value,2,',','.')}}</small>
-                    </div>
-                    <div class="col-auto">
-                      <button type="button" class="btn btn-sm btn-primary">Add</button>
+<!-- s2  -->
+<div class="header bg-white pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <!-- <i class="ni ni-collection text-white"></i>
+                    <h3 class="h3 text-white d-inline-block mb-0">Menu</h3> -->
+          <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+            <i class="ni ni-collection"></i>
+
+          </div>
+          <h3 class="display-5 text-dark d-inline-block mb-0"> Menu</h3>
+        </div>
+        <div class="col-lg-6 col-5 text-right">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+
+    <div class="col-xl-12 col-md-6">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<section class="section">
+  <div class="accordion-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 ml-auto">
+          <div class="accordion my-0" id="accordionExample">
+
+            @foreach ($categories as $category)
+            <div class="card mb-1">
+              <div class="card-header p-0" id="heading{{ $loop->index }}" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
+                <h5 class="mb-0">
+                  <h2 class="btn btn-link w-100 text-primary text-left" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
+                    <i class="ni ni-ungroup text-default"></i> <i class="text-default"> {{ $category->description }}
+
+
+                  </h2>
+
+
+                </h5>
+              </div>
+
+              <div id="collapse{{ $loop->index }}" class="collapse" aria-labelledby="heading{{ $loop->index }}" data-parent="#accordionExample">
+                <div class="card-body opacity-8">
+                  <div class="row">
+                    {{-- @foreach ($category->products as $product)
+                      <div class="card text-center col-md-4" style="width: 20rem;">
+                        <img class="card-img-top" src="{{ url("{$product->image}") }}" alt="{{ $product->title }}">
+                    <div class="card-body">
+                      <h4 class="card-title">{{ $product->title }}</h4>
+                      <p class="card-text">{{ $product->details }}</p>
+                      <a href="{{ route('site.menu.product', ['token' => $token,'id' => $product->id]) }}" class="btn btn-sm btn-primary">Ver Produto</a>
                     </div>
                   </div>
-                </li>  
-              
-              @empty
+                  @endforeach --}}
 
-<!-- <i class="fab fa-twitter"></i> -->
-<span class="alert-text"><strong>Nenhuma</strong> categoria cadastrada!</span>
+                  <div class="card-body p-1">
+                    <ul class="list-group list-group-flush list my--3 ">
+                      @foreach ($category->products as $product)
+                      <li class="list-group-item px-0">
+                        <div class="row align-items-center">
+                          <div class="col-auto">
+                            <!-- Avatar -->
 
-@endforelse
-</ul>
-            </div>
-          </div>
-        </div>
+                            <a href="{{ route('site.menu.product', ['token' => $token,'id' => $product->id]) }}">
+                              <img class="avatar" src="{{ url("{$product->image}") }}" alt="{{ $product->title }}">
+                            </a>
 
 
-
-                  <!-- <div class="row">
-                    <div class="col-md-12 mx-auto">
-                      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img class="d-block w-100" src="https://images.unsplash.com/photo-1457904375453-3e1fc2fc76f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1800&q=80" alt="First slide">
                           </div>
-                          <div class="carousel-item">
-                            <img class="d-block w-100" src="https://images.unsplash.com/photo-1526404801122-40fc40fca08f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2553&q=80" alt="Second slide">
+                          <div class="col ml--2">
+                            <h4 class="mb-0">
+                              <a href="{{ route('site.menu.product', ['token' => $token,'id' => $product->id]) }}">{{ $product->title }}</a>
+                            </h4>
+
+                            <!-- <span class="text-success">●</span> -->
+                            <small>R$ {{ number_format($product->price,2,',','.')}}</small>
                           </div>
-                          <div class="carousel-item">
-                            <img class="d-block w-100" src="https://images.unsplash.com/photo-1524095731963-b4e38d1b3329?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80" alt="Third slide">
+                          <div class="col-auto">
+
+                            <!-- <button type="button" class="btn btn-sm btn-primary">Add</button> -->
+
+
                           </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div> -->
+
+
+
+                      </li>
+                      @endforeach
+
+
+
+
+
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+          @endforeach
+
+        </div>
       </div>
     </div>
   </div>
+  </div>
+
 </section>
+
+
+</div>
+</div>

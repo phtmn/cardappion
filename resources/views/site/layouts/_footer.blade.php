@@ -27,9 +27,7 @@
 </a>
   </li>
   <li class="nav-item">
-  <a href="#" class="avatar rounded-circle">
-    <img alt="Image placeholder" src="../../assets/img/theme/bootstrap.jpg">
-</a>
+  <a href="{{ route('cart.checkout', ['token' => $token]) }}" class="btn btn-warning ml-3">Sacola <i class="ni ni-cart"></i></a href="{{ route('cart.checkout', ['token' => $token]) }}">
   </li>
   <li class="nav-item">
   <a href="#" class="avatar rounded-circle">
@@ -56,6 +54,7 @@
         <div class="copyright text-center text-xl-left text-muted">
           <ul class="nav nav-pills nav-pills-circle" id="tabs_2" role="tablist">
             <li class="nav-item">
+              <a href="{{ route('cart.checkout', ['token' => $token]) }}" class="btn btn-warning ml-3">Sacola <i class="ni ni-cart"></i></a href="{{ route('cart.checkout', ['token' => $token]) }}">
               <a href="{{ route('cart.checkout', ['token' => $token]) }}" class="btn btn-warning ml-3">Sacola <i class="ni ni-cart"></i></a href="{{ route('cart.checkout', ['token' => $token]) }}">
             </li>
             <li class="nav-item">
