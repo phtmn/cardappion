@@ -10,7 +10,7 @@
           <!-- <i class="ni ni-settings-gear-65 text-white"></i>
                     <h3 class="h3 text-white d-inline-block mb-0">Configurações</h3> -->
           <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-            <i class="ni ni-badge"></i>
+            <i class="ni ni-building"></i>
           </div>
           <h3 class="display-5 text-dark d-inline-block mb-0"> Perfil</h3>
         </div>

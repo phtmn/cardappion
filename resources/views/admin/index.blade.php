@@ -37,7 +37,7 @@
               </div>
               <div class="col-auto">
                 <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
-                  <i class="ni ni-badge"></i>
+                  <i class="ni ni-building"></i>
                 </div>
               </div>
             </div>

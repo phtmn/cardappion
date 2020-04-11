@@ -42,7 +42,7 @@
                             </a>
                             <a href="{{route('config.createEdit')}}" class="media d-flex align-items-center">
                                 <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                                    <i class="ni ni-badge"></i>
+                                    <i class="ni ni-building"></i>
                                 </div>
                                 <div class="media-body ml-3">
                                     <h6 class="heading text-dark mb-md-1">Perfil</h6>
