@@ -1,0 +1,8 @@
+resources\views\site
+checkout.blade
+product.blade
+show.blade
+show_argon.blade
+show_s1.blade
+show_s2.blade
+show_s4.blade

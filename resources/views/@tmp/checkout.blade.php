@@ -1,4 +1,6 @@
-@extends('site.layouts.master')
+{{-- @extends('site.layouts.master') --}}
+
+@extends('site.layouts.master_design')
 
 @section('content')
 

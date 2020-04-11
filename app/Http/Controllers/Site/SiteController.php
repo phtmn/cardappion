@@ -26,59 +26,59 @@ class SiteController extends Controller
     //   return view('client.promotion', compact('promotion'));
     // }
 
-    public function promo($slug)
-    {
+    // public function promo($slug)
+    // {
 
-        $promotion = Promotion::where('url', '=', $slug)->first();
-        //dd($promotion);
-        return view('client.promotion', compact('promotion'));
-    }
+    //     $promotion = Promotion::where('url', '=', $slug)->first();
+    //     //dd($promotion);
+    //     return view('client.promotion', compact('promotion'));
+    // }
 
-    public function produto($slug)
-    {
+    // public function produto($slug)
+    // {
 
-        $product = Product::where('url', '=', $slug)->first();
-        //dd($promotion);
-        return view('client.product', compact('product'));
-    }
+    //     $product = Product::where('url', '=', $slug)->first();
+    //     //dd($promotion);
+    //     return view('client.product', compact('product'));
+    // }
 
-    public function detalhe_promocao2($slug)
-    {
+    // public function detalhe_promocao2($slug)
+    // {
 
-        $promotion = Promotion::where('url', '=', $slug)->first();
-        //dd($promotion);
-        return response()->json($promotion);
+    //     $promotion = Promotion::where('url', '=', $slug)->first();
+    //     //dd($promotion);
+    //     return response()->json($promotion);
 
-        // return view('client.promotion', compact('promotion'));
-    }
+    //     // return view('client.promotion', compact('promotion'));
+    // }
 
-    public function detalhe_promocao($token)
-    {
+    // public function detalhe_promocao($token)
+    // {
 
-        $tenant = Tenant::where('token', $token)->firstOrFail();
-        // $promotions = $tenant->promotions()->where('active', true)->get();
-        $promotion = Promotion::where('url', '=', $token)->first();
-        //dd($promotion);
-        return response()->json($promotion);
+    //     $tenant = Tenant::where('token', $token)->firstOrFail();
+    //     // $promotions = $tenant->promotions()->where('active', true)->get();
+    //     $promotion = Promotion::where('url', '=', $token)->first();
+    //     //dd($promotion);
+    //     return response()->json($promotion);
 
-        // return view('client.promotion', compact('promotion'));
-    }
+    //     // return view('client.promotion', compact('promotion'));
+    // }
 
-    public function menu($slug)
-    {
+    // public function menu($slug)
+    // {
 
-        return view('client.menu', [
-        'promotions'    => Promotion::all(),
-        'menu'          => Menu::where('slug', '=', $slug)->first(),
-        'categories'    => ProductCategory::all()
-        ]);
-    }
+    //     return view('client.menu', [
+    //     'promotions'    => Promotion::all(),
+    //     'menu'          => Menu::where('slug', '=', $slug)->first(),
+    //     'categories'    => ProductCategory::all()
+    //     ]);
+    // }
 
-    public function productDetail($id)
-    {
-        $product = Product::find($id);
-        return view('client.productDetail', compact('product'));
-    }
+    // public function productDetail($id)
+    // {
+    //     $product = Product::find($id);
+    //     return view('client.productDetail', compact('product'));
+    // }
 
     public function show($token)
     {
@@ -90,12 +90,25 @@ class SiteController extends Controller
 
         $products = $tenant->products()->where('active', true)->get();
 
-        $promotions = $tenant->promotions()->where('active', true)->get();
+        // $promotions = $tenant->promotions()->where('active', true)->get();
 
         // return view('site.show_argon', compact('tenant', 'config', 'categories', 'products', 'promotions', 'token'));
 
-        return view('site.show', compact('tenant', 'config', 'categories', 'products', 'promotions', 'token'));
+        return view('site.m.show', compact('tenant', 'config', 'categories', 'products', 'promotions', 'token'));
         // return view('site.show', compact('tenant', 'config', 'categories', 'promotions'));
+    }
+
+    public function menu($token)
+    {
+        $tenant = Tenant::where('token', $token)->firstOrFail();
+
+        // $config = $tenant->config()->withoutGlobalScopes()->first();
+
+        $categories = $tenant->menus()->where('active', true)->orderBy('sort')->get();
+
+        $products = $tenant->products()->where('active', true)->get();       
+
+        return view('site.m.menu', compact('tenant', 'categories', 'products', 'token'));        
     }
 
     public function product($token, $id)
@@ -108,6 +121,7 @@ class SiteController extends Controller
             return redirect()->back();
         }
 
-        return view('site.product', compact('product', 'tenant', 'token'));
+        // return view('site.product', compact('product', 'tenant', 'token'));
+        return view('site.m.product', compact('product', 'tenant', 'token'));
     }
 }

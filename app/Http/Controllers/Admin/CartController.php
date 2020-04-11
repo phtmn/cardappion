@@ -36,7 +36,7 @@ class CartController extends Controller
         $total     = number_format(\Cart::session($userId)->getTotal(), 2, ',', '.');
         $total_qty = \Cart::session($userId)->getTotalQuantity();
 
-        return view('site.checkout', compact('items', 'token', 'subtotal', 'total', 'total_qty', 'delivery'));
+        return view('site.m.checkout', compact('items', 'token', 'subtotal', 'total', 'total_qty', 'delivery'));
     }
 
     public function add(Request $request, $token)

@@ -1,6 +1,7 @@
 </html>
 <!DOCTYPE html>
 <html>
+  
   @include('site.layouts._head') 
 <body class="bg-default">
   @include('site.layouts._nav')  

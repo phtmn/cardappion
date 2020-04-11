@@ -1,17 +1,16 @@
 <?php
 
 Route::get('/blog', 'Site\BlogController@index')->name('site.blog.index');
-// Route::get('/blog/{slug}', 'Site\BlogController@index2')->name('site.blog.index2');
 Route::get('/blog/{slug}', 'Site\BlogController@show')->name('site.blog.show');
 
 Route::get('/', 'Site\SiteController@home')->name('site');
-Route::name('site.menu.show')->get('/m/{token}', 'Site\SiteController@show');
-// Route::name('detalhe.promocao')->get('/m/{token}/{id}', 'Site\SiteController@detalhe_promocao');
-Route::name('site.menu.product')->get('/m/{token}/produto/{id}', 'Site\SiteController@product');
+Route::get('/m/{token}/show', 'Site\SiteController@show')->name('site.menu.show'); //perfil
+Route::get('/m/{token}/menu', 'Site\SiteController@menu')->name('site.menu.menu');
+Route::get('/m/{token}/produto/{id}', 'Site\SiteController@product')->name('site.menu.product');
 
-// Route::get('promo/{slug}', 'Site\SiteController@promo')->name('promo');
-Route::get('produto/{slug}', 'Site\SiteController@produto')->name('produto');
-Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
+
+// Route::get('produto/{slug}', 'Site\SiteController@produto')->name('produto');
+// Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
 
 Route::name('cart.checkout')->get('{token}/checkout','Admin\CartController@checkout');
 Route::name('cart.index')->get('/m/{token}/checkout/cart','Admin\CartController@index');
