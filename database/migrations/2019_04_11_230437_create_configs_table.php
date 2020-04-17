@@ -24,9 +24,9 @@ class CreateConfigsTable extends Migration
       $table->string('address')->nullable();
       $table->string('neighborhood')->nullable();
       $table->string('city')->nullable();
-      $table->string('us')->nullable();
-      $table->string('telephone')->nullable();
+      $table->string('us')->nullable();      
       $table->string('whatsapp')->nullable();
+      $table->string('telegram')->nullable();
       $table->string('image')->nullable();
       $table->string('site')->nullable();
       $table->string('instagram')->nullable();

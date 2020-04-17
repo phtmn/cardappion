@@ -9,9 +9,7 @@ class Product extends Model
 {
   use TenantTrait;
 
-  // protected $fillable = ['tenant_id','menu_id','category_id','description','price','image','details','active'];
-
-  protected $fillable = ['tenant_id', 'title', 'price', 'url', 'image', 'details', 'active'];
+  protected $fillable = ['tenant_id', 'title', 'image1', 'image2', 'image3','price', 'details', 'nutritional_value', 'origin_inputs', 'serving_suggestion', 'linked_revenue', 'service_suggestion', 'harmonization','curiosities','active'];
 
   protected $casts = [
     'active' => 'boolean'

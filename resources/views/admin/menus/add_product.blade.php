@@ -50,7 +50,38 @@
             @forelse( $products as $d)
               <tr class="js-table-{{ $d->id }}">
               <td>
-                  <img src="{{ url("{$d->image}") }}" style="height: 70px;" alt=""/>
+                          <div class="avatar-group">
+
+                            @if(!$d->image1)
+                            <a class="avatar ">
+                              <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
+                        </a>
+                        @else
+                        <a class="avatar ">
+                          <img src="{{ Storage::url($d->image1) }}" width="45" height="45">
+                        </a>
+                        @endif
+
+                        @if(!$d->image2)
+                        <a class="avatar ">
+                          <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
+                        </a>
+                        @else
+                        <a class="avatar ">
+                          <img src="{{ Storage::url($d->image2) }}" width="45" height="45">
+                        </a>
+                        @endif
+
+                        @if(!$d->image3)
+                        <a class="avatar ">
+                          <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
+                        </a>
+                        @else
+                        <a class="avatar ">
+                          <img src="{{ Storage::url($d->image3) }}" width="45" height="45">
+                        </a>
+                        @endif
+                </div>
                 </td>
                 <td>{{$d->title}}</td>
                 <td>R$ {{ number_format($d->price,2,',','.') }}</td>
@@ -63,7 +94,7 @@
             </td>
               </tr>
             @empty
-            <p class="text-danger">Nenhum produto cadastrado</p>
+            <p class="text-danger">Nenhum produto cadastrado!</p>
 
             @endforelse
             </tbody>

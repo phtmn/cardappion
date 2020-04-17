@@ -7,6 +7,8 @@ use App\Models\Product;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProductsController extends Controller
 {
@@ -28,8 +30,17 @@ class ProductsController extends Controller
       $product = $request->all();
       // $product['url']   = Str::random(5);
 
-      if ($request->hasFile('image')) {
-        $product['image']  = $request->image->move('images/products');
+      
+      if ($request->hasFile('image1') && $request->file('image1')->isValid()) {      
+        $product['image1']  = $request->image1->store('images/products');
+      }
+
+      if ($request->hasFile('image2') && $request->file('image2')->isValid()) {      
+        $product['image2']  = $request->image2->store('images/products');
+      }
+
+      if ($request->hasFile('image3') && $request->file('image3')->isValid()) {      
+        $product['image3']  = $request->image3->store('images/products');
       }
 
       if ($request->price) {
@@ -45,30 +56,62 @@ class ProductsController extends Controller
       return redirect()->back()->with('error', 'Ocorreu um Erro: ' . $e->getMessage());
     }
   }
-
+  
   public function edit($id)
   {
     $product = Product::findOrFail($id);
-
     return view('admin.products.edit', compact('product'));
   }
 
   public function update(Request $request, $id)
   {
     $product = Product::findOrFail($id);
+    $dados = $request->all();
 
-    if ($request->hasFile('image')) {
-      $product['image'] = $request->image->move('images/products');
+    if($product)
+    {
+
+      $productImage1 = $product->image1;
+      $productImage2 = $product->image2;
+      $productImage3 = $product->image3;
+
+      if ($request->hasFile('image1') && $request->file('image1')->isValid()) {
+        if ($productImage1) {
+            Storage::delete($productImage1);
+        }
+        $productImage1 = $request->image1->store('images/products');
+      }
+
+      if ($request->hasFile('image2') && $request->file('image2')->isValid()) {
+        if ($productImage2) {
+            Storage::delete($productImage2);
+        }
+        $productImage2 = $request->image2->store('images/products');
+      }
+
+      if ($request->hasFile('image3') && $request->file('image3')->isValid()) {
+        if ($productImage3) {
+            Storage::delete($productImage3);
+        }
+        $productImage3 = $request->image3->store('images/products');
+      }
     }
 
-    $product['title'] = $request->title;
-    $product['price'] = $request->price;
-    $product['details'] = $request->details;
+    // $dados['title'] = $request->title;
+    // $dados['price'] = $request->price;
+    // $dados['details'] = $request->details;
+    // // $dados['user_id']   = Auth()->user()->id;
+    $dados['image1'] = $productImage1;
+    $dados['image2'] = $productImage2;
+    $dados['image3'] = $productImage3;
 
-    $product->save();
+    $product->update($dados);
+
+    // $product->save();:
 
     return redirect()->route('products.index');
   }
+
 
   public function activate($id)
   {

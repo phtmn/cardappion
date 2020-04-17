@@ -36,18 +36,9 @@
             <h3 class="mb-0">Editar Produto</h3>
           </div>
           <div class="card-body">
-            <form action="{{route('products.update', [ 'id' => $product->id ])}}" method="POST"
-              enctype="multipart/form-data">
+            <form action="{{route('products.update', [ 'id' => $product->id ])}}" method="POST" enctype="multipart/form-data">
               @csrf
               {{ method_field('PUT') }}
-              <div class="form-group row">
-                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Foto de
-                  destaque </label>
-                <div class="col-md-4">
-                  <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail"
-                    data-default-file="{{ url("{$product->image}") }}" />
-                </div>
-              </div>
 
               <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Título
@@ -58,34 +49,97 @@
               </div>
 
               <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Foto de
+                  destaque I</label>
+                <div class="col-md-4">
+                  <input type="file" name="image1" class="form-control img-thumbnail" data-default-file="{{ url("{$product->image1}") }}" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Foto de
+                  destaque II</label>
+                <div class="col-md-4">
+                  <input type="file" name="image2" class="form-control img-thumbnail" data-default-file="{{ url("{$product->image2}") }}" />
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-text-input" class="col-md-4 col-form-label form-control-label text-right ">Foto de
+                  destaque III</label>
+                <div class="col-md-4">
+                  <input type="file" name="image3" class="form-control img-thumbnail" data-default-file="{{ url("{$product->image3}") }}" />
+                </div>
+              </div>
+
+              <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Valor
                   (R$) </label>
                 <div class="col-md-2">
-                  <!-- <input type="text" name="price" class="form-control" id=""> -->
                   <input type="text" name="price" class="form-control" id="price" value="{{ $product->price }}">
                 </div>
               </div>
               <div class="form-group row">
-                <label for="example-search-input"
-                  class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
                 <div class="col-md-4">
-                  <textarea name="details" rows="5" resize="none" class="form-control"
-                    maxlenght="500">{{ $product->details }}</textarea>
+                  <textarea name="details" rows="5" resize="none" class="form-control" maxlenght="500">{{ $product->details }}</textarea>
                 </div>
               </div>
 
               <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Valor nutricional </label>
                 <div class="col-md-4">
-
+                  <textarea name="nutritional_value" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!">{{ $product->nutritional_value }}</textarea>
                 </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Origem do insumos </label>
                 <div class="col-md-4">
-                  <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i
-                      class=" fa fa-check-square nav-icon"></i> Salvar</button>
+                  <textarea name="origin_inputs" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!">{{ $product->origin_inputs }}</textarea>
                 </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Sugestão de porção - Rendimento </label>
                 <div class="col-md-4">
-
+                  <textarea name="serving_suggestion" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!">{{ $product->serving_suggestion }}</textarea>
                 </div>
+              </div>
 
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Receita vinculada </label>
+                <div class="col-md-4">
+                  <textarea name="linked_revenue" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!">{{ $product->linked_revenue }}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Sugestão de serviço </label>
+                <div class="col-md-4">
+                  <textarea name="service_suggestion" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!">{{ $product->service_suggestion }}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Harmonização </label>
+                <div class="col-md-4">
+                  <textarea name="harmonization" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!">{{ $product->harmonization }}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Curiosidades </label>
+                <div class="col-md-4">
+                  <textarea name="curiosities" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!">{{ $product->curiosities }}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right"> </label>
+                <div class="col-md-2">
+                  <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i class=" fa fa-check-square nav-icon"></i> Salvar</button>
+                </div>
               </div>
 
               @include('tools.messages')
@@ -97,56 +151,14 @@
     </div>
   </div>
 
-  
-
-  @include('tools.messages')
-
-  @stop
-
-  @section('css')
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{asset('js/dropify/dist/css/dropify.css')}}">
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
-
   @stop
 
   @section('js')
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
-  <script src="{{asset('js/dropify/dist/js/dropify.js')}}"></script>
-  <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
-  <!-- <script src="{{ asset('js/viaCep.js') }}"></script> -->
   <script>
-    $('#summernote').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ]
-        });
-
-        $(document).ready(function(){
-
-                $("#price").mask('#.##0,00', {reverse: true});
-
-
-        })
-
-        $(document).ready(function(){
-            $('.dropify').dropify({
-                messages:{
-                    'default': 'upload da imagem do produto'
-                }
-            });
-        });
-
-
-
+    $(document).ready(function() {
+      $("#price").mask('#.##0,00', {
+        reverse: true
+      });
+    })
   </script>
-
-
   @stop

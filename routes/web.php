@@ -4,7 +4,7 @@ Route::get('/blog', 'Site\BlogController@index')->name('site.blog.index');
 Route::get('/blog/{slug}', 'Site\BlogController@show')->name('site.blog.show');
 
 Route::get('/', 'Site\SiteController@home')->name('site');
-Route::get('/m/{token}/show', 'Site\SiteController@show')->name('site.menu.show'); //perfil
+Route::get('/m/{token}/', 'Site\SiteController@show')->name('site.menu.show'); //perfil
 Route::get('/m/{token}/menu', 'Site\SiteController@menu')->name('site.menu.menu');
 Route::get('/m/{token}/produto/{id}', 'Site\SiteController@product')->name('site.menu.product');
 
@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 
     Route::get('/config/createEdit', 'ConfigController@createEdit')->name('config.createEdit');
     Route::post('/config/createEdit', 'ConfigController@store')->name('config.store');
+    Route::put('/config/createEdit', 'ConfigController@update')->name('config.update');
 
     Route::get('/menu-itens/{id}', 'MenuController@menuItens')->name('menu.menuItens');
     Route::get('/menu-item/menu/{menu}/delete/{id}', 'MenuController@deleteItem')->name('menu.deleteItem');

@@ -59,6 +59,7 @@ class MenuController extends Controller
 
   public function menuItens($menu_id)
   {
+    
     $menu = Menu::find($menu_id);
 
     return view('admin.menus.menu_itens', [

@@ -89,7 +89,7 @@
         <div class="table-responsive">
           <table class="table">
             <thead class="text-dark">
-              <th>#</th>
+              <th>=</th>
               <th>Categoria</th>
               <!-- <th>Produtos</th> -->
               <th>Publicado</th>
@@ -124,7 +124,7 @@
 
               </tr>
               @empty
-              <p class="text-danger">Nenhuma categoria cadastrada</p>
+              <p class="text-danger">Nenhuma categoria cadastrada!</p>
               @endforelse
             </tbody>
           </table>

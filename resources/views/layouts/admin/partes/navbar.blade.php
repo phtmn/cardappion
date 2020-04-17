@@ -63,7 +63,7 @@
                                     <i class="ni ni-collection"></i>
                                 </div>
                                 <div class="media-body ml-3">
-                                    <h6 class="heading text-dark mb-md-1">Menus</h6>
+                                    <h6 class="heading text-dark mb-md-1">Menu</h6>
                                 </div>
                             </a>
                             <a href="{{route('sale.index')}}" class="media d-flex align-items-center">

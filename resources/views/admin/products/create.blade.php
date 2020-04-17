@@ -41,13 +41,7 @@
                     <div class="card-body">
                     <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group row">
-                                <label for="example-text-input"
-                                    class="col-md-4 col-form-label form-control-label text-right ">Foto de destaque </label>
-                                <div class="col-md-4">
-                                    <input type="file" id="input-file-now" name="image" class="dropify img-thumbnail" />
-                                </div>
-                            </div>
+
 
                             <div class="form-group row">
                                 <label for="example-search-input"
@@ -56,6 +50,30 @@
                                     <input type="text" name="title" class="form-control" required> 
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="example-text-input"
+                                    class="col-md-4 col-form-label form-control-label text-right ">Foto de destaque I</label>
+                                <div class="col-md-4">
+                                    <input type="file" name="image1" class="form-control img-thumbnail" />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-text-input"
+                                    class="col-md-4 col-form-label form-control-label text-right ">Foto de destaque II</label>
+                                <div class="col-md-4">
+                                    <input type="file" name="image2" class="form-control img-thumbnail" />
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-text-input"
+                                    class="col-md-4 col-form-label form-control-label text-right ">Foto de destaque II</label>
+                                <div class="col-md-4">
+                                    <input type="file" name="image3" class="form-control img-thumbnail" />
+                                </div>
+                            </div>                           
 
                             <div class="form-group row">
                                 <label for="example-search-input"
@@ -69,23 +87,74 @@
                                 <label for="example-search-input"
                                     class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
                                 <div class="col-md-4">
-                                         <textarea name="details" rows="5" resize="none" class="form-control" maxlenght="500"></textarea>
+                                         <textarea name="details" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Valor nutricional </label>
                                 <div class="col-md-4">
-
+                                         <textarea name="nutritional_value" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!"></textarea>
                                 </div>
-                                <div class="col-md-4">
-                                <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i
-                                    class=" fa fa-check-square nav-icon"></i> Salvar</button>
-                                </div>
-                                <div class="col-md-4">
-
-                                </div>
-
                             </div>
+
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Origem do insumos </label>
+                                <div class="col-md-4">
+                                         <textarea name="origin_inputs" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Sugestão de porção - Rendimento </label>
+                                <div class="col-md-4">
+                                         <textarea name="serving_suggestion" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Receita vinculada </label>
+                                <div class="col-md-4">
+                                         <textarea name="linked_revenue" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Sugestão de serviço </label>
+                                <div class="col-md-4">
+                                         <textarea name="service_suggestion" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Harmonização </label>
+                                <div class="col-md-4">
+                                         <textarea name="harmonization" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">Curiosidades  </label>
+                                <div class="col-md-4">
+                                         <textarea name="curiosities" rows="4" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="example-search-input"
+                                    class="col-md-4 col-form-label form-control-label text-right">  </label>
+                                <div class="col-md-2">
+                                <button type="submit" class="btn btn-block btn-outline-primary btn-lg btn-round"> <i
+                                    class=" fa fa-check-square nav-icon"></i> Salvar</button>                                  
+                                </div>
+                            </div>                           
 
                             @include('tools.messages')
 
@@ -96,55 +165,13 @@
         </div>
     </div>
 
-  @include('tools.messages')
-
+  
 @stop
 
-@section('css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('js/dropify/dist/css/dropify.css')}}">
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
-
-@stop
-
-@section('js')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script> -->
-    <script src="{{asset('js/dropify/dist/js/dropify.js')}}"></script>
-    <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
-    <script src="{{ asset('js/viaCep.js') }}"></script>
+@section('js')    
     <script>
-
-        $('#summernote').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ]
-        });
-
-        $(document).ready(function(){
-               
+        $(document).ready(function(){               
                 $("#price").mask('#.##0,00', {reverse: true});   
-
-
-        })
-
-        $(document).ready(function(){
-            $('.dropify').dropify({
-                messages:{
-                    'default': 'upload da imagem do produto'
-                }
-            });
-        });
-
-
-    
+        })            
     </script>
-
-
 @stop

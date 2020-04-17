@@ -9,7 +9,7 @@ class Config extends Model
 {
   use TenantTrait;
 
-  protected $fillable = ['user_id', 'tenant_id', 'name', 'delivery', 'docnumber', 'zipcode', 'address', 'neighborhood', 'city', 'us', 'telephone', 'image', 'whatsapp', 'site', 'instagram', 'fanpage', 'details'];
+  protected $fillable = ['user_id', 'tenant_id', 'name', 'delivery', 'docnumber', 'zipcode', 'address', 'neighborhood', 'city', 'us', 'telephone', 'image', 'whatsapp', 'telegram','site', 'instagram', 'fanpage', 'details'];
 
   public function user()
   {

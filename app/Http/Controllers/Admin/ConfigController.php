@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Config;
-use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Tenant;
+use App\Models\User;
 
 class ConfigController extends Controller
 {
@@ -24,10 +25,7 @@ class ConfigController extends Controller
 
   public function store(Request $request)
   {
-    // if ($request->hasFile('image')) {
-    //     $image = $request->image->store('images/logos');
-    // }
-
+   
     if ($request->hasFile('image') && $request->file('image')->isValid() ) {
       $image = $request->image->store('images/logos');
    }
@@ -46,11 +44,10 @@ class ConfigController extends Controller
       $user->save();
     }
 
-    // dd($request->all());
     $config = Config::UpdateOrCreate(
         ['user_id' => auth()->user()->id],
         [
-           'image'         => isset($image) ? $image : null,
+            'image'         => isset($image) ? $image : null,
             // 'name'          => $request->name,
             // 'docnumber'     => $request->docnumber,
             'delivery'      => $request->delivery,
@@ -58,10 +55,9 @@ class ConfigController extends Controller
             'address'       => $request->address,
             'neighborhood'  => $request->neighborhood,
             'city'          => $request->city,
-            'us'            => $request->us,
-            // 'telephone'     => $request->telephone,            
+            'us'            => $request->us,            
             'whatsapp'      => $request->whatsapp,
-            'telegram'     => $request->telegram,
+            'telegram'      => $request->telegram,
             'site'          => $request->site,
             'instagram'     => $request->instagram,
             'fanpage'       => $request->fanpage,
@@ -69,6 +65,47 @@ class ConfigController extends Controller
             'user_id'       => auth()->user()->id
         ]
     );
+
+    if ($config) {
+        return redirect()->route('config.createEdit')->with('msg', 'Dados armazenados com sucesso!');
+    }
+  }
+
+  public function update(Request $request)
+  {
+   
+    $config = auth()->user()->config();
+    $dados = $request->all();
+    
+    if($config)
+    {
+
+      $configImage = $config->image;      
+
+      if ($request->hasFile('image') && $request->file('image')->isValid()) {
+        if ($configImage) {
+            Storage::delete($configImage);
+        }
+        $configImage = $request->image->store('images/logos');
+      }
+    }  
+      
+    if($request->has('tenant_name')){      
+      $tenant = Tenant::find(auth()->user()->tenant->id);
+      // dd($tenant);
+      $tenant->name = $request->tenant_name ?: $tenant->name;   
+      $tenant->save();   
+    }
+
+    if($request->has('user_name')){
+      $user = User::find(auth()->user()->id);
+      $user->name = $request->user_name ?: $user->name;
+      $user->save();
+    }
+
+    $dados['image'] = $configImage;
+
+    $config->update($dados);
 
     if ($config) {
         return redirect()->route('config.createEdit')->with('msg', 'Dados armazenados com sucesso!');

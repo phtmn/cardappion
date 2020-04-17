@@ -48,9 +48,9 @@
                         @foreach ($items as $item)
                             <tr class="item-checkout" data-id="{{ $item->id }}" data-quantity="{{ $item->quantity }}">
                                 <td>
-                                    <div class="img-container">
+                                    {{--<div class="img-container">
                                         <img src="{{ url("{$item->conditions->image}") }}" alt="{{ $item->name }}">
-                                    </div>
+                                    </div>--}}
                                 </td>
                                 <td class="td-name">
                                     <span>{{ $item->name }}</span>
