@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('admin.layouts.master')
 
 @section('cabecalho')
 
@@ -82,7 +82,7 @@
               <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Informações adicionais </label>
                 <div class="col-md-4">
-                  <textarea name="details" rows="5" resize="none" class="form-control" maxlenght="500">{{ $product->details }}</textarea>
+                  <textarea name="details" rows="5" resize="none" class="form-control" maxlenght="500" placeholder="No máximo 500 caracteres!">{{ $product->details }}</textarea>
                 </div>
               </div>
 

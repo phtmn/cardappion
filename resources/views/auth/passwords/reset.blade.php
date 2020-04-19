@@ -2,7 +2,7 @@
 <html>
 
 @include('site.layouts._head')
-<body class="bg-dark">
+<body class="bg-gradient-default">
 @include('site.layouts._nav')
 
  
@@ -71,7 +71,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-dark my-2">
+                                <button type="submit" class="btn btn btn-outline-default my-2">
                                     {{ __('Alterar Senha') }}
                                 </button>
                             </div>

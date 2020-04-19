@@ -3,7 +3,7 @@
 
 
 @include('site.layouts._head')
-<body class="bg-gradient-danger">
+<body class="bg-gradient-default">
 @include('site.layouts._nav')
 
   <div class="main-content">
@@ -127,7 +127,7 @@
 
                         
                             <div class="text-center">
-                                <button type="submit" class="btn btn-warning my-2">
+                                <button type="submit" class="btn btn-outline-default my-2">
                                     {{ __('Cadastre-se') }}
                                 </button>
                             </div>

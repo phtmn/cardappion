@@ -126,7 +126,7 @@
   </div>
 </section>
 
-<section class="py-0 bg-dark">
+<section class="py-0 bg-gradient-default">
   <div class="main-content">
 
     <div class="header  py-7 py-lg-7 pt-lg-4">
@@ -242,7 +242,7 @@
                     </div>
                   </li>
                 </ul>
-                <a href="{{route('register')}}" class="btn btn-warning my-2 ">Cadastre-se</a>
+                <a href="{{route('register')}}" class="btn btn-outline-default my-2 ">Cadastre-se</a>
               </div>
             </div>
           </div>

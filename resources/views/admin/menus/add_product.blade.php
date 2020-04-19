@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('admin.layouts.master')
 
 @section('cabecalho')
 
@@ -7,8 +7,7 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <!-- <i class="ni ni-collection text-white"></i>
-                    <h3 class="h3 text-white d-inline-block mb-0">Menu <i class="ni ni-ungroup text-white"></i> {{$menu->description}}</h3></h3> -->
+             
                     <div class="icon icon-shape bg-gradient-warning  rounded-circle text-white">
                                     <i class="ni ni-collection"></i>
                                 </div>
@@ -16,7 +15,7 @@
                 </div>
                 <div class="col-lg-6 col-5 text-right">
                 <a class="text-dark" href="{{route('menu.menuItens', [ 'menu_id' => $menu->id ])}} "><i class="ni ni-bold-left text-dark"></i> Voltar </a>
-              <!-- <a href="#" class="btn btn-sm btn-neutral"> Total de Categorias ({{$menu->count()}})</a> -->
+             
             </div>
             </div>
         </div>

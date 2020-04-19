@@ -89,7 +89,7 @@
 
   @yield('content')
   @stack('scripts')
-  @include('site.layouts._footer') 
+  {{--@include('site.layouts._footer') --}}
 </div>
 
 

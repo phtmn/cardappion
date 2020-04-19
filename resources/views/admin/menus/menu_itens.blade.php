@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('admin.layouts.master')
 
 @section('cabecalho')
 
@@ -38,7 +38,7 @@
           <div class="card-header">
             <div class="row align-items-center">
               <div class="col-8">
-                <a href="{{ route('admin.menus.products', [ 'id' => $menu->id ]) }}" class="btn btn-dark"> <i class=" fa fa-plus nav-icon"> </i> Adicionar produto na categoria</a>
+                <a href="{{ route('admin.menus.products', [ 'id' => $menu->id ]) }}" class="btn btn-gradiente-default"> <i class=" fa fa-plus nav-icon"> </i> Adicionar produto na categoria</a>
 
               </div>
               <div class="col-4 text-right">

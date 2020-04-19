@@ -1,5 +1,5 @@
 
-@extends('layouts.site.master')
+@extends('site.layouts.master')
 
 @section('content')
 <div class="main-content">

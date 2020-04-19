@@ -6,6 +6,6 @@
   @include('site.layouts._nav')  
   @yield('content')
   @stack('scripts')    
-  @include('site.layouts._footer')   
+  
 </body>
 </html>

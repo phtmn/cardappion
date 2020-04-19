@@ -2,7 +2,7 @@
 <html>
 
 @include('site.layouts._head')
-<body class="bg-dark">
+<body class="bg-gradient-default">
 @include('site.layouts._nav')
   <div class="main-content">
     <!-- Header -->
@@ -17,34 +17,15 @@
           </div>
         </div>
       </div>
-      <!-- <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-secondary" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-      </div> -->
+      
     </div>
     <!-- Page content -->
     <div class="container mt--7 pb-5">
       <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-7">
-          <!-- <div class="card bg-secondary border-0 mb-0"> -->
-          <div class="card  border-0 mb-0">
-            <!-- <div class="card-header bg-transparent pb-5">
-              <div class="text-muted text-center mt-2 mb-3"><small>Entre com</small></div>
-              <div class="btn-wrapper text-center">
-                <a href="#" class="btn btn-neutral btn-icon">
-                  <span class="btn-inner--icon"><img src="../../assets/img/icons/common/github.svg"></span>
-                  <span class="btn-inner--text">Facebook</span>
-                </a>
-                <a href="#" class="btn btn-neutral btn-icon">
-                  <span class="btn-inner--icon"><img src="../../assets/img/icons/common/google.svg"></span>
-                  <span class="btn-inner--text">Google</span>
-                </a>
-              </div>
-            </div> -->
+        <div class="col-lg-6 col-md-7">          
+          <div class="card  border-0 mb-0">            
             <div class="card-body px-lg-5 py-lg-5">
-              <div class="text-center text-muted mb-4">
-                <!-- <small class="font-weight-bold">Bem vindo!</small> -->
+              <div class="text-center text-muted mb-4">                
               </div>
               <form role="form" action="{{ route('login') }}" method="POST">
                   @csrf
@@ -80,7 +61,7 @@
                   
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-dark my-2">Acessar conta</button>
+                  <button type="submit" class="btn btn-outline-default my-2">Acessar conta</button>
                 </div>
               </form>
             </div>
@@ -88,7 +69,7 @@
           <div class="row mt-3">
             <div class="col-6 text-left">
             <a href="{{url('/password/reset')}}" class="text-white"><small><b>Esqueceu a senha?</b></small></a>
-              <!-- <a href="#" class="text-white"><small>Esqueci a senha?</small></a> -->
+              
             </div>
             <div class="col-6 text-right">
               <a href="{{route('register')}}" class="text-white"><small><b>Cadastre-se</b></small></a>

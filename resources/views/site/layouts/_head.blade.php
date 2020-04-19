@@ -1,8 +1,9 @@
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-  <meta name="author" content="Creative Tim">
+  <meta name="author" content="Creative Tim"> -->
+
   
   <title>{{ config('app.name') }}</title>
 
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="{{ asset('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('assets/css/argon.min.css?v=1.0.0') }}" type="text/css">
-
+  
   <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
@@ -22,7 +23,10 @@
   <script src="{{ asset('assets/vendor/lavalamp/js/jquery.lavalamp.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
   <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
-  <script src="{{ asset('assets/js/demo.min.js') }}"></script>  
+  <script src="{{ asset('assets/js/demo.min.js') }}"></script> 
+  <!-- Botão + - Produto-->
+  <script src="{{ asset('js/argon-design-system.min.js?v=1.0.2') }}" type="text/javascript"></script> 
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <!-- Google Analytics phtolentinon@gmail.com -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148440473-1"></script>

@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('admin.layouts.master')
 
 @section('cabecalho')
 
@@ -44,8 +44,7 @@
               <div class="row align-items-center">
                 <div class="col-8">
                   <h3 class="mb-0">Editar Categoria</h3>
-                  <!-- <a href="#!" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Em breve!"><i
-                            class=" ni ni-cloud-upload-96"></i> Upload Logo</a> -->
+                 
                 </div>
                 <div class="col-4 text-right">
                 </div>
@@ -108,7 +107,7 @@
             <tbody id="category-drag">
               @forelse($data as $d)
               <tr class="js-sort" data-id="{{ $d->uuid }}" style="cursor: grab">
-                <td>= {{$d->sort}}</td>
+                <td>= </td>
                 <td>{{$d->description}}</a> </td>
                 <!-- <td>{{ 0 }}</td> -->
                 <td>
