@@ -63,9 +63,9 @@ class SaleController extends Controller
 
                 return response(array(
                     'success'  => true,
-                    'message'  => "Compra efetuada com sucesso, vamos entrar em contato nos próximos minutos.",
+                    'message'  => "Pedido efetuado com sucesso, aguarde que entraremos em contato!",
                     'redirect' => route('site.menu.show', ['token' => $request->token]),
-                    'time'     => 2000 // milisegundos
+                    'time'     => 4000 // milisegundos
                 ), 200,[]);
             }
 

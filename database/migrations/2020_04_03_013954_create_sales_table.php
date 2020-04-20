@@ -20,7 +20,12 @@ class CreateSalesTable extends Migration
             $table->string('invoice_number')->default(0);
             $table->string('name')->nullable();
             $table->string('whatsapp', 11)->nullable();
-            $table->text('address')->nullable();
+            $table->string('telegram', 11)->nullable();
+            $table->text('zipcode')->nullable();
+            $table->text('neighborhood')->nullable();
+            $table->text('city')->nullable();
+            $table->text('num')->nullable();
+            $table->text('obs')->nullable();            
             $table->char('payment', 1)->nullable();
             $table->decimal('total', 10, 2)->nullable();
             $table->decimal('delivery', 10, 2)->nullable();
