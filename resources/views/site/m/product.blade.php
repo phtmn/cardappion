@@ -136,7 +136,7 @@
                     <!-- <h5 class="h3">
                   Jessica Jones<span class="font-weight-light">, 27</span>
                 </h5> -->
-                    <div class="h5 font-weight-300 mt-2">
+                 {{--   <div class="h5 font-weight-300 mt-2">
                       <small><b>Quantidade</b></small>
                       <div class="input-group">
                         <div class="input-group-btn">
@@ -153,7 +153,7 @@
 
                       <button class="btn btn-sm btn-warning ml-3 addCart" data-id="{{ $product->id }}">Adicionar ao Pedido &nbsp;<i class="ni ni-cart"></i></button>
 
-                    </div>
+                    </div> --}}
                     <div>
                       @if (($product->price) != "0")
 
