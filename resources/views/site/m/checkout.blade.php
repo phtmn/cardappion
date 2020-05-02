@@ -46,72 +46,71 @@
     <script src="{{asset('js/jquery.mask.min.js')}}"> </script>
 
     <script>
-        $(document).ready(function() {           
-            $("#cep").mask('00.000-000');
+        $(document).ready(function() {
+            $("#zipcode").mask('00.000-000');
             $('#telegram').mask('(99) 99999-9999');
         })
-
     </script>
 
     <script>
-    function limpa_formulário_cep() {
-      // Limpa valores do formulário de cep.
-      $("#address").val("");
-      $("#neighborhood").val("");
-      $("#city").val("");
-      $("#us").val("");
-    }
+        function limpa_formulário_cep() {
+            // Limpa valores do formulário de cep.
+            $("#address").val("");
+            $("#neighborhood").val("");
+            $("#city").val("");
+            $("#us").val("");
+        }
 
-    //Quando o campo cep perde o foco.
-    $("#cep").blur(function() {
+        //Quando o campo cep perde o foco.
+        $("#zipcode").blur(function() {
 
-      //Nova variável "cep" somente com dígitos.
-      var cep = $(this).val().replace(/\D/g, '');
+            //Nova variável "cep" somente com dígitos.
+            var zipcode = $(this).val().replace(/\D/g, '');
 
-      //Verifica se campo cep possui valor informado.
-      if (cep != "") {
+            //Verifica se campo cep possui valor informado.
+            if (zipcode != "") {
 
-        //Expressão regular para validar o CEP.
-        var validacep = /^[0-9]{8}$/;
+                //Expressão regular para validar o CEP.
+                var validazipcode = /^[0-9]{8}$/;
 
-        //Valida o formato do CEP.
-        if (validacep.test(cep)) {
+                //Valida o formato do CEP.
+                if (validazipcode.test(zipcode)) {
 
-          //Preenche os campos com "..." enquanto consulta webservice.
-          $("#address").val("...");
-          $("#neighborhood").val("...");
-          $("#city").val("...");
-          $("#state").val("...");
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    $("#address").val("...");
+                    $("#neighborhood").val("...");
+                    $("#city").val("...");
+                    $("#state").val("...");
 
-          //Consulta o webservice viacep.com.br/
-          $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function(dados) {
+                    //Consulta o webservice viacep.com.br/
+                    $.getJSON("https://viacep.com.br/ws/" + zipcode + "/json/?callback=?", function(dados) {
 
-            if (!("erro" in dados)) {
-              //Atualiza os campos com os valores da consulta.
-              $("#address").val(dados.logradouro);
-              $("#neighborhood").val(dados.bairro);
-              $("#city").val(dados.localidade);
-              $("#us").val(dados.uf);
+                        if (!("erro" in dados)) {
+                            //Atualiza os campos com os valores da consulta.
+                            $("#address").val(dados.logradouro);
+                            $("#neighborhood").val(dados.bairro);
+                            $("#city").val(dados.localidade);
+                            $("#us").val(dados.uf);
+                        } //end if.
+                        else {
+                            //CEP pesquisado não foi encontrado.
+                            limpa_formulário_cep();
+                            alert("CEP não encontrado.");
+                        }
+                    });
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulário_cep();
+                    alert("Formato de CEP inválido.");
+                }
             } //end if.
             else {
-              //CEP pesquisado não foi encontrado.
-              limpa_formulário_cep();
-              alert("CEP não encontrado.");
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
             }
-          });
-        } //end if.
-        else {
-          //cep é inválido.
-          limpa_formulário_cep();
-          alert("Formato de CEP inválido.");
-        }
-      } //end if.
-      else {
-        //cep sem valor, limpa formulário.
-        limpa_formulário_cep();
-      }
-    });
-  </script>
+        });
+    </script>
 
 </head>
 
@@ -141,188 +140,12 @@
 
         <div class="container-fluid mt--6">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="card-wrapper">
-                        <div class="card ">
-
-                            @foreach ($items as $item)
-                            <!-- Card body -->
-                            <div class="card-body">
-                                <div class="row">
-
-                                    <div class="col-auto">
-                                        @if(!$item->conditions->image1)
-                                        <a class="avatar">
-                                            <img alt="" src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}">
-                                        </a>
-                                    </div>
-                                    @else
-                                    <a class="avatar">
-                                        <img alt="" src="{{ Storage::url("{$item->conditions->image1}") }}">
-                                    </a>
-                                </div>
-                                @endif
-                                <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Quantidade</h5>
-                                    <span class="h2 font-weight-bold mb-0">
-                                        <button class="btn btn-outline-warning btn-round btn-sm quantity" data-id="{{ $item->id }}" data-qty="{{ $item->quantity }}" data-op="delete"> <i class="ni ni-fat-delete"></i> </button>
-                                        <button class="btn btn-outline-warning btn-round btn-sm quantity" data-id="{{ $item->id }}" data-qty="{{ $item->quantity }}" data-op="add"> <i class="ni ni-fat-add"></i> </button>
-                                        {{ $item->quantity }}
-
-                                    </span>
-                                </div>
-
-                            </div>
-                            <p class="mt-2 mb-0 text-sm">
-                                <span class="text-warning mr-2"><i class="ni ni-bullet-list-67"></i> {{ $item->name }}</span>
-                            </p>
-                            <p class="mt-1 mb-0 text-sm">
-                                <span class="text-primary mr-2"> {{ $item->conditions->price_masked }}</span>
-                                <span class="text-nowrap">Valor Unitário</span>
-                            </p>
-                            <p class="mt-1 mb-0 text-sm">
-                                <span class="text-primary mr-2"> R$ {{ number_format($item->price * $item->quantity, 2, ',', '.') }} </span>
-                                <span class="text-nowrap">Valor Total</span>
-                            </p>
-                            <p class="mt-2 mb-0 text-sm">
-                                <button type="button" rel="tooltip" data-placement="left" title="Remove item" data-id="{{ $item->id }}" class="btn btn-sm btn-icon btn-warning removeItem">
-                                    Retirar do Pedido <i class="ni ni-cart"></i>
-                                </button>
-                            </p>
-                        </div>
-
-                        @endforeach
-
-
-                    </div>
-                </div>
+                @include('site.m.checkout._l1')
             </div>
 
-            <div class="col-lg-4">
-                <div class="card-wrapper">
-                    <div class="card ">
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush list my--3">
-                                <li class="list-group-item px-0">
-                                    <div class="row align-items-center">
-                                        <div class="col ml--2">
-                                            <h4 class="mb-0">
-                                                <a>Itens</a>
-                                            </h4>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a class="btn btn-sm btn-secondary">{{ $total_qty }}</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item px-0">
-                                    <div class="row align-items-center">
-                                        <div class="col ml--2">
-                                            <h4 class="mb-0">
-                                                <a>Subtotal</a>
-                                            </h4>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a class="btn btn-sm btn-secondary">R$ {{ $subtotal }}</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item px-0">
-                                    <div class="row align-items-center">
-                                        <div class="col ml--2">
-                                            <h4 class="mb-0">
-                                                <a>Taxa de Entrega</a>
-                                            </h4>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a class="btn btn-sm btn-secondary">R$ {{ number_format($delivery, 2, ',', '.') }}</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item px-0">
-                                    <div class="row align-items-center">
-                                        <div class="col ml--2">
-                                            <h4 class="mb-0">
-                                                <a>Valor Final</a>
-                                            </h4>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a class="btn btn-sm btn-secondary text-warning">R$ {{ $total }}</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include('site.m.checkout._l2')
 
-
-            <div class="col-lg-4 ">
-
-                <div class="accordion text-white" id="accordionExample">
-                    <div class="card">
-                        <div class="card-header bg-warning" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <h5 class="mb-0 text-white">Solicitar Pedido</h5>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <form id="formSale">
-
-                                <small for="name" class="col-form-label text-dark p-2" style="text-indent: 25px;">Meu nome é</small>
-                                <div class="col-md-12">
-                                    <input type="text" name="name" class="form-control" placeholder="Seu nome">
-                                </div>
-
-                                <small for="name" class="col-form-label text-dark p-2" style="text-indent: 25px;">Meu contato é</small>
-                                <div class="col-md-12">
-                                    <input type="text" name="whatsapp" class="form-control" placeholder="WhatsApp" id="whatsapp">                                    
-                                </div>
-                                <div class="col-md-12 mt-1">
-                                    <input type="text" name="telegram" class="form-control" placeholder="Telegram" id="telegram">                                    
-                                </div>
-
-                                <small for="name" class="col-form-label text-dark p-2" style="text-indent: 25px;">O pedido será entregue em</small>
-                                <div class="col-md-12 mt-1">
-                                    <input type="text" name="zipcode" class="form-control" id="cep" placeholder="CEP">
-                                </div>
-                                <div class="col-md-12 mt-1">
-                                    <input type="text" name="address" class="form-control" id="address" placeholder="Endereço">
-                                </div>
-                                <div class="col-md-12 mt-1">
-                                    <input type="text" name="neighborhood" class="form-control" id="neighborhood" placeholder="Bairro">
-                                </div>
-                                <div class="col-md-12 mt-1">
-                                    <input type="text" name="city" class="form-control" id="city" placeholder="Cidade">
-                                </div>
-                                <div class="col-md-12 mt-1">
-                                    <input type="text" name="num" class="form-control" placeholder="Nº">
-                                </div>
-                                <small for="name" class="col-form-label text-dark p-2" style="text-indent: 25px;">Desejo pagar</small>
-                                <div class="col-md-12 ">
-                                <select class="form-control checkout-payment" data-trigger name="payment" id="payment" required>
-                                            <option value="1">Cartão de Crédito</option>
-                                            <option value="2">Cartão de Débito</option>
-                                            <option value="3">Dinheiro</option>
-                                        </select>
-                                </div>
-                                
-                                <div style="display: none" id="checkout-change" class="col-md-12 mt-1">                                
-                                <input type="text" class="form-control" id="change" placeholder="Desejo troco pra R$  ">
-                                </div>
-                                <small for="name" class="col-form-label text-dark p-2" style="text-indent: 25px;">Observações</small>
-                                <div class="col-md-12 ">
-                                <textarea name="obs" rows="3" resize="none" class="form-control" maxlenght="500"></textarea>    
-                                </div>
-                                <div class="col-md-12 mt-1 mb-2">
-                                <button type="button" class="btn btn-warning formSale " >Enviar Pedido</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
+           @include('site.m.checkout._l3') 
 
         </div>
 
@@ -331,7 +154,7 @@
     </div>
     </div>
 
-    <button class="btn btn-warning ml-3" data-toggle="modal" data-target="#finished">Solicitar Pedido </button>
+    {{-- <button class="btn btn-warning ml-3" data-toggle="modal" data-target="#finished">Solicitar Pedido </button> --}}
 
     <section class="py-6 bg-gradient-default ">
 
@@ -339,7 +162,7 @@
 
 
 
-
+    {{--
 
     <!-- Modal -->
     <div class="modal fade" id="finished" tabindex="-1" role="dialog" aria-labelledby="finishedTitle" aria-hidden="true">
@@ -391,11 +214,9 @@
     </div>
     </div>
 
-    <section class="py-6 bg-gradient-default ">
+    --}}
 
-    </section>
-
-
+   
 
     @include('site.m._footer')
 

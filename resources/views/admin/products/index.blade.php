@@ -31,7 +31,7 @@
           <div class="card-header">
             <div class="row align-items-center">
               <div class="col-8">
-                <a href="{{route('products.create')}}" class="btn btn-gradiente-default"> <i class=" fa fa-plus nav-icon"></i>
+                <a href="{{route('products.create')}}" class="btn btn-neutral my-2"> <i class=" fa fa-plus nav-icon"></i>
                   Adicionar Produto </a>
               </div>
               <div class="col-4 text-right">

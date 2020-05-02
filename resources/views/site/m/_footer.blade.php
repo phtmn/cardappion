@@ -27,15 +27,14 @@
             <h6 class="text-dark text-center">Menu</h6>
           </a>
         </li>
-    {{--  <li class="nav-item">
+        <li class="nav-item">
           <a href="{{ route('cart.checkout', ['token' => $token]) }}">
             <div class="icon icon-shape bg-gradient-warning  rounded-circle text-white">
               <i class="ni ni-cart"></i>
             </div>
             <h6 class="text-dark text-center">Pedidos</h6>
           </a>
-        </li> 
-        --}}
+        </li>      
              
       </ul>
     </div>

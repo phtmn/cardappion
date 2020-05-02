@@ -27,7 +27,7 @@
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">                
               </div>
-              <form role="form" action="{{ route('login') }}" method="POST">
+              <form role="form" action="{{ route('login') }}" method="POST" >
                   @csrf
                 <div class="form-group mb-3">
                   <div class="input-group input-group-merge input-group-alternative">
@@ -60,8 +60,8 @@
                   <!-- <input class="custom-control-input" id=" customCheckLogin" type="checkbox"> -->
                   
                 </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-outline-default my-2">Acessar conta</button>
+                <div class="text-center">              
+                  <button type="submit" class="btn btn-neutral my-2">Acessar conta</button>
                 </div>
               </form>
             </div>

@@ -64,7 +64,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn btn-outline-default my-2">
+                                <button type="submit" class="btn btn-neutral my-2">
                                     {{ __('Enviar senha para e-mail') }}
                                 </button>
                             </div>

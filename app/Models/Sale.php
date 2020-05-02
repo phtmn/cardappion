@@ -27,10 +27,10 @@ class Sale extends Model
         'telegram',
         'zipcode',
         'address',
-        'neighborhood',
+        'neighborhood',   
         'city',
         'num',
-        'obs',
+        'obs', 
         'payment',
         'total',
         'delivery',
@@ -96,6 +96,12 @@ class Sale extends Model
         $this->attributes['whatsapp'] = preg_replace('/\D/', '', $input);
     }
 
+    public function setTelegramAttribute($input)
+    {
+        if ($input)
+        $this->attributes['telegram'] = preg_replace('/\D/', '', $input);
+    }
+
 
     public function setChangeAttribute($input)
     {
@@ -107,6 +113,11 @@ class Sale extends Model
     public function getWhatsappMaskedAttribute()
     {
         return $this->maskPhone($this->whatsapp);
+    }
+
+    public function getTelegramMaskedAttribute()
+    {
+        return $this->maskPhone($this->telegram);
     }
 
     public function getDeliveryMaskedAttribute()

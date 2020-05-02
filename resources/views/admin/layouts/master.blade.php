@@ -57,9 +57,9 @@
   <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
   <script src="{{ asset('assets/js/demo.min.js') }}"></script>
 
-  {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+ {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 
   @yield('css')
   @yield('style')
@@ -188,12 +188,12 @@
 
   <script>
     $(document).ready(function() {
-      var APP_URL = {
-        !!json_encode(url('/')) !!
-      }
-      var _TOKEN = {
-        !!json_encode(csrf_token()) !!
-      }
+      // var APP_URL = {
+      //   !!json_encode(url('/')) !!
+      // }
+      // var _TOKEN = {
+      //   !!json_encode(csrf_token()) !!
+      // }
 
 
       $('#whatsapp').mask('(00) 00000-0000');

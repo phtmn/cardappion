@@ -82,13 +82,14 @@
             <div class="card-body">
               <div class="text-center">
                 <a>
-                @if(!$config->image)
-                  <img src="{{asset('vendor/argon/assets/img/brand/no_foto.png')}}" class="avatar img-fluid floating" style="width:150px; height:150px">
+                @if($config->image ?? '')
+                  <img src="{{ Storage::url("{$config->image }") }}" class="avatar img-fluid floating" style="width:150px; height:150px">
+                  
                   @else
-                  <img src="{{ Storage::url("{$config->image}") }}" class="avatar img-fluid floating" style="width:150px; height:150px">
+                  <img src="{{asset('vendor/argon/assets/img/brand/no_foto.png')}}" class="avatar img-fluid floating" style="width:150px; height:150px">
                   @endif
 
-                </a>
+                </a> 
               </div>
             </div>
           </div>
@@ -119,35 +120,35 @@
 
               <div class="col-auto  mt-3">
                 <!-- Avatar -->
-                @if($config->whatsapp)
+                @if($config->whatsapp ?? '')
                 <a target="_blank" href="https://api.whatsapp.com/send?phone=55{{$config->whatsapp}}" class="avatar rounded-circle">
                   <img alt="Image placeholder" src="{{asset('/vendor/argon/assets/img/brand/zap.png')}}">
                 </a>
                 @endif
 
-                @if($config->telegram)  
+                @if($config->telegram ?? '')  
                 <a target="_blank" href="https://t.me/{{$config->telegram}}" class="avatar rounded-circle">
                   <img alt="Image placeholder" src="{{asset('/vendor/argon/assets/img/brand/telegram.png')}}">
                 </a>
                 @endif
 
-                @if($config->instagram)
+                @if($config->instagram ?? '')
                 <a target="_blank" href="https://www.instagram.com/{{$config->instagram}}" class="avatar rounded-circle">
                   <img alt="Image placeholder" src="{{asset('/vendor/argon/assets/img/brand/instagram.png')}}">
                 </a>
                 @endif
 
-                @if($config->fanpage)
+                @if($config->fanpage ?? '')
                 <a target="_blank" href="https://www.facebook.com/{{$config->fanpage}}" class="avatar rounded-circle">
                   <img alt="Image placeholder" src="{{asset('/vendor/argon/assets/img/brand/face.png')}}">
                 </a>
-                @endif
+                @endif 
 
-                @if($config->site)
+                @if($config->site ?? '')
                 <a target="_blank" href="http://{{$config->site}}" class="avatar rounded-circle">
                   <img alt="Image placeholder" src="{{asset('/vendor/argon/assets/img/brand/sites.png')}}">
-                </a>
-                @endif
+                </a> 
+                @endif   
               </div>
             </div>
           </div>
@@ -165,12 +166,12 @@
                     <h4 class="mb-0">
                       <a> Informações adicionais </a>
                     </h4>
-                    @if($config->details)
-                    <small>{{$config->details}}</small>
+                    @if($config->details ?? '')
+                    <small>{{$config->details }}</small>
                     @else
                     <small class="text-danger">Informações adicionais não cadastrada!</small>
                     @endif
-                    
+                   
                   </div>
                 </div>
               </li>

@@ -57,7 +57,7 @@ class CartController extends Controller
 
             return response(array(
                 'success' => true,
-                'message' => "Produto adicionado!"
+                'message' => "Produto adicionado a Sacola."
             ),201,[]);
         } else {
             return false;

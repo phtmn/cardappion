@@ -127,7 +127,7 @@
 
                         
                             <div class="text-center">
-                                <button type="submit" class="btn btn-outline-default my-2">
+                                <button type="submit" class="btn btn-neutral my-2">
                                     {{ __('Cadastre-se') }}
                                 </button>
                             </div>
