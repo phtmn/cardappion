@@ -94,7 +94,7 @@
               @forelse ($categories as $category)
               <div class="card mb-1">
                 <div class="card-header p-0" id="heading{{ $loop->index }}" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
-                  <h5 class="mb-0">
+                  <h5 class="mb-0 m-3">
                     
                       <i class="ni ni-ungroup text-default"></i> {{ $category->description }} 
                     
