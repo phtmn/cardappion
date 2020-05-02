@@ -95,9 +95,9 @@
               <div class="card mb-1">
                 <div class="card-header p-0" id="heading{{ $loop->index }}" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
                   <h5 class="mb-0">
-                    <h2 class="btn w-100 text-primary text-left text-dark" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
+                    
                       <i class="ni ni-ungroup text-default"></i> {{ $category->description }} 
-                    </h2>
+                    
                   </h5>
                 </div>
 
