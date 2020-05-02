@@ -10,7 +10,7 @@ use Webpatser\Uuid\Uuid;
 
 class Menu extends Model
 {
-  protected $fillable = ['tenant_id', 'user_id', 'description', 'active', 'uui', 'url', 'slug', 'token'];
+  protected $fillable = ['tenant_id', 'user_id', 'description', 'active', 'uui', 'token'];
 
   protected $casts = [
     'active' => 'boolean'
