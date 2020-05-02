@@ -57,7 +57,9 @@
                                 <td>{{ $sale->invoice_number }}</td>
                              {{--   <td>{{ $sale->created_at }}</td> --}}
                                 <td>{{ $sale->name }}</td>
-                                <td>{{ $sale->whatsapp_masked }}</td>
+                                <td>{{ $sale->whatsapp_masked }}
+                                    
+                                </td>
                                 <td>{{ $sale->address }}</td>
                                 <td>
                                     {{ $sale->payment_name }}

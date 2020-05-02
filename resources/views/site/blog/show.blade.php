@@ -2,7 +2,7 @@
 @extends('site.layouts.master')
 
 @section('content')
-<div class="main-content">
+<div class="main-content  mt-6">
     <!-- Header -->
     <div class="header bg-white pt-5 pb-7">
       <div class="container">

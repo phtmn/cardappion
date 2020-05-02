@@ -51,10 +51,10 @@
 </head>
 
 
-<body class="bg-gradient-default">
+<body class="">
 @include('site.layouts._nav')
 
-<div class="main-content bg-gradient-default">
+<div class="main-content bg-white mt-6 ">
   <div class="header bg-white pb-6">
     <div class="container-fluid">
       <div class="header-body">
@@ -95,8 +95,8 @@
               <div class="card mb-1">
                 <div class="card-header p-0" id="heading{{ $loop->index }}" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
                   <h5 class="mb-0">
-                    <h2 class="btn btn-link w-100 text-primary text-left" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
-                      <i class="ni ni-ungroup text-default"></i> <b class="text-default"> {{ $category->description }} </b>
+                    <h2 class="btn w-100 text-primary text-left text-dark" type="button" data-toggle="collapse" data-target="#collapse{{ $loop->index }}" aria-expanded="true" aria-controls="collapse{{ $loop->index }}">
+                      <i class="ni ni-ungroup text-default"></i> {{ $category->description }} 
                     </h2>
                   </h5>
                 </div>
@@ -114,7 +114,9 @@
                           
 
                           <li class="list-group-item px-0">
+                          
                             <div class="row align-items-center">
+                           
                               <div class="col-auto">
                                 <div class="avatar-group">
                                   @if(!$product->image1)
@@ -131,19 +133,22 @@
                               </div>
                               <div class="col ml--2">
                                 <h4 class="mb-0">
-                                  <a href="{{ route('site.menu.product', ['token' => $token,'id' => $product->id]) }}">{{ $product->title }}</a>
+                                  <a href="{{ route('site.menu.product', ['token' => $token,'id' => $product->id]) }}">{{ substr ($product->title, 0,22) }} ... </a>
                                 </h4>
-                                @if (($product->price) != "0")
                                 
-                                <small>R$ {{ number_format($product->price,2,',','.')}}</small>
-                                @endif
                               </div>
                               <div class="col-auto">
-                                <!-- <button type="button" class="btn btn-sm btn-primary">Add</button> -->
+                              
+                              @if (($product->price) != "0")
+                                
+                              <label><b>R$ {{ number_format($product->price,2,',','.')}}</b></label>
+                                @endif
+                            
                               </div>
                             </div>
-
+                            
                           </li>
+                      
                           @endif
                           @empty
                           <p class="text-danger">Nenhum produto cadastrado na categoria!</p>
@@ -171,7 +176,7 @@
 </div>
 
 </div>
-<section class="py-6 bg-gradient-default ">
+<section class="py-8 bg-white ">
 
 </section>
 

@@ -115,10 +115,10 @@
 </head>
 
 
-<body class="bg-gradient-default">
+<body class=" ">
     @include('site.layouts._nav')
 
-    <div class="main-content bg-white">
+    <div class="main-content bg-white mt-6">
         <div class="header bg-white pb-6">
             <div class="container-fluid">
                 <div class="header-body">
@@ -156,7 +156,7 @@
 
     {{-- <button class="btn btn-warning ml-3" data-toggle="modal" data-target="#finished">Solicitar Pedido </button> --}}
 
-    <section class="py-6 bg-gradient-default ">
+    <section class="py-8 bg-white ">
 
     </section>
 

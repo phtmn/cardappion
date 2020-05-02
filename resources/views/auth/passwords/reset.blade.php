@@ -6,7 +6,7 @@
 @include('site.layouts._nav')
 
  
-<div class="main-content">
+<div class="main-content  mt-6">
 <div class="header bg-white pt-5 pb-7">
       <div class="container">
         <div class="header-body text-center mb-4">

@@ -51,11 +51,11 @@
 </head>
 
 
-<body class="bg-gradient-default">
+<body class="">
 @include('site.layouts._nav')
 
 
-<div class="main-content bg-white">
+<div class="main-content bg-white mt-6 ">
   <div class="header bg-white pb-6">
     <div class="container-fluid">
       <div class="header-body">
@@ -83,10 +83,10 @@
               <div class="text-center">
                 <a>
                 @if($config->image ?? '')
-                  <img src="{{ Storage::url("{$config->image }") }}" class="avatar img-fluid floating" style="width:150px; height:150px">
+                  <img src="{{ Storage::url("{$config->image }") }}" class="avatar img-fluid floating" style="width:225px; height:225px">
                   
                   @else
-                  <img src="{{asset('vendor/argon/assets/img/brand/no_foto.png')}}" class="avatar img-fluid floating" style="width:150px; height:150px">
+                  <img src="{{asset('vendor/argon/assets/img/brand/no_foto.png')}}" class="avatar img-fluid floating" style="width:225px; height:225px">
                   @endif
 
                 </a> 
@@ -189,7 +189,7 @@
 
 
 
-<section class="py-6 bg-gradient-default ">
+<section class="py-8 bg-white ">
 
 </section>
 
