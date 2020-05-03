@@ -52,10 +52,11 @@
 
 
 <body class="">
+<section class="bg-white ">
 @include('site.layouts._nav')
 
-<div class="main-content bg-gradient-default mt-6 ">
-  <div class="header bg-white pb-6">
+<div class="main-content  mt-6 ">
+  <div class="header  pb-6">
     <div class="container-fluid">
       <div class="header-body">
         <div class="row align-items-center py-4">
@@ -98,7 +99,7 @@
         </div>
       </div>
       <div class="col-lg-4 ">
-        <div class="card bg-white border-0">
+        <div class="card border-0">
           <div class="card-body">
             <ul class="list-group list-group-flush list my--3">
               <li class="list-group-item px-0">
@@ -189,7 +190,7 @@
 </div>
 </div>
 
-
+</section>
 
 <section class="py-8 bg-white ">
 

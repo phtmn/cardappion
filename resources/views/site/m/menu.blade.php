@@ -52,10 +52,11 @@
 
 
 <body class="">
+<section class=" bg-white ">
 @include('site.layouts._nav')
 
-<div class="main-content bg-gradient-default mt-6 ">
-  <div class="header bg-white pb-6">
+<div class="main-content  mt-6 ">
+  <div class="header  pb-6">
     <div class="container-fluid">
       <div class="header-body">
         <div class="row align-items-center py-4">
@@ -73,6 +74,7 @@
       </div>
     </div>
   </div>
+ 
 
   <div class="container-fluid mt--6">
     <div class="row">
@@ -176,6 +178,7 @@
 </div>
 
 </div>
+</section>
 <section class="py-8 bg-white ">
 
 </section>
