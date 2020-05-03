@@ -10,7 +10,7 @@ use Webpatser\Uuid\Uuid;
 
 class Menu extends Model
 {
-  protected $fillable = ['tenant_id', 'user_id', 'description', 'active', 'uui', 'token'];
+  protected $fillable = ['tenant_id', 'user_id', 'description', 'active', 'uui'];
 
   protected $casts = [
     'active' => 'boolean'
@@ -24,9 +24,7 @@ class Menu extends Model
     static::observe(new TenantObserver);
 
     self::creating(function ($model) {
-      $model->uuid = (string) Uuid::generate(4);
-      $model->slug = (string) Str::slug($model->url, '_');
-      $model->url  = (string) self::gerarUrl($model->url);
+      $model->uuid = (string) Uuid::generate(4);      
     });
   }
 

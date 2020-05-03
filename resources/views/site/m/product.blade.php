@@ -59,7 +59,7 @@
 
 
 
-  <div class="main-content bg-white mt-6">
+  <div class="main-content bg-gradient-default mt-6">
     <div class="header bg-white pb-6">
       <div class="container-fluid">
         <div class="header-body">

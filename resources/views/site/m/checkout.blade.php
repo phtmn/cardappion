@@ -118,7 +118,7 @@
 <body class=" ">
     @include('site.layouts._nav')
 
-    <div class="main-content bg-white mt-6">
+    <div class="main-content bg-gradient-default mt-6">
         <div class="header bg-white pb-6">
             <div class="container-fluid">
                 <div class="header-body">
@@ -154,69 +154,9 @@
     </div>
     </div>
 
-    {{-- <button class="btn btn-warning ml-3" data-toggle="modal" data-target="#finished">Solicitar Pedido </button> --}}
-
     <section class="py-8 bg-white ">
 
     </section>
-
-
-
-    {{--
-
-    <!-- Modal -->
-    <div class="modal fade" id="finished" tabindex="-1" role="dialog" aria-labelledby="finishedTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-warning">
-                    <h5 class="modal-title text-white" id="exampleModalLabel">Cadastrar Pedido</h5>
-                </div>
-                <div class="modal-body">
-                    <form id="formSale">
-                        <div class="row">
-                            <div class="form-group col-md-6 js-validate">
-                                <label for="name" class="col-form-label">Nome:</label>
-                                <input type="text" class="form-control" id="name" required>
-
-                            </div>
-                            <div class="form-group col-md-6 js-validate">
-                                <label for="whatsapp" class="col-form-label">Whatsapp:</label>
-                                <input type="text" class="form-control" id="whatsapp" required>
-
-                            </div>
-                            <div class="form-group col-md-12 js-validate">
-                                <label for="address" class="col-form-label">Endereço:</label>
-                                <textarea class="form-control" id="address" rows="3" required></textarea>
-
-                            </div>
-                            <div class="form-group col-md-6 js-validate">
-                                <label for="payment" class="col-form-label">Tipo de Pagamento:</label>
-                                <select class="form-control checkout-payment" data-trigger name="payment" id="payment" required>
-                                    <option value="1">Cartão de Crédito</option>
-                                    <option value="2">Cartão de Débito</option>
-                                    <option value="3">Dinheiro</option>
-                                </select>
-
-                            </div>
-                            <div id="checkout-change" class="form-group col-md-6" style="display: none">
-                                <label for="change" class="col-form-label">Troco para:</label>
-                                <input type="text" class="form-control" id="change">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button> -->
-                    <button type="button" class="btn btn-warning formSale">Enviar Pedido</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    --}}
-
-   
 
     @include('site.m._footer')
 

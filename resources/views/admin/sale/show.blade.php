@@ -17,7 +17,9 @@
                     </div>
                     <h3 class="display-5 text-dark d-inline-block mb-0"> Vendas</h3>
                 </div>
-                <div class="col-lg-6 col-5 text-right"></div>
+                <div class="col-lg-6 col-5 text-right">
+                <a class="text-dark" href="{{route('sale.index')}} "><i class="ni ni-bold-left text-dark"></i> Voltar </a>
+                </div>
             </div>
         </div>
     </div>
@@ -52,7 +54,7 @@
                         <th>Status</th>
                     </thead>
                     <tbody>
-                        @foreach($sales as $sale)
+                       
                             <tr>
                                 <td>{{ $sale->invoice_number }}</td>
                              {{--   <td>{{ $sale->created_at }}</td> --}}
@@ -60,10 +62,7 @@
                                 <td>{{ $sale->whatsapp_masked }}
                                     
                                 </td>
-                                <td>
-                                <a href="{{route('sale.show',$sale->id)}}" class="btn btn-outline-primary btn-sm btn-round"><i class="ni ni-ui-04 y"></i> VER </a>    
-
-                                </td>
+                                <td>{{ $sale->address }}</td>
                                 <td>
                                     {{ $sale->payment_name }}
                                 </td>
@@ -81,7 +80,7 @@
                                     @endif
                                 </td>
                             </tr>
-                        @endforeach
+                      
                     </tbody>
                   </table>
                 </div>

@@ -22,10 +22,10 @@ Route::name('cart.details')->get('/m/{token}/checkout/cart/details','Admin\CartC
 Route::name('cart.delete')->delete('/m/{token}/checkout/cart/{id}','Admin\CartController@delete');
 
 
-Route::name('sale.index')->get('/sale','Admin\SaleController@index');
-Route::name('sale.store')->post('/sale','Admin\SaleController@store');
-Route::name('sale.update')->put('/sale/{id}','Admin\SaleController@update');
-
+Route::get('/sale','Admin\SaleController@index')->name('sale.index');
+Route::post('/sale','Admin\SaleController@store')->name('sale.store');
+Route::put('/sale/{id}','Admin\SaleController@update')->name('sale.update');
+Route::get('/sale/{id}', 'Admin\SaleController@show')->name('sale.show');
 
 Route::get('menu/product/{id}', 'Site\SiteController@productDetail')->name('product.detail');
 

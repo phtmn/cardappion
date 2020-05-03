@@ -93,4 +93,11 @@ class SaleController extends Controller
         ), 200,[]);
     }
 
+    public function show($id)
+    {
+        $sale = Sale::findOrFail($id);
+        
+        return view('admin.sale.show', compact('sale')); 
+    }
+
 }
