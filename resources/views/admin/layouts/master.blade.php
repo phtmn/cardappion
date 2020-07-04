@@ -11,7 +11,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
-  <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/logo3.png') }}" type="image/png">
+  <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">: -->
   
 
@@ -76,7 +76,7 @@
             <span class="navbar-toggler-icon bg-dark"></span>
           </button>
           <a class="navbar-brand mx-auto" href="{{route('site')}}">
-            <img src="{{asset('vendor/argon/assets/img/brand/logo4.png')}}" alt="{{ config('app.name') }}" class="img-fluid" style="width:215px; height:50px">
+            <img src="{{asset('vendor/argon/assets/img/brand/logo_sem_slogan.png')}}" alt="{{ config('app.name') }}" class="img-fluid" style="width:215px; height:50px">
           </a>
           <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
             <div class="navbar-collapse-header">

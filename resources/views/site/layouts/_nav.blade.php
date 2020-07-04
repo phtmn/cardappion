@@ -6,7 +6,7 @@
       <span class="navbar-toggler-icon bg-dark"></span>
     </button>
     <a class="navbar-brand mx-auto" href="{{route('site')}}">
-      <img src="{{asset('vendor/argon/assets/img/brand/logo4.png')}}" alt="{{ config('app.name') }}" class="img-fluid"
+      <img src="{{asset('vendor/argon/assets/img/brand/logo_sem_slogan.png')}}" alt="{{ config('app.name') }}" class="img-fluid"
         style="width:215px; height:50px">
     </a>
     <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
@@ -28,50 +28,9 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link" data-toggle="dropdown" role="button">
             <i class="ni ni-ui-04 d-lg-none"></i>
-            <span class="nav-link-inner--text text-dark"><b>Conheça</b></span>
+            <span class="nav-link-inner--text text-dark"><b>Blog</b></span>
           </a>
-          <div class="dropdown-menu dropdown-menu-xl">
-            <div class="dropdown-menu-inner">
-              <a href="" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-building"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-dark mb-md-1">Sobre Nós</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Todos os cardápios e promoções em um único lugar.
-                  </p>
-                </div>
-              </a>              
-              <a href="" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-align-left-2"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-dark mb-md-1">Serviços</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Soluções em Cardápios Digitais.</p>
-                </div>
-              </a>
-              <a href="" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-paper-diploma"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-dark mb-md-1">Planos</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Conheça nossos planos e escolha o que mais
-                    combina com o seu negócio.</p>
-                </div>
-              </a>
-              <a href="{{ route('site.blog.index') }}" class="media d-flex align-items-center">
-                <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                  <i class="ni ni-world"></i>
-                </div>
-                <div class="media-body ml-3">
-                  <h6 class="heading text-dark mb-md-1">Blog</h6>
-                  <p class="description d-none d-md-inline-block mb-0">Todas as novidades em um único lugar.</p>
-                </div>
-              </a>
-            </div>
-          </div>
+          
         </li>
         @endguest
 

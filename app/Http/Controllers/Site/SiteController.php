@@ -29,7 +29,7 @@ class SiteController extends Controller
 
         $products = $tenant->products()->where('active', true)->get();
 
-        return view('site.m.show', compact('tenant', 'config', 'categories', 'products', 'promotions', 'token'));        
+        return view('site.m.show', compact('tenant', 'config', 'categories', 'products', 'token'));        
     }
 
     public function menu($token)

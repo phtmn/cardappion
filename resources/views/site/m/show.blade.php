@@ -7,7 +7,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="mtoken" content="{{ $token }}">
 
-  <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/logo3.png') }}" type="image/png">
+  <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
   <title>
     {{ config('app.name') }}
   </title>
