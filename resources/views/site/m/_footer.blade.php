@@ -3,7 +3,7 @@
 <footer class="" id="footer-main">
   <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo fixed-bottom">
     <div class="container justify-content-center ">
-      <ul class="nav nav-pills nav-pills-circle mt-4 " id="tabs_2" role="tablist">
+      <ul class="nav nav-pills nav-pills-circle " id="tabs_2" role="tablist">
        <!-- <li class="nav-item">
           <a href="">
             <div class="icon icon-shape bg-default  rounded-circle text-white">

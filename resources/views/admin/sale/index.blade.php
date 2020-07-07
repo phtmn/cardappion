@@ -40,46 +40,41 @@
                 <div class="table-responsive">
                   <table class="table">
                     <thead class="text-dark">
+                        <th>Data</th>
                         <th>Nº</th>
-                        <!-- <th>Data</th> -->
-                        <th>Comprador</th>
-                        <th>Whatsapp</th>
-                        <th>Endereço</th>
+                        <th>CLiente</th>
                         <th>Pagamento</th>
                         <th>Total</th>
                         <th>Entrega</th>
-                        <th>Troco</th>
-                        <th>Status</th>
+                        <th>Troco Pra</th>
+                        <th class="text-center">Status</th>
+                        
                     </thead>
                     <tbody>
                         @foreach($sales as $sale)
                             <tr>
-                                <td>{{ $sale->invoice_number }}</td>
-                             {{--   <td>{{ $sale->created_at }}</td> --}}
-                                <td>{{ $sale->name }}</td>
-                                <td>{{ $sale->whatsapp_masked }}
-                                    
-                                </td>
-                                <td>
-                                <a href="{{route('sale.show',$sale->id)}}" class="btn btn-outline-primary btn-sm btn-round"><i class="ni ni-ui-04 y"></i> VER </a>    
-
-                                </td>
+                                <td>{{ $sale->created_at->format('d/m/Y H:i:s')}}    </td> 
+                                <td><a href="{{route('sale.show',$sale->id)}}" class="btn btn-primary btn-sm">  {{ $sale->invoice_number }} </a></td>
+                                
+                                <td>. {{ substr ($sale->name, 0,15) }} . </td>
                                 <td>
                                     {{ $sale->payment_name }}
                                 </td>
                                 <td>R$ {{ $sale->total_masked }}</td>
                                 <td>R$ {{ $sale->delivery_masked }}</td>
-                                <td>R$ {{ $sale->change_masked }}</td>
-                                <td>
+                                <td>R$ {{ number_format($sale->change,2,',','.') }} </td>
+                                <td class="text-center">
                                     @if($sale->status == 1)
+                                    
                                         <!-- <i class="bg-warning"></i> -->
-                                        <span class="badge badge-primary js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
+                                        <span class="badge badge-warning badge-lg js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
                                     @elseif($sale->status == 2)
-                                        <span class="badge badge-success js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
+                                        <span class="badge badge-success badge-lg  js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
                                     @elseif($sale->status == 3)
-                                        <span class="badge badge-danger js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
+                                        <span class="badge badge-danger badge-lg  js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
                                     @endif
                                 </td>
+                                
                             </tr>
                         @endforeach
                     </tbody>
@@ -108,18 +103,18 @@
                 <form id="formStatus">
                     <input type="hidden" id="uuid" name="uuid">
                     <div class="form-group col-md-12 js-validate">
-                        <label for="status" class="col-form-label">Novo Status</label>
+                        
                         <select class="form-control" data-trigger name="status">
-                            <option>Selecione...</option>
-                            <option value="2">Fechado</option>
+                            <option>..Selecione...</option>
+                            <option value="2">Entregue</option>
                             <option value="3">Cancelado</option>
                         </select>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
-                <button type="button" class="btn btn-danger js-change-status">Atualizar</button>
+                
+                <button type="button" class="btn btn-secondary my-2 text-warning  js-change-status">Atualizar</button>
             </div>
         </div>
     </div>

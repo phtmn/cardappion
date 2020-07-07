@@ -1,6 +1,6 @@
 <div class="col-lg-4">
     <div class="card-wrapper">
-        <div class="card ">
+        <div class=" ">
 
             @foreach ($items as $item)
             <!-- Card body -->

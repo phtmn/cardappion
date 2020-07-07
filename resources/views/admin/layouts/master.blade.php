@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim"> -->
-  <title>{{ config('app.name') }}</title>
+  <title> cardappion | Soluções em Cardápios Digitais </title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
@@ -96,7 +96,7 @@
             <ul class="navbar-nav align-items-lg-center ml-lg-auto navbar-nav-hover">
               <li class="nav-item dropdown">
               <a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            <i class="ni ni-ui-04 d-lg-none"></i>
+            <i class="ni ni-settings d-lg-none"></i>
             <span class="nav-link-inner--text text-dark"><b>Configurações</b></span>
           </a>
           
@@ -146,7 +146,41 @@
                         <h6 class="heading text-dark mb-md-1">Vendas</h6>
                       </div>
                     </a>
-
+                    <hr class="d-lg-none">
+                    <a href="https://blog.cardappion.com.br"class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="fab fa-wordpress"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class="heading text-dark mb-md-1">Blog</h6>
+                      </div>
+                    </a>
+                    <a href="https://www.facebook.com/cardappion" target="_blank" class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="fab fa-facebook"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class="heading text-dark mb-md-1">Facebook</h6>
+                      </div>
+                    </a>
+                    <a href="https://www.instagram.com/cardappion"  class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="fab fa-instagram"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                      
+                      <h6 class="heading text-dark mb-md-1">Instagram</h6>
+                      </div>
+                    </a>
+                    <a href="https://www.linkedin.com/company/cardappion/" target="_blank" class="media d-flex align-items-center">
+                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                        <i class="fab fa-linkedin"></i>
+                      </div>
+                      <div class="media-body ml-3">
+                        <h6 class="heading text-dark mb-md-1">LinkedIn</h6>
+                      </div>
+                    </a>
+                    <hr class="d-lg-none">
                   </div>
                 </div>
               </li>

@@ -8,15 +8,13 @@
     <meta name="mtoken" content="{{ $token }}">
 
     <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/logo3.png') }}" type="image/png">
-    <title>
-        {{ config('app.name') }}
-    </title>
+    <title> cardappion | Soluções em Cardápios Digitais </title>
 
     <!-- <meta name="keywords" content="argon design system pro, design system, login, form, table, tables, calendar, card, cards, navbar, modal, icons, icons, map, chat, carousel, menu, datepicker, gallery, slider, date, sidebar, social, dropdown, search, tab, nav, footer, date picker, forms, tabs, time, button, select, input, timeline, cart, car, fullcalendar, about us, invoice, account, chat, log in, blog, profile, portfolio, landing page, ecommerce, shop, landing, register, app, contact, one page, sign up, signup, store, bootstrap 4, bootstrap4">
   <meta name="description" content="Start your development with a Premium Argon Design System for Bootstrap 4. It combines colors that are easy on the eye, spacious cards, beautiful typography, and graphics. It is a beautiful cross-platform UI kit featuring over 1100 components, 43 sections and 17 example pages."> -->
 
     <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
-    <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/logo3.png') }}" type="image/png">
+    <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet" href="{{ asset('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
@@ -115,14 +113,14 @@
 </head>
 
 
-<body class=" ">
-<section class="bg-white ">
+<body class="bg-white">
+<section class=" bg-white ">
     @include('site.layouts._nav')
 
     <div class="main-content  mt-6">
         <div class="header pb-6">
             <div class="container-fluid">
-                <div class="header-body">
+                <!-- <div class="header-body">
                     <div class="row align-items-center py-4">
                         <div class="col-lg-2 col-7">
                             <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
@@ -135,12 +133,12 @@
                             <h4 class="display-5 text-dark d-inline-block mb-0"> Pedidos</h4>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
 
-        <div class="container-fluid mt--6">
+        <div class="container-fluid mt--5">
             <div class="row">
                 @include('site.m.checkout._l1')
             </div>

@@ -1,5 +1,6 @@
 <!-- <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo headroom "> -->
-  <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo fixed-top">
+<nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo fixed-top">
+  <!-- <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo fixed-top"> -->
   <div class="container">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
       aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +13,9 @@
     <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
       <div class="navbar-collapse-header">
         <div class="row">
-          <div class="col-6 collapse-brand"></div>
+          <div class="col-6 collapse-brand">
+          
+          </div>
           <div class="col-6 collapse-close">
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse"
               aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,15 +27,18 @@
       </div>
 
       <ul class="navbar-nav align-items-lg-center ml-lg-auto  navbar-nav-hover ">
-      @guest
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link" data-toggle="dropdown" role="button">
-            <i class="ni ni-ui-04 d-lg-none"></i>
+      
+    
+        <li class="nav-item ">
+          <a href="https://blog.cardappion.com.br" class="nav-link" role="button">
+            
             <span class="nav-link-inner--text text-dark"><b>Blog</b></span>
           </a>
+
+          
           
         </li>
-        @endguest
+       
 
         
         <li class="nav-item">

@@ -76,10 +76,10 @@ class Sale extends Model
     {
         switch ($this->status):
             case 1:
-                $label = 'Aberto';
+                $label = 'Novo';
             break;
             case 2:
-                $label = 'Fechado';
+                $label = 'Entregue';
             break;
             case 3:
                 $label = 'Cancelado';

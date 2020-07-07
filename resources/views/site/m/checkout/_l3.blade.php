@@ -1,7 +1,7 @@
 <div class="col-lg-4 ">
 
     <div class="accordion text-white" id="accordionExample">
-        <div class="card">
+        <div class="">
             <div class="card-header bg-warning" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <h5 class="mb-0 text-white">Solicitar Pedido</h5>
             </div>
