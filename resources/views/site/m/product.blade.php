@@ -76,7 +76,7 @@
                   </div>
                   <div class="text-center">
                      <h5 class="h3">
- {{ $product->title}}<span class="font-weight-light"></span>
+                      {{ $product->title}}<span class="font-weight-light"></span>
                 </h5> 
                     <div class="h5 font-weight-300 mt-2">
                       <small><b>Quantidade</b></small>

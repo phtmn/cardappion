@@ -18,7 +18,7 @@
                     <h3 class="display-5 text-dark d-inline-block mb-0"> Vendas</h3>
                 </div>
                 <div class="col-lg-6 col-5 text-right">
-                <a class="text-dark" href="{{route('sale.index')}} "><i class="ni ni-bold-left text-dark"></i> Voltar </a>
+                    <a class="text-dark" href="{{route('sale.index')}} "><i class="ni ni-bold-left text-dark"></i> Voltar </a>
                 </div>
             </div>
         </div>
@@ -27,67 +27,214 @@
 @stop
 
 @section('conteudo')
+
+
 <div class="container-fluid mt--6">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="card-wrapper">
-        <div class="card">
-        <div class="card-header">
-        <h3 class="mb-0">Lista de Pedidos</h3>
-      </div>
-          <div class="card-body">
-            <div class="text-center">
+    <div class="row">
 
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class="text-dark">
-                       
-                        <th>ID</th>
-                        <th>Sale_id</th>
-                        <th>PRECO</th>
-                        <th>Quantidade</th>
-                        <th>Produto</th>
-                        <th></th>
-                        <th></th>
-                    </thead>
-                    <tbody>
-                    @forelse ($itens as $iten)
-                            <tr>
-                            
-                               <td>{{ $iten->id }}</td>
-                               <td>{{ $iten->sale_id }}</td>
-                               <td>{{ $iten->price }}</td>
-                               <td>{{ $iten->quantity }}</td>
-                               <td>{{ $iten->product_id }}</td>
-                               @forelse ($products as $p)
+        <div class="col-lg-4">
+            <div class="card-wrapper">
 
-                            
-                               <td>{{ $p->id }}</td>
-                               <td>{{ $p->title }}</td>
-                               @empty
-                                        <p class="text-danger">Nenhum ITEM cadastrado!</p>
-                                        @endforelse
-                             
-                            </tr>
-                            @empty
-                                        <p class="text-danger">Nenhum ITEM cadastrado!</p>
-                                        @endforelse
-                    </tbody>
-                  </table>
+                <div class="card">
+
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">Pedido <a class="btn btn-sm btn-neutral text-primary">{{ $sale->invoice_number }} </a></h3>
+
+                            </div>
+                            <div class="col-4 text-right">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush list my--3">
+                            <li class="list-group-item px-0">
+                                <div class="row align-items-center">
+                                    <div class="col ml--2">
+                                        <h4 class="mb-0">
+                                            <a>Data</a>
+                                        </h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        {{ $sale->created_at->format('d/m/Y H:i:s')}}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <div class="row align-items-center">
+                                    <div class="col ml--2">
+                                        <h4 class="mb-0">
+                                            <a>Cliente</a>
+                                        </h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a class="btn btn-sm btn-neutral text-primary">. {{ substr ($sale->name, 0,15) }} .</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <div class="row align-items-center">
+                                    <div class="col ml--2">
+                                        <h4 class="mb-0">
+                                            <a>Pagamento</a>
+                                        </h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        {{ $sale->payment_name }}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <div class="row align-items-center">
+                                    <div class="col ml--2">
+                                        <h4 class="mb-0">
+                                            <a>Total</a>
+                                        </h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a class="btn btn-sm btn-secondary text-warning">R$ {{ $sale->total_masked }}</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item px-0">
+                                <div class="row align-items-center">
+                                    <div class="col ml--2">
+                                        <h4 class="mb-0">
+                                            <a>Entrega</a>
+                                        </h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a class="btn btn-sm btn-secondary text-warning">R$ {{ $sale->delivery_masked }}</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <div class="row align-items-center">
+                                    <div class="col ml--2">
+                                        <h4 class="mb-0">
+                                            <a>Troco pra</a>
+                                        </h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a class="btn btn-sm btn-secondary text-warning">R$ {{ number_format($sale->change,2,',','.') }}</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0">
+                                <div class="row align-items-center">
+                                    <div class="col ml--2">
+                                        <h4 class="mb-0">
+                                            <a>Status</a>
+                                        </h4>
+                                    </div>
+                                    <div class="col-auto">
+                                        @if($sale->status == 1)
+
+                                        <!-- <i class="bg-warning"></i> -->
+                                        <span class="badge badge-warning badge-lg ">{{ $sale->status_name }}</span>
+                                        @elseif($sale->status == 2)
+                                        <span class="badge badge-success badge-lg  ">{{ $sale->status_name }}</span>
+                                        @elseif($sale->status == 3)
+                                        <span class="badge badge-danger badge-lg ">{{ $sale->status_name }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+        <div class="col-lg-8">
+            <div class="card-wrapper">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="mb-0">Detalhes do Pedido <a class="btn btn-sm btn-neutral text-primary">{{ $sale->invoice_number }} </a></h3>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-dark">
+                                    <th>#</th>
+                                    <th>Produto</th>
+                                    <th>Valor (R$)</th>
+                                    <th>Quantidade</th>
+                                </thead>
+                                <tbody>
+
+
+
+                                    @forelse ($itens as $iten)
+                                    <tr>
+
+                                        <td>
+                                 {{--       <td>
+                                            <div class="avatar-group">
+
+                                                @if(!$d->image1)
+                                                <a class="avatar ">
+                                                    <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
+                                                </a>
+                                                @else
+                                                <a class="avatar ">
+                                                    <img src="{{ Storage::url($d->image1) }}" width="45" height="45">
+                                                </a>
+                                                @endif
+
+                                                @if(!$d->image2)
+                                                <a class="avatar ">
+                                                    <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
+                                                </a>
+                                                @else
+                                                <a class="avatar ">
+                                                    <img src="{{ Storage::url($d->image2) }}" width="45" height="45">
+                                                </a>
+                                                @endif
+
+                                                @if(!$d->image3)
+                                                <a class="avatar ">
+                                                    <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
+                                                </a>
+                                                @else
+                                                <a class="avatar ">
+                                                    <img src="{{ Storage::url($d->image3) }}" width="45" height="45">
+                                                </a>
+                                                @endif
+                                            </div>
+
+
+                                        </td> --}}
+                                        <td>NOME DO PRODUTO {{ $iten->sale_id }}</td>
+                                        <td> R$ {{ number_format($sale->price,2,',','.') }} </td>
+                                        <td> {{ $iten->quantity }}</td>
+                                      
 
 
 
 
 
+                                    </tr>
+                                    @empty
+                                    <p class="text-danger">Nenhum PEDIDO cadastrado!</p>
+                                    @endforelse
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-@stop
+
+
+
+
+        @stop

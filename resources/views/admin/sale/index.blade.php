@@ -54,8 +54,8 @@
                         @foreach($sales as $sale)
                             <tr>
                                 <td>{{ $sale->created_at->format('d/m/Y H:i:s')}}    </td> 
-                                <td><a href="{{route('sale.show',$sale->id)}}" class="btn btn-primary btn-sm">  {{ $sale->invoice_number }} </a></td>
-                                
+                                <td><a href="{{route('sale.show',$sale->id)}}" class="btn btn-sm btn-neutral text-primary">  {{ $sale->invoice_number }} </a></td>
+                            
                                 <td>. {{ substr ($sale->name, 0,15) }} . </td>
                                 <td>
                                     {{ $sale->payment_name }}
