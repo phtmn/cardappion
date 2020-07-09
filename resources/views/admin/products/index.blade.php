@@ -43,7 +43,7 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table align-items-center table-flush " style="width:100%" >
-                    <thead class="text-dark">
+                  <thead class="text-dark">
                       <th>#</th>
                       <th>Produto</th>
                       <th>Valor (R$)</th>
@@ -118,4 +118,6 @@
     </div>
   </div>
 </div>
+
+
 @stop

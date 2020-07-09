@@ -8,8 +8,6 @@
   <title> cardappion | Soluções em Cardápios Digitais </title>
 
   
-
-  
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
   <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">

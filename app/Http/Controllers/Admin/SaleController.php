@@ -95,9 +95,22 @@ class SaleController extends Controller
 
     public function show($id)
     {
-        $sale = Sale::findOrFail($id);
+        //$tenant = Auth::user()->tenant; 
         
-        return view('admin.sale.show', compact('sale')); 
+        $sale = Sale::findOrFail($id);
+
+        $itens = $sale->items()->get();
+       //$products = $sale->items()->pluck('product_id');
+       //$products = Product::findOrFail($id);
+        $products = Product::where('tenant_id', $tenant->id)->get();
+       // $product = $itens()->get();
+        
+    // dd($products);
+       // $items_check = $collectors->items()->pluck('id');
+
+        return view('admin.sale.show', compact('sale', 'itens', 'products'));
+        
+
     }
 
 }

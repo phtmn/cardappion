@@ -28,7 +28,7 @@ class Itens extends Model
         return $this->belongsTo(Sale::class);
     }
 
-
+ 
     public function setDeliveryAttribute($input)
     {
         if ($input)

@@ -1,53 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <meta name="mtoken" content="{{ $token }}">
-
-  <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
-  <title> cardappion | Soluções em Cardápios Digitais </title>
-
-  <!-- <meta name="keywords" content="argon design system pro, design system, login, form, table, tables, calendar, card, cards, navbar, modal, icons, icons, map, chat, carousel, menu, datepicker, gallery, slider, date, sidebar, social, dropdown, search, tab, nav, footer, date picker, forms, tabs, time, button, select, input, timeline, cart, car, fullcalendar, about us, invoice, account, chat, log in, blog, profile, portfolio, landing page, ecommerce, shop, landing, register, app, contact, one page, sign up, signup, store, bootstrap 4, bootstrap4">
-  <meta name="description" content="Start your development with a Premium Argon Design System for Bootstrap 4. It combines colors that are easy on the eye, spacious cards, beautiful typography, and graphics. It is a beautiful cross-platform UI kit featuring over 1100 components, 43 sections and 17 example pages."> -->
-
-  <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
-  <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-  <link rel="stylesheet" href="{{ asset('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
-  <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
-  <link rel="stylesheet" href="{{ asset('assets/css/argon.min.css?v=1.0.0') }}" type="text/css">
-
-
-  <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
-  <script src="{{ asset('assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/lavalamp/js/jquery.lavalamp.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
-  <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
-  <script src="{{ asset('assets/js/demo.min.js') }}"></script>
-
-
-
-
-  <!-- Place this tag in your head or just before your close body tag. -->
-  <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
-  <script src="{{ asset('js/argon-design-system.min.js?v=1.0.2') }}" type="text/javascript"></script> <!-- botão -->
-  <!-- <script src="{{ asset('js/jquery.sharrre.js') }}"></script>
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script> -->
-
-
-
-
-  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-  <script src="{{ asset('js/app.js') }}"></script>
-
-</head>
-
+@include('site.layouts._head_m') 
 
 <body class="bg-white">
 <section class=" bg-white ">
@@ -56,20 +10,7 @@
 <div class="main-content  mt-6 ">
   <div class="header  pb-6">
     <div class="container-fluid">
-      <!-- <div class="header-body">
-        <div class="row align-items-center py-4">
-          <div class="col-lg-2 col-7">
-            <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-              <i class="ni ni-collection"></i>
-
-            </div>
-            
-          </div>
-          <div class="col-lg-10 col-5 text-right">
-            <h4 class="display-5 text-dark d-inline-block mb-0"> Categorias do Menu</h4>
-          </div>
-        </div>
-      </div> -->
+ 
     </div>
   </div>
  
@@ -182,7 +123,7 @@
 </section>
 
 
-@include('site.m._footer')
+@include('site.layouts._footer')
 
 </body>
 

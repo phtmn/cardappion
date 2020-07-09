@@ -4,7 +4,7 @@
 
             @foreach ($items as $item)
             <!-- Card body -->
-            <div class="card-body">
+            <div class="card-body item-checkout"  data-id="{{ $item->id }}" data-quantity="{{ $item->quantity }}">
                 <div class="row">
 
                     <div class="col-auto">
@@ -53,3 +53,6 @@
 
     </div>
 </div>
+
+
+
