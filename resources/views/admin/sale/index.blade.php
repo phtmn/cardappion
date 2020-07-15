@@ -38,7 +38,7 @@
 
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table js-datatable">
                     <thead class="text-dark">
                         <th>Data</th>
                         <th>Nº</th>
@@ -48,14 +48,14 @@
                         <th>Entrega</th>
                         <th>Troco Pra</th>
                         <th class="text-center">Status</th>
-                        
+
                     </thead>
                     <tbody>
                         @foreach($sales as $sale)
                             <tr>
-                                <td>{{ $sale->created_at->format('d/m/Y H:i:s')}}    </td> 
+                                <td>{{ $sale->created_at->format('d/m/Y H:i:s')}}    </td>
                                 <td><a href="{{route('sale.show',$sale->id)}}" class="btn btn-sm btn-neutral text-primary">  {{ $sale->invoice_number }} </a></td>
-                            
+
                                 <td>. {{ substr ($sale->name, 0,15) }} . </td>
                                 <td>
                                     {{ $sale->payment_name }}
@@ -65,7 +65,7 @@
                                 <td>R$ {{ number_format($sale->change,2,',','.') }} </td>
                                 <td class="text-center">
                                     @if($sale->status == 1)
-                                    
+
                                         <!-- <i class="bg-warning"></i> -->
                                         <span class="badge badge-warning badge-lg js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
                                     @elseif($sale->status == 2)
@@ -74,7 +74,7 @@
                                         <span class="badge badge-danger badge-lg  js-status" data-toggle="modal" data-target="modalStatus" data-uuid="{{ $sale->uuid }}">{{ $sale->status_name }}</span>
                                     @endif
                                 </td>
-                                
+
                             </tr>
                         @endforeach
                     </tbody>
@@ -103,7 +103,7 @@
                 <form id="formStatus">
                     <input type="hidden" id="uuid" name="uuid">
                     <div class="form-group col-md-12 js-validate">
-                        
+
                         <select class="form-control" data-trigger name="status">
                             <option>..Selecione...</option>
                             <option value="2">Entregue</option>
@@ -113,7 +113,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                
+
                 <button type="button" class="btn btn-secondary my-2 text-warning  js-change-status">Atualizar</button>
             </div>
         </div>

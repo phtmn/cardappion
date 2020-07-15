@@ -18,6 +18,9 @@ class Itens extends Model
     protected $table = 'sale_itens';
 
 
+    /**
+     * Relationship
+     */
     public function tenant()
     {
         return $this->belongsTo(Tenant::class);
@@ -28,7 +31,12 @@ class Itens extends Model
         return $this->belongsTo(Sale::class);
     }
 
- 
+    public function product()
+    {
+      return $this->belongsTo(Product::class, 'product_id');
+    }
+
+
     public function setDeliveryAttribute($input)
     {
         if ($input)

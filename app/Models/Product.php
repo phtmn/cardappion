@@ -21,6 +21,15 @@ class Product extends Model
   }
 
 
+  /**
+   * Relationship
+   */
+  public function item()
+  {
+    return $this->hasOne(Sale::class, 'product_id');
+  }
+
+
 
   public function setPriceAttribute($input)
   {

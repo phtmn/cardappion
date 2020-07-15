@@ -13,14 +13,13 @@
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
   <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">: -->
-  
 
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
   <link rel="stylesheet" href="{{ asset('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('assets/css/argon.min.css?v=1.0.0') }}" type="text/css">
-  
-  
-  
+
+
   <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/js-cookie/js.cookie.js') }}"></script>
@@ -31,9 +30,10 @@
   <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
   <script src="{{ asset('assets/js/demo.min.js') }}"></script>
 
- {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+  {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
   @yield('css')
   @yield('style')
@@ -55,7 +55,7 @@
           <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
             <div class="navbar-collapse-header">
               <div class="row">
-                <div class="col-6 collapse-brand">                  
+                <div class="col-6 collapse-brand">
 
                 </div>
                 <div class="col-6 collapse-close">
@@ -73,8 +73,8 @@
             <i class="ni ni-settings d-lg-none"></i>
             <span class="nav-link-inner--text text-dark"><b>Configurações</b></span>
           </a>
-          
-   
+
+
                 <div class="dropdown-menu dropdown-menu-xl">
                   <div class="dropdown-menu-inner">
                     <a href="{{route('dashboard.index')}}" class="media d-flex align-items-center">
@@ -142,7 +142,7 @@
                         <i class="fab fa-instagram"></i>
                       </div>
                       <div class="media-body ml-3">
-                      
+
                       <h6 class="heading text-dark mb-md-1">Instagram</h6>
                       </div>
                     </a>
@@ -162,7 +162,7 @@
               <li class="nav-item">
                 <a href="{{ Auth::user()->tenant->url_token }}"  class="btn btn-secondary my-2">
 
-                  
+
                   <span class="nav-link-text text-warning ">Landing Page </span>
                 </a>
               </li>
@@ -170,7 +170,7 @@
               <li class="nav-item">
                 <a href="{{route('logout')}}" class="btn btn-secondary my-2 " onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                  
+
 
                   <span class="nav-link-text text-warning"> Sair </span>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -202,6 +202,8 @@
       // var _TOKEN = {
       //   !!json_encode(csrf_token()) !!
       // }
+
+      $('.js-datatable').dataTable();
 
 
       $('#whatsapp').mask('(00) 00000-0000');

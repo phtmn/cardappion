@@ -142,6 +142,20 @@
                                     </div>
                                 </div>
                             </li>
+                            <li class="list-group-item px-0">
+                              <div class="row align-items-center">
+                                  <div class="col ml--2">
+                                      <h4 class="mb-0">
+                                          <a>Excluir Pedido</a>
+                                      </h4>
+                                  </div>
+                                  <div class="col-auto">
+
+                                      <span class="badge badge-warning badge-lg ">{{ $sale->status_name }}</span>
+
+                                  </div>
+                              </div>
+                          </li>
                         </ul>
 
 
@@ -169,57 +183,47 @@
                                     <th>Quantidade</th>
                                 </thead>
                                 <tbody>
-
-
-
-                                    @forelse ($itens as $iten)
+                                    @forelse ($itens as $item)
                                     <tr>
-
-                                        <td>
-                                 {{--       <td>
+                                       <td>
                                             <div class="avatar-group">
 
-                                                @if(!$d->image1)
+                                                @if(!$item->product->image1)
                                                 <a class="avatar ">
                                                     <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
                                                 </a>
                                                 @else
                                                 <a class="avatar ">
-                                                    <img src="{{ Storage::url($d->image1) }}" width="45" height="45">
+                                                    <img src="{{ Storage::url($item->product->image1) }}" width="45" height="45">
                                                 </a>
                                                 @endif
 
-                                                @if(!$d->image2)
+                                                @if(!$item->product->image2)
                                                 <a class="avatar ">
                                                     <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
                                                 </a>
                                                 @else
                                                 <a class="avatar ">
-                                                    <img src="{{ Storage::url($d->image2) }}" width="45" height="45">
+                                                    <img src="{{ Storage::url($item->product->image2) }}" width="45" height="45">
                                                 </a>
                                                 @endif
 
-                                                @if(!$d->image3)
+                                                @if(!$item->product->image3)
                                                 <a class="avatar ">
                                                     <img src="{{asset('/vendor/argon/assets/img/brand/no_foto.png')}}" width="45" height="45">
                                                 </a>
                                                 @else
                                                 <a class="avatar ">
-                                                    <img src="{{ Storage::url($d->image3) }}" width="45" height="45">
+                                                    <img src="{{ Storage::url($item->product->image3) }}" width="45" height="45">
                                                 </a>
                                                 @endif
                                             </div>
 
 
-                                        </td> --}}
-                                        <td>NOME DO PRODUTO {{ $iten->sale_id }}</td>
-                                        <td> R$ {{ number_format($sale->price,2,',','.') }} </td>
-                                        <td> {{ $iten->quantity }}</td>
-                                      
-
-
-
-
+                                        </td>
+                                        <td>{{ $item->product->title }}</td>
+                                        <td>{{ number_format($item->product->price,2,',','.') }}</td>
+                                        <td>{{ $item->quantity }}</td>
 
                                     </tr>
                                     @empty
@@ -233,8 +237,4 @@
             </div>
         </div>
 
-
-
-
-
-        @stop
+@stop
