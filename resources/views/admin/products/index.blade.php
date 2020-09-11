@@ -41,7 +41,7 @@
           <div class="card-body">
             <div class="text-center">
               <div class="card-body">
-                <div class="table-responsive">
+                <div class="table-responsive ">
                   <table class="table align-items-center table-flush " style="width:100%" >
                   <thead class="text-dark">
                       <th>#</th>

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim"> -->
-  <title> cardappion | Soluções em Cardápios Digitais </title>
+  <title> cardappion | Todos os cardápios em um único lugar! </title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
@@ -121,7 +121,7 @@
                       </div>
                     </a>
                     <hr class="d-lg-none">
-                    <a href="https://blog.cardappion.com.br"class="media d-flex align-items-center">
+                    <a href="https://blog.cardappion.com"class="media d-flex align-items-center">
                       <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                         <i class="fab fa-wordpress"></i>
                       </div>
@@ -204,6 +204,16 @@
       // }
 
       $('.js-datatable').dataTable();
+
+      $('.js-datatable2').dataTable();
+      $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    } );
 
 
       $('#whatsapp').mask('(00) 00000-0000');

@@ -7,7 +7,7 @@
   
   <title> cardappion | Soluções em Cardápios Digitais </title>
 
-  
+  <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
   <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
@@ -24,6 +24,11 @@
   <script src="{{ asset('assets/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
   <script src="{{ asset('assets/js/argon.min.js?v=1.0.0') }}"></script>
   <script src="{{ asset('assets/js/demo.min.js') }}"></script> 
+
+  <script src="{{ asset('assets/js/build/vendor.min.js') }}"></script> 
+  <script src="{{ asset('assets/js/build/script.min.js') }}"></script> 
+  
+
   <!-- Botão + - Produto-->
   <script src="{{ asset('js/argon-design-system.min.js?v=1.0.2') }}" type="text/javascript"></script> 
 

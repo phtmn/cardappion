@@ -30,7 +30,7 @@
       
     
         <li class="nav-item ">
-          <a href="https://blog.cardappion.com.br" class="nav-link" role="button">
+          <a href="https://blog.cardappion.com" class="nav-link" role="button">
             
             <span class="nav-link-inner--text text-dark"><b>Blog</b></span>
           </a>

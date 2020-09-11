@@ -41,10 +41,7 @@
                 </div>
               </div>
             </div>
-            <!-- <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p> -->
+         
           </div>
         </a>
       </div>
@@ -65,10 +62,7 @@
                 </div>
               </div>
             </div>
-            <!-- <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-nowrap">Total de Produtos</span>
-                    <span class="text-primary mr-2">  </span>
-                  </p> -->
+           
           </div>
         </a>
       </div>
@@ -202,7 +196,7 @@
           </a>
           <div class="mx-3">
             <small class="d-block text-muted font-weight-900">{{ Auth::user()->tenant->url_token }}</small>
-            <button class="btn btn-sm btn-primary mt-2" type="button" data-toggle="collapse"
+            <button class="btn btn-sm btn btn-neutral my-2 mt-2" type="button" data-toggle="collapse"
               data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               Alterar Link <i class="ni ni-bold-down"></i>
             </button>
@@ -233,7 +227,7 @@
                   </div>
                   <div class="col-auto">
                     <button type="submit"
-                      class="btn btn-block btn-outline-primary btn-sm btn-round mb-2">Alterar</button>
+                      class="btn btn-block btn btn-neutral my-2">Alterar</button>
                   </div>
                  
                 </div>

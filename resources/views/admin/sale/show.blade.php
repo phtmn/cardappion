@@ -69,9 +69,10 @@
                                         </h4>
                                     </div>
                                     <div class="col-auto">
-                                        <a class="btn btn-sm btn-neutral text-primary">. {{ substr ($sale->name, 0,15) }} .</a>
+                                        <button class="btn btn-sm btn-neutral text-primary " type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            . {{ substr ($sale->name, 0,15) }} .
+                                        </button>
                                     </div>
-                                </div>
                             </li>
                             <li class="list-group-item px-0">
                                 <div class="row align-items-center">
@@ -142,20 +143,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item px-0">
-                              <div class="row align-items-center">
-                                  <div class="col ml--2">
-                                      <h4 class="mb-0">
-                                          <a>Excluir Pedido</a>
-                                      </h4>
-                                  </div>
-                                  <div class="col-auto">
 
-                                      <span class="badge badge-warning badge-lg ">{{ $sale->status_name }}</span>
-
-                                  </div>
-                              </div>
-                          </li>
                         </ul>
 
 
@@ -170,10 +158,68 @@
             <div class="card-wrapper">
                 <div class="card">
                     <div class="card-header">
+                        <h3 class="mb-0">Detalhes do Cliente <a class="btn btn-sm btn-neutral text-primary"> . {{ substr ($sale->name, 0,15) }} . </a></h3>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="text-dark">
+                                    <th>Contato</th>
+                                    <th>CEP</th>
+                                    <th>Endereço</th>
+                                </thead>
+                                <tbody>
+                               
+                                    <tr>
+                               
+                                        <td>
+                                        <h4 class="mb-0">
+                                        @if($sale->whatsapp ?? '')
+
+
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=55{{$sale->whatsapp}}" class="avatar rounded-circle">
+                  <img alt="Image placeholder" src="{{asset('/vendor/argon/assets/img/brand/zap.png')}}">
+                </a>
+             
+                {{$sale->whatsapp ?? ''}} 
+                @endif
+
+                @if($sale->telegram ?? '')  
+                <a target="_blank" href="https://t.me/{{$sale->telegram}}" class="avatar rounded-circle">
+                  <img alt="Image placeholder" src="{{asset('/vendor/argon/assets/img/brand/telegram.png')}}">
+                </a>
+                {{$sale->telegram ?? ''}} 
+                @endif
+
+                                    
+                                            </h4>
+                                        </td>
+                                        <td>{{ $sale->zipcode}}</td>
+                                        <td>
+                                            <h4 class="mb-0">
+                                                <a> {{$sale->address ?? ''}} {{$sale->num ?? ''}}</a>
+                                                <p> {{$sale->neighborhood ?? ''}} </p>
+                                            </h4>
+                                            <small>{{$sale->city ?? ''}} </small>
+
+                                        </td>
+
+                                    </tr>
+                               
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
                         <h3 class="mb-0">Detalhes do Pedido <a class="btn btn-sm btn-neutral text-primary">{{ $sale->invoice_number }} </a></h3>
                     </div>
 
                     <div class="card-body">
+                       
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class="text-dark">
@@ -185,7 +231,7 @@
                                 <tbody>
                                     @forelse ($itens as $item)
                                     <tr>
-                                       <td>
+                                        <td>
                                             <div class="avatar-group">
 
                                                 @if(!$item->product->image1)
@@ -232,9 +278,15 @@
                                 </tbody>
                             </table>
                         </div>
+                        <h2> Observações </h2>
+                    <small class="text-warning">{{$sale->obs ?? ''}} </small>
+
                     </div>
                 </div>
+
             </div>
         </div>
 
-@stop
+
+
+        @stop

@@ -4,10 +4,11 @@ Route::get('/blog', 'Site\BlogController@index')->name('site.blog.index');
 Route::get('/blog/{slug}', 'Site\BlogController@show')->name('site.blog.show');
 
 Route::get('/', 'Site\SiteController@home')->name('site');
-Route::get('/m/{token}/', 'Site\SiteController@show')->name('site.menu.show'); //perfil
-Route::get('/m/{token}/menu', 'Site\SiteController@menu')->name('site.menu.menu');
-Route::get('/m/{token}/produto/{id}', 'Site\SiteController@product')->name('site.menu.product');
+Route::get('/@/{token}/', 'Site\SiteController@show')->name('site.menu.show'); //perfil
+Route::get('/@/{token}/menu', 'Site\SiteController@menu')->name('site.menu.menu');
+Route::get('/@/{token}/produto/{id}', 'Site\SiteController@product')->name('site.menu.product');
 
+//  Mudar m para @
 
 // Route::get('produto/{slug}', 'Site\SiteController@produto')->name('produto');
 // Route::get('menu/{slug}', 'Site\SiteController@menu')->name('menu.slug');
