@@ -11,6 +11,17 @@
             </div>           
           </a>
         </li>    -->
+        @auth 
+        <li class="nav-item">
+          <a href="{{route('dashboard.index')}}">
+            <div class="icon icon-shape bg-gradient-warning  rounded-circle text-white">
+              <i class="ni ni-tv-2"></i>
+            </div>
+            <h6 class="text-dark text-center">Painel
+            </h6>
+          </a>
+        </li>
+        @endauth
         <li class="nav-item ">
           <a href="{{route('site.menu.show', ['token' => $token,'id'])}}">
             <div class="icon icon-shape bg-gradient-warning  rounded-circle text-white">
@@ -28,13 +39,15 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('cart.checkout', ['token' => $token]) }}">
+          <a href="{{route('site.menu.menu', ['token' => $token,'id'])}}">
             <div class="icon icon-shape bg-gradient-warning  rounded-circle text-white">
-              <i class="ni ni-cart"></i>
+              <i class="ni ni-collection"></i>
             </div>
-            <h6 class="text-dark text-center">Pedidos</h6>
+            <h6 class="text-dark text-center">Serviços</h6>
           </a>
-        </li>      
+        </li>
+       
+            
              
       </ul>
     </div>

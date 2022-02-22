@@ -26,10 +26,10 @@
               <div class="text-center">
                 <a>
                 @if($config->image ?? '')
-                  <img src="{{ Storage::url("{$config->image }") }}" class="avatar img-fluid floating" style="width:225px; height:225px">
+                  <img src="{{ Storage::url("{$config->image }") }}" class="img-fluid rounded-circle shadow" style="width:225px; height:225px">
                   
                   @else
-                  <img src="{{asset('vendor/argon/assets/img/brand/no_foto.png')}}" class="avatar img-fluid floating" style="width:225px; height:225px">
+                  <img src="{{asset('vendor/argon/assets/img/brand/no_foto.png')}}" class="img-fluid rounded-circle shadow" style="width:225px; height:225px">
                   @endif
 
                 </a> 

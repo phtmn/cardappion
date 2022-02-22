@@ -112,14 +112,6 @@
                         <h6 class="heading text-dark mb-md-1">Menu</h6>
                       </div>
                     </a>
-                    <a href="{{route('sale.index')}}" class="media d-flex align-items-center">
-                      <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                        <i class="ni ni-cart"></i>
-                      </div>
-                      <div class="media-body ml-3">
-                        <h6 class="heading text-dark mb-md-1">Vendas</h6>
-                      </div>
-                    </a>
                     <hr class="d-lg-none">
                     <a href="https://blog.cardappion.com"class="media d-flex align-items-center">
                       <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">

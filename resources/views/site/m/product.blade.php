@@ -65,43 +65,14 @@
                       </div>
                       @endif
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Anterior</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Próximo</span>
-                    </a>
+                    
                   </div>
                   <div class="text-center">
                      <h5 class="h3">
                       {{ $product->title}}<span class="font-weight-light"></span>
                 </h5> 
-                    <div class="h5 font-weight-300 mt-2">
-                      <small><b>Quantidade</b></small>
-                      <div class="input-group">
-                        <div class="input-group-btn">
-                          <button id="down" class="btn btn-outline-warning btn-round" onclick="down('0')"><i class="ni ni-fat-delete"></i></button>
-                        </div>
-                        <input type="text" id="myNumber" class="form-control input-number" value="1">
-                        <div class="input-group-btn">
-                          <button id="up" class="btn btn-outline-warning btn-round" onclick="up('100')"><i class="ni ni-fat-add"></i></button>
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="h5 mt-4 ">
-
-                      <button class="btn btn-sm btn-warning ml-3 addCart" data-id="{{ $product->id }}">Adicionar ao Pedido &nbsp;<i class="ni ni-cart"></i></button>
-
-                    </div> 
-                    <div>
-                      @if (($product->price) != "0")
-
-                      <label><b>R$ {{ number_format($product->price,2,',','.')}}</b></label>
-                      @endif
-                    </div>
+                    
+                   
                   </div>
 
                 </div>
