@@ -3,11 +3,22 @@
 <html lang="pt-br">
 
 <head>
+  <!-- Google Analytics phtolentinomn@gmail.com -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5NLKZ5BRSP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5NLKZ5BRSP');
+  </script>
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim"> -->
-  <title> cardappion | Todos os cardápios em um único lugar! </title>
+  <title> cardappion.com </title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">

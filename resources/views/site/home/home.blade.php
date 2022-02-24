@@ -28,20 +28,29 @@
   </div>
 
   </section> 
+  
   <section class="section section-lg pt-lg-0 mt--7 bg-white">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12">
           <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
               <div class="card card-lift--hover shadow border-0 bg-danger">
                 <div class="card-body py-5">
                   <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-building"></i></span>
-                  <span class="alert-text text-white"><strong> CADASTRE</strong> seu negócio</span>
+                  <span class="alert-text text-white"><strong> <a href="{{route('register')}}">CADASTRE-se</a></strong> </span>
                 </div>
               </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
+              <div class="card card-lift--hover shadow border-6 bg-gradient-danger">
+                <div class="card-body py-5">
+                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
+                  <span class="alert-text text-white"><strong><a href="{{route('login')}}">ENTRAR</a></strong> em sem painel administrativo</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
               <div class="card card-lift--hover shadow border-6 bg-gradient-danger">
                 <div class="card-body py-5">
                   <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
@@ -49,7 +58,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
               <div class="card card-lift--hover shadow border-0 bg-gradient-warning">
                 <div class="card-body py-5">
                   <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i class="ni ni-world-2"></i></span>
