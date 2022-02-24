@@ -34,11 +34,11 @@
             <div class="text-center">
               <a >
               @if(!$config->image)
-              <img src="{{asset('vendor/argon/assets/img/brand/no_foto.png')}}" class="avatar img-fluid floating"
+              <img src="{{asset('vendor/argon/assets/img/brand/no_foto.png')}}" class="img-fluid rounded-circle shadow"
                   style="width:150px; height:150px">
             @else
           
-            <img src="{{ Storage::url("{$config->image}") }}" class="avatar img-fluid floating" style="width:150px; height:150px">
+            <img src="{{ Storage::url("{$config->image}") }}" class="img-fluid rounded-circle shadow" style="width:150px; height:150px">
             @endif 
               </a>
 
@@ -117,13 +117,6 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Taxa de Entrega (R$)
-                </label>
-                <div class="col-md-2">
-                  <input type="text" name="delivery" class="form-control" value="{{$config->delivery_masked}}" id="delivery">
-                </div>
-              </div>                            
-              <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">WhatsApp
                 </label>
                 <div class="col-md-3">
@@ -146,13 +139,28 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Facebook
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Facebook FanPage
                 </label>
                 <div class="col-md-6">
                   <input type="text" name="fanpage" class="form-control" value="{{$config->fanpage}}"  placeholder="https://www.facebook.com/">
                 </div>
               </div>
 
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Facebook Pixel </label>
+                <div class="col-md-6">
+                  <textarea name="facebook_pixel" rows="5" resize="none" class="form-control" maxlenght="500">{{$config->facebook_pixel}}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Google Analytics </label>
+                <div class="col-md-6">
+                  <textarea name="google_analytics" rows="5" resize="none" class="form-control" maxlenght="500">{{$config->google_analytics}}</textarea>
+                </div>
+              </div>
+
+              
               <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Site
                 </label>

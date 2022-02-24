@@ -13,7 +13,7 @@
         </li>    -->
         @auth 
         <li class="nav-item">
-          <a href="{{route('dashboard.index')}}">
+          <a href="{{route('panel.index')}}">
             <div class="icon icon-shape bg-gradient-warning  rounded-circle text-white">
               <i class="ni ni-tv-2"></i>
             </div>
@@ -38,14 +38,14 @@
             <h6 class="text-dark text-center">Menu</h6>
           </a>
         </li>
-        <li class="nav-item">
+      {{--  <li class="nav-item">
           <a href="{{route('site.menu.menu', ['token' => $token,'id'])}}">
             <div class="icon icon-shape bg-gradient-warning  rounded-circle text-white">
               <i class="ni ni-collection"></i>
             </div>
             <h6 class="text-dark text-center">Serviços</h6>
           </a>
-        </li>
+        </li> --}}
        
             
              

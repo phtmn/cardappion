@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
 
-class DashboardController extends Controller
+class PanelController extends Controller
 {
     public function index()
     {

@@ -43,7 +43,10 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
 
-    Route::get('/', 'DashboardController@index')->name('dashboard.index');
+    //Route::get('/', 'DashboardController@index')->name('dashboard.index');
+
+    Route::get('/', 'PanelController@index')->name('panel.index');
+
 
     // Route::resource('promotions', 'PromotionController');
     Route::resource('menus', 'MenuController');

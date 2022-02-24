@@ -46,8 +46,8 @@
     <div id="app">
       <nav id="navbar-main" class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark bg-white nav-stilo">
         <div class="container">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon bg-dark"></span>
+          <button class="navbar-toggler bg-default" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span ></span>
           </button>
           <a class="navbar-brand mx-auto" href="{{route('site')}}">
             <img src="{{asset('vendor/argon/assets/img/brand/logo_sem_slogan.png')}}" alt="{{ config('app.name') }}" class="img-fluid" style="width:215px; height:50px">
@@ -68,7 +68,7 @@
             </div>
 
             <ul class="navbar-nav align-items-lg-center ml-lg-auto navbar-nav-hover">
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown ">
               <a href="#" class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="ni ni-settings d-lg-none"></i>
             <span class="nav-link-inner--text text-dark"><b>Configurações</b></span>
@@ -77,12 +77,12 @@
 
                 <div class="dropdown-menu dropdown-menu-xl">
                   <div class="dropdown-menu-inner">
-                    <a href="{{route('dashboard.index')}}" class="media d-flex align-items-center">
+                    <a href="{{route('panel.index')}}" class="media d-flex align-items-center">
                       <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                         <i class="ni ni-tv-2"></i>
                       </div>
                       <div class="media-body ml-3">
-                        <h6 class="heading text-dark mb-md-1">Dashboard</h6>
+                        <h6 class="heading text-dark mb-md-1">Painel</h6>
 
                       </div>
                     </a>
@@ -104,15 +104,15 @@
 
                       </div>
                     </a>
-                    <a href="{{route('menus.index')}}" class="media d-flex align-items-center">
+                     <a href="{{route('menus.index')}}" class="media d-flex align-items-center">
                       <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                         <i class="ni ni-collection"></i>
                       </div>
                       <div class="media-body ml-3">
                         <h6 class="heading text-dark mb-md-1">Menu</h6>
                       </div>
-                    </a>
-                    <hr class="d-lg-none">
+                    </a> 
+                    {{--  <hr class="d-lg-none">
                     <a href="https://blog.cardappion.com"class="media d-flex align-items-center">
                       <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
                         <i class="fab fa-wordpress"></i>
@@ -145,8 +145,8 @@
                       <div class="media-body ml-3">
                         <h6 class="heading text-dark mb-md-1">LinkedIn</h6>
                       </div>
-                    </a>
-                    <hr class="d-lg-none">
+                    </a> 
+                    <hr class="d-lg-none">--}}
                   </div>
                 </div>
               </li>

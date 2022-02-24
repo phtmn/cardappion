@@ -164,7 +164,7 @@ class MenuController extends Controller
     $tenant = Auth::user()->tenant()->firstOrFail();
     $tenant->fill($request->only('token'))->save();
 
-    return redirect()->route('dashboard.index');
+    return redirect()->route('panel.index');
   }
 
   public function sort(Request $request) {

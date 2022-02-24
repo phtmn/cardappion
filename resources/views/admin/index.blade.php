@@ -9,7 +9,7 @@
           <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
             <i class="ni ni-tv-2"></i>
           </div>
-          <h3 class="display-5 text-dark d-inline-block mb-0"> Dashboard</h3>
+          <h3 class="display-5 text-dark d-inline-block mb-0"> Painel</h3>
 
         </div>
 
@@ -24,83 +24,7 @@
 <div class="container-fluid mt--6">
 
   <!-- 1 -->
-  <div class="row">
-    <div class="col-xl-3 col-md-6">
-      <div class="card card-stats">
-        <a href="{{route('config.createEdit')}}" class="media d-flex align-items-center">
-          <div class="card-body">
-            <div class="row">
-
-              <div class="col">
-                <!-- <h5 class="card-title text-uppercase text-muted mb-0">Perfil</h5> -->
-                <span class="h2 font-weight-bold mb-0">Perfil</span>
-              </div>
-              <div class="col-auto">
-                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
-                  <i class="ni ni-building"></i>
-                </div>
-              </div>
-            </div>
-         
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-      <div class="card card-stats">
-        <a href="{{route('products.index')}}" class="media d-flex align-items-center">
-          <div class="card-body">
-            <div class="row">
-
-              <div class="col">
-                <!-- <h5 class="card-title text-uppercase text-muted mb-0">Perfil</h5> -->
-                <span class="h2 font-weight-bold mb-0">Produtos</span>
-              </div>
-              <div class="col-auto">
-                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
-                  <i class="ni ni-bullet-list-67"></i>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-        </a>
-      </div>
-    </div>    
-    <div class="col-xl-3 col-md-6">
-      <div class="card card-stats">
-        <a href="{{route('menus.index')}}" class="media d-flex align-items-center">
-          <div class="card-body">
-            <div class="row">
-
-              <div class="col">
-                <!-- <h5 class="card-title text-uppercase text-muted mb-0">Perfil</h5> -->
-                <span class="h2 font-weight-bold mb-0">Menu</span>
-              </div>
-              <div class="col-auto">
-                <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
-                  <i class="ni ni-collection"></i>
-                </div>
-              </div>
-            </div>
-            <!-- <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                    <span class="text-nowrap">Since last month</span>
-                  </p> -->
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="col-xl-3 col-md-6">
-      <div class="card card-stats">
-        <a href="{{route('sale.index')}}" class="media d-flex align-items-center">
-          <div class="card-body">
-            
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+  
   <!-- 2 -->
   <div class="row">
     <div class="col-xl-6">
@@ -115,7 +39,7 @@
           <small class="d-block text-muted font-weight-900">{{ Auth::user()->tenant->name }}</small>
         </div>
 
-        <div class="card-header d-flex align-items-center">
+       {{-- <div class="card-header d-flex align-items-center">
           <div class="d-flex align-items-center">
             <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
               <i class="ni ni-email-83"></i>
@@ -134,7 +58,7 @@
               </div> -->
 
 
-        </div>
+        </div> --}}
         <div class="card-header d-flex align-items-center">
           <div class="d-flex align-items-center">
             <div class="icon icon-shape bg-gradient-warning text-white rounded-circle shadow">
@@ -152,19 +76,32 @@
           </div>
 
 
-        </div>
+        </div> 
 
         <div class="card-body">
           <p class="mb-0">
-            Neste Plano você pode:
+            <b> Neste Plano você pode: </b>
 
           </p>
-
-          <img alt="Image placeholder" src="{{ asset('vendor/argon/assets/img/brand/master.png') }}"
-            class="img-fluid floating">
-
-
+            <ul>
+            <li> Configurar o perfil do seu estabelecimento; </li> 
+            <li> Cadastrar, editar e apagar produtos; </li> 
+            <li> Cadastrar, editar e apagar menus;</li> 
+            <li> Vincular produtos a menus; </li> 
+            <li> Personalizar o link do cardápio digital; </li> 
+            <li> Compartilhar cardápio digital (link e qrcode); </li>    
+            <li> ... </li>    
+          </ul>
+         
+          <hr> <b>DICA 1:</b> Compartilhe o <b> <i> link </b> </i> de sua Landing Page para seus clientes em
+          <i class="fab fa-facebook-square text-default"></i>
+          <i class="fab fa-instagram text-primary"></i>
+          <i class="fab fa-whatsapp text-success"></i> e muito mais!
+          <hr> <b>DICA 2:</b> Disponibilize o <b> <i> qrcode </b> </i> da sua Landing Page para seus clientes em
+          panfletos, cardápios e materiais de divulgação!   
+          </ul>
         </div>
+      
 
       </div>
     </div>
@@ -189,6 +126,8 @@
                   <span class="help-block text-danger "><b>{{ $errors->first('link') }}</b></span>
                   @endif
           </div>
+
+          
          
           <p>
 
@@ -220,12 +159,7 @@
             </div>
           </div>
 
-          <hr> <b>DICA 1:</b> Compartilhe o <b> <i> link </b> </i> de sua Landing Page para seus clientes em
-          <i class="fab fa-facebook-square text-default"></i>
-          <i class="fab fa-instagram text-primary"></i>
-          <i class="fab fa-whatsapp text-success"></i> e muito mais!
-          <hr> <b>DICA 2:</b> Disponibilize o <b> <i> qrcode </b> </i> da sua Landing Page para seus clientes em
-          panfletos, cardápio e materiais de divulgação!
+        
         </div>
         <div class="card-header d-flex align-items-center mx-3 ">
           {!! QrCode::size(500)->generate(Auth::user()->tenant->url_token); !!}
