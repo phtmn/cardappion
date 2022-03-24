@@ -2,265 +2,231 @@
 
 
 @section('content')
-<div class="main-content mt-6">  
-  <div class="header bg-white pt-5 pb-7">
+
+<div class="main-content mt-6">
+  <div class="header bg-default pt-5 pb-7">
     <div class="container">
       <div class="header-body">
         <div class="row align-items-center">
-          <div class="col-lg-1">
-          </div>
-          <div class="col-lg-10">
+          <div class="col-lg-6">
             <div class="pr-5">
-              <h1 class="display-1 text-dark font-weight-bold mb-0">Soluções em Cardápios Digitais </h1>
-              <h2 class="display-4 text-dark font-weight-light">Todos os cardápios e promoções em um único lugar.</h2>
-
+              <h1 class="display-2 text-white font-weight-bold mb-0">SEU cardápio agora pode ser online</h1>
+              <h2 class="display-4 text-white font-weight-light">e SEM custos :D</h2>
+              <p class="text-white mt-4">Uma solução completa para o seu negócio (seja grande ou pequeno), fácil de usar e <b> TOTALMENTE GRÁTIS! </b></p>
               <div class="mt-5">
-                
+                <a data-toggle="modal" data-target="#modal-register" class="btn btn-neutral text-primary my-2">Cadastre-se </a>
+                <a data-toggle="modal" data-target="#modal-login" class="btn btn-default my-2 text-white">Acesse sua Conta</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-1">
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </section> 
-  
-  <section class="section section-lg pt-lg-0 mt--7 bg-white">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-0 bg-danger">
-                <div class="card-body py-5">
-                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-building"></i></span>
-                  <span class="alert-text text-white"><strong> <a href="{{route('register')}}">CADASTRE-se</a></strong> </span>
+          <div class="col-lg-6">
+            <div class="row pt-5">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white shadow mb-4">
+                      <i class="ni ni-building"></i>
+                    </div>
+                    <h5 class="h3">Perfil</h5>
+                    <p>Configure as informações do seu estabelecimento</p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-body">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white shadow mb-4">
+                      <i class="ni ni-collection"></i>
+                    </div>
+                    <h5 class="h3">Menu</h5>
+                    <p>Cadastre, edite, apague e vincule os produtos disponíveis ao seu menu</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 pt-lg-5 pt-4">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white shadow mb-4">
+                      <i class="ni ni-bullet-list-67"></i>
+                    </div>
+                    <h5 class="h3">Produtos</h5>
+                    <p>Cadastre, edite e apague seus produtos facilmente</p>
+                  </div>
+                </div>
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white shadow mb-4">
+                      <i class="ni ni-world-2 "></i>
+                    </div>
+                    <h5 class="h3">Landing Page</h5>
+                    <p>Compartilhe seu cardápio através do link e QRcode</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-6 bg-gradient-danger">
-                <div class="card-body py-5">
-                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
-                  <span class="alert-text text-white"><strong><a href="{{route('login')}}">ENTRAR</a></strong> em sem painel administrativo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal register -->
+    <div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-register" aria-hidden="true">
+      <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+        <div class="modal-content">
+
+          <div class="modal-body p-0">
+
+
+            <div class="card border-0 mb-0">
+
+              <div class="card-body px-lg-5 py-lg-5">
+                <div class="text-center text-muted mb-4">
+                  <small>Utilize o formulário para <b> cadastrar </b> sua conta</small>
+                </div>
+                <form method="POST" action="{{ route('register') }}">
+                  @csrf
+                  <div class="form-group mb-3">
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-settings-gear-65"></i></span>
+                      </div>
+                      <input id="tenant" type="text" placeholder="Nome do negócio" class="form-control{{ $errors->has('tenant') ? ' is-invalid' : '' }}" name="tenant" value="{{ old('tenant') }}" required autofocus>
+
+                      @if ($errors->has('tenant'))
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('tenant') }}</strong>
+                      </span>
+                      @endif
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                      </div>
+                      <input id="name" type="text" placeholder="Nome completo" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                      @if ($errors->has('name'))
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('name') }}</strong>
+                      </span>
+                      @endif
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                      </div>
+                      <input id="email" type="email" placeholder="E-mail" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                      @if ($errors->has('email'))
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                      @endif
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      </div>
+                      <input id="password" type="password" placeholder="Senha" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                      @if ($errors->has('password'))
+                      <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                      </span>
+                      @endif
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="input-group input-group-merge input-group-alternative">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                      </div>
+                      <input id="password-confirm" type="password" placeholder="Repita sua Senha" class="form-control" name="password_confirmation" required>
+                           
+                     
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-neutral my-2  my-4">Cadastrar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+      <!-- Modal Entrar -->
+      <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login" aria-hidden="true">
+        <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
+          <div class="modal-content">
+
+            <div class="modal-body p-0">
+
+
+              <div class="card border-0 mb-0">
+
+                <div class="card-body px-lg-5 py-lg-5">
+                  <div class="text-center text-muted mb-4">
+                    <small>Utilize o formulário para <b> entrar </b> na sua conta</small>
+                  </div>
+                  <form role="form" action="{{ route('login') }}" method="POST">
+                    @csrf
+                    <div class="form-group mb-3">
+                      <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                        </div>
+                        <input class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="E-mail" type="email" name="email" value="{{ old('email') }}">
+                        @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                        @endif
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                        </div>
+                        <input class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Senha" type="password" name="password">
+                        @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                          <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                        @endif
+                      </div>
+                    </div>
+                   
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-neutral my-2  my-4">Entrar</button>
+                    </div>
+                  </form>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-6 bg-gradient-danger">
-                <div class="card-body py-5">
-                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
-                  <span class="alert-text text-white"><strong>CRIE</strong> seu cardápio</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-0 bg-gradient-warning">
-                <div class="card-body py-5">
-                  <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i class="ni ni-world-2"></i></span>
-                  <span class="alert-text text-white"><strong>COMPARTILHE</strong> seu cardápio</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-</div>
-</section>
-
-
-<section class="py-6 bg-white">
-  <div class="container">
-    <div class="row row-grid align-items-center">
-      <div class="col-md-6">
-        <img src="{{asset('vendor/argon/assets/img/theme/cad_1.png')}}" class="img-fluid floating">
-      </div>
-      <div class="col-md-6">
-        <div class="pr-md-5">
-          <div class="alert alert-danger" role="alert">
-            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-building"></i></span>
-            <span class="alert-text"><strong> CADASTRE</strong> seu negócio</span>
-          </div>
-          <p>Nosso objetivo é melhorar seu negócio com soluções baseadas em cardápios digitais.</p>
-          <a href="{{route('register')}}" class="font-weight-bold text-warning mt-5">Cadastre-se</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-6 bg-white">
-  <div class="container">
-    <div class="row row-grid align-items-center">
-      <div class="col-md-6 order-md-2">
-        <img src="{{asset('vendor/argon/assets/img/theme/cad_3.png')}}" class="img-fluid floating">
-      </div>
-      <div class="col-md-6 order-md-1">
-        <div class="pr-md-5 text-dark">
-          <div class="alert alert-danger bg-gradient-danger" role="alert">
-            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-danger"><i class="ni ni-collection"></i></span>
-            <span class="alert-text"><strong>CRIE</strong> seu cardápio</span>
-          </div>
-          <p> O cardappion é perfeito para o seu negócio, seja ele do tamanho que for. Informações e preços atualizadas
-            de forma instantânea.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-6 bg-white">
-  <div class="container">
-    <div class="row row-grid align-items-center">
-      <div class="col-md-6 ">
-        <img src="{{asset('vendor/argon/assets/img/theme/landing-1.png')}}" class="img-fluid floating">
-      </div>
-      <div class="col-md-6">
-        <div class="pr-md-5">
-          <div class="alert alert-warning bg-gradient-warning" role="alert">
-            <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-warning"><i class="ni ni-world-2"></i></span>
-            <span class="alert-text text-white"><strong>COMPARTILHE</strong> seu cardápio</span>
-          </div>
-          <p> Acesso aos itens que realmente estão sendo servidos no dia.</p>
-          <a href="{{route('login')}}" class="font-weight-bold text-dark mt-5">Acessar conta</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-0 bg-gradient-default">
-  <div class="main-content">
-
-    <div class="header  py-7 py-lg-7 pt-lg-4">
-      <div class="container">
-        <div class="header-body text-center mb-7">
-          <div class="row justify-content-center">
-            <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <span class="icon icon-shape bg-gradient-white shadow rounded-circle text-dark"><i class="ni ni-paper-diploma"></i></span>
-              <span class="alert-text text-white"><strong>
-                  <h1 class="text-white">Planos</h1>
-                </strong> </span>
 
             </div>
           </div>
         </div>
+
+
       </div>
-    </div>
-
-    <div class="container mt--8 pb-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="pricing card-group flex-column flex-md-row mb-3">
-            <div class="card card-pricing border-0 text-center mb-4">
-              <div class="card-header bg-transparent">
-                <h2 class="text-uppercase ls-1 text-dark py-3 mb-0"><b>MASTER</b></h2>
-              </div>
-              <div class="card-body px-lg-7">
-                <div class="display-2">R$ 0,00</div>
-                <span class="text-muted">por mês</span>
-                <ul class="list-unstyled my-4">
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
-                          <i class="fas fa-terminal"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">Configurar Perfil</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
-                          <i class="fas fa-terminal"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">Cadastrar Produtos</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
-                          <i class="fas fa-terminal"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">Cadastrar Promoções</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
-                          <i class="fas fa-terminal"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">Criar Cardápio Digital</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
-                          <i class="fas fa-terminal"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">Compartilhar Cardápio </span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
-                          <i class="fas fa-terminal"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">Acessar Cardápio via QR Code</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="icon icon-xs icon-shape bg-gradient-danger shadow rounded-circle text-white">
-                          <i class="fas fa-terminal"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <span class="pl-2">...</span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <a href="{{route('register')}}" class="btn btn-outline-default my-2 ">Cadastre-se</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-@stop
- 
+
+      @stop

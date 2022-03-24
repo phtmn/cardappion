@@ -146,20 +146,6 @@
                 </div>
               </div>
 
-              <div class="form-group row">
-                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Facebook Pixel </label>
-                <div class="col-md-6">
-                  <textarea name="facebook_pixel" rows="5" resize="none" class="form-control" maxlenght="500">{{$config->facebook_pixel}}</textarea>
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Google Analytics </label>
-                <div class="col-md-6">
-                  <textarea name="google_analytics" rows="5" resize="none" class="form-control" maxlenght="500">{{$config->google_analytics}}</textarea>
-                </div>
-              </div>
-
               
               <div class="form-group row">
                 <label for="example-search-input" class="col-md-4 col-form-label form-control-label text-right">Site
