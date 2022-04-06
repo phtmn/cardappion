@@ -6,10 +6,10 @@
       @forelse ($categories as $category)
       @forelse ($category->products as $product)
       @if (($product->active) != "0")
-      <div class="d hx hf gu gallery-item gallery-expand ce {{ $category->id }}" style="position: absolute; ">
-        <div class="placeholder">
+      <div class=" d hx hf gu gallery-item gallery-expand ce {{ $category->id }}" style="position: absolute; ">
+        <div class=" placeholder">
 
-          <div class="gallery-curve-wrapper">
+          <div class=" gallery-curve-wrapper">
             <div class="gallery-header">
               <span><b style="font-size: 20pt;"> {{ substr ($product->title, 0,22) }} </b></span>
             </div>
@@ -43,7 +43,7 @@
       </div>
       @endif
       @empty
-      <p class="text-danger">Nenhum produto cadastrado na categoria!</p>
+      <!-- <p class="text-danger">Nenhum produto cadastrado na categoria!</p> -->
       @endforelse
       @empty
       <p class="text-danger">Nenhuma categoria cadastrada!</p>
