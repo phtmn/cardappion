@@ -19,6 +19,7 @@
 
   <link rel="stylesheet" href="{{ asset('assets/css/stilo.css') }}" type="text/css">
   <link rel="icon" href="{{ asset('vendor/argon/assets/img/brand/on.png') }}" type="image/png">
+  
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <link rel="stylesheet" href="{{ asset('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
   <link rel="stylesheet" href="{{ asset('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
@@ -72,6 +73,9 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '675012923687108');
 fbq('track', 'PageView');
 </script>
+
+
+
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=675012923687108&ev=PageView&noscript=1"
 /></noscript>

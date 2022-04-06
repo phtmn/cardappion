@@ -29,7 +29,8 @@ class SiteController extends Controller
 
         $products = $tenant->products()->where('active', true)->get();
 
-        return view('site.m.show', compact('tenant', 'config', 'categories', 'products', 'token'));        
+        // return view('site.m.show', compact('tenant', 'config', 'categories', 'products', 'token'));  
+        return view('site.landingPage.index', compact('tenant', 'config', 'categories', 'products', 'token'));        
     }
 
     public function menu($token)
@@ -40,7 +41,8 @@ class SiteController extends Controller
 
         $products = $tenant->products()->where('active', true)->get();   
         
-        return view('site.m.menu', compact('tenant', 'categories', 'products', 'token'));        
+      //  return view('site.landingPage.index', compact('tenant', 'categories', 'products', 'token'));  
+        // return view('site.m.menu', compact('tenant', 'categories', 'products', 'token'));        
     }
 
     public function product($token, $id)
@@ -52,7 +54,7 @@ class SiteController extends Controller
         if (!$product) {
             return redirect()->back();
         }
-
-        return view('site.m.product', compact('product', 'tenant', 'token'));
+        return view('site.landingPage.product', compact('product', 'tenant', 'token'));
+       // return view('site.m.product', compact('product', 'tenant', 'token'));
     }
 }
