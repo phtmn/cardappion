@@ -56,14 +56,7 @@ return [
       'visibility' => 'public',
     ],
 
-     's3' => [
-       'driver' => 's3',
-       'key'    => 'AKIA2ZWL5DCSNFILZVN5',
-       'secret' => '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',
-       'region' => 'us-east-2',
-       'bucket' => 'cardappion',
-      //  'url' => env('AWS_URL'),
-     ],
+     
 
   ],
 
